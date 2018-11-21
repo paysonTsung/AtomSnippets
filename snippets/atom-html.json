@@ -1,0 +1,163 @@
+{
+    "component": {
+        "prefix": "/component",
+        "body": [
+            "<component",
+            "\t:is=\"$1\"",
+            ">",
+            "</component>"
+        ]
+    },
+    "c-aladdin": {
+        "prefix": "/aladdin",
+        "body": [
+            "<c-aladdin",
+            "\t:url=\"$1\"",
+            "\t:title=\"$2\"",
+            "\t:show-left-text=\"$3\"",
+            "\t:show-right-text=\"$4\"",
+            "\t:show-right-url=\"$5\"",
+            ">",
+            "\t$0",
+            "</c-aladdin>"
+        ],
+        "description": "c-aladdin"
+    },
+    "c-title": {
+        "prefix": "/title",
+        "body": [
+            "<c-title",
+            "\t:url=\"$1\"",
+            "\t:text=\"$2\"",
+            "/>"
+        ],
+        "description": "c-title"
+    },
+    "c-line": {
+        "prefix": "/line",
+        "body": [
+            "<c-line clamp=\"$1\"/>",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "c-line"
+    },
+    "c-link": {
+        "prefix": "/link",
+        "body": [
+            "<c-link",
+            "\t:params=\"$1\"",
+            "/>",
+            "\t$0",
+            "</c-link>"
+        ],
+        "description": "c-link"
+    },
+    "c-btn": {
+        "prefix": "/btn",
+        "body": [
+            "<c-btn",
+            "\ttype=\"$1\"",
+            "\t:text=\"$2\"",
+            "\t:icon=\"$3\"",
+            "\t:params=\"$4\"",
+            "/>"
+        ],
+        "description": "c-btn"
+    },
+    "c-divider": {
+        "prefix": "/divider",
+        "body": [
+            "<c-divider/>"
+        ],
+        "description": "c-divider"
+    },
+    "c-icon": {
+        "prefix": "/icon",
+        "body": [
+            "<c-icon :type=\"$1\"/>"
+        ],
+        "description": "c-icon"
+    },
+    "c-img": {
+        "prefix": "/img",
+        "body": [
+            "<c-img",
+            "\t:src=\"$1\"",
+            "\t:title=\"$2\"",
+            "/>"
+        ],
+        "description": "c-img"
+    },
+    "c-label": {
+        "prefix": "/label",
+        "body": [
+            "<c-label type=\"$1\" :text=\"$2\"/>"
+        ],
+        "description": "c-label"
+    },
+    "c-slink": {
+        "prefix": "/slink",
+        "body": [
+            "<c-slink",
+            "\ttype=\"$1\"",
+            "\t:params=\"$2\"",
+            "\t:text=\"$3\"",
+            "/>"
+        ],
+        "description": "c-slink"
+    },
+    "c-img-content": {
+        "prefix": "/img-content",
+        "body": [
+            "<c-img-content",
+            "\t:img-src=\"$1\"",
+            "\t:img-col=\"${2:2}\"",
+            "/>",
+            "\t$0",
+            "</c-img-content>"
+        ],
+        "description": "c-img-content"
+    },
+    "c-list": {
+        "prefix": "/list",
+        "body": [
+            "<c-list>",
+            "\t<c-list-item",
+            "\t\ta-for=\"(${2:nav}, ${3:index}) in ${1:listArr}\"",
+            "\t\t:key=\"$3\"",
+            "\t>",
+            "\t\t$0",
+            "\t</c-list-item>",
+            "</c-list>"
+        ],
+        "description": "c-list"
+    },
+    "c-navs": {
+        "prefix": "/navs",
+        "body": [
+            "<c-navs",
+            "\t:label-list=\"$1\"",
+            "\t@change=\"${2:selectFn}\"",
+            "/>"
+        ],
+        "description": "c-navs"
+    },
+    "c-tabs": {
+        "prefix": "/tabs",
+        "body": [
+            "<c-tabs",
+            "   :selected=\"${1:0}\"",
+            "   has-slide-animation",
+            "   @change=\"${2:changeFn}\">",
+            "   <c-tabs-item",
+            "       a-for=\"(${4:tab}, ${5:index}) in ${3:tabs}\"",
+            "       :key=\"$5\"",
+            "       :label=\"$4.label\"",
+            "   >",
+            "       $0",
+            "   </c-tabs-item>",
+            "</c-tabs>"
+        ]
+    }
+}

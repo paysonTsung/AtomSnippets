@@ -1,0 +1,60 @@
+{
+    "name": "atom-snippets",
+    "displayName": "Atom Snippets",
+    "description": "Code snippets for Atom",
+    "keywords": ["atom", "snippets"],
+    "version": "0.0.1",
+    "publisher": "congpeisen", 
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.soy"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.soy",
+                "title": "Soy"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.soy",
+                "key": "ctrl+.",
+                "mac": "cmd+.",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "extension.soy",
+                    "group": "navigation",
+                    "when": "editorTextFocus"
+                }
+            ]
+        },
+        "snippets": [
+            {
+                "language": "atom-html",
+                "path": "./snippets/atom-html.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    }
+}
