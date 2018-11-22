@@ -2,9 +2,13 @@
     "name": "atom-snippets",
     "displayName": "Atom Snippets",
     "description": "Code snippets for Atom",
-    "keywords": ["atom", "snippets", "as"],
-    "version": "0.0.1",
-    "publisher": "congpeisen", 
+    "keywords": [
+        "atom",
+        "snippets",
+        "as"
+    ],
+    "version": "0.0.2",
+    "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
     },
