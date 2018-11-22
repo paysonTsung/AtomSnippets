@@ -1,11 +1,10 @@
 # Atom Snippets
 
-Code snippets for Atom.
-In order to let you develop faster. 
+Code snippets for Atom in order to let you develop faster. 
 
 为Atom开发提供snippets功能
-Atom Snippets的使用需要配合Mota插件提供的语言定义
-所以使用前请确保安装并启动了Mota插件
+
+Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用前请确保安装并启动了Mota插件
 
 ## Features
 
