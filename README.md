@@ -8,12 +8,13 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 
 ## Features
 
-- 提供Atom模板部分常用模板的Snippets功能
-- 提供快捷键（⌘+.）跳转到索引平台
+- 提供Atom模板部分常用组件的Snippets功能
+- 提供快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台
 
 ## Plans
 
-- 对全部Atom组件的Snippets功能支持
-- Ala基础函数库Snippets
-- 鼠标悬浮+快捷键show组件基本用法
-- 自动添加config中对组件的引用
+- 对全部Atom组件的snippets功能支持
+- Ala基础函数库snippets
+- smarty/php预处理文件snippets
+- 鼠标悬停+快捷键后show组件基本用法
+- 代码补全后自动添加config中对组件的引用

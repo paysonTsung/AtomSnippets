@@ -9,7 +9,7 @@
         ]
     },
     "c-aladdin": {
-        "prefix": "/aladdin",
+        "prefix": "caladdin",
         "body": [
             "<c-aladdin",
             "\t:url=\"$1\"",
@@ -24,7 +24,7 @@
         "description": "c-aladdin"
     },
     "c-title": {
-        "prefix": "/title",
+        "prefix": "ctitle",
         "body": [
             "<c-title",
             "\t:url=\"$1\"",
@@ -34,7 +34,7 @@
         "description": "c-title"
     },
     "c-line": {
-        "prefix": "/line",
+        "prefix": "cline",
         "body": [
             "<c-line clamp=\"$1\"/>",
             "\t$0",
@@ -43,7 +43,7 @@
         "description": "c-line"
     },
     "c-link": {
-        "prefix": "/link",
+        "prefix": "clink",
         "body": [
             "<c-link",
             "\t:params=\"$1\"",
@@ -54,7 +54,7 @@
         "description": "c-link"
     },
     "c-btn": {
-        "prefix": "/btn",
+        "prefix": "cbtn",
         "body": [
             "<c-btn",
             "\ttype=\"$1\"",
@@ -66,21 +66,21 @@
         "description": "c-btn"
     },
     "c-divider": {
-        "prefix": "/divider",
+        "prefix": "cdivider",
         "body": [
             "<c-divider/>"
         ],
         "description": "c-divider"
     },
     "c-icon": {
-        "prefix": "/icon",
+        "prefix": "cicon",
         "body": [
             "<c-icon :type=\"$1\"/>"
         ],
         "description": "c-icon"
     },
     "c-img": {
-        "prefix": "/img",
+        "prefix": "cimg",
         "body": [
             "<c-img",
             "\t:src=\"$1\"",
@@ -90,14 +90,14 @@
         "description": "c-img"
     },
     "c-label": {
-        "prefix": "/label",
+        "prefix": "clabel",
         "body": [
             "<c-label type=\"$1\" :text=\"$2\"/>"
         ],
         "description": "c-label"
     },
     "c-slink": {
-        "prefix": "/slink",
+        "prefix": "cslink",
         "body": [
             "<c-slink",
             "\ttype=\"$1\"",
@@ -108,7 +108,7 @@
         "description": "c-slink"
     },
     "c-img-content": {
-        "prefix": "/img-content",
+        "prefix": "cimgcontent",
         "body": [
             "<c-img-content",
             "\t:img-src=\"$1\"",
@@ -120,7 +120,7 @@
         "description": "c-img-content"
     },
     "c-list": {
-        "prefix": "/list",
+        "prefix": "clist",
         "body": [
             "<c-list>",
             "\t<c-list-item",
@@ -134,7 +134,7 @@
         "description": "c-list"
     },
     "c-navs": {
-        "prefix": "/navs",
+        "prefix": "cnavs",
         "body": [
             "<c-navs",
             "\t:label-list=\"$1\"",
@@ -144,7 +144,7 @@
         "description": "c-navs"
     },
     "c-tabs": {
-        "prefix": "/tabs",
+        "prefix": "ctabs",
         "body": [
             "<c-tabs",
             "   :selected=\"${1:0}\"",
