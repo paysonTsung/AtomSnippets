@@ -1,7 +1,7 @@
 # Change Log
-All notable changes to the "Rubik" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.1] - 2018-11-21
 
-## [Unreleased]
-- Initial release
+### Added
+- 增加了常用atom组件的snippets功能
+- 提供快捷键（⌘+.）跳转到索引平台
