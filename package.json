@@ -7,7 +7,7 @@
         "snippets",
         "as"
     ],
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
