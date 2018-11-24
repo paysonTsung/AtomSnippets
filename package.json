@@ -48,6 +48,18 @@
             {
                 "language": "atom-html",
                 "path": "./snippets/atom-html.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/atom-php.json"
+            },
+            {
+                "language": "smarty",
+                "path": "./snippets/atom-smarty.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/atom-js.json"
             }
         ]
     },

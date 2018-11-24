@@ -1,0 +1,156 @@
+{
+    "print-data": {
+        "prefix": "print",
+        "body": [
+            "<script type=\"text/javascript\">",
+            "    console.log({%json_encode(\\$tplData)%});",
+            "</script>"
+        ],
+        "description": "print-data"
+    },
+    "$tplData": {
+        "prefix": "data",
+        "body": [
+            "\\$tplData"
+        ],
+        "description": "tpl-data"
+    },
+    "coat": {
+        "prefix": "cc",
+        "body": [
+            "{%$0%}"
+        ],
+        "description": "coat"
+    },
+    "if": {
+        "prefix": "cif",
+        "body": [
+            "{%if $1%}",
+            "   $0",
+            "{%/if%}"
+        ],
+        "description": "if"
+    },
+    "if-else": {
+        "prefix": "cifelse",
+        "body": [
+            "{%if $1%}",
+            "   $2",
+            "{%else%}",
+            "   $3",
+            "{%/if%}"
+        ],
+        "description": "ifelse"
+    },
+    "if-no-empty": {
+        "prefix": "ifempty",
+        "body": [
+            "{%if !empty($1)%}",
+            "   $0",
+            "{%/if%}"
+        ],
+        "description": "if-no-empty"
+    },
+    "if-no-isset": {
+        "prefix": "ifisset",
+        "body": [
+            "{%if !isset($1)%}",
+            "   $0",
+            "{%/if%}"
+        ],
+        "description": "if-no-isset"
+    },
+    "foreach": {
+        "prefix": "cforeach",
+        "body": [
+            "{%foreach $1 as ${3:\\$index}=>${2:\\$item}%}",
+            "   $0",
+            "{%/foreach%}"
+        ],
+        "description": "foreach"
+    },
+    "tc-link": {
+        "prefix": "tclink",
+        "body": [
+            "{%fe_fn_atom_tclink url=${1:\\$tplData.tcUrl} noreturn=1%}",
+            "{%${0:\\$tplData.tcParams} = \\$__tc_params%}"
+        ],
+        "description": "tclink"
+    },
+    "sf-link": {
+        "prefix": "sflink",
+        "body": [
+            "{%fe_fn_atom_sflink url=${1:\\$tplData.sfUrl}%}",
+            "{%${0:\\$tplData.sfParams} = \\$__sf_params%}"
+        ],
+        "description": "sflink"
+    },
+    "mip-link": {
+        "prefix": "miplink",
+        "body": [
+            "{%fe_fn_atom_miplink url=${1:\\$tplData.mipUrl} title=${2:\\$tplData.mipTitle}%}",
+            "{%${0:\\$tplData.mipParams} = \\$__mip_params%}"
+        ],
+        "description": "miplink"
+    },
+    "mip-link-nohead": {
+        "prefix": "miplink-nohead",
+        "body": [
+            "{%fe_fn_atom_miplink url=${1:\\$tplData.mipUrl} title=${2:\\$tplData.mipTitle}%}",
+            "{%${0:\\$tplData.mipParams} = \\$__mip_params%}",
+            "{%${0:\\$tplData.mipParams}.sfUrl = \\$__mip_params.sfUrl|cat:'?nohead=1'%}"
+        ],
+        "description": "miplink-nohead"
+    },
+    "vsearch-link": {
+        "prefix": "vsearchlink",
+        "body": [
+            "{%fe_fn_atom_vsearch_url pd=$2 sa=$3 url=${1:\\$tplData.vsearchUrl}%}",
+            "{%${0:\\$tplData.vsearchParams} = \\$__vsearch_params%}"
+        ],
+        "description": "vsearch-link"
+    },
+    "timg-link": {
+        "prefix": "timglink",
+        "body": [
+            "{%${2:\\$tplData.imgUrl} = {%fe_fn_atom_timg imgsrc=${1:\\$tplData.img}%}%}"
+        ],
+        "description": "timg-link"
+    },
+    "tpl-info": {
+        "prefix": "tplinfo",
+        "body": [
+            "{%fe_fn_atom_tpl_info%}",
+            "{%\\$tplData.tplInfo = \\$__tpl_info%}"
+        ],
+        "description": "tpl-info"
+    },
+    "format-date": {
+        "prefix": "formatdate",
+        "body": [
+            "{%${1:\\$formatedDate} = {%fe_fn_atom_date_format timestamp=$2%}%}"
+        ],
+        "description": "format-date"
+    },
+    "time-span": {
+        "prefix": "timespan",
+        "body": [
+            "{%${1:\\$timeSpan} = {%fe_fn_atom_time_span timestamp=$2%}%}"
+        ],
+        "description": "timespan"
+    },
+    "highlight": {
+        "prefix": "highlight",
+        "body": [
+            "{%${1:\\$tplData.title} = ${1:\\$tplData.title}|@highlight%}"
+        ],
+        "description": "highlight"
+    },
+    "https-host": {
+        "prefix": "httpshost",
+        "body": [
+            "{%${1:\\$tplData.imgSrc} = ${1:\\$tplData.imgSrc}|getHttpsHost%}"
+        ],
+        "description": "https-host"
+    }
+}

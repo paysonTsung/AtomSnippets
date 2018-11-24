@@ -1,0 +1,46 @@
+{
+    "if": {
+        "prefix": "cif",
+        "body": [
+            "if ($1) {",
+            "    $0",
+            "}"
+        ],
+        "description": "if"
+    },
+    "if-else": {
+        "prefix": "cifelse",
+        "body": [
+            "if ($1) {",
+            "    $2",
+            "}",
+            "else {",
+            "    $3",
+            "}"
+        ],
+        "description": "ifelse"
+    },
+    "function": {
+        "prefix": "cfunction",
+        "body": [
+            "${1:fnName} (${2:params}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "if"
+    },
+    "switch": {
+        "prefix": "cswitch",
+        "body": [
+            "switch (${1:key}) {",
+            "    case ${2:value}:",
+            "        $3",
+            "        break;",
+            "    $4",
+            "    default:",
+            "        break;",
+            "}"
+        ],
+        "description": "switch"
+    }
+}

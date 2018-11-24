@@ -1,12 +1,41 @@
 {
     "component": {
-        "prefix": "/component",
+        "prefix": "ccomponent",
         "body": [
             "<component",
             "\t:is=\"$1\"",
             ">",
             "</component>"
-        ]
+        ],
+        "description": "component"
+    },
+    "filter-sf": {
+        "prefix": "|sf",
+        "body": [
+            "| tc({",
+            "    type: 'sf'",
+            "})"
+        ],
+        "description": "filter-sf"
+    },
+    "filter-mip": {
+        "prefix": "|mip",
+        "body": [
+            "| tc({",
+            "    type: 'mip',",
+            "    title: $1",
+            "})"
+        ],
+        "description": "filter-mip"
+    },
+    "filter-vsearch": {
+        "prefix": "|vsearch",
+        "body": [
+            "| tc({",
+            "    type: 'vsearch'",
+            "})"
+        ],
+        "description": "filter-vsearch"
     },
     "c-aladdin": {
         "prefix": "caladdin",
@@ -36,7 +65,9 @@
     "c-line": {
         "prefix": "cline",
         "body": [
-            "<c-line clamp=\"$1\"/>",
+            "<c-line",
+            "    clamp=\"${1:2}\"",
+            ">",
             "\t$0",
             "</c-line>"
         ],
@@ -57,10 +88,10 @@
         "prefix": "cbtn",
         "body": [
             "<c-btn",
-            "\ttype=\"$1\"",
-            "\t:text=\"$2\"",
-            "\t:icon=\"$3\"",
-            "\t:params=\"$4\"",
+            "   type=\"${1:default}\"",
+            "   :text=\"$2\"",
+            "   :icon=\"$3\"",
+            "   :params=\"$4\"",
             "/>"
         ],
         "description": "c-btn"
@@ -158,6 +189,394 @@
             "       $0",
             "   </c-tabs-item>",
             "</c-tabs>"
-        ]
+        ],
+        "description": "c-tabs"
+    },
+    "c-calendar": {
+        "prefix": "ccalendar",
+        "body": [
+            "<c-calendar",
+            "    :is-show=\"${1:isShow}\"",
+            "    :type=\"${2:2}\"",
+            "    :before-month-num=\"${3:0}\"",
+            "    :after-month-num=\"${4:7}\"",
+            "    start-text=\"${5:入住}\"",
+            "    end-text=\"${6:离店}\"",
+            "    @change=\"${7:handleChange}\"",
+            "    @confirm=\"${8:handleConfirm}\"",
+            "    @reset=\"${9:handleReset}\"",
+            "/>"
+        ],
+        "description": "c-calendar"
+    },
+    "c-table": {
+        "prefix": "ctable",
+        "body": [
+            "<c-table",
+            "    :content=\"${1:tableData}\"",
+            "    type=\"${2:standardLine}\"",
+            "/>"
+        ],
+        "description": "c-table"
+    },
+    "c-table-grid": {
+        "prefix": "ctablegrid",
+        "body": [
+            "<c-table-grid",
+            "    :content=\"${1:tableData}\"",
+            "/>"
+        ],
+        "description": "c-table-grid"
+    },
+    "c-mask": {
+        "prefix": "cmask",
+        "body": [
+            "<c-mask",
+            "    ref=\"${1:mask}\"",
+            "    z-index=\"${2:301}\"",
+            "    class=\"${3:mask}\"",
+            "    @click=\"${4:handleMaskClick}\"",
+            ">",
+            "    $0",
+            "</mask>"
+        ],
+        "description": "c-mask"
+    },
+    "c-error-page": {
+        "prefix": "cerrorpage",
+        "body": [
+            "<c-error-page",
+            "    logo=\"${1:blank}\"",
+            "    has-btn$2",
+            "    btn-text=\"${3:重新加载}\"",
+            "    title=\"${4:暂无内容}\"",
+            "    @click=\"${5:onClick}\"",
+            "/>"
+        ],
+        "description": "c-error-page"
+    },
+    "c-loading": {
+        "prefix": "cloading",
+        "body": [
+            "<c-loading class=\"${1:loading}\"/>"
+        ],
+        "description": "c-loading"
+    },
+    "c-more": {
+        "prefix": "cmore",
+        "body": [
+            "<c-more",
+            "    :url=\"${1:url}\"",
+            "    :params=\"${2:params}\"",
+            "    :text=\"${3:text}\"",
+            "    inline$4",
+            "    @showMore=\"${5:selfShowMore}\"",
+            "/>"
+        ],
+        "description": "c-more"
+    },
+    "c-source": {
+        "prefix": "csource",
+        "body": [
+            "<c-source",
+            "    :url=\"${1:url}\"",
+            "    :params=\"${2:params}\"",
+            "    :img-src=\"${3:imgSrc}\"",
+            "    :source=\"${4:source}\"",
+            "    :time=\"${5:time}\"",
+            "    @click=\"${6:handleSourceClick}\"",
+            "/>"
+        ],
+        "description": "c-source"
+    },
+    "c-strong-link": {
+        "prefix": "cstronglink",
+        "body": [
+            "<c-strong-link",
+            "    :name=\"${1:name}\"",
+            "    :url=\"${2:url}\"",
+            "    :params=\"${3:params}\"",
+            ">",
+            "   $0",
+            "</c-strong-link>"
+        ],
+        "description": "c-strong-link"
+    },
+    "c-text-line": {
+        "prefix": "ctextline",
+        "body": [
+            "<c-text-line",
+            "    clamp=\"${1:2}\"",
+            "    :text=\"${2:text}\"",
+            "/>"
+        ],
+        "description": "c-text-line"
+    },
+    "c-timespan": {
+        "prefix": "ctimespan",
+        "body": [
+            "<c-timespan",
+            "    :time=\"${1:time}\"",
+            "/>"
+        ],
+        "description": "c-timespan"
+    },
+    "c-tombstone": {
+        "prefix": "ctombstone",
+        "body": [
+            "<c-tombstone",
+            "    a-if=\"${1:isShow}\"",
+            "    :type=\"${2:2}\"",
+            "/>"
+        ],
+        "description": "c-tombstone"
+    },
+    "c-triangle": {
+        "prefix": "ctriangle",
+        "body": [
+            "<c-triangle",
+            "    :animation=\"false\"",
+            "    :direction=\"direction1\"",
+            "/>"
+        ],
+        "description": "c-triangle"
+    },
+    "c-arrow": {
+        "prefix": "carrow",
+        "body": [
+            "<c-arrow",
+            "    :animation=\"false\"",
+            "    :direction=\"direction1\"",
+            "/>"
+        ],
+        "description": "c-arrow"
+    },
+    "c-dropdown": {
+        "prefix": "cdropdown",
+        "body": [
+            "<c-dropdown",
+            "    :label=\"${1:label}\"",
+            "    :options=\"${2:options}\"",
+            "    @change=\"${3:handleChange}\"",
+            "/>"
+        ],
+        "description": "c-dropdown"
+    },
+    "c-input": {
+        "prefix": "cinput",
+        "body": [
+            "<c-input",
+            "    :placeholder=\"${q:placeholder}\"",
+            "    type=\"${2:search}\"",
+            "/>"
+        ],
+        "description": "c-input"
+    },
+    "c-cascader": {
+        "prefix": "ccascader",
+        "body": [
+            "<c-cascader",
+            "    :column=\"${1:1}\"",
+            "    :options=\"${2:options}\"",
+            "    :default-value=\"${3:defaultValue}\"",
+            "    @itemclick=\"${4:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "c-cascader"
+    },
+    "c-row": {
+        "prefix": "crow",
+        "body": [
+            "<c-row>",
+            "    <c-span",
+            "        a-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
+            "        :key=\"${3:index}\"",
+            "        :col=\"12/${1:list}.length\"",
+            "    >",
+            "        $0",
+            "    </c-span>",
+            "</c-row>"
+        ],
+        "description": "c-row"
+    },
+    "c-kg-footer": {
+        "prefix": "ckgfooter",
+        "body": [
+            "<c-kg-footer",
+            "    :text=\"${1:text}\"",
+            "    :url=\"${2:url}\"",
+            "    :url-params=\"${3:params}\"",
+            "    :icon-type=\"${4:iconType}\"",
+            "    :text-color=\"${5:textColor}\"",
+            "    :icon-color=\"${6:iconColor}\"",
+            "/>"
+        ],
+        "description": "c-kg-footer"
+    },
+    "c-kg-header": {
+        "prefix": "ckgheader",
+        "body": [
+            "<c-kg-header",
+            "    :title=\"${1:title}\"",
+            "    :url=\"${2:url}\"",
+            "    :params=\"${3:params}\"",
+            "    :abstract=\"${4:abstract}\"",
+            "    :tab-list=\"${5:tabList}\"",
+            "/>"
+        ],
+        "description": "c-kg-header"
+    },
+    "c-list-result": {
+        "prefix": "clistresult",
+        "body": [
+            "<c-list-result",
+            "    :title=\"${1:title}\"",
+            "    :url=\"${2:url}\"",
+            "    :url-params=\"${3:urlParams}\"",
+            ">",
+            "    $0",
+            "</c-list-result>"
+        ],
+        "description": "c-list-result"
+    },
+    "c-footer": {
+        "prefix": "cfooter",
+        "body": [
+            "<c-footer",
+            "    left-text=\"${1:leftText}\"",
+            "    right-text=\"${2:rightText}\"",
+            "    right-url=\"${3:rightUrl}\"",
+            "    right-url-params=\"${4:rightUrlParams}\"",
+            "/>"
+        ],
+        "description": "c-footer"
+    },
+    "c-content": {
+        "prefix": "ccontent",
+        "body": [
+            "<c-content",
+            "    :selected-index=\"${1:selectedIndex}\"",
+            ">",
+            "    $0",
+            "</c-content>"
+        ],
+        "description": "c-content"
+    },
+    "c-tags": {
+        "prefix": "ctags",
+        "body": [
+            "<c-tags",
+            "    :label-list=\"${1:labelList}\"",
+            "    @change=\"${2:handleTagsChange}\"",
+            "/>"
+        ],
+        "description": "c-tags"
+    },
+    "c-tag-group": {
+        "prefix": "ctaggroup",
+        "body": [
+            "<c-tag-group",
+            "    :list=\"${1:list}\"",
+            "    type=\"${2:radio}\"",
+            "    @change=\"${3:handleChange}\"",
+            "/>"
+        ],
+        "description": "c-tag-group"
+    },
+    "c-rec": {
+        "prefix": "crec",
+        "body": [
+            "<c-rec",
+            "    :list=\"${1:list}\"",
+            "    :title=\"${2:title}\"",
+            "    :num=\"${3:num}\"",
+            "    @itemclick=\"${4:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "c-rec"
+    },
+    "c-scroll-imgs": {
+        "prefix": "cscrollimgs",
+        "body": [
+            "<c-scroll-imgs",
+            "    :col=\"${1:col}\"",
+            "    :img-list=\"${2:imgList}\"",
+            "    :more-url=\"${3:moreUrl}\"",
+            "    :more-url-params=\"${4:moreUrlParams}\"",
+            "    :more-col=\"${5:moreCol}\"",
+            "    :default-image-type=\"${6:defaultImageType}\"",
+            "    @itemclick=\"${7:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "c-scroll-imgs"
+    },
+    "c-stitch-imgs": {
+        "prefix": "cstitchimgs",
+        "body": [
+            "<c-stitch-imgs",
+            "    :num=\"${1:2}\"",
+            "    :img-list=\"${2:imgList}\"",
+            "/>"
+        ],
+        "description": "c-stitch-imgs"
+    },
+    "c-waterfall": {
+        "prefix": "cwaterfall",
+        "body": [
+            "<c-waterfall",
+            "    :img-list=\"${1:imgList}\"",
+            "    :column=\"${2:col}\"",
+            "    class=\"${3:c-row-tile}\"",
+            "    @load=\"${4:onLoad}\"",
+            "    @imgclick=\"${5:handleImgClick}\"",
+            "/>"
+        ],
+        "description": "c-waterfall"
+    },
+    "c-scroll-video": {
+        "prefix": "cscrollvideo",
+        "body": [
+            "<c-scroll-video",
+            "    :video=\"${1:video}\"",
+            "    :col=\"${2:6}\"",
+            "    :show-config=\"${3:showConfig}\"",
+            "    :more-info=\"${4:moreInfo}\"",
+            "    @showMore=\"${5:selfShowMore}\"",
+            "    @scrollEnd=\"${6:selfScrollEnd}\"",
+            "/>"
+        ],
+        "description": "c-scroll-video"
+    },
+    "c-video": {
+        "prefix": "cvideo",
+        "body": [
+            "<c-video",
+            "    :video=\"${1:video}\"",
+            "    @click=\"${2:onClick}\"",
+            "/>"
+        ],
+        "description": "c-video"
+    },
+    "c-selector": {
+        "prefix": "cselector",
+        "body": [
+            "<c-selector",
+            "    :title=\"${1:title}\"",
+            "    :data=\"${2:data}\"",
+            "    :open=\"${3:open}\"",
+            "    @select=\"${4:onSelect}\"",
+            "    @close=\"${5:onClose}\"",
+            "/>"
+        ],
+        "description": "c-selector"
+    },
+    "c-stars": {
+        "prefix": "cstars",
+        "body": [
+            "<c-stars",
+            "    :stars=\"$1\"",
+            "/>"
+        ],
+        "description": "c-stars"
     }
 }

@@ -2,19 +2,96 @@
 
 Code snippets for Atom in order to let you develop faster. 
 
-为Atom开发提供snippets功能
+为Atom/NextPage开发提供snippets功能
 
 Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用前请确保安装并启动了Mota插件
 
 ## Features
 
 - 提供Atom模板部分常用组件的Snippets功能
-- 提供快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台
+- 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台
+
+## Snippets available
+
+### Atom组件
+目前支持c-aladdin等47个atom组件
+
+prefix:
+
+- caladdin
+- ctitle
+- cline
+- ...
+
+### filter
+支持filter拼sf/mip..
+
+prefix:
+
+- |sf
+- |mip
+- |vsearch
+
+### smarty API
+支持Ala全部smarty API，常用smarty语法及变量、代码块
+
+prefix:
+
+- print
+- data
+- cc 
+- cif
+- cifelse
+- cifempty
+- cisset
+- cforeach
+- tclink
+- sflink
+- miplink
+- vsearchlink
+- timglink
+- tplinfo
+- formatdate
+- timespan
+- highlight
+- httpshost
+
+### PHP API
+支持Ala全部PHP API，常用PHP语法及变量、代码块
+
+prefix:
+
+- print
+- data
+- cif
+- cifelse
+- cifempty
+- cisset
+- cforeach
+- tclink
+- sflink
+- miplink
+- vsearchlink
+- timglink
+- httpshost
+- highlight
+- tplinfo
+- searchlink
+- formatdate
+- timespan
+- templatevars
+
+### JS
+支持少量js语法
+
+prefix:
+
+- cif
+- cifelse
+- cfunction
+- cswitch
 
 ## Plans
 
 - 对全部Atom组件的snippets功能支持
-- Ala基础函数库snippets
-- smarty/php预处理文件snippets
-- 鼠标悬停+快捷键后show组件基本用法
-- 代码补全后自动添加config中对组件的引用
+- 鼠标悬停+快捷键等
