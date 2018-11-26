@@ -8,7 +8,7 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 
 ## Features
 
-- 提供Atom模板部分常用组件的Snippets功能
+- 提供Atom模板常用组件的Snippets功能
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台
 
 ## Snippets available
@@ -32,14 +32,14 @@ prefix:
 - |mip
 - |vsearch
 
-### smarty API
-支持Ala全部smarty API，常用smarty语法及变量、代码块
+### Smarty
+支持Ala全部Smarty API，常用Smarty语法及变量、代码块
 
 prefix:
 
-- print
-- data
 - cc 
+- data
+- cprint
 - cif
 - cifelse
 - cifempty
@@ -56,13 +56,13 @@ prefix:
 - highlight
 - httpshost
 
-### PHP API
+### PHP
 支持Ala全部PHP API，常用PHP语法及变量、代码块
 
 prefix:
 
-- print
 - data
+- cprint
 - cif
 - cifelse
 - cifempty
@@ -94,4 +94,5 @@ prefix:
 ## Plans
 
 - 对全部Atom组件的snippets功能支持
-- 鼠标悬停+快捷键等
+- 鼠标悬停+快捷键等显示基本用法or跳转文档
+- 底bar提供按钮调终端一键同步到测试机

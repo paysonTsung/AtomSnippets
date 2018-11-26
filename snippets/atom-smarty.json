@@ -1,6 +1,6 @@
 {
     "print-data": {
-        "prefix": "print",
+        "prefix": "cprint",
         "body": [
             "<script type=\"text/javascript\">",
             "    console.log({%json_encode(\\$tplData)%});",
