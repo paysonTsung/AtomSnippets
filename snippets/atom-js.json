@@ -23,7 +23,7 @@
     "function": {
         "prefix": "cfunction",
         "body": [
-            "${1:fnName} (${2:params}) {",
+            "${1:fnName}(${2:params}) {",
             "    $0",
             "}"
         ],

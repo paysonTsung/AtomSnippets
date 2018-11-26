@@ -45,6 +45,8 @@ prefix:
 - cforeach
 - ifempty
 - ifisset
+- empty
+- isset
 - tclink
 - sflink
 - miplink
@@ -62,6 +64,7 @@ prefix:
 prefix:
 
 - data
+- datall
 - cprint
 - cif
 - cifelse

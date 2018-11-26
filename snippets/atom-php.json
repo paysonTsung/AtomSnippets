@@ -9,18 +9,25 @@
         ],
         "description": "print-data"
     },
-    "$tplData": {
+    "tplData": {
         "prefix": "data",
         "body": [
             "\\$tplData"
         ],
-        "description": "tpl-data"
+        "description": "tpldata"
+    },
+    "tplData-prop": {
+        "prefix": "datall",
+        "body": [
+            "\\$tplData['$0']"
+        ],
+        "description": "tpldata-prop"
     },
     "if": {
         "prefix": "cif",
         "body": [
             "if ($1) {",
-            "$0",
+            "    $0",
             "}"
         ],
         "description": "if"
@@ -29,9 +36,9 @@
         "prefix": "cifelse",
         "body": [
             "if ($1) {",
-            "   $2",
+            "    $2",
             "} else {",
-            "   $3",
+            "    $3",
             "}"
         ],
         "description": "ifelse"
@@ -39,8 +46,8 @@
     "if-no-empty": {
         "prefix": "ifempty",
         "body": [
-            "if (!empty(\\$tplData['${1:item}'])) {",
-            "   $0",
+            "if (!$1empty($2)) {",
+            "    $0",
             "}"
         ],
         "description": "if-no-empty"
@@ -48,17 +55,17 @@
     "if-no-isset": {
         "prefix": "ifisset",
         "body": [
-            "if (!isset(\\$tplData['${1:item}'])) {",
-            "   $0",
+            "if ($1isset($2)) {",
+            "    $0",
             "}"
         ],
-        "description": "if-no-isset"
+        "description": "if-isset"
     },
     "foreach": {
         "prefix": "cforeach",
         "body": [
             "foreach ($1 as ${2:\\$key} => ${3:\\$value}) {",
-            "   $0",
+            "    $0",
             "}"
         ],
         "description": "foreach"
@@ -66,22 +73,22 @@
     "tc-link": {
         "prefix": "tclink",
         "body": [
-            "\\$tplData['${2:urlParams}'] = Atom_Wise_Utils::makeTcLink(\\$tplData['${1:url}']);"
+            "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeTcLink(${1:\\$tplData}['${3:url}']);"
         ],
         "description": "tc-link"
     },
     "sf-link": {
         "prefix": "sflink",
         "body": [
-            "\\$tplData['${2:urlParams}'] = Atom_Wise_Utils::makeSfLink(\\$tplData['${1:url}']);"
+            "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeSfLink(${1:\\$tplData}['${3:url}']);"
         ],
         "description": "sf-link"
     },
     "mip-link": {
         "prefix": "miplink",
         "body": [
-            "\\$tplData['${3:urlParams}'] = Atom_Wise_Utils::makeMipLink(\\$tplData['${1:url}'], array(",
-            "    'title' => \\$tplData['${2:mipTitle}']",
+            "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeMipLink(${1:\\$tplData}['${3:url}'], array(",
+            "    'title' => ${1:\\$tplData}['${4:mipTitle}']$0",
             "));"
         ],
         "description": "mip-link"
@@ -89,9 +96,9 @@
     "vsearch-link": {
         "prefix": "vsearchlink",
         "body": [
-            "\\$tplData['${4:urlParams}'] = Atom_Wise_Utils::makeVsearchLink(\\$tplData['${1:url}'], array(",
-            "    'sa' => '$2',",
-            "    'pd' => '$3',",
+            "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeVsearchLink(${1:\\$tplData}['${3:url}'], array(",
+            "    'sa' => '$4',",
+            "    'pd' => '$5'$0",
             "));"
         ],
         "description": "vsearch-link"
@@ -99,8 +106,8 @@
     "timg-link": {
         "prefix": "timglink",
         "body": [
-            "\\$tplData['${1:imgSrc}'] = Atom_Wise_Utils::makeTimgLink(array(",
-            "    'imgSrc' => \\$tplData['${1:imgSrc}']",
+            "${1:\\$tplData}['${2:imgSrc}'] = Atom_Wise_Utils::makeTimgLink(array(",
+            "    'imgSrc' => ${1:\\$tplData}['${2:imgSrc}']$0",
             "));"
         ],
         "description": "timg-link"
@@ -108,8 +115,8 @@
     "https-host": {
         "prefix": "httpshost",
         "body": [
-            "\\$tplData['${1:imgUrl}'] = Atom_Wise_Utils::httpsHost(array(",
-            "    'url' => \\$tplData['${1:imgUrl}']",
+            "${1:\\$tplData}['${2:imgUrl}'] = Atom_Wise_Utils::httpsHost(array(",
+            "    'url' => ${1:\\$tplData}['${2:imgUrl}']",
             "));"
         ],
         "description": "https-host"
@@ -133,9 +140,9 @@
     "search-link": {
         "prefix": "searchlink",
         "body": [
-            "\\$tplData['${1:url}'] = Atom_Wise_Utils::makeSearchLink(array(",
-            "    'wd' => '$2',",
-            "    'sa' => '$3',",
+            "${1:\\$tplData}['${2:url}'] = Atom_Wise_Utils::makeSearchLink(array(",
+            "    'wd' => '$3',",
+            "    'sa' => '$4'$0",
             "));"
         ],
         "description": "search-link"
@@ -143,8 +150,8 @@
     "format-date": {
         "prefix": "formatdate",
         "body": [
-            "\\$tplData['${1:formatedDate}'] = Atom_Wise_Utils::formatDate(array(",
-            "   'timestamp' => \\$tplData['${2:timestamp}']",
+            "${1:\\$tplData}['${2:formatedDate}'] = Atom_Wise_Utils::formatDate(array(",
+            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']$0",
             "));"
         ],
         "description": "format-date"
@@ -152,8 +159,8 @@
     "time-span": {
         "prefix": "timespan",
         "body": [
-            "\\$tplData['${1:timeSpan}'] = Atom_Wise_Utils::formatTimeSpan(array(",
-            "   'timestamp' => \\$tplData['${2:timestamp}']",
+            "${1:\\$tplData}['${2:timeSpan}'] = Atom_Wise_Utils::formatTimeSpan(array(",
+            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']$0",
             "));"
         ],
         "description": "time-span"
@@ -161,7 +168,7 @@
     "template-vars": {
         "prefix": "templatevars",
         "body": [
-            "${1:\\$alaData} = Atom_Wise_Utils::getTemplateVars('${1:alaData}');"
+            "${1:\\$alaData} = Atom_Wise_Utils::getTemplateVars('${2:alaData}');"
         ],
         "description": "template-vars"
     }
