@@ -42,9 +42,9 @@ prefix:
 - cprint
 - cif
 - cifelse
-- cifempty
-- cisset
 - cforeach
+- ifempty
+- ifisset
 - tclink
 - sflink
 - miplink
@@ -65,9 +65,9 @@ prefix:
 - cprint
 - cif
 - cifelse
-- cifempty
-- cisset
 - cforeach
+- ifempty
+- ifisset
 - tclink
 - sflink
 - miplink
