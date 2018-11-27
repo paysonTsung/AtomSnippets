@@ -4,10 +4,9 @@
     "description": "Code snippets for Atom",
     "keywords": [
         "atom",
-        "snippets",
-        "as"
+        "snippets"
     ],
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
