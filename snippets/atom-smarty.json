@@ -3,7 +3,7 @@
         "prefix": "cprint",
         "body": [
             "<script type=\"text/javascript\">",
-            "    console.log({%json_encode(\\$tplData)%});",
+            "    console.log({%json_encode(${0:\\$tplData})%});",
             "</script>"
         ],
         "description": "print-data"
@@ -18,7 +18,7 @@
     "coat": {
         "prefix": "ll",
         "body": [
-            "{%$0%}"
+            "{%$1%}"
         ],
         "description": "coat"
     },
@@ -26,7 +26,7 @@
         "prefix": "cif",
         "body": [
             "{%if $1%}",
-            "    $0",
+            "    $2",
             "{%/if%}"
         ],
         "description": "if"
@@ -46,7 +46,7 @@
         "prefix": "ifempty",
         "body": [
             "{%if !empty($1)%}",
-            "    $0",
+            "    $2",
             "{%/if%}"
         ],
         "description": "if-no-empty"
@@ -55,7 +55,7 @@
         "prefix": "ifisset",
         "body": [
             "{%if isset($1)%}",
-            "    $0",
+            "    $2",
             "{%/if%}"
         ],
         "description": "if-isset"
@@ -63,8 +63,8 @@
     "foreach": {
         "prefix": "cforeach",
         "body": [
-            "{%foreach $1 as ${3:\\$index}=>${2:\\$item}%}",
-            "    $0",
+            "{%foreach $1 as ${2:\\$index}=>${3:\\$item}%}",
+            "    $4",
             "{%/foreach%}"
         ],
         "description": "foreach"
@@ -72,14 +72,14 @@
     "empty": {
         "prefix": "empty",
         "body": [
-            "empty($0)"
+            "empty($1)"
         ],
         "description": "empty"
     },
     "isset": {
         "prefix": "isset",
         "body": [
-            "isset($0)"
+            "isset($1)"
         ],
         "description": "isset"
     },
@@ -87,7 +87,7 @@
         "prefix": "tclink",
         "body": [
             "{%fe_fn_atom_tclink url=\\$tplData.${1:tcUrl} noreturn=1%}",
-            "{%\\$tplData.${0:tcParams} = \\$__tc_params%}"
+            "{%\\$tplData.${2:tcParams} = \\$__tc_params%}"
         ],
         "description": "tclink"
     },
@@ -95,7 +95,7 @@
         "prefix": "sflink",
         "body": [
             "{%fe_fn_atom_sflink url=\\$tplData.${1:sfUrl}%}",
-            "{%\\$tplData.${0:sfParams} = \\$__sf_params%}"
+            "{%\\$tplData.${2:sfParams} = \\$__sf_params%}"
         ],
         "description": "sflink"
     },
@@ -103,7 +103,7 @@
         "prefix": "miplink",
         "body": [
             "{%fe_fn_atom_miplink url=\\$tplData.${1:mipUrl} title=\\$tplData.${2:mipTitle}%}",
-            "{%\\$tplData.${0:mipParams} = \\$__mip_params%}"
+            "{%\\$tplData.${3:mipParams} = \\$__mip_params%}"
         ],
         "description": "miplink"
     },
@@ -111,8 +111,8 @@
         "prefix": "miplink-nohead",
         "body": [
             "{%fe_fn_atom_miplink url=\\$tplData.${1:mipUrl} title=\\$tplData.${2:mipTitle}%}",
-            "{%\\$tplData.${0:mipParams} = \\$__mip_params%}",
-            "{%\\$tplData.${0:mipParams}.sfUrl = \\$__mip_params.sfUrl|cat:'?nohead=1'%}"
+            "{%\\$__mip_params.sfUrl = \\$__mip_params.sfUrl|cat:'?nohead=1'%}",
+            "{%\\$tplData.${3:mipParams} = \\$__mip_params%}"
         ],
         "description": "miplink-nohead"
     },
@@ -120,7 +120,7 @@
         "prefix": "vsearchlink",
         "body": [
             "{%fe_fn_atom_vsearch_url pd=$2 sa=$3 url=\\$tplData.${1:vsearchUrl}%}",
-            "{%\\$tplData.${0:vsearchParams} = \\$__vsearch_params%}"
+            "{%\\$tplData.${2:vsearchParams} = \\$__vsearch_params%}"
         ],
         "description": "vsearch-link"
     },
@@ -156,14 +156,14 @@
     "highlight": {
         "prefix": "highlight",
         "body": [
-            "{%\\$tplData.${0:title} = \\$tplData.${0:title}|@highlight%}"
+            "{%\\$tplData.${1:title} = \\$tplData.${1:title}|@highlight%}"
         ],
         "description": "highlight"
     },
     "https-host": {
         "prefix": "httpshost",
         "body": [
-            "{%\\$tplData.${0:imgSrc} = \\$tplData.${0:imgSrc}|getHttpsHost%}"
+            "{%\\$tplData.${1:imgSrc} = \\$tplData.${1:imgSrc}|getHttpsHost%}"
         ],
         "description": "https-host"
     }

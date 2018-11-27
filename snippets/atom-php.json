@@ -4,7 +4,7 @@
         "body": [
             "?>",
             "<script type=\"text/javascript\">",
-            "    console.log(<?php echo json_encode(\\$tplData)?>);",
+            "    console.log(<?php echo json_encode(${0:\\$tplData})?>);",
             "</script>"
         ],
         "description": "print-data"
@@ -16,10 +16,17 @@
         ],
         "description": "tpldata"
     },
+    "prop": {
+        "prefix": "ll",
+        "body": [
+            "['$1']"
+        ],
+        "description": "prop"
+    },
     "tplData-prop": {
         "prefix": "datall",
         "body": [
-            "\\$tplData['$0']"
+            "\\$${1:tplData}['$2']"
         ],
         "description": "tpldata-prop"
     },
@@ -27,7 +34,7 @@
         "prefix": "cif",
         "body": [
             "if ($1) {",
-            "    $0",
+            "    $2",
             "}"
         ],
         "description": "if"
@@ -46,8 +53,8 @@
     "if-no-empty": {
         "prefix": "ifempty",
         "body": [
-            "if (!$1empty($2)) {",
-            "    $0",
+            "if (!empty($1)) {",
+            "    $2",
             "}"
         ],
         "description": "if-no-empty"
@@ -55,8 +62,8 @@
     "if-no-isset": {
         "prefix": "ifisset",
         "body": [
-            "if ($1isset($2)) {",
-            "    $0",
+            "if (isset($1)) {",
+            "    $2",
             "}"
         ],
         "description": "if-isset"
@@ -65,7 +72,7 @@
         "prefix": "cforeach",
         "body": [
             "foreach ($1 as ${2:\\$key} => ${3:\\$value}) {",
-            "    $0",
+            "    $4",
             "}"
         ],
         "description": "foreach"
@@ -88,7 +95,7 @@
         "prefix": "miplink",
         "body": [
             "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeMipLink(${1:\\$tplData}['${3:url}'], array(",
-            "    'title' => ${1:\\$tplData}['${4:mipTitle}']$0",
+            "    'title' => ${1:\\$tplData}['${4:mipTitle}']",
             "));"
         ],
         "description": "mip-link"
@@ -98,7 +105,7 @@
         "body": [
             "${1:\\$tplData}['${2:urlParams}'] = Atom_Wise_Utils::makeVsearchLink(${1:\\$tplData}['${3:url}'], array(",
             "    'sa' => '$4',",
-            "    'pd' => '$5'$0",
+            "    'pd' => '$5'",
             "));"
         ],
         "description": "vsearch-link"
@@ -107,7 +114,7 @@
         "prefix": "timglink",
         "body": [
             "${1:\\$tplData}['${2:imgSrc}'] = Atom_Wise_Utils::makeTimgLink(array(",
-            "    'imgSrc' => ${1:\\$tplData}['${2:imgSrc}']$0",
+            "    'imgSrc' => ${1:\\$tplData}['${2:imgSrc}']",
             "));"
         ],
         "description": "timg-link"
@@ -142,7 +149,7 @@
         "body": [
             "${1:\\$tplData}['${2:url}'] = Atom_Wise_Utils::makeSearchLink(array(",
             "    'wd' => '$3',",
-            "    'sa' => '$4'$0",
+            "    'sa' => '$4'",
             "));"
         ],
         "description": "search-link"
@@ -151,7 +158,7 @@
         "prefix": "formatdate",
         "body": [
             "${1:\\$tplData}['${2:formatedDate}'] = Atom_Wise_Utils::formatDate(array(",
-            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']$0",
+            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']",
             "));"
         ],
         "description": "format-date"
@@ -160,7 +167,7 @@
         "prefix": "timespan",
         "body": [
             "${1:\\$tplData}['${2:timeSpan}'] = Atom_Wise_Utils::formatTimeSpan(array(",
-            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']$0",
+            "    'timestamp' => ${3:\\$tplData}['${4:timestamp}']",
             "));"
         ],
         "description": "time-span"

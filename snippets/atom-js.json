@@ -3,7 +3,7 @@
         "prefix": "cif",
         "body": [
             "if ($1) {",
-            "    $0",
+            "    $2",
             "}"
         ],
         "description": "if"
@@ -24,7 +24,7 @@
         "prefix": "cfunction",
         "body": [
             "${1:fnName}(${2:params}) {",
-            "    $0",
+            "    $3",
             "}"
         ],
         "description": "if"

@@ -37,9 +37,12 @@ prefix:
 
 prefix:
 
-- cc 
+- ll
+    - {% %} 定界符
 - data
+    - $tplData
 - cprint
+    - 打印数据
 - cif
 - cifelse
 - cforeach
@@ -64,8 +67,13 @@ prefix:
 prefix:
 
 - data
+    - $tplData
 - datall
+    - $tplData[' ']
+- ll
+    - [' ']
 - cprint
+    - 打印数据
 - cif
 - cifelse
 - cforeach
