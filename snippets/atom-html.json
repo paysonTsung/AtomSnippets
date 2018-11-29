@@ -1,4 +1,11 @@
 {
+    "coat": {
+        "prefix": "ll",
+        "body": [
+            "{{ $1 }}$0"
+        ],
+        "description": "coat"
+    },
     "component": {
         "prefix": "ccomponent",
         "body": [
@@ -144,7 +151,7 @@
             "<c-img-content",
             "\t:img-src=\"$1\"",
             "\t:img-col=\"${2:2}\"",
-            "/>",
+            ">",
             "\t$0",
             "</c-img-content>"
         ],
@@ -155,7 +162,7 @@
         "body": [
             "<c-list>",
             "\t<c-list-item",
-            "\t\ta-for=\"(${2:nav}, ${3:index}) in ${1:listArr}\"",
+            "\t\ta-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
             "\t\t:key=\"$3\"",
             "\t>",
             "\t\t$0",
@@ -238,7 +245,7 @@
             "    @click=\"${4:handleMaskClick}\"",
             ">",
             "    $0",
-            "</mask>"
+            "</c-mask>"
         ],
         "description": "c-mask"
     },

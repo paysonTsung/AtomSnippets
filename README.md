@@ -18,6 +18,8 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 
 prefix:
 
+- ll
+    - {{ }} 文本插值
 - caladdin
 - ctitle
 - cline
@@ -97,6 +99,8 @@ prefix:
 
 prefix:
 
+- clog
+    - console.log
 - cif
 - cifelse
 - cfunction
