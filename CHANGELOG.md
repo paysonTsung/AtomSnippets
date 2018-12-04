@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.1.6] - 2018-12-04
+
+### Added
+- 新增atom文件开发模板Snippets
+- 修改cline, 区分cline单行截断/cline2多行截断
+- 增加cimgcontents小图Snippets
+
+### Fixed
+- 修复c-link标签错误
+
+
 ## [0.1.5] - 2018-11-29
 
 ### Added
@@ -7,6 +18,7 @@
 
 ### Fixed
 - 修复部分Snippets错误
+
 
 ## [0.1.0] - 2018-11-24
 

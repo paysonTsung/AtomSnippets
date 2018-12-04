@@ -11,6 +11,13 @@ function activate(context) {
                 vscode.window.setStatusBarMessage('(ノ=Д=)ノ┻━━┻', 3000);
             }
         });
+
+        // let debugButton = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 200);
+        // debugButton.command = 'extension.build';
+        // debugButton.text = `$(zap)`;
+        // debugButton.tooltip = "Build";
+        // debugButton.show();
+
         // vscode.window.showInputBox({
         //     placeHolder: '输入查询Atom组件',
         //     prompt: '前往索引平台'
@@ -22,7 +29,18 @@ function activate(context) {
         //     exec(`open 'http://soy.baidu-int.com/component/${msg}'`);
         // });
     });
+
+    // let build = vscode.commands.registerCommand('extension.build', function () {
+    //     let terminal = vscode.window.createTerminal({name: "bash"});
+    //     terminal.show(true);
+    //     terminal.sendText("make watch");
+    // });
+    
+    // let build = vscode.commands.registerCommand('extension.build', function () {
+        
+    // });
     context.subscriptions.push(gotoSoy);
+    // context.subscriptions.push(build);
 }
 exports.activate = activate;
 

@@ -6,7 +6,7 @@
         "atom",
         "snippets"
     ],
-    "version": "0.1.5",
+    "version": "0.1.6",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
@@ -24,6 +24,10 @@
             {
                 "command": "extension.soy",
                 "title": "Soy"
+            },
+            {
+                "command": "extension.build",
+                "title": "Build"
             }
         ],
         "keybindings": [
@@ -45,8 +49,16 @@
         },
         "snippets": [
             {
+                "language": "atom",
+                "path": "./snippets/atom.json"
+            },
+            {
                 "language": "atom-html",
                 "path": "./snippets/atom-html.json"
+            },
+            {
+                "language": "config",
+                "path": "./snippets/atom-config.json"
             },
             {
                 "language": "php",

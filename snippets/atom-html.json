@@ -63,29 +63,49 @@
         "prefix": "ctitle",
         "body": [
             "<c-title",
-            "\t:url=\"$1\"",
-            "\t:text=\"$2\"",
+            "\t:params=\"${1:params}\"",
+            "\t:text=\"${2:text}\"",
             "/>"
         ],
-        "description": "c-title"
+        "description": "标题/Title"
+    },
+    "c-title-s": {
+        "prefix": "ctitles",
+        "body": [
+            "<c-title",
+            "\t:params=\"${1:params}\"",
+            "\t:text=\"${2:text}\"",
+            "\tsize=\"t2\"",
+            "/>"
+        ],
+        "description": "标题/Title (小字)"
     },
     "c-line": {
         "prefix": "cline",
         "body": [
+            "<c-line>",
+            "\t${0:...}",
+            "</c-line>"
+        ],
+        "description": "多行截断/Line"
+    },
+    "c-line-2": {
+        "prefix": "cline2",
+        "body": [
             "<c-line",
             "    clamp=\"${1:2}\"",
             ">",
-            "\t$0",
+            "\t${0:...}",
             "</c-line>"
         ],
-        "description": "c-line"
+        "description": "多行截断/Line 双行截断"
     },
     "c-link": {
         "prefix": "clink",
         "body": [
             "<c-link",
             "\t:params=\"$1\"",
-            "/>",
+            ">",
             "\t$0",
             "</c-link>"
         ],
@@ -113,7 +133,7 @@
     "c-icon": {
         "prefix": "cicon",
         "body": [
-            "<c-icon :type=\"$1\"/>"
+            "<c-icon type=\"$1\"/>"
         ],
         "description": "c-icon"
     },
@@ -149,13 +169,26 @@
         "prefix": "cimgcontent",
         "body": [
             "<c-img-content",
-            "\t:img-src=\"$1\"",
-            "\t:img-col=\"${2:2}\"",
+            "\t:img-src=\"${1:src}\"",
             ">",
-            "\t$0",
+            "\t${0:...}",
             "</c-img-content>"
         ],
-        "description": "c-img-content"
+        "description": "左图右文/ImgContent"
+    },
+    "c-img-content-s": {
+        "prefix": "cimgcontents",
+        "body": [
+            "<c-img-content",
+            "\t:img-src=\"${1:src}\"",
+            "\t:img-col=\"2\"",
+            "\timg-is-round",
+            "\tis-vertical-middle",
+            ">",
+            "\t${0:...}",
+            "</c-img-content>"
+        ],
+        "description": "左图右文/ImgContent (小图)"
     },
     "c-list": {
         "prefix": "clist",

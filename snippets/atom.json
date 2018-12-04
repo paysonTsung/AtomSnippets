@@ -1,0 +1,35 @@
+{
+    "shell": {
+        "prefix": "ll",
+        "body": [
+            "<template>",
+            "    $0",
+            "</template>",
+            "<script type=\"config\">",
+            "{",
+            "    props: {",
+            "",
+            "    },",
+            "    components: {",
+            "",
+            "    }",
+            "}",
+            "</script>",
+            "<script>",
+            "export default {",
+            "    mounted() {",
+            "",
+            "    },",
+            "    methods: {",
+            "",
+            "    }",
+            "};",
+            "</script>",
+            "<style lang=\"less\" scoped>",
+            "",
+            "</style>",
+            ""
+        ],
+        "description": "Atom开发模板"
+    }
+}

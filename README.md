@@ -13,6 +13,14 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 
 ## Snippets available
 
+### Atom
+提供开发模板
+
+prefix:
+
+- ll 开发模板: template/script/style标签组
+
+
 ### Atom组件
 目前支持c-aladdin等47个atom组件
 
@@ -23,6 +31,9 @@ prefix:
 - caladdin
 - ctitle
 - cline
+- cline2
+- cimgcontent
+- cimgcontents
 - ...
 
 ### filter

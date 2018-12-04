@@ -1,0 +1,9 @@
+{
+    "Demo": {
+        "prefix": "demo",
+        "body": [
+            "demo"
+        ],
+        "description": "demo"
+    }
+}
