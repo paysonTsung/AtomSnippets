@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.1.7] - 2018-12-06
+
+### Added
+- 新增data-module及常用属性params
+
+### Changed
+- 修改smarty拼链接默认参数
+
+
 ## [0.1.6] - 2018-12-04
 
 ### Added
