@@ -86,41 +86,32 @@
     "tc-link": {
         "prefix": "tclink",
         "body": [
-            "{%fe_fn_atom_tclink url=\\$tplData.${1:tcUrl} noreturn=1%}",
-            "{%\\$tplData.${2:tcParams} = \\$__tc_params%}"
+            "{%fe_fn_atom_tclink url=\\$tplData.${1:url} noreturn=1%}",
+            "{%\\$tplData.${2:urlParams} = \\$__tc_params%}"
         ],
         "description": "tclink"
     },
     "sf-link": {
         "prefix": "sflink",
         "body": [
-            "{%fe_fn_atom_sflink url=\\$tplData.${1:sfUrl}%}",
-            "{%\\$tplData.${2:sfParams} = \\$__sf_params%}"
+            "{%fe_fn_atom_sflink url=\\$tplData.${1:url}%}",
+            "{%\\$tplData.${2:urlParams} = \\$__sf_params%}"
         ],
         "description": "sflink"
     },
     "mip-link": {
         "prefix": "miplink",
         "body": [
-            "{%fe_fn_atom_miplink url=\\$tplData.${1:mipUrl} title=\\$tplData.${2:mipTitle}%}",
-            "{%\\$tplData.${3:mipParams} = \\$__mip_params%}"
+            "{%fe_fn_atom_miplink url=\\$tplData.${1:url} title=\\$tplData.${2:title}%}",
+            "{%\\$tplData.${3:urlParams} = \\$__mip_params%}"
         ],
         "description": "miplink"
-    },
-    "mip-link-nohead": {
-        "prefix": "miplink-nohead",
-        "body": [
-            "{%fe_fn_atom_miplink url=\\$tplData.${1:mipUrl} title=\\$tplData.${2:mipTitle}%}",
-            "{%\\$__mip_params.sfUrl = \\$__mip_params.sfUrl|cat:'?nohead=1'%}",
-            "{%\\$tplData.${3:mipParams} = \\$__mip_params%}"
-        ],
-        "description": "miplink-nohead"
     },
     "vsearch-link": {
         "prefix": "vsearchlink",
         "body": [
-            "{%fe_fn_atom_vsearch_url pd=$2 sa=$3 url=\\$tplData.${1:vsearchUrl}%}",
-            "{%\\$tplData.${2:vsearchParams} = \\$__vsearch_params%}"
+            "{%fe_fn_atom_vsearch_url pd=$2 sa=$3 url=\\$tplData.${1:url}%}",
+            "{%\\$tplData.${4:urlParams} = \\$__vsearch_params%}"
         ],
         "description": "vsearch-link"
     },

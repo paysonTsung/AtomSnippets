@@ -27,8 +27,7 @@
             "</script>",
             "<style lang=\"less\" scoped>",
             "",
-            "</style>",
-            ""
+            "</style>"
         ],
         "description": "Atom开发模板"
     }

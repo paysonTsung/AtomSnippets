@@ -6,6 +6,20 @@
         ],
         "description": "coat"
     },
+    "data-module": {
+        "prefix": "datamodule",
+        "body": [
+            "data-module=\"$1\""
+        ],
+        "description": "data-module"
+    },
+    "params": {
+        "prefix": "params",
+        "body": [
+            ":params=\"$1\""
+        ],
+        "description": "params"
+    },
     "component": {
         "prefix": "ccomponent",
         "body": [
@@ -438,6 +452,17 @@
             "</c-row>"
         ],
         "description": "c-row"
+    },
+    "c-span": {
+        "prefix": "cspan",
+        "body": [
+            "<c-span",
+            "    :col=\"$1\"",
+            ">",
+            "    $0",
+            "</c-span>"
+        ],
+        "description": "c-span"
     },
     "c-kg-footer": {
         "prefix": "ckgfooter",
