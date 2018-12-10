@@ -10,7 +10,7 @@ function activate(context) {
     let syncBtn = window.createStatusBarItem(rightPosBar, 201);
     let terminal = window.createTerminal({name: "Atom"});
 
-    window.terminals[0].dispose();
+    // window.terminals[0].dispose();
 
     termBtn.command = 'extension.terminal';
     termBtn.text = `$(terminal)`;
