@@ -3,14 +3,44 @@ let exec = require('child_process').exec;
 function activate(context) {
     console.log('Extension "Atom Snippets" is now active');
 
-    let {window, commands} = vscode;
+    let {window, commands, workspace} = vscode;
+    // let curFile = workspace.textDocuments[0].fileName;
+    let curTime;
+    let curFile = window.activeTextEditor.document.fileName;
     let sub = context.subscriptions;
     let rightPosBar = vscode.StatusBarAlignment.Right;
     let termBtn = window.createStatusBarItem(rightPosBar, 200);
     let syncBtn = window.createStatusBarItem(rightPosBar, 201);
     let terminal = window.createTerminal({name: "Atom"});
+    let log = window.createOutputChannel("atom/log");
+    let getCurTime = () => new Date().toLocaleString().replace(/\//g,"-");
+    let devType = {
+        at: {
+            patt: /aladdin-atom\/src\/app/,
+            handle(term, log) {
+                let res = /app\/((\w|_)+)(?=\/|$)/.exec(curFile);
+                if (res && res[1]) {
+                    curTime = getCurTime();
+                    term.sendText(`ala sync ${res[1]} -w`);
+                    log.appendLine(`[${curTime}] 模板${res[1]}同步至测试机`);
+                }
+            }
+        },
+        np: {
+            patt: /next-page\/src\/products/,
+            handle(term, log) {
+                curTime = getCurTime();
+                term.sendText("make watch");
+                log.appendLine(`[${curTime}] nextpage同步至测试机`);
+            }
+        }
+    }
 
-    window.terminals[0].dispose();
+
+    if (window.terminals[0].name === 'bash') {
+        window.terminals[0].dispose();
+    }
+    window.onDidChangeActiveTextEditor(e => curFile = e.document.fileName);
 
     termBtn.command = 'extension.terminal';
     termBtn.text = `$(terminal)`;
@@ -38,31 +68,14 @@ function activate(context) {
     });
 
     let syncMachine = commands.registerCommand('extension.sync', function () {
-        let curPath = __filename;
-        let devType = {
-            at: {
-                patt: /aladdin-atom\/src\/app/,
-                handle(t) {
-                    let res = /app\/((\w|_)+)(?=\/|$)/.exec(curPath);
-                    if (res && res[1]) {
-                        t.sendText(`ala sync ${res[1]} -w`);
-                    }
-                }
-            },
-            np: {
-                patt: /next-page\/src\/products/,
-                handle(t) {
-                    t.sendText("make watch");
-                }
-            }
-        }
         Object.keys(devType).forEach((key) => {
             let cur = devType[key];
-            if (cur.patt.test(curPath)) {
-                cur.handle(terminal);
+            if (cur.patt.test(curFile)) {
+                cur.handle(terminal, log);
                 return;
             }
         });
+        log.show();
         terminal.show(true);
     });
     
