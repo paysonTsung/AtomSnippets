@@ -1,46 +1,77 @@
 let vscode = require('vscode');
 let exec = require('child_process').exec;
 function activate(context) {
-    console.log('Extension "Atom Snippets" is now active!');
-    let gotoSoy = vscode.commands.registerCommand('extension.soy', function () {
-        vscode.window.showInformationMessage('是否前往索引平台？', '是', '否').then((select) => {
+    console.log('Extension "Atom Snippets" is now active');
+
+    let {window, commands} = vscode;
+    let sub = context.subscriptions;
+    let rightPosBar = vscode.StatusBarAlignment.Right;
+    let termBtn = window.createStatusBarItem(rightPosBar, 200);
+    let syncBtn = window.createStatusBarItem(rightPosBar, 201);
+    let terminal = window.createTerminal({name: "Atom"});
+
+    window.terminals[0].dispose();
+
+    termBtn.command = 'extension.terminal';
+    termBtn.text = `$(terminal)`;
+    termBtn.tooltip = "terminal";
+    termBtn.show();
+
+    syncBtn.command = 'extension.sync';
+    syncBtn.text = `$(zap)`;
+    syncBtn.tooltip = "sync";
+    syncBtn.show();
+
+    let jumpSoy = commands.registerCommand('extension.soy', function () {
+        window.showInformationMessage('是否前往索引平台？', '是', '否').then((select) => {
             if (select === '是') {
                 exec(`open 'http://soy.baidu-int.com/component'`);
             }
             else {
-                vscode.window.setStatusBarMessage('(ノ=Д=)ノ┻━━┻', 3000);
+                window.setStatusBarMessage('(ノ=Д=)ノ┻━━┻', 3000);
             }
         });
-
-        // let debugButton = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 200);
-        // debugButton.command = 'extension.build';
-        // debugButton.text = `$(zap)`;
-        // debugButton.tooltip = "Build";
-        // debugButton.show();
-
-        // vscode.window.showInputBox({
-        //     placeHolder: '输入查询Atom组件',
-        //     prompt: '前往索引平台'
-        // }).then(msg => {
-        //     if(!msg) return;
-        //     if (msg.slice(0, 2) === 'c-') {
-        //         msg = msg.slice(2);
-        //     }
-        //     exec(`open 'http://soy.baidu-int.com/component/${msg}'`);
-        // });
+    });
+    
+    let showTerminal = commands.registerCommand('extension.terminal', function () {
+        terminal.show(true);
     });
 
-    // let build = vscode.commands.registerCommand('extension.build', function () {
-    //     let terminal = vscode.window.createTerminal({name: "bash"});
-    //     terminal.show(true);
-    //     terminal.sendText("make watch");
-    // });
+    let syncMachine = commands.registerCommand('extension.sync', function () {
+        let curPath = __filename;
+        let devType = {
+            at: {
+                patt: /aladdin-atom\/src\/app/,
+                handle(t) {
+                    let res = /app\/((\w|_)+)(?=\/|$)/.exec(curPath);
+                    if (res && res[1]) {
+                        t.sendText(`ala sync ${res[1]} -w`);
+                    }
+                }
+            },
+            np: {
+                patt: /next-page\/src\/products/,
+                handle(t) {
+                    t.sendText("make watch");
+                }
+            }
+        }
+        Object.keys(devType).forEach((key) => {
+            let cur = devType[key];
+            if (cur.patt.test(curPath)) {
+                cur.handle(terminal);
+                return;
+            }
+        });
+        terminal.show(true);
+    });
     
-    context.subscriptions.push(gotoSoy);
-    // context.subscriptions.push(build);
+    sub.push(jumpSoy);
+    sub.push(showTerminal);
+    sub.push(syncMachine);
 }
-exports.activate = activate;
-
 function deactivate() {
 }
+
+exports.activate = activate;
 exports.deactivate = deactivate;

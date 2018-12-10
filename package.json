@@ -6,7 +6,7 @@
         "atom",
         "snippets"
     ],
-    "version": "0.1.8",
+    "version": "0.1.9",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
@@ -16,7 +16,7 @@
     ],
     "icon": "images/icon.png",
     "activationEvents": [
-        "onCommand:extension.soy"
+        "*"
     ],
     "main": "./extension",
     "contributes": {
@@ -26,8 +26,12 @@
                 "title": "Soy"
             },
             {
-                "command": "extension.build",
-                "title": "Build"
+                "command": "extension.terminal",
+                "title": "Terminal"
+            },
+            {
+                "command": "extension.sync",
+                "title": "Sync"
             }
         ],
         "keybindings": [
