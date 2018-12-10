@@ -36,9 +36,6 @@ function activate(context) {
     //     terminal.sendText("make watch");
     // });
     
-    // let build = vscode.commands.registerCommand('extension.build', function () {
-        
-    // });
     context.subscriptions.push(gotoSoy);
     // context.subscriptions.push(build);
 }
