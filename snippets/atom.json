@@ -30,5 +30,46 @@
             "</style>"
         ],
         "description": "Atom开发模板"
+    },
+    "script": {
+        "prefix": "lscript",
+        "body": [
+            "<script>",
+            "export default {",
+            "    mounted() {",
+            "$0",
+            "    },",
+            "    methods: {",
+            "",
+            "    }",
+            "};",
+            "</script>"
+        ],
+        "description": "script"
+    },
+    "config": {
+        "prefix": "lconfig",
+        "body": [
+            "<script type=\"config\">",
+            "{",
+            "    props: {",
+            "$0",
+            "    },",
+            "    components: {",
+            "",
+            "    }",
+            "}",
+            "</script>"
+        ],
+        "description": "config"
+    },
+    "style": {
+        "prefix": "lstyle",
+        "body": [
+            "<style lang=\"less\" scoped>",
+            "$0",
+            "</style>"
+        ],
+        "description": "Atom开发模板"
     }
 }

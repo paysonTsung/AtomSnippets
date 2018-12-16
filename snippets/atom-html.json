@@ -7,11 +7,18 @@
         "description": "coat"
     },
     "data-module": {
-        "prefix": "datamodule",
+        "prefix": "data-module",
         "body": [
             "data-module=\"$1\""
         ],
         "description": "data-module"
+    },
+    "url": {
+        "prefix": "url",
+        "body": [
+            ":url=\"$1\""
+        ],
+        "description": "url"
     },
     "params": {
         "prefix": "params",
@@ -20,13 +27,43 @@
         ],
         "description": "params"
     },
+    "title": {
+        "prefix": "title",
+        "body": [
+            ":title=\"$1\""
+        ],
+        "description": "title"
+    },
+    "htmlcs-disable": {
+        "prefix": "htmlcs-disable",
+        "body": [
+            "<!-- htmlcs-disable -->"
+        ],
+        "description": "htmlcs-disable"
+    },
+    "htmlcs-enable": {
+        "prefix": "htmlcs-enable",
+        "body": [
+            "<!-- htmlcs-enable -->"
+        ],
+        "description": "htmlcs-enable"
+    },
     "component": {
-        "prefix": "ccomponent",
+        "prefix": "component",
         "body": [
             "<component",
             "\t:is=\"$1\"",
             ">",
             "</component>"
+        ],
+        "description": "component"
+    },
+    "template": {
+        "prefix": "template",
+        "body": [
+            "<template>",
+            "\t$0",
+            "</template>"
         ],
         "description": "component"
     },
@@ -129,10 +166,10 @@
         "prefix": "cbtn",
         "body": [
             "<c-btn",
-            "   type=\"${1:default}\"",
-            "   :text=\"$2\"",
-            "   :icon=\"$3\"",
-            "   :params=\"$4\"",
+            "\ttype=\"${1:default}\"",
+            "\ttext=\"$2\"",
+            "\ticon=\"$3\"",
+            "\tparams=\"$4\"",
             "/>"
         ],
         "description": "c-btn"

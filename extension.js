@@ -3,7 +3,7 @@ let exec = require('child_process').exec;
 function activate(context) {
     console.log('Extension "Atom Snippets" is now active');
 
-    let {window, commands, workspace} = vscode;
+    let {window, commands, workspace, languages, Hover} = vscode;
     // let curFile = workspace.textDocuments[0].fileName;
     let curTime;
     let curFile = window.activeTextEditor.document.fileName;
@@ -15,7 +15,7 @@ function activate(context) {
     let log = window.createOutputChannel("atom/log");
     let getCurTime = () => new Date().toLocaleString().replace(/\//g,"-");
     let devType = {
-        at: {
+        atom: {
             patt: /aladdin-atom\/src\/app/,
             handle(term, log) {
                 let res = /app\/((\w|_)+)(?=\/|$)/.exec(curFile);
@@ -26,7 +26,7 @@ function activate(context) {
                 }
             }
         },
-        np: {
+        nextpage: {
             patt: /next-page\/src\/products/,
             handle(term, log) {
                 curTime = getCurTime();
@@ -36,6 +36,15 @@ function activate(context) {
         }
     }
 
+    // let hoverProvider = languages.registerHoverProvider({ scheme: 'file', language: 'atom' }, {
+    //     provideHover(document, position, token) {
+    //         let word = document.getText(document.getWordRangeAtPosition(position));
+    //         console.log(word);
+    //         if (word === 'c-line') {
+    //             return new Hover('Line');
+    //         }
+    //     }
+    // });
 
     if (window.terminals[0].name === 'bash') {
         window.terminals[0].dispose();
@@ -79,6 +88,7 @@ function activate(context) {
         terminal.show(true);
     });
     
+    // sub.push(hoverProvider);
     sub.push(jumpSoy);
     sub.push(showTerminal);
     sub.push(syncMachine);

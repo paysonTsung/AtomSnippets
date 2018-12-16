@@ -19,6 +19,9 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 prefix:
 
 - ll 开发模板: template/script/style标签组
+- lconfig
+- lscript
+- lstyle
 
 
 ### Atom组件
@@ -28,6 +31,8 @@ prefix:
 
 - ll
     - {{ }} 文本插值
+- component
+- template
 - caladdin
 - ctitle
 - cline
@@ -35,6 +40,20 @@ prefix:
 - cimgcontent
 - cimgcontents
 - ...
+
+### 常用属性
+prefix:
+
+- url
+- params
+- title
+- data-module
+
+### 注释
+prefix:
+
+- htmlcs-disable
+- htmlcs-enable
 
 ### filter
 支持filter拼sf/mip..
@@ -121,4 +140,8 @@ prefix:
 
 - 对全部Atom组件的snippets功能支持
 - 鼠标悬停+快捷键等显示基本用法or跳转文档
-- 底bar提供按钮调终端一键同步到测试机
+- 底部状态栏提供按钮调终端一键同步到测试机
+- nextpage引用组件文件跳转
+- prop/data数据模板内sinppets
+- 引用组件/数据模板内未使用的提示处理
+- 模板内使用组件未引用等提示处理
