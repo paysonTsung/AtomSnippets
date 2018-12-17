@@ -6,7 +6,7 @@
         "atom",
         "snippets"
     ],
-    "version": "0.2.2",
+    "version": "0.2.3",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"

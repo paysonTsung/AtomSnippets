@@ -8,7 +8,9 @@ Atom Snippets的使用需要配合Mota插件提供的语言定义，所以使用
 
 ## Features
 
-- 提供Atom模板常用组件的Snippets功能
+- 提供Atom模板常用组件、属性等的Snippets功能
+- 提供smarty、php预处理文件Ala全部API
+- 底部状态栏提供按钮调起终端及atom/nextpage快速同步到测试机
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台
 
 ## Snippets available

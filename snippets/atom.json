@@ -29,7 +29,7 @@
             "",
             "</style>"
         ],
-        "description": "Atom开发模板"
+        "description": "Atom主开发模板"
     },
     "script": {
         "prefix": "lscript",
@@ -45,7 +45,7 @@
             "};",
             "</script>"
         ],
-        "description": "script"
+        "description": "Atom开发模板-script"
     },
     "config": {
         "prefix": "lconfig",
@@ -61,7 +61,7 @@
             "}",
             "</script>"
         ],
-        "description": "config"
+        "description": "Atom开发模板-config"
     },
     "style": {
         "prefix": "lstyle",
@@ -70,6 +70,6 @@
             "$0",
             "</style>"
         ],
-        "description": "Atom开发模板"
+        "description": "Atom开发模板-style"
     }
 }

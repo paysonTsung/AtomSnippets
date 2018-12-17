@@ -4,7 +4,7 @@
         "body": [
             "console.log($1);"
         ],
-        "description": "clog"
+        "description": "console.log"
     },
     "if": {
         "prefix": "cif",
@@ -25,7 +25,7 @@
             "    $3",
             "}"
         ],
-        "description": "ifelse"
+        "description": "if-else"
     },
     "function": {
         "prefix": "cfunction",
@@ -34,7 +34,7 @@
             "    $3",
             "}"
         ],
-        "description": "if"
+        "description": "function"
     },
     "switch": {
         "prefix": "cswitch",

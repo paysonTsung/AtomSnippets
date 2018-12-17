@@ -46,9 +46,9 @@ function activate(context) {
     //     }
     // });
 
-    if (window.terminals[0].name === 'bash') {
-        window.terminals[0].dispose();
-    }
+    // if (window.terminals[0].name === 'bash') {
+    //     window.terminals[0].dispose();
+    // }
     window.onDidChangeActiveTextEditor(e => curFile = e.document.fileName);
 
     termBtn.command = 'extension.terminal';

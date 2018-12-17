@@ -7,14 +7,14 @@
             "    console.log(<?php echo json_encode(${0:\\$tplData})?>);",
             "</script>"
         ],
-        "description": "print-data"
+        "description": "控制台打印数据"
     },
     "tplData": {
         "prefix": "data",
         "body": [
             "\\$tplData"
         ],
-        "description": "tpldata"
+        "description": "tpldata对象"
     },
     "prop": {
         "prefix": "ll",
@@ -48,7 +48,7 @@
             "    $3",
             "}"
         ],
-        "description": "ifelse"
+        "description": "if-else"
     },
     "if-no-empty": {
         "prefix": "ifempty",

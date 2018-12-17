@@ -2,16 +2,16 @@
     "coat": {
         "prefix": "ll",
         "body": [
-            "{{ $1 }}$0"
+            "{{ $1 }}"
         ],
-        "description": "coat"
+        "description": "Atom文本插值"
     },
     "data-module": {
         "prefix": "data-module",
         "body": [
             "data-module=\"$1\""
         ],
-        "description": "data-module"
+        "description": "data-module埋点"
     },
     "url": {
         "prefix": "url",
@@ -56,7 +56,7 @@
             ">",
             "</component>"
         ],
-        "description": "component"
+        "description": "component组件标签"
     },
     "template": {
         "prefix": "template",
@@ -65,7 +65,7 @@
             "\t$0",
             "</template>"
         ],
-        "description": "component"
+        "description": "template模板标签"
     },
     "filter-sf": {
         "prefix": "|sf",
@@ -74,7 +74,7 @@
             "    type: 'sf'",
             "})"
         ],
-        "description": "filter-sf"
+        "description": "filter拼sf"
     },
     "filter-mip": {
         "prefix": "|mip",
@@ -84,7 +84,7 @@
             "    title: $1",
             "})"
         ],
-        "description": "filter-mip"
+        "description": "filter拼mip"
     },
     "filter-vsearch": {
         "prefix": "|vsearch",
@@ -93,7 +93,7 @@
             "    type: 'vsearch'",
             "})"
         ],
-        "description": "filter-vsearch"
+        "description": "filter拼vsearch"
     },
     "c-aladdin": {
         "prefix": "caladdin",
@@ -108,7 +108,7 @@
             "\t$0",
             "</c-aladdin>"
         ],
-        "description": "c-aladdin"
+        "description": "卡片框架/ Aladdin"
     },
     "c-title": {
         "prefix": "ctitle",
@@ -118,7 +118,7 @@
             "\t:text=\"${2:text}\"",
             "/>"
         ],
-        "description": "标题/Title"
+        "description": "标题/ Title"
     },
     "c-title-s": {
         "prefix": "ctitles",
@@ -129,7 +129,7 @@
             "\tsize=\"t2\"",
             "/>"
         ],
-        "description": "标题/Title (小字)"
+        "description": "标题/ Title (小字标题)"
     },
     "c-line": {
         "prefix": "cline",
@@ -138,7 +138,7 @@
             "\t${0:...}",
             "</c-line>"
         ],
-        "description": "多行截断/Line"
+        "description": "多行截断/ Line"
     },
     "c-line-2": {
         "prefix": "cline2",
@@ -149,7 +149,7 @@
             "\t${0:...}",
             "</c-line>"
         ],
-        "description": "多行截断/Line 双行截断"
+        "description": "多行截断/ Line (双行截断)"
     },
     "c-link": {
         "prefix": "clink",
@@ -160,7 +160,7 @@
             "\t$0",
             "</c-link>"
         ],
-        "description": "c-link"
+        "description": "跳转链接/ Link"
     },
     "c-btn": {
         "prefix": "cbtn",
@@ -172,21 +172,21 @@
             "\tparams=\"$4\"",
             "/>"
         ],
-        "description": "c-btn"
+        "description": "按钮/ Button"
     },
     "c-divider": {
         "prefix": "cdivider",
         "body": [
             "<c-divider/>"
         ],
-        "description": "c-divider"
+        "description": "分割线/ Divider"
     },
     "c-icon": {
         "prefix": "cicon",
         "body": [
             "<c-icon type=\"$1\"/>"
         ],
-        "description": "c-icon"
+        "description": "图标/ Icon"
     },
     "c-img": {
         "prefix": "cimg",
@@ -196,14 +196,14 @@
             "\t:title=\"$2\"",
             "/>"
         ],
-        "description": "c-img"
+        "description": "图片/ Image"
     },
     "c-label": {
         "prefix": "clabel",
         "body": [
             "<c-label type=\"$1\" :text=\"$2\"/>"
         ],
-        "description": "c-label"
+        "description": "标签/ Label"
     },
     "c-slink": {
         "prefix": "cslink",
@@ -214,7 +214,7 @@
             "\t:text=\"$3\"",
             "/>"
         ],
-        "description": "c-slink"
+        "description": "短链/ Slink"
     },
     "c-img-content": {
         "prefix": "cimgcontent",
@@ -225,7 +225,7 @@
             "\t${0:...}",
             "</c-img-content>"
         ],
-        "description": "左图右文/ImgContent"
+        "description": "左图右文/ ImgContent"
     },
     "c-img-content-s": {
         "prefix": "cimgcontents",
@@ -239,7 +239,7 @@
             "\t${0:...}",
             "</c-img-content>"
         ],
-        "description": "左图右文/ImgContent (小图)"
+        "description": "左图右文/ ImgContent (小图)"
     },
     "c-list": {
         "prefix": "clist",
@@ -253,7 +253,7 @@
             "\t</c-list-item>",
             "</c-list>"
         ],
-        "description": "c-list"
+        "description": "列表行/ List"
     },
     "c-navs": {
         "prefix": "cnavs",
@@ -263,7 +263,7 @@
             "\t@change=\"${2:selectFn}\"",
             "/>"
         ],
-        "description": "c-navs"
+        "description": "导航/ Navs"
     },
     "c-tabs": {
         "prefix": "ctabs",
@@ -281,7 +281,7 @@
             "   </c-tabs-item>",
             "</c-tabs>"
         ],
-        "description": "c-tabs"
+        "description": "选项卡/ Tabs"
     },
     "c-calendar": {
         "prefix": "ccalendar",

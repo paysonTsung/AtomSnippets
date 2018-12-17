@@ -6,7 +6,7 @@
             "    console.log({%json_encode(${0:\\$tplData})%});",
             "</script>"
         ],
-        "description": "print-data"
+        "description": "控制台打印数据"
     },
     "$tplData": {
         "prefix": "data",
@@ -20,7 +20,7 @@
         "body": [
             "{%$1%}"
         ],
-        "description": "coat"
+        "description": "定界符"
     },
     "if": {
         "prefix": "cif",
@@ -40,7 +40,7 @@
             "    $3",
             "{%/if%}"
         ],
-        "description": "ifelse"
+        "description": "if-else"
     },
     "if-no-empty": {
         "prefix": "ifempty",
