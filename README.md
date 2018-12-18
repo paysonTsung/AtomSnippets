@@ -22,12 +22,12 @@ Code snippets for Atom in order to let you develop faster.
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台(暂定)
 
 ### Demo-atom补全
-![demo_a](images/demo_a.gif)
-<!-- <img src="images/demo_a.gif" width="300"/> -->
+<!-- ![demo_a](images/demo_a.gif) -->
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_a.gif" width="400"/>
 
 ### Demo-php补全
-![demo_b](images/demo_b.gif)
-<!-- <img src="images/demo_b.gif" width="380"/> -->
+<!-- ![demo_b](images/demo_b.gif) -->
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_b.gif" width="480"/>
 
 ## Snippets available
 
@@ -228,7 +228,8 @@ prefix:
 
 - vscode自带word预测优先级高于sinppets
 
-    <img src="images/set_priority.png" width="200"/>
+    <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/set_priority.png" width="200"/>
+    <!-- ![set_priority](images/set_priority.png) -->
 
     设置取消预测, 将snippets优先级设置最高
 
