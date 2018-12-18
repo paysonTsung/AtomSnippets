@@ -1,12 +1,14 @@
 {
     "name": "atom-snippets",
     "displayName": "Atom Snippets",
-    "description": "Code snippets for Atom",
+    "description": "Code snippets for Atom/AtomEngine/NextPage",
     "keywords": [
         "atom",
+        "atomengine",
+        "nextpage",
         "snippets"
     ],
-    "version": "0.2.3",
+    "version": "0.3.0",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
@@ -51,6 +53,88 @@
                 }
             ]
         },
+        "languages": [
+            {
+                "id": "atom",
+                "aliases": [
+                    "Atom",
+                    "atom"
+                ],
+                "extensions": [
+                    ".atom"
+                ],
+                "configuration": "./languages/atom.json"
+            },
+            {
+                "id": "atom-html",
+                "aliases": [
+                    "Atom-html"
+                ],
+                "configuration": "./languages/atom-html.json"
+            },
+            {
+                "id": "postcss",
+                "aliases": [
+                    "PostCSS",
+                    "POSTCSS"
+                ],
+                "configuration": "./languages/postcss.json"
+            },
+            {
+                "id": "config",
+                "aliases": [
+                    "Atom-config",
+                    "Atom-Config",
+                    "atom-config"
+                ],
+                "configuration": "./languages/atom-config.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "atom",
+                "scopeName": "source.atom",
+                "path": "./syntaxes/atom-generated.json",
+                "embeddedLanguages": {
+                    "text.html.basic": "html",
+                    "text.html.atom-html": "atom-html",
+                    "text.jade": "jade",
+                    "text.pug": "pug",
+                    "text.config": "config",
+                    "source.css": "css",
+                    "source.css.scss": "scss",
+                    "source.css.less": "less",
+                    "source.css.postcss": "postcss",
+                    "source.sass": "sass",
+                    "source.stylus": "stylus",
+                    "source.js": "javascript",
+                    "source.ts": "typescript",
+                    "source.coffee": "coffeescript",
+                    "text.html.markdown": "md",
+                    "source.yaml": "yaml",
+                    "source.json": "json",
+                    "source.php": "php"
+                }
+            },
+            {
+                "language": "postcss",
+                "scopeName": "source.css.postcss",
+                "path": "./syntaxes/postcss.json"
+            },
+            {
+                "language": "atom-html",
+                "scopeName": "text.html.atom-html",
+                "path": "./syntaxes/atom-html.json",
+                "embeddedLanguages": {
+                    "source.js": "javascript"
+                }
+            },
+            {
+                "language": "config",
+                "scopeName": "text.config",
+                "path": "./syntaxes/atom-config.json"
+            }
+        ],
         "snippets": [
             {
                 "language": "atom",

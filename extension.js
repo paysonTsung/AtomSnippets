@@ -15,23 +15,31 @@ function activate(context) {
     let log = window.createOutputChannel("atom/log");
     let getCurTime = () => new Date().toLocaleString().replace(/\//g,"-");
     let devType = {
-        atom: {
+        "atom": {
             patt: /aladdin-atom\/src\/app/,
             handle(term, log) {
                 let res = /app\/((\w|_)+)(?=\/|$)/.exec(curFile);
                 if (res && res[1]) {
                     curTime = getCurTime();
-                    term.sendText(`ala sync ${res[1]} -w`);
                     log.appendLine(`[${curTime}] 模板${res[1]}同步至测试机`);
+                    term.sendText(`ala sync ${res[1]} -w`);
                 }
             }
         },
-        nextpage: {
+        "atom-engine": {
+            patt: /atom-engine-demo\/src/,
+            handle(term, log) {
+                curTime = getCurTime();
+                log.appendLine(`[${curTime}] atom-engine启动调试`);
+                term.sendText("atom-engine build -d");
+            }
+        },
+        "next-page": {
             patt: /next-page\/src\/products/,
             handle(term, log) {
                 curTime = getCurTime();
-                term.sendText("make watch");
                 log.appendLine(`[${curTime}] nextpage同步至测试机`);
+                term.sendText("make watch");
             }
         }
     }
@@ -84,7 +92,7 @@ function activate(context) {
                 return;
             }
         });
-        log.show();
+        // log.show();
         terminal.show(true);
     });
     

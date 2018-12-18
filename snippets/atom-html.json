@@ -67,6 +67,22 @@
         ],
         "description": "template模板标签"
     },
+    "div": {
+        "prefix": "div",
+        "body": [
+            "<div>",
+            "\t$0",
+            "</div>"
+        ],
+        "description": "div标签"
+    },
+    "span": {
+        "prefix": "span",
+        "body": [
+            "<span>$1</span>"
+        ],
+        "description": "span标签"
+    },
     "filter-sf": {
         "prefix": "|sf",
         "body": [
@@ -680,5 +696,177 @@
             "/>"
         ],
         "description": "c-stars"
+    },
+
+
+
+
+    "view": {
+        "prefix": "view",
+        "body": [
+            "<view",
+            "\tref=\"${1:container}\"",
+            "\t:style=\"$2\"",
+            ">",
+            "\t$0",
+            "</view>"
+        ],
+        "description": "view"
+    },
+    "webview": {
+        "prefix": "webview",
+        "body": [
+            "<webview",
+            "\tref=\"${1:webview}\"",
+            "\tstyle=\"${2:width:100%;height:100%}\"",
+            "\thref=\"$3\"",
+            "/>"
+        ],
+        "description": "webview"
+    },
+    "text": {
+        "prefix": "text",
+        "body": [
+            "<text :style=\"$1\">$0</text>"
+        ],
+        "description": "text"
+    },
+    "viewpager": {
+        "prefix": "viewpager",
+        "body": [
+            "<viewpager>",
+            "\t$0",
+            "</viewpager>"
+        ],
+        "description": "viewpager"
+    },
+    "scrollview": {
+        "prefix": "scrollview",
+        "body": [
+            "<scrollview",
+            "\tref=\"${1:scrollview}\"",
+            "\tstyle=\"$2\"",
+            "\t@scroll=\"$3\"",
+            ">",
+            "\t$0",
+            "</scrollview>"
+        ],
+        "description": "scrollview"
+    },
+    "image": {
+        "prefix": "image",
+        "body": [
+            "<image height=\"$1\" width=\"$2\" src=\"$3\"></image>"
+        ],
+        "description": "image"
+    },
+    "h-scrollview": {
+        "prefix": "hscrollview",
+        "body": [
+            "<hscrollview",
+            "\tref=\"${1:hScrollview}\"",
+            "\tstyle=\"$2\"",
+            "\t@scroll=\"$3\"",
+            ">",
+            "\t$0",
+            "</hscrollview>"
+        ],
+        "description": "hscrollview"
+    },
+    "photo": {
+        "prefix": "photo",
+        "body": [
+            "<photo",
+            "\t:src=\"$1\"",
+            "\tminimum-scale=\"1\"",
+            "\tmedium-scale=\"1.5\"",
+            "\tmaximum-scale=\"2\"",
+            "\tzoomable=\"${2:false}\"",
+            "/>"
+        ],
+        "description": "photo"
+    },
+    "video": {
+        "prefix": "video",
+        "body": [
+            "<video",
+            "\tref=\"${1:video}\"",
+            "\t:src=\"$2\"",
+            "\t:title=\"$3\"",
+            "\t:controls=\"$4\"",
+            "\tstyle=\"$5\"",
+            "></video>"
+        ],
+        "description": "photo"
+    },
+    "click": {
+        "prefix": "@click",
+        "body": [
+            "@click=\"$1\""
+        ],
+        "description": "绑定click事件"
+    },
+    "tap": {
+        "prefix": "@tap",
+        "body": [
+            "@tap=\"$1\""
+        ],
+        "description": "绑定tap事件"
+    },
+    "focus": {
+        "prefix": "@focus",
+        "body": [
+            "@focus=\"$1\""
+        ],
+        "description": "绑定focus事件"
+    },
+    "touchstart": {
+        "prefix": "@touchstart",
+        "body": [
+            "@touchstart=\"$1\""
+        ],
+        "description": "绑定touchstart事件"
+    },
+    "touchend": {
+        "prefix": "@touchend",
+        "body": [
+            "@touchend=\"$1\""
+        ],
+        "description": "绑定touchend事件"
+    },
+    "touchmove": {
+        "prefix": "@touchmove",
+        "body": [
+            "@touchmove=\"$1\""
+        ],
+        "description": "绑定touchmove事件"
+    },
+    "scroll": {
+        "prefix": "@scroll",
+        "body": [
+            "@scroll=\"$1\""
+        ],
+        "description": "绑定scroll事件"
+    },
+    "ref": {
+        "prefix": "ref",
+        "body": [
+            "ref=\"$1\""
+        ],
+        "description": "ref"
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "class=\"$1\""
+        ],
+        "description": "class"
+    },
+    "style": {
+        "prefix": "style",
+        "body": [
+            "style=\"$1\""
+        ],
+        "description": "style"
     }
 }

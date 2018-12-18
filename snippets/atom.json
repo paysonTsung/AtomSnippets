@@ -25,7 +25,7 @@
             "    }",
             "};",
             "</script>",
-            "<style lang=\"less\" scoped>",
+            "<style scoped>",
             "",
             "</style>"
         ],
@@ -66,10 +66,19 @@
     "style": {
         "prefix": "lstyle",
         "body": [
-            "<style lang=\"less\" scoped>",
+            "<style scoped>",
             "$0",
             "</style>"
         ],
         "description": "Atom开发模板-style"
+    },
+    "style-less": {
+        "prefix": "lstyle-less",
+        "body": [
+            "<style lang=\"less\" scoped>",
+            "$0",
+            "</style>"
+        ],
+        "description": "Atom开发模板-style-less"
     }
 }

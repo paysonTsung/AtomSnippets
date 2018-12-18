@@ -49,5 +49,95 @@
             "}"
         ],
         "description": "switch"
+    },
+    "beforeCreate": {
+        "prefix": "beforeCreate",
+        "body": [
+            "beforeCreate() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-beforeCreate:\n在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用 注意：此时无法获取 data中的数据、methods中的方法"
+    },
+    "created": {
+        "prefix": "created",
+        "body": [
+            "created() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-created:\n实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据(Data Observer)、属性和方法的运算"
+    },
+    "beforeMount": {
+        "prefix": "beforeMount",
+        "body": [
+            "beforeMount() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-beforeMount:\n在挂载开始之前被调用，相关的render函数首次被调用"
+    },
+    "preMounted": {
+        "prefix": "preMounted",
+        "body": [
+            "preMounted() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-preMounted:\natom-engine中新增，为了在ssr时就能产出动画的命令新增的生命周期，使用方法参考文档"
+    },
+    "mounted": {
+        "prefix": "mounted",
+        "body": [
+            "mounted() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-mounted:\n实例已经挂载到页面中，可以获取到el中的DOM元素，进行DOM操作"
+    },
+    "beforeUpdated": {
+        "prefix": "beforeUpdated",
+        "body": [
+            "beforeUpdated() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-beforeUpdated:\n数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。在这个方法中进一步地更改状态，不会触发附加的重渲染过程"
+    },
+    "updated": {
+        "prefix": "updated",
+        "body": [
+            "updated() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-updated:\n组件DOM已经更新，所以现在可以执行依赖于DOM的操作"
+    },
+    "beforeDestroy": {
+        "prefix": "beforeDestroy",
+        "body": [
+            "beforeDestroy() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-beforeDestroy:\n实例销毁之前调用。在这一步，实例仍然完全可用。 使用场景：实例销毁之前，执行清理任务，比如：清除定时器等"
+    },
+    "destroyed": {
+        "prefix": "destroyed",
+        "body": [
+            "destroyed() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "生命周期-destroyed:\n实例销毁之后调用。调用后，实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁"
+    },
+    "computed": {
+        "prefix": "computed",
+        "body": [
+            "computed: {",
+            "\t$0",
+            "}"
+        ],
+        "description": "计算属性computed"
     }
 }
