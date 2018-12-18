@@ -22,10 +22,12 @@ Code snippets for Atom in order to let you develop faster.
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台(暂定)
 
 ### Demo-atom补全
-<img src="images/demo_a.gif" width="300"/>
+![demo_a](images/demo_a.gif)
+<!-- <img src="images/demo_a.gif" width="300"/> -->
 
 ### Demo-php补全
-<img src="images/demo_b.gif" width="380"/>
+![demo_b](images/demo_b.gif)
+<!-- <img src="images/demo_b.gif" width="380"/> -->
 
 ## Snippets available
 
