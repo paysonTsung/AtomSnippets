@@ -27,7 +27,7 @@ function activate(context) {
             }
         },
         "atom-engine": {
-            patt: /atom-engine-demo\/src/,
+            patt: /fe-duer-swan/,
             handle(term, log) {
                 curTime = getCurTime();
                 log.appendLine(`[${curTime}] atom-engine启动调试`);
