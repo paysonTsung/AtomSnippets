@@ -28,7 +28,7 @@
         "description": "if-else"
     },
     "function": {
-        "prefix": "cfunction",
+        "prefix": "cfn",
         "body": [
             "${1:fnName}(${2:params}) {",
             "    $3",
@@ -139,5 +139,602 @@
             "}"
         ],
         "description": "计算属性computed"
+    },
+
+
+    "Number": {
+        "prefix": "number",
+        "body": [
+            "Number"
+        ],
+        "description": "Number"
+    },
+    "String": {
+        "prefix": "string",
+        "body": [
+            "String"
+        ],
+        "description": "String"
+    },
+    "Boolean": {
+        "prefix": "boolean",
+        "body": [
+            "Boolean"
+        ],
+        "description": "Boolean"
+    },
+    "Array": {
+        "prefix": "array",
+        "body": [
+            "Array"
+        ],
+        "description": "Array"
+    },
+    "Object": {
+        "prefix": "object",
+        "body": [
+            "Object"
+        ],
+        "description": "Object"
+    },
+
+    "c-aladdin": {
+        "prefix": "caladdin",
+        "body": [
+            "'c-aladdin': 'search-ui/Aladdin/Aladdin'"
+        ],
+        "description": "卡片框架/ Aladdin"
+    },
+    "c-title": {
+        "prefix": "ctitle",
+        "body": [
+            "'c-title': 'search-ui/Title/Title'"
+        ],
+        "description": "标题/ Title"
+    },
+    "c-line": {
+        "prefix": "cline",
+        "body": [
+            "'c-line': 'search-ui/Line/Line'"
+        ],
+        "description": "多行截断/ Line"
+    },
+    "c-link": {
+        "prefix": "clink",
+        "body": [
+            "'c-link': 'search-ui/Link/Link'"
+        ],
+        "description": "跳转链接/ Link"
+    },
+    "c-btn": {
+        "prefix": "cbtn",
+        "body": [
+            "'c-btn': 'search-ui/Button/Button'"
+        ],
+        "description": "按钮/ Button"
+    },
+    "c-btn-layout": {
+        "prefix": "cbtnlayout",
+        "body": [
+            "'c-btn-layout': 'search-ui/Button/BtnLayout'"
+        ],
+        "description": "按钮/按钮栏 Button"
+    },
+    "c-divider": {
+        "prefix": "cdivider",
+        "body": [
+            "'c-divider': 'search-ui/Divider/Divider'"
+        ],
+        "description": "分割线/ Divider"
+    },
+    "c-icon": {
+        "prefix": "cicon",
+        "body": [
+            "'c-icon': 'search-ui/Icon/Icon'"
+        ],
+        "description": "图标/ Icon"
+    },
+    "c-img": {
+        "prefix": "cimg",
+        "body": [
+            "'c-img': 'search-ui/Image/Image'"
+        ],
+        "description": "图片/ Image"
+    },
+    "c-label": {
+        "prefix": "clabel",
+        "body": [
+            "'c-label':'search-ui/Label/Label'"
+        ],
+        "description": "标签/ Label"
+    },
+    "c-slink": {
+        "prefix": "cslink",
+        "body": [
+            "'c-slink': 'search-ui/Slink/Slink'"
+        ],
+        "description": "短链/ Slink"
+    },
+    "c-img-content": {
+        "prefix": "cimgcontent",
+        "body": [
+            "'c-img-content': 'search-ui/ImgContent/ImgContent'"
+        ],
+        "description": "左图右文/ ImgContent"
+    },
+    "c-list": {
+        "prefix": "clist",
+        "body": [
+            "'c-list': 'search-ui/List/List',",
+            "'c-list-item': 'search-ui/List/ListItem'"
+        ],
+        "description": "列表行/ List"
+    },
+    "c-navs": {
+        "prefix": "cnavs",
+        "body": [
+            "'c-navs': 'search-ui/Navs/Navs'"
+        ],
+        "description": "导航/ Navs"
+    },
+    "c-tabs": {
+        "prefix": "ctabs",
+        "body": [
+            "'c-tabs': 'search-ui/Tabs/Tabs',",
+            "'c-tabs-item': 'search-ui/Tabs/TabsItem'"
+        ],
+        "description": "选项卡/ Tabs"
+    },
+    "c-calendar": {
+        "prefix": "ccalendar",
+        "body": [
+            "'c-calendar': 'search-ui/Calendar/Calendar'"
+        ],
+        "description": "日历/ Calendar"
+    },
+    "c-table": {
+        "prefix": "ctable",
+        "body": [
+            "'c-table': 'search-ui/Table/Table'"
+        ],
+        "description": "表格/ Table"
+    },
+    "c-table-grid": {
+        "prefix": "ctablegrid",
+        "body": [
+            "'c-table-grid': 'search-ui/TableGrid/TableGrid'"
+        ],
+        "description": "网格表格/ TableGrid"
+    },
+    "c-mask": {
+        "prefix": "cmask",
+        "body": [
+            "'c-mask': 'search-ui/Mask/Mask'"
+        ],
+        "description": "蒙层/ Mask"
+    },
+    "c-error-page": {
+        "prefix": "cerrorpage",
+        "body": [
+            "'c-error-page': 'search-ui/ErrorPage/ErrorPage'"
+        ],
+        "description": "搜索空白页/ ErrorPage"
+    },
+    "c-loading": {
+        "prefix": "cloading",
+        "body": [
+            "'c-loading': 'search-ui/Loading/Loading'"
+        ],
+        "description": "加载中/ Loading"
+    },
+    "c-more": {
+        "prefix": "cmore",
+        "body": [
+            "'c-more': 'search-ui/More/More'"
+        ],
+        "description": "查看更多/ More"
+    },
+    "c-source": {
+        "prefix": "csource",
+        "body": [
+            "'c-source': 'search-ui/Source/Source'"
+        ],
+        "description": "来源/ Source"
+    },
+    "c-strong-link": {
+        "prefix": "cstronglink",
+        "body": [
+            "'c-strong-link': 'search-ui/StrongLink/StrongLink'"
+        ],
+        "description": "强链接/ StrongLink"
+    },
+    "c-text-line": {
+        "prefix": "ctextline",
+        "body": [
+            "'c-text-line': 'search-ui/TextLine/TextLine'"
+        ],
+        "description": "文本多行截断/ TextLine"
+    },
+    "c-timespan": {
+        "prefix": "ctimespan",
+        "body": [
+            "'c-timespan': 'search-ui/Timespan/Timespan'"
+        ],
+        "description": "时间差/ Timespan"
+    },
+    "c-tombstone": {
+        "prefix": "ctombstone",
+        "body": [
+            "'c-tombstone': 'search-ui/Tombstone/Tombstone'"
+        ],
+        "description": "占位加载/ Tombstone"
+    },
+    "c-triangle": {
+        "prefix": "ctriangle",
+        "body": [
+            "'c-triangle': 'search-ui/AnimateIcon/Triangle'"
+        ],
+        "description": "动效图标/三角型图标 AnimateIcon"
+    },
+    "c-arrow": {
+        "prefix": "carrow",
+        "body": [
+            "'c-arrow': 'search-ui/AnimateIcon/Arrow'"
+        ],
+        "description": "动效图标/箭头型图标 AnimateIcon"
+    },
+    "c-dropdown": {
+        "prefix": "cdropdown",
+        "body": [
+            "'c-dropdown': 'search-ui/Dropdown/Dropdown'"
+        ],
+        "description": "下拉选择框/ Dropdown"
+    },
+    "c-input": {
+        "prefix": "cinput",
+        "body": [
+            "'c-input': 'search-ui/Input/Input'"
+        ],
+        "description": "表单组件/ Input"
+    },
+    "c-cascader": {
+        "prefix": "ccascader",
+        "body": [
+            "'c-cascader': 'search-ui/Cascader/Cascader'"
+        ],
+        "description": "级联选择器/ Cascader"
+    },
+    "c-row": {
+        "prefix": "crow",
+        "body": [
+            "'c-row': 'search-ui/Row/Row',",
+        	"'c-span': 'search-ui/Row/Span'"
+        ],
+        "description": "栅格行/ Row"
+    },
+    "c-kg-footer": {
+        "prefix": "ckgfooter",
+        "body": [
+            "'c-kg-footer': 'search-ui/KgFooter/KgFooter'"
+        ],
+        "description": "KG底部组件/ KgFooter"
+    },
+    "c-kg-header": {
+        "prefix": "ckgheader",
+        "body": [
+            "'c-kg-header': 'search-ui/KgHeader/KgHeader'"
+        ],
+        "description": "KG头部组件/ KgHeader"
+    },
+    "c-list-result": {
+        "prefix": "clistresult",
+        "body": [
+            "'c-list-result': 'search-ui/ListResult/ListResult'"
+        ],
+        "description": "列表结果框架/ ListResult"
+    },
+    "c-footer": {
+        "prefix": "cfooter",
+        "body": [
+            "'c-footer': 'search-ui/Footer/Footer'"
+        ],
+        "description": "卡片脚注/ Footer"
+    },
+    "c-content": {
+        "prefix": "ccontent",
+        "body": [
+            "'c-content': 'search-ui/Content/Content'"
+        ],
+        "description": "内容/ Content"
+    },
+    "c-tags": {
+        "prefix": "ctags",
+        "body": [
+            "'c-tags': 'search-ui/Tags/Tags'"
+        ],
+        "description": "标签/ Tags"
+    },
+    "c-tag-group": {
+        "prefix": "ctaggroup",
+        "body": [
+            "'c-tag-group': 'search-ui/TagGroup/TagGroup'"
+        ],
+        "description": "标签组/ TagGroup"
+    },
+    "c-rec": {
+        "prefix": "crec",
+        "body": [
+            "'c-rec': 'search-ui/Rec/Rec'"
+        ],
+        "description": "推荐模块/ Rec"
+    },
+    "c-scroll-imgs": {
+        "prefix": "cscrollimgs",
+        "body": [
+            "'c-scroll-imgs': 'search-ui/ScrollImgs/ScrollImgs'"
+        ],
+        "description": "多图横滑/ ScrollImgs"
+    },
+    "c-stitch-imgs": {
+        "prefix": "cstitchimgs",
+        "body": [
+            "'c-stitch-imgs': 'search-ui/StitchImgs/StitchImgs'"
+        ],
+        "description": "图集组件/ StitchImgs"
+    },
+    "c-waterfall": {
+        "prefix": "cwaterfall",
+        "body": [
+            "'c-waterfall': 'search-ui/Waterfall/Waterfall'"
+        ],
+        "description": "瀑布流/ Waterfall"
+    },
+    "c-scroll-video": {
+        "prefix": "cscrollvideo",
+        "body": [
+            "'c-scroll-video': 'search-ui/ScrollVideo/ScrollVideo'"
+        ],
+        "description": "视频横滑列表/ ScrollVideo"
+    },
+    "c-video": {
+        "prefix": "cvideo",
+        "body": [
+            "'c-video': 'search-ui/Video/Video'"
+        ],
+        "description": "视频/ Video"
+    },
+    "c-selector": {
+        "prefix": "cselector",
+        "body": [
+            "'c-selector': 'search-ui/Selector/Selector'"
+        ],
+        "description": "选择框/ Selector"
+    },
+    "c-stars": {
+        "prefix": "cstars",
+        "body": [
+            "'c-stars': 'search-ui/Stars/Stars'"
+        ],
+        "description": "星星评分/ Stars"
+    },
+    "c-article": {
+        "prefix": "carticle",
+        "body": [
+            "'c-article': 'search-ui/Article/Article'"
+        ],
+        "description": "文章单结果组件/ Article"
+    },
+    "c-list-article": {
+        "prefix": "clistarticle",
+        "body": [
+            "'c-list-article': 'search-ui/ListArticle/ListArticle'"
+        ],
+        "description": "文章列表组件/ ListArticle"
+    },
+    "c-news-article": {
+        "prefix": "cnewsarticle",
+        "body": [
+            "'c-news-article': 'search-ui/NewsArticle/NewsArticle'"
+        ],
+        "description": "资讯组件/ NewsArticle"
+    },
+    "c-scroll-two": {
+        "prefix": "cscrolltwo",
+        "body": [
+            "'c-scroll-two': 'search-ui/ScrollTwo/ScrollTwo'"
+        ],
+        "description": "双排横划组件/ ScrollTwo"
+    },
+    "c-scroll-two-frame": {
+        "prefix": "cscrolltwoframe",
+        "body": [
+            "'c-scroll-two-frame': 'search-ui/ScrollTwoFrame/ScrollTwoFrame'"
+        ],
+        "description": "双排横划框架组件/ ScrollTwoFrame"
+    },
+    "c-audio": {
+        "prefix": "caudio",
+        "body": [
+            "'c-audio': 'search-ui/Audio/Audio'"
+        ],
+        "description": "音频播放/ Audio"
+    },
+    "c-carousel": {
+        "prefix": "ccarousel",
+        "body": [
+            "'c-carousel': 'search-ui/Carousel/Carousel'"
+        ],
+        "description": "轮播图-走马灯/ Carousel"
+    },
+    "c-drawer": {
+        "prefix": "cdrawer",
+        "body": [
+            "'c-drawer': 'search-ui/Drawer/Drawer'"
+        ],
+        "description": "抽屉/ Drawer"
+    },
+    "c-filter-simple": {
+        "prefix": "cfiltersimple",
+        "body": [
+            "'c-filter-simple': 'search-ui/FilterSimple/FilterSimple'"
+        ],
+        "description": "简单筛选/ FilterSimple"
+    },
+    "c-filter-frame": {
+        "prefix": "cfilterframe",
+        "body": [
+            "'c-filter-frame': 'search-ui/FilterEnhanced/FilterFrame'"
+        ],
+        "description": "筛选/ FilterEnhanced"
+    },
+    "c-filter-enhanced": {
+        "prefix": "cfilterenhanced",
+        "body": [
+            "'c-filter-enhanced': 'search-ui/FilterEnhanced/FilterEnhanced'"
+        ],
+        "description": "筛选/(旧) FilterEnhanced"
+    },
+    "c-image-viewer": {
+        "prefix": "cimageviewer",
+        "body": [
+            "'c-image-viewer': 'search-ui/ImageViewer/ImageViewer'"
+        ],
+        "description": "大图浏览/ ImageViewer"
+    },
+    "c-infinite-scroll": {
+        "prefix": "cinfinitescroll",
+        "body": [
+            "'c-infinite-scroll': 'search-ui/InfiniteScroll/InfiniteScroll'"
+        ],
+        "description": "无限下拉/ InfiniteScroll"
+    },
+    "c-infinite-scroll-bottom-bar": {
+        "prefix": "cinfinitescrollbottombar",
+        "body": [
+            "'c-infinite-scroll-bottom-bar': 'search-ui/InfiniteScroll/InfiniteScrollBottomBar'"
+        ],
+        "description": "无限下拉/无限下拉底部栏 InfiniteScroll"
+    },
+    "c-letter-sort": {
+        "prefix": "clettersort",
+        "body": [
+            "'c-letter-sort': 'search-ui/LetterSort/LetterSort'"
+        ],
+        "description": "字母排序/ LetterSort"
+    },
+    "c-move": {
+        "prefix": "cmove",
+        "body": [
+            "'c-move': 'search-ui/Motion/Animation'"
+        ],
+        "description": "动效通用组件/ Motion"
+    },
+    "c-page-scroll": {
+        "prefix": "cpagescroll",
+        "body": [
+            "'c-page-scroll': 'search-ui/PageScroll/PageScroll',",
+            "'c-page-scroll-item': 'search-ui/PageScroll/PageScrollItem'"
+        ],
+        "description": "翻页横滑/ PageScroll"
+    },
+    "c-popup": {
+        "prefix": "cpopup",
+        "body": [
+            "'c-popup': 'search-ui/Popup/Popup'"
+        ],
+        "description": "弹层/ Popup"
+    },
+    "c-pull-refresh": {
+        "prefix": "cpullrefresh",
+        "body": [
+            "'c-pull-refresh': 'search-ui/PullRefresh/PullRefresh'"
+        ],
+        "description": "下拉刷新/ PullRefresh"
+    },
+    "c-scroll": {
+        "prefix": "cscroll",
+        "body": [
+            "'c-scroll': 'search-ui/Scroll/Scroll',",
+		    "'c-scroll-item': 'search-ui/Scroll/ScrollItem'"
+        ],
+        "description": "横滑/ Scroll"
+    },
+    "c-share": {
+        "prefix": "cshare",
+        "body": [
+            "'c-share': 'search-ui/Share/Share'"
+        ],
+        "description": "分享/ Share"
+    },
+    "c-spread": {
+        "prefix": "cspread",
+        "body": [
+            "'c-spread': 'search-ui/SpreadEnhanced/Spread'"
+        ],
+        "description": "展开收起/ SpreadEnhanced"
+    },
+    "c-to-top": {
+        "prefix": "ctotop",
+        "body": [
+            "'c-to-top': 'search-ui/ToTop/ToTop'"
+        ],
+        "description": "返回顶部/ ToTop"
+    },
+    "c-toast": {
+        "prefix": "ctoast",
+        "body": [
+            "'c-toast': 'search-ui/Toast/Toast'"
+        ],
+        "description": "提示框/ Toast"
+    },
+    "c-touchable-feedback": {
+        "prefix": "ctouchablefeedback",
+        "body": [
+            "'c-touchable-feedback': 'search-ui/TouchableFeedback/TouchableFeedback'"
+        ],
+        "description": "点击态/ TouchableFeedback"
+    },
+    "c-switch": {
+        "prefix": "cswitch",
+        "body": [
+            "'c-switch': 'search-ui/Switch/Switch'"
+        ],
+        "description": "开关/ Switch"
+    },
+    "c-image-viewer-simple": {
+        "prefix": "cimageviewersimple",
+        "body": [
+            "'c-image-viewer-simple': 'search-ui/ImageViewerSimple/ImageViewerSimple'"
+        ],
+        "description": "图片查看器/ ImageViewerSimple"
+    },
+    "c-dialog": {
+        "prefix": "cdialog",
+        "body": [
+            "'c-dialog': 'search-ui/Dialog/Dialog'"
+        ],
+        "description": "对话框组件/ Dialog"
+    },
+
+    "ala-util": {
+        "prefix": "alautil",
+        "body": [
+            "import Util from '@baidu/ala-util';"
+        ],
+        "description": "alaUtil工具库"
+    },
+    "swan": {
+        "prefix": "swan",
+        "body": [
+            "var Swan = require('swan/swan');"
+        ],
+        "description": "swan库"
+    },
+    "atomEngine": {
+        "prefix": "atomengine",
+        "body": [
+            "var atomEngine = require('AtomEngine');"
+        ],
+        "description": "AtomEngine库"
     }
 }

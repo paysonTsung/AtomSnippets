@@ -1,0 +1,157 @@
+{
+    "tokenColors": [
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "settings": {
+                "foreground": "#B3B3B3"
+            }
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "settings": {
+                "foreground": "#42B983"
+            }
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "settings": {
+                "foreground": "#ae81ff"
+            }
+        },
+        {
+            "name": "Built-in constant",
+            "scope": "constant.language",
+            "settings": {
+                "foreground": "#ae81ffff"
+            }
+        },
+        {
+            "name": "User-defined constant",
+            "scope": ["constant.character", "constant.other"],
+            "settings": {
+                "foreground": "#0092db"
+            }
+        },
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "settings": {
+                "foreground": "#e96900"
+            }
+        },
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#f92672ff"
+            }
+        },
+        {
+            "name": "Storage type",
+            "scope": "storage.type",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#0092db"
+            }
+        },
+        {
+            "name": "Class name",
+            "scope": "entity.name.class",
+            "settings": {
+                "fontStyle": "underline",
+                "foreground": "#a6e22eff"
+            }
+        },
+        {
+            "name": "Inherited class",
+            "scope": "entity.other.inherited-class",
+            "settings": {
+                "fontStyle": "italic underline",
+                "foreground": "#a6e22eff"
+            }
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#a6e22e"
+            }
+        },
+        {
+            "name": "Function argument",
+            "scope": "variable.parameter",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#fd971fff"
+            }
+        },
+        {
+            "name": "Tag name",
+            "scope": "entity.name.tag",
+            "settings": {
+                "foreground": "#2973B7"
+            }
+        },
+        {
+            "name": "Tag attribute",
+            "scope": "entity.other.attribute-name",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "Library function",
+            "scope": "support.function",
+            "settings": {
+                "foreground": "#42b983"
+            }
+        },
+        {
+            "name": "Library constant",
+            "scope": "support.constant",
+            "settings": {
+                "foreground": "#0092db"
+            }
+        },
+        {
+            "name": "Library class/type",
+            "scope": ["support.type", "support.class"],
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#E96900"
+            }
+        },
+        {
+            "name": "Library variable",
+            "scope": "support.other.variable",
+            "settings": {
+                "fontStyle": ""
+            }
+        }
+    ],
+    // "colors": {
+    //     "editor.background": "#363636",
+    //     "editorCursor.foreground": "#33AF6E",
+    //     "editor.foreground": "#d7dfd5",
+    //     "editorWhitespace.foreground": "#3B3A32",
+    //     "editor.lineHighlightBackground": "#646464",
+    //     "editor.selectionBackground": "#D1D1D1",
+    //     "editor.findMatchHighlightBackground": "#35495E",
+    //     "peekViewResult.matchHighlightBackground": "#35495E",
+    //     "editor.inactiveSelectionBackground": "#35495E",
+    //     "editor.hoverHighlightBackground": "#8DABCA"
+    // },
+    "name": "atom-dark"
+}

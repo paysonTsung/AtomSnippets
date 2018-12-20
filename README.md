@@ -91,6 +91,20 @@ prefix:
 - `title`
 - `data-module`
 
+### 指令
+prefix:
+
+- `aonce`
+- `aif`
+- `aelseif`
+- `aelse`
+- `afor`
+- `afori`
+- `amodel`
+- `apre`
+- `anossr`
+
+
 ### 注释
 prefix:
 
@@ -105,6 +119,16 @@ prefix:
 - `|sf`
 - `|mip`
 - `|vsearch`
+
+### config
+支持目前所有atom组件引用
+
+prefix:
+
+- `caladdin`
+- `ctitle`
+- `cline`
+- ......
 
 ### Smarty
 支持Ala全部Smarty API，常用Smarty语法及变量、代码块
@@ -171,7 +195,7 @@ prefix:
 - `templatevars`
 
 ### JS
-支持少量js语法及生命周期函数
+支持少量js语法、生命周期函数、库引用
 
 prefix:
 
@@ -179,7 +203,7 @@ prefix:
     - console.log
 - `cif`
 - `cifelse`
-- `cfunction`
+- `cfn`
 - `cswitch`
 - `computed`
 - `beforeCreate`
@@ -191,13 +215,15 @@ prefix:
 - `updated`
 - `beforeDestroy`
 - `destroyed`
-- `computed`
+- `alautil`
+- `swan`
+- `atomengine`
 
 ## Plans
 
-- 对php/smarty提供语法高亮
-- 提供颜色主题选择
-- 对全部Atom组件的snippets功能支持
+- php/smarty语法高亮
+- 颜色主题
+- Atom所有组件片段补全
 - 鼠标悬停+快捷键等显示说明or跳转文档
 - nextpage引用组件文件跳转
 - prop/data数据模板内sinppets
@@ -207,7 +233,7 @@ prefix:
 ## Common Issues
 - atom中使用vscode内置插件emmet语法
 
-    修改emmet语言映射
+    修改setting.json用户设置emmet语言映射
 
     ```json
     "emmet.includeLanguages": {
@@ -218,7 +244,7 @@ prefix:
 
 - nextpage 代码自补全功能不生效
 
-    修改setting.json用户设置配置语言文件关联
+    配置语言文件关联
 
     ```json
     "files.associations": {
