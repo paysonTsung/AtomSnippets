@@ -780,17 +780,17 @@
         "description": "image"
     },
     "h-scrollview": {
-        "prefix": "hscrollview",
+        "prefix": "h-scrollview",
         "body": [
-            "<hscrollview",
+            "<h-scrollview",
             "\tref=\"${1:hScrollview}\"",
             "\tstyle=\"$2\"",
             "\t@scroll=\"$3\"",
             ">",
             "\t$0",
-            "</hscrollview>"
+            "</h-scrollview>"
         ],
-        "description": "hscrollview"
+        "description": "h-scrollview"
     },
     "photo": {
         "prefix": "photo",
