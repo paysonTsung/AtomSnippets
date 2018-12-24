@@ -18,7 +18,14 @@ Code snippets for Atom in order to let you develop faster.
 - 提供Atom常用组件、属性等Snippets功能
 - 提供smarty、php预处理文件Ala全部API的Snippets功能
 - 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
-- 底部状态栏提供按钮调起终端及快速同步到测试机(atom、nextpage)/启动调试(atom-engine)并输出日志
+- 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志
+    - atom执行 ala sync xxx -w
+    - nextpage执行 make watch
+    - atom-engine执行 atom-engine build -d
+- 文件引用处(⌘+鼠标左键)跳转到对应文件
+    - atom组件引用跳转到search-ui下对应组件readme
+    - nextpage组件跳转到app_components下对应文件
+    - 其他跳转到对应文件
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台(暂定)
 
 ### Demo-atom补全
