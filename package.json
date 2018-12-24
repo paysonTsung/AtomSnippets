@@ -8,7 +8,7 @@
         "nextpage",
         "snippets"
     ],
-    "version": "0.3.3",
+    "version": "0.3.4",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
@@ -88,6 +88,17 @@
                     "atom-config"
                 ],
                 "configuration": "./languages/atom-config.json"
+            },
+            {
+                "id": "smarty",
+                "aliases": [
+                    "Smarty",
+                    "smarty"
+                ],
+                "extensions": [
+                    ".tpl"
+                ],
+                "configuration": "./languages/smarty.json"
             }
         ],
         "grammars": [
@@ -133,7 +144,12 @@
                 "language": "config",
                 "scopeName": "text.config",
                 "path": "./syntaxes/atom-config.json"
-            }
+            },
+            {
+                "language": "smarty",
+                "scopeName": "text.html.smarty",
+                "path": "./syntaxes/smarty.tmLanguage"
+		    }
         ],
         "snippets": [
             {

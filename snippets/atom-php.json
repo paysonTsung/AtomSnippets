@@ -30,26 +30,6 @@
         ],
         "description": "tpldata-prop"
     },
-    "if": {
-        "prefix": "cif",
-        "body": [
-            "if ($1) {",
-            "    $2",
-            "}"
-        ],
-        "description": "if"
-    },
-    "if-else": {
-        "prefix": "cifelse",
-        "body": [
-            "if ($1) {",
-            "    $2",
-            "} else {",
-            "    $3",
-            "}"
-        ],
-        "description": "if-else"
-    },
     "if-no-empty": {
         "prefix": "ifempty",
         "body": [
@@ -59,7 +39,7 @@
         ],
         "description": "if-no-empty"
     },
-    "if-no-isset": {
+    "if-isset": {
         "prefix": "ifisset",
         "body": [
             "if (isset($1)) {",
@@ -67,15 +47,6 @@
             "}"
         ],
         "description": "if-isset"
-    },
-    "foreach": {
-        "prefix": "cforeach",
-        "body": [
-            "foreach ($1 as ${2:\\$key} => ${3:\\$value}) {",
-            "    $4",
-            "}"
-        ],
-        "description": "foreach"
     },
     "tc-link": {
         "prefix": "tclink",

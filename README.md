@@ -14,7 +14,7 @@ Code snippets for Atom in order to let you develop faster.
 
 ## Features
 
-- 支持Atom语法高亮
+- 支持Atom、Smarty语法高亮
 - 提供Atom常用组件、属性等Snippets功能
 - 提供smarty、php预处理文件Ala全部API的Snippets功能
 - 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
@@ -140,8 +140,6 @@ prefix:
 ### Smarty
 支持Ala全部Smarty API，常用Smarty语法及变量、代码块
 
-p.s. c前缀为防止与其他框架冲突, 后续增加对smarty语法高亮后取消
-
 prefix:
 
 - `ll`
@@ -149,10 +147,11 @@ prefix:
 - `data`
     - $tplData
 - `cprint`
-    - 打印数据, 用于文件尾
-- `cif`
-- `cifelse`
-- `cforeach`
+    - 打印数据, 用于文件末
+- `if`
+- `ifelse`
+- `foreach`
+- `break`
 - `ifempty`
 - `ifisset`
 - `empty`
@@ -169,9 +168,8 @@ prefix:
 - `httpshost`
 
 ### PHP
-支持Ala全部PHP API，常用PHP语法及变量、代码块
-
-p.s. c前缀为防止与其他框架冲突, 后续增加对php语法高亮后取消
+支持Ala全部PHP API，常用PHP变量、代码块
+p.s. 删除了部分语法, 建议使用内置vscode-php代码补充
 
 prefix:
 
@@ -182,10 +180,7 @@ prefix:
 - `ll`
     - [' ']
 - `cprint`
-    - 打印数据, 用于文件尾
-- `cif`
-- `cifelse`
-- `cforeach`
+    - 打印数据, 用于文件末
 - `ifempty`
 - `ifisset`
 - `tclink`
@@ -203,15 +198,11 @@ prefix:
 
 ### JS
 支持少量js语法、生命周期函数、库引用
+p.s. 删除了部分语法, 建议使用内置vscode-javascript代码补充
 
 prefix:
 
-- `clog`
-    - console.log
-- `cif`
-- `cifelse`
 - `cfn`
-- `cswitch`
 - `computed`
 - `beforeCreate`
 - `created`
@@ -228,11 +219,8 @@ prefix:
 
 ## Plans
 
-- php/smarty语法高亮
 - 颜色主题
 - Atom所有组件片段补全
-- 鼠标悬停+快捷键等显示说明or跳转文档
-- nextpage引用组件文件跳转
 - prop/data数据模板内sinppets
 - 引用组件/数据模板内未使用的提示处理
 - 模板内使用组件未引用等提示处理
