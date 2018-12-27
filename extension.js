@@ -16,9 +16,9 @@ function activate(context) {
 
     let getCurTime = () => new Date().toLocaleString().replace(/\//g, '-');
     let getCurTemplate = (curFile) => {
-        let res = /app\/((\w|_)+)(?=\/|$)/.exec(curFile);
-        if (res && res[0]) {
-            return res[0];
+        let res = /app\/((?:\w|_)+)(?=\/|$)/.exec(curFile);
+        if (res && res[1]) {
+            return res[1];
         }
     }
     let curFile = window.activeTextEditor.document.fileName;
@@ -36,31 +36,43 @@ function activate(context) {
     let devType = {
         'atom': {
             patt: /aladdin-atom\/src\/app/,
-            logText: `[${getCurTime()}] 模板${curTemplate}同步至测试机`,
-            termText: `ala sync ${curTemplate} -w`,
+            logText() {
+                return `[${getCurTime()}] 模板${curTemplate}同步至测试机`;
+            },
+            termText() {
+                return `ala sync ${curTemplate} -w`;
+            },
             handle(term, log) {
                 if (curTemplate) {
-                    log.appendLine(this.logText);
-                    term.sendText(this.termText);
+                    log.appendLine(this.logText());
+                    term.sendText(this.termText());
                 }
             }
         },
         'atom-engine': {
             patt: /fe-duer-swan/,
-            logText: `[${getCurTime()}] atom-engine启动调试`,
-            termText: 'atom-engine build -d',
+            logText(){
+                return `[${getCurTime()}] atom-engine启动调试`;
+            },
+            termText(){
+                return 'atom-engine build -d';
+            },
             handle(term, log) {
-                log.appendLine(this.logText);
-                term.sendText(this.termText);
+                log.appendLine(this.logText());
+                term.sendText(this.termText());
             }
         },
         'next-page': {
             patt: /next-page\/src\/products/,
-            logText: `[${getCurTime()}] nextpage同步至测试机`,
-            termText: 'make watch',
+            logText() {
+                return `[${getCurTime()}] nextpage同步至测试机`;
+            },
+            termText() {
+                return 'make watch';
+            },
             handle(term, log) {
-                log.appendLine(this.logText);
-                term.sendText(this.termText);
+                log.appendLine(this.logText());
+                term.sendText(this.termText());
             }
         }
     };
@@ -154,7 +166,29 @@ function activate(context) {
                     return jumpTo(jumpPath);
                 }
             }
-        })
+        }),
+        // autoCompletion: languages.registerCompletionItemProvider(['atom'], {
+        //     provideCompletionItems: (document, position, token, context) => {
+        //         let doc = document.getText();
+        //         let line  = document.lineAt(position);
+        //         let lineText = line.text.substr(0, position.character);
+        //         let optArr = [];
+        //         // console.log(doc.match(/(props|data):\s\{[^\}]+\}/g));
+
+        //         console.log(doc.match(/(props|data):[\s\S]+[\s\S]+\}/g));
+        //         // console.log(doc.match(/props:[\{\s](\w+):[\}\s]/g));
+        //         if (/this\.$/.test(lineText)) {
+        //             return [
+        //                 new vscode.CompletionItem('url', vscode.CompletionItemKind.Field),
+        //                 new vscode.CompletionItem('title', vscode.CompletionItemKind.Field),
+        //                 new vscode.CompletionItem('showPopup', vscode.CompletionItemKind.Field),
+        //             ]
+        //         }
+        //     },
+        //     resolveCompletionItem: (item, token) => {
+        //         return null;
+        //     }
+        // }, '.')
     }
 
     Btns.forEach((btnObj, btn) => {

@@ -1,32 +1,4 @@
 {
-    "clog": {
-        "prefix": "clog",
-        "body": [
-            "console.log($1);"
-        ],
-        "description": "console.log"
-    },
-    "if": {
-        "prefix": "cif",
-        "body": [
-            "if ($1) {",
-            "    $2",
-            "}"
-        ],
-        "description": "if"
-    },
-    "if-else": {
-        "prefix": "cifelse",
-        "body": [
-            "if ($1) {",
-            "    $2",
-            "}",
-            "else {",
-            "    $3",
-            "}"
-        ],
-        "description": "if-else"
-    },
     "function": {
         "prefix": "cfn",
         "body": [
@@ -35,20 +7,6 @@
             "}"
         ],
         "description": "function"
-    },
-    "switch": {
-        "prefix": "cswitch",
-        "body": [
-            "switch (${1:key}) {",
-            "    case ${2:value}:",
-            "        $3",
-            "        break;",
-            "    $4",
-            "    default:",
-            "        break;",
-            "}"
-        ],
-        "description": "switch"
     },
     "beforeCreate": {
         "prefix": "beforeCreate",
