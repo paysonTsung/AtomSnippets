@@ -17,6 +17,7 @@ Code snippets for Atom in order to let you develop faster.
 - 支持Atom、Smarty语法高亮
 - 提供Atom常用组件、属性等Snippets功能
 - 提供smarty、php预处理文件Ala全部API的Snippets功能
+- 提供this./this.$refs等的代码预测补全
 - 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
 - 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志
     - atom执行 ala sync xxx -w
@@ -169,6 +170,7 @@ prefix:
 
 ### PHP
 支持Ala全部PHP API，常用PHP变量、代码块
+
 p.s. 删除了部分语法, 建议使用内置vscode-php代码补充
 
 prefix:
@@ -198,6 +200,7 @@ prefix:
 
 ### JS
 支持少量js语法、生命周期函数、库引用
+
 p.s. 删除了部分语法, 建议使用内置vscode-javascript代码补充
 
 prefix:
@@ -213,17 +216,19 @@ prefix:
 - `updated`
 - `beforeDestroy`
 - `destroyed`
-- `alautil`
-- `swan`
-- `atomengine`
+- `import alaUtil`
+- `require swan`
+- `require atomengine`
 
 ## Plans
 
 - 颜色主题
+- 声明变量的代码补全
 - Atom所有组件片段补全
-- prop/data数据模板内sinppets
-- 引用组件/数据模板内未使用的提示处理
+- 变量/方法/组件跳转定义
 - 模板内使用组件未引用等提示处理
+- 变量/组件声明未使用的颜色提示处理
+- 组件补全后自动向config中添加组件引用
 
 ## Common Issues
 - atom中使用vscode内置插件emmet语法

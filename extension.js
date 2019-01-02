@@ -1,3 +1,8 @@
+/**
+ * 插件入口
+ * TODO: 待拆分文件, 待优化
+ */
+
 let vscode = require('vscode');
 let path = require('path');
 let fs = require('fs');
@@ -167,28 +172,91 @@ function activate(context) {
                 }
             }
         }),
-        // autoCompletion: languages.registerCompletionItemProvider(['atom'], {
-        //     provideCompletionItems: (document, position, token, context) => {
-        //         let doc = document.getText();
-        //         let line  = document.lineAt(position);
-        //         let lineText = line.text.substr(0, position.character);
-        //         let optArr = [];
-        //         // console.log(doc.match(/(props|data):\s\{[^\}]+\}/g));
+        autoCompletion: languages.registerCompletionItemProvider(['atom'], {
+            // TODO 代码待优化
+            provideCompletionItems: (document, position) => {
+                let doc = document.getText();
+                let line  = document.lineAt(position);
+                let lineText = line.text.substr(0, position.character); 
+                let alaUtilTextArr = doc.match(/\w+(?=\sfrom\s[\'\"]@baidu\/ala-util\/ala[\'\"])/);
+                let alaUtilText = alaUtilTextArr ? alaUtilTextArr[0] : null;
+                let reg = {
+                    props: /this\.[^\s\.]*$/,
+                    refs: /this\.\$refs\.[^\s\.]*$/,
+                    alaUtil: alaUtilText ? new RegExp(`${alaUtilText}\\.[^\\s\\.]*$`) : null,
+                }
+                let getPropArr = () => {
+                    let dataPartArr = doc.match(/(props|data):\s*\{[^\{\}]+(\{[^\{\}]+\}[^\{\}]+)*[^\}]+\}/g);
+                    let resArr = [];
+                    resArr.push('$refs');
+                    dataPartArr.forEach((dataObj) => {
+                        let dataArr = dataObj.match(/\b\w+(?=:)/g);
+                        dataArr.shift();
+                        resArr = resArr.concat(...dataArr);
+                    });
+                    return resArr.filter((opt) => {
+                        if (opt === 'default' || opt === 'type') {
+                            return false;
+                        }
+                        return opt;
+                    }).map((opt) => {
+                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Field);
+                    });
+                };
+                let getFuncArr = () => {
+                    let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/);
+                    let resArr = [];
+                    resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
+                    return resArr.map((opt) => {
+                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Method);
+                    });
+                };
+                let getRefsArr = () => {
+                    let refsPartArr = doc.match(/\bref\=\"(\w+)\"/g);
+                    let resArr = [];
+                    refsPartArr.forEach((refPart) => {
+                        let ref = refPart.match(/\w+(?=\")/);
+                        resArr.push(ref[0]);
+                    });
+                    return resArr.map((opt) => {
+                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Field);
+                    });
+                };
+                let getAlaUtilArr = () => {
+                    let resArr = [
+                        'highLight',
+                        'getHttpsHost',
+                        'makeTcLink',
+                        'makeSfLink',
+                        'makeMipLink',
+                        'makeSearchLink',
+                        'makeSearchTcLink',
+                        'makeTimg',
+                        'sendLog',
+                        'setHttpsHost'
+                    ];
+                    return resArr.map((opt) => {
+                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Method);
+                    });
+                }
 
-        //         console.log(doc.match(/(props|data):[\s\S]+[\s\S]+\}/g));
-        //         // console.log(doc.match(/props:[\{\s](\w+):[\}\s]/g));
-        //         if (/this\.$/.test(lineText)) {
-        //             return [
-        //                 new vscode.CompletionItem('url', vscode.CompletionItemKind.Field),
-        //                 new vscode.CompletionItem('title', vscode.CompletionItemKind.Field),
-        //                 new vscode.CompletionItem('showPopup', vscode.CompletionItemKind.Field),
-        //             ]
-        //         }
-        //     },
-        //     resolveCompletionItem: (item, token) => {
-        //         return null;
-        //     }
-        // }, '.')
+                if (reg.props.test(lineText)) {
+                    let propArr = getPropArr();
+                    let funcArr = getFuncArr();
+                    return [...propArr, ...funcArr];
+                } else if (reg.refs.test(lineText)) {
+                    let refsArr = getRefsArr();
+                    return refsArr;
+                } else if (reg.alaUtil.test(lineText)) {
+                    let alaUtilArr = getAlaUtilArr();
+                    return alaUtilArr;
+                }
+            },
+            resolveCompletionItem: (item) => {
+                // item.insertText = 'xxx';
+                return item;
+            }
+        }, '.')
     }
 
     Btns.forEach((btnObj, btn) => {

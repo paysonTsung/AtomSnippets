@@ -675,21 +675,21 @@
     },
 
     "ala-util": {
-        "prefix": "alautil",
+        "prefix": "import alaUtil",
         "body": [
-            "import Util from '@baidu/ala-util';"
+            "import ${1:AlaUtil} from '@baidu/ala-util/ala';"
         ],
         "description": "alaUtil工具库"
     },
     "swan": {
-        "prefix": "swan",
+        "prefix": "require swan",
         "body": [
             "var Swan = require('swan/swan');"
         ],
         "description": "swan库"
     },
     "atomEngine": {
-        "prefix": "atomengine",
+        "prefix": "require atomEngine",
         "body": [
             "var atomEngine = require('AtomEngine');"
         ],
