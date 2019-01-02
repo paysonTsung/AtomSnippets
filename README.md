@@ -17,13 +17,13 @@ Code snippets for Atom in order to let you develop faster.
 - 支持Atom、Smarty语法高亮
 - 提供Atom常用组件、属性等Snippets功能
 - 提供smarty、php预处理文件Ala全部API的Snippets功能
-- 提供this./this.$refs等的代码预测补全
+- 提供this./this.$refs./引入模块/声明变量等的代码智能提示
 - 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
-- 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志
+- 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志(Atom/log)
     - atom执行 ala sync xxx -w
     - nextpage执行 make watch
     - atom-engine执行 atom-engine build -d
-- 文件引用处(⌘+鼠标左键)跳转到对应文件
+- 文件引用处(⌘+鼠标左键)跳转到对应文件(需要本地路径与远程一致)
     - atom组件引用跳转到search-ui下对应组件readme
     - nextpage组件跳转到app_components下对应文件
     - 其他跳转到对应文件
@@ -205,7 +205,8 @@ p.s. 删除了部分语法, 建议使用内置vscode-javascript代码补充
 
 prefix:
 
-- `cfn`
+- `clog`
+- `cfunc`
 - `computed`
 - `beforeCreate`
 - `created`
@@ -223,7 +224,6 @@ prefix:
 ## Plans
 
 - 颜色主题
-- 声明变量的代码补全
 - Atom所有组件片段补全
 - 变量/方法/组件跳转定义
 - 模板内使用组件未引用等提示处理

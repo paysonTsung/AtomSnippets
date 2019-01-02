@@ -1,93 +1,98 @@
 /**
- * 插件入口
- * TODO: 待拆分文件, 待优化
+ * @model   Core
+ * @version 0.3.7
+ * @author  congpeisen
  */
 
 let vscode = require('vscode');
-let path = require('path');
-let fs = require('fs');
-let exec = require('child_process').exec;
+let path   = require('path');
+let fs     = require('fs');
+let exec   = require('child_process').exec;
 let {
     window,
     commands,
-    // workspace,
-    languages,
-    Location,
-    Position,
-    Uri,
+    languages
 } = vscode;
 function activate(context) {
     console.log('"Atom Snippets" is now active');
 
-    let getCurTime = () => new Date().toLocaleString().replace(/\//g, '-');
-    let getCurTemplate = (curFile) => {
-        let res = /app\/((?:\w|_)+)(?=\/|$)/.exec(curFile);
+    let getCurTime = () => 
+        new Date()
+            .toLocaleString()
+            .replace(/\//g, '-');
+
+    let getCurTemplate = (curFilePath) => {
+        let res = /app\/((?:\w|_)+)(?=\/|$)/.exec(curFilePath);
         if (res && res[1]) {
             return res[1];
         }
     }
-    let curFile = window.activeTextEditor.document.fileName;
-    let sub = context.subscriptions;
+
+    let sub         = context.subscriptions;
     let rightPosBar = vscode.StatusBarAlignment.Right;
-    let termBtn = window.createStatusBarItem(rightPosBar, 200);
-    let syncBtn = window.createStatusBarItem(rightPosBar, 201);
-    let terminal = window.createTerminal({name: 'Atom'});
-    let log = window.createOutputChannel('atom/log');
+    let curFile     = window.activeTextEditor.document.fileName;
+    let termBtn     = window.createStatusBarItem(rightPosBar, 200);
+    let syncBtn     = window.createStatusBarItem(rightPosBar, 201);
+    let terminal    = window.createTerminal({name: 'Atom'});
+    let log         = window.createOutputChannel('Atom/log');
     let curTemplate = getCurTemplate(curFile);
+
     window.onDidChangeActiveTextEditor(e => {
-        curFile = e.document.fileName;
+        curFile     = e.document.fileName;
         curTemplate = getCurTemplate(curFile);
     });
+
     let devType = {
-        'atom': {
+        'Atom': {
             patt: /aladdin-atom\/src\/app/,
-            logText() {
+            getLog() {
                 return `[${getCurTime()}] 模板${curTemplate}同步至测试机`;
             },
-            termText() {
+            getSyncCmd() {
                 return `ala sync ${curTemplate} -w`;
             },
-            handle(term, log) {
+            init(terminal, log) {
                 if (curTemplate) {
-                    log.appendLine(this.logText());
-                    term.sendText(this.termText());
+                    log.appendLine(this.getLog());
+                    terminal.sendText(this.getSyncCmd());
                 }
             }
         },
-        'atom-engine': {
+        'Atom-Engine': {
             patt: /fe-duer-swan/,
-            logText(){
+            getLog(){
                 return `[${getCurTime()}] atom-engine启动调试`;
             },
-            termText(){
+            getSyncCmd(){
                 return 'atom-engine build -d';
             },
-            handle(term, log) {
-                log.appendLine(this.logText());
-                term.sendText(this.termText());
+            init(terminal, log) {
+                log.appendLine(this.getLog());
+                terminal.sendText(this.getSyncCmd());
             }
         },
-        'next-page': {
+        'Next-Page': {
             patt: /next-page\/src\/products/,
-            logText() {
+            getLog() {
                 return `[${getCurTime()}] nextpage同步至测试机`;
             },
-            termText() {
+            getSyncCmd() {
                 return 'make watch';
             },
-            handle(term, log) {
-                log.appendLine(this.logText());
-                term.sendText(this.termText());
+            init(terminal, log) {
+                log.appendLine(this.getLog());
+                terminal.sendText(this.getSyncCmd());
             }
         }
     };
+
     let Btns = new Map([
         [
             termBtn,
             {
                 command: 'extension.terminal',
                 text: `$(terminal)`,
-                tooltip: 'terminal'
+                tooltip: '终端'
             }
         ],
         [
@@ -95,36 +100,55 @@ function activate(context) {
             {
                 command: 'extension.sync',
                 text: `$(zap)`,
-                tooltip: 'sync'
+                tooltip: '同步至测试机'
             }
         ]
     ]);
 
     let Func = {
+        /**
+         * 跳转索引平台
+         */
         jumpSoy: commands.registerCommand('extension.soy', function () {
-            window.showInformationMessage('前往索引平台？', '是', '否').then((select) => {
-                if (select === '是') {
-                    exec(`open 'http://soy.baidu-int.com/component'`);
-                }
-                else {
-                    window.setStatusBarMessage('(ノ=Д=)ノ┻━━┻', 3000);
-                }
-            });
+            window
+                .showInformationMessage('前往索引平台？', '是', '否')
+                .then((select) => {
+                    if (select === '是') {
+                        exec(`open 'http://soy.baidu-int.com/component'`);
+                    }
+                    else {
+                        window.setStatusBarMessage('(ノ=Д=)ノ┻━━┻', 3000);
+                    }
+                });
         }),
+
+        /**
+         * 显示控制台
+         */
         showTerminal: commands.registerCommand('extension.terminal', function () {
             terminal.show(true);
         }),
+
+        /**
+         * 同步到测试机/启动调试
+         */
         syncMachine: commands.registerCommand('extension.sync', function () {
-            Object.keys(devType).forEach((key) => {
-                let cur = devType[key];
-                if (cur.patt.test(curFile)) {
-                    cur.handle(terminal, log);
-                    return;
-                }
-            });
+            Object
+                .keys(devType)
+                .forEach((key) => {
+                    let cur = devType[key];
+                    if (cur.patt.test(curFile)) {
+                        cur.init(terminal, log);
+                        return;
+                    }
+                });
             // log.show();
             terminal.show(true);
         }),
+
+        /**
+         * 跳转定义
+         */
         jumpDefination: languages.registerDefinitionProvider(['atom'], {
             provideDefinition: (document, position) => {
                 let word = document.getText(
@@ -135,22 +159,24 @@ function activate(context) {
                     '',
                     '.atom',
                     '.atom.html'
-                ]
+                ];
                 // let workRootPath = workspace.rootPath;
                 // let line = document.lineAt(position);
                 
-                let wordArr = word.split('/');
-                let headWord = wordArr.shift();
-                let tailWord = wordArr.join('/');
-                let npRootPathArr = fileName.match(/\S*next-page\/src\/products\//);
+                let wordArr           = word.split('/');
+                let headWord          = wordArr.shift();
+                let tailWord          = wordArr.join('/');
+                let npRootPathArr     = fileName.match(/\S*next-page\/src\/products\//);
                 let parentWorkPathArr = fileName.match(/\S*ps-se-fe-tpl\//);
                 let jumpPath;
                 let npRootPath;
                 let npPdPath;
                 let parentWorkPath;
-                let jumpTo = (path) => {
-                    return new Location(Uri.file(path), new Position(0, 0));
-                };
+                let jumpTo = (path) => 
+                    new vscode.Location(
+                        vscode.Uri.file(path),
+                        new vscode.Position(0, 0)
+                    );
 
                 npRootPathArr && (npRootPath = npRootPathArr[0]);
                 npPdPath = `${npRootPath}${headWord}`;
@@ -163,31 +189,46 @@ function activate(context) {
                     }
                 }
 
-                if (fs.existsSync(jumpPath = `${npPdPath}/views/${tailWord}.atom.html`)) {
-                    // nextpage
-                    return jumpTo(jumpPath);
-                } else if(fs.existsSync(jumpPath = path.join(parentWorkPath, headWord, '/src', tailWord, '..', 'readme.md'))) {
-                    // search-ui
-                    return jumpTo(jumpPath);
+                let jumpPathStrategy = {
+                    'next-page': () => 
+                        `${npPdPath}/views/${tailWord}.atom.html`,
+                    'search-ui': () => 
+                        path.join(
+                            parentWorkPath, headWord, '/src', tailWord,
+                            '..', 'readme.md'
+                        )
+                };
+                for (let i = 0, type; type = Object.keys(jumpPathStrategy)[i++];) {
+                    if (fs.existsSync(
+                        jumpPath = jumpPathStrategy[type]())) {
+                        return jumpTo(jumpPath);
+                    }
                 }
             }
         }),
+
+        /**
+         * 智能提示
+         * this.xx / this.$refs.xx / AlaUtil.xx
+         */
         autoCompletion: languages.registerCompletionItemProvider(['atom'], {
             // TODO 代码待优化
             provideCompletionItems: (document, position) => {
-                let doc = document.getText();
-                let line  = document.lineAt(position);
-                let lineText = line.text.substr(0, position.character); 
+                let doc            = document.getText();
+                let line           = document.lineAt(position);
+                let lineText       = line.text.substr(0, position.character); 
                 let alaUtilTextArr = doc.match(/\w+(?=\sfrom\s[\'\"]@baidu\/ala-util\/ala[\'\"])/);
-                let alaUtilText = alaUtilTextArr ? alaUtilTextArr[0] : null;
+                let alaUtilText    = alaUtilTextArr ? alaUtilTextArr[0] : null;
                 let reg = {
                     props: /this\.[^\s\.]*$/,
                     refs: /this\.\$refs\.[^\s\.]*$/,
-                    alaUtil: alaUtilText ? new RegExp(`${alaUtilText}\\.[^\\s\\.]*$`) : null,
-                }
+                    alaUtil: alaUtilText
+                        ? new RegExp(`${alaUtilText}\\.[^\\s\\.]*$`)
+                        : null
+                };
                 let getPropArr = () => {
                     let dataPartArr = doc.match(/(props|data):\s*\{[^\{\}]+(\{[^\{\}]+\}[^\{\}]+)*[^\}]+\}/g);
-                    let resArr = [];
+                    let resArr      = [];
                     resArr.push('$refs');
                     dataPartArr.forEach((dataObj) => {
                         let dataArr = dataObj.match(/\b\w+(?=:)/g);
@@ -200,7 +241,10 @@ function activate(context) {
                         }
                         return opt;
                     }).map((opt) => {
-                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Field);
+                        return new vscode.CompletionItem(
+                            opt,
+                            vscode.CompletionItemKind.Field
+                        );
                     });
                 };
                 let getFuncArr = () => {
@@ -208,7 +252,10 @@ function activate(context) {
                     let resArr = [];
                     resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
                     return resArr.map((opt) => {
-                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Method);
+                        return new vscode.CompletionItem(
+                            opt,
+                            vscode.CompletionItemKind.Method
+                        );
                     });
                 };
                 let getRefsArr = () => {
@@ -219,7 +266,10 @@ function activate(context) {
                         resArr.push(ref[0]);
                     });
                     return resArr.map((opt) => {
-                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Field);
+                        return new vscode.CompletionItem(
+                            opt,
+                            vscode.CompletionItemKind.Field
+                        );
                     });
                 };
                 let getAlaUtilArr = () => {
@@ -236,40 +286,103 @@ function activate(context) {
                         'setHttpsHost'
                     ];
                     return resArr.map((opt) => {
-                        return new vscode.CompletionItem(opt, vscode.CompletionItemKind.Method);
+                        return new vscode.CompletionItem(
+                            opt,
+                            vscode.CompletionItemKind.Method
+                        );
                     });
                 }
 
                 if (reg.props.test(lineText)) {
-                    let propArr = getPropArr();
-                    let funcArr = getFuncArr();
-                    return [...propArr, ...funcArr];
+                    return [
+                        ...getPropArr(),
+                        ...getFuncArr()
+                    ];
                 } else if (reg.refs.test(lineText)) {
-                    let refsArr = getRefsArr();
-                    return refsArr;
+                    return getRefsArr();
                 } else if (reg.alaUtil.test(lineText)) {
-                    let alaUtilArr = getAlaUtilArr();
-                    return alaUtilArr;
+                    return getAlaUtilArr();
                 }
             },
             resolveCompletionItem: (item) => {
                 // item.insertText = 'xxx';
                 return item;
             }
-        }, '.')
+        }, '.'),
+
+        /**
+         * 智能提示
+         * 引用模块/声明变量  import xx / let xxx
+         */
+        refCompletion: languages.registerCompletionItemProvider('atom', {
+            provideCompletionItems: (document, position) => {
+                let doc = document.getText();
+                let beforeCursorDoc = document.getText(
+                    new vscode.Range(new vscode.Position(0, 0), position)
+                );
+                if (!/module\.exports\s*\=/g.test(beforeCursorDoc)) {
+                    return null;
+                }
+                let getQuoteArr = () => {
+                    let quoteTextArr = doc.match(/(\{[\w\s,]+\}|\w+)(?=\s+from)/g);
+                    let quoteGroup = [];
+                    quoteTextArr.forEach((quoteText) => {
+                        let quoteArr = quoteText.match(/\w+/g);
+                        let type = quoteText.includes('{')
+                                    ? 'Method'
+                                    : 'Reference';
+                        quoteArr.forEach((quote) => {
+                            quoteGroup.push(new vscode.CompletionItem(
+                                quote,
+                                vscode.CompletionItemKind[type]
+                            ));
+                        })
+                    });
+                    return quoteGroup;
+                }
+                let getVarArr = () => {
+                    let varTextArr = doc.match(/(var|let|const)\s+\w+\b/g);
+                    let vars = [];
+                    varTextArr.forEach((varText) => {
+                        vars.push(varText.match(/\w+/g)[1]);
+                    });
+                    return vars.map((val) => 
+                        new vscode.CompletionItem(
+                            val,
+                            vscode.CompletionItemKind.Variable
+                        )
+                    );
+                }
+                return [
+                    ...getQuoteArr(),
+                    ...getVarArr()
+                ];
+            },
+            resolveCompletionItem: (item) => {
+                return item;
+            }
+        })
     }
 
+    // 初始化状态栏按钮
     Btns.forEach((btnObj, btn) => {
-        Object.keys(btnObj).forEach((item) => {
-            btn[item] = btnObj[item];
-            btn.show();
+        Object
+            .keys(btnObj)
+            .forEach((item) => {
+                btn[item] = btnObj[item];
+                btn.show();
+            });
+    });
+
+    // 注入功能方法
+    Object
+        .keys(Func)
+        .forEach((item) => {
+            sub.push(Func[item]);
         });
-    });
-    Object.keys(Func).forEach((item) => {
-        sub.push(Func[item]);
-    });
 }
 function deactivate() {
+    
 }
 
 exports.activate = activate;

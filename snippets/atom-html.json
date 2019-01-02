@@ -892,63 +892,63 @@
 
 
     "a-once": {
-        "prefix": "aonce",
+        "prefix": "a-once",
         "body": [
             "a-once=\"$1\""
         ],
         "description": "a-once指令"
     },
     "a-if": {
-        "prefix": "aif",
+        "prefix": "a-if",
         "body": [
             "a-if=\"$1\""
         ],
         "description": "a-if指令"
     },
     "a-else-if": {
-        "prefix": "aelseif",
+        "prefix": "a-else-if",
         "body": [
             "a-else-if=\"$1\""
         ],
         "description": "a-else-if指令"
     },
     "a-else": {
-        "prefix": "aelse",
+        "prefix": "a-else",
         "body": [
             "a-else"
         ],
         "description": "a-else指令"
     },
     "a-for": {
-        "prefix": "afor",
+        "prefix": "a-for",
         "body": [
             "a-for=\"${2:item} in ${1:items}\""
         ],
         "description": "a-for指令"
     },
     "a-for-i": {
-        "prefix": "afori",
+        "prefix": "a-for-i",
         "body": [
             "a-for=\"(${2:item}, ${3:index}) in ${1:items}\""
         ],
         "description": "a-for指令 +索引"
     },
     "a-model": {
-        "prefix": "amodel",
+        "prefix": "a-model",
         "body": [
             "a-model=\"$1\""
         ],
         "description": "a-model指令"
     },
     "a-pre": {
-        "prefix": "apre",
+        "prefix": "a-pre",
         "body": [
             "a-pre"
         ],
         "description": "a-pre指令"
     },
     "a-nossr": {
-        "prefix": "anossr",
+        "prefix": "a-nossr",
         "body": [
             "a-nossr"
         ],

@@ -1,6 +1,13 @@
 {
+    "clog": {
+        "prefix": "clog",
+        "body": [
+            "console.log($1);"
+        ],
+        "description": "打印"
+    },
     "function": {
-        "prefix": "cfn",
+        "prefix": "cfunc",
         "body": [
             "${1:fnName}(${2:params}) {",
             "    $3",
