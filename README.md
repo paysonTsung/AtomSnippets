@@ -10,7 +10,7 @@ Code snippets for Atom in order to let you develop faster.
 
 (新版本提供了语言定义, Snippets功能不再依赖Mota插件)
 
-默认Tab键触发
+默认Tab/Enter键触发补全
 
 ## Features
 
@@ -20,7 +20,7 @@ Code snippets for Atom in order to let you develop faster.
 - 提供this./this.$refs./引入模块/声明变量等的代码智能提示
 - 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
 - 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志(Atom/log)
-    - atom执行 ala sync xxx -w
+    - atom执行 ala sync [template] -w
     - nextpage执行 make watch
     - atom-engine执行 atom-engine build -d
 - 文件引用处(⌘+鼠标左键)跳转到对应文件(需要本地路径与远程一致)
@@ -223,12 +223,13 @@ prefix:
 
 ## Plans
 
-- 颜色主题
+- 补全优化
+- 组件跳转定义
+- 迁入语言服务器
 - Atom所有组件片段补全
-- 变量/方法/组件跳转定义
-- 模板内使用组件未引用等提示处理
-- 变量/组件声明未使用的颜色提示处理
+- PSMD常用class智能提示
 - 组件补全后自动向config中添加组件引用
+- 模板内使用组件未引用/引入组件未使用等提示处理
 
 ## Common Issues
 - atom中使用vscode内置插件emmet语法
@@ -252,14 +253,14 @@ prefix:
     }
     ```
 
-- vscode自带word预测优先级高于sinppets
+- vscode自带word提示优先级高于sinppets
 
     <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/set_priority.png" width="200"/>
     <!-- ![set_priority](images/set_priority.png) -->
 
-    设置取消预测, 将snippets优先级设置最高
+    设置取消文本提示, 或将snippets优先级设置最高
 
     ```json
     "editor.wordBasedSuggestions": false,
-    "editor.snippetSuggestions": "top"
+    // "editor.snippetSuggestions": "top"  // 不建议使用
     ```
