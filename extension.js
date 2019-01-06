@@ -1,16 +1,15 @@
 /**
- * @model   Core
- * @description 扩展入口
- * @version 0.3.8
- * @author  congpeisen
+ * @model        Core
+ * @description  扩展主入口
+ * @version      0.3.8
+ * @author       congpeisen
  */
 
 let vscode = require('vscode');
 
-let {jumpSoy} = require('./func/jumpLink');
-require('./func/jumpDefination');
-let {jumpFolder, jumpComponent} = require('./func/jumpDefination');
-let {showTerminal, syncMachine} = require('./func/terminal');
+let {jumpSoy}                       = require('./func/jumpLink');
+let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
+let {showTerminal, syncMachine}      = require('./func/terminal');
 let {dataCompletion, refCompletion} = require('./func/autoCompletion');
 
 function activate(context) {
@@ -20,7 +19,7 @@ function activate(context) {
     let rightPos  = vscode.StatusBarAlignment.Right;
     let termBtn   = createBtn(rightPos, 200);
     let syncBtn   = createBtn(rightPos, 201);
-    let Func = {    
+    let Func = {
         jumpSoy,
         showTerminal,
         syncMachine,
