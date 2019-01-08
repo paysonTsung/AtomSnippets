@@ -232,9 +232,11 @@ prefix:
 - 模板内使用组件未引用/引入组件未使用等提示处理
 
 ## Common Issues
-- atom中使用vscode内置插件emmet语法
+配置修改setting.json用户设置
 
-    修改setting.json用户设置emmet语言映射
+- atom中无法使用vscode内置插件emmet语法
+
+    修改emmet语言映射
 
     ```json
     "emmet.includeLanguages": {
@@ -253,7 +255,7 @@ prefix:
     }
     ```
 
-- vscode自带word提示优先级高于sinppets
+- vscode自带单词提示优先级高于sinppets
 
     <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/set_priority.png" width="200"/>
     <!-- ![set_priority](images/set_priority.png) -->
@@ -262,5 +264,25 @@ prefix:
 
     ```json
     "editor.wordBasedSuggestions": false,
-    // "editor.snippetSuggestions": "top"  // 不建议使用
+    "editor.snippetSuggestions": "top"  // 该行配置不建议使用
+    ```
+
+- 双击组件无法选中组件整体
+
+    设置编辑器单词导航分隔符
+
+    ```json
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
+    ```
+
+- 字符串内无法使用自动补全功能
+
+    设置编辑器键入
+
+    ```json
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    }
     ```

@@ -1,7 +1,7 @@
 /**
  * @model        Core
  * @description  扩展主入口
- * @version      0.3.8
+ * @version      0.3.9
  * @author       congpeisen
  */
 
@@ -9,7 +9,7 @@ let vscode = require('vscode');
 
 let {jumpSoy}                       = require('./func/jumpLink');
 let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
-let {showTerminal, syncMachine}      = require('./func/terminal');
+let {showTerminal, syncMachine}     = require('./func/terminal');
 let {dataCompletion, refCompletion} = require('./func/autoCompletion');
 
 function activate(context) {
