@@ -8,6 +8,11 @@
 let vscode = require('vscode');
 let languages = vscode.languages;
 
+let uniqueArr = (arr) => {
+    let x = new Set(arr);
+    return [...x];
+}
+
 exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
     provideCompletionItems: (document, position) => {
         let doc            = document.getText();
@@ -31,6 +36,8 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
                 dataArr.shift();
                 resArr = resArr.concat(...dataArr);
             });
+            resArr = uniqueArr(resArr);
+
             return resArr.filter((opt) => {
                 if (opt === 'default' || opt === 'type') {
                     return false;
@@ -46,7 +53,8 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
         let getFuncArr = () => {
             let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/);
             let resArr = [];
-            resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
+            // resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
+            resArr = methodsPartArr[0].match(/\w+(?=\([\w\s,]*\)\s*\{)/g);
             return resArr.map((opt) => {
                 return new vscode.CompletionItem(
                     opt,
