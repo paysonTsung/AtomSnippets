@@ -682,11 +682,25 @@
     },
 
     "ala-util": {
-        "prefix": "import alaUtil",
+        "prefix": "import AlaUtil",
         "body": [
             "import ${1:AlaUtil} from '@baidu/ala-util/ala';"
         ],
         "description": "alaUtil工具库"
+    },
+    "util": {
+        "prefix": "import Util",
+        "body": [
+            "import ${1:Util} from '@baidu/ala-util';"
+        ],
+        "description": "Util工具库"
+    },
+    "fetch": {
+        "prefix": "import fetch",
+        "body": [
+            "import {fetch} from '@baidu/ala-util';"
+        ],
+        "description": "Util工具库"
     },
     "swan": {
         "prefix": "require swan",

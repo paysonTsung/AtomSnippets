@@ -124,7 +124,7 @@ exports.refCompletion = languages.registerCompletionItemProvider('atom', {
             return null;
         }
         let getQuoteArr = () => {
-            let quoteTextArr = doc.match(/(\{[\w\s,]+\}|\w+)(?=\s+from)/g);
+            let quoteTextArr = doc.match(/(\{[\w\s,]+\}|\w+)(?=\s+from)/g) || [];
             let quoteGroup = [];
             quoteTextArr.forEach((quoteText) => {
                 let quoteArr = quoteText.match(/\w+/g);
@@ -141,7 +141,7 @@ exports.refCompletion = languages.registerCompletionItemProvider('atom', {
             return quoteGroup;
         }
         let getVarArr = () => {
-            let varTextArr = doc.match(/(var|let|const)\s+\w+\b/g);
+            let varTextArr = doc.match(/(var|let|const)\s+\w+\b/g) || [];
             let vars = [];
             varTextArr.forEach((varText) => {
                 vars.push(varText.match(/\w+/g)[1]);

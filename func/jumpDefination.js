@@ -16,11 +16,11 @@ let getSelectWord = (doc, pos) =>
         doc.getWordRangeAtPosition(pos, /[\w-/]+/)
     );
 // 跳转文件
-let jumpTo = (path, line = 0) => 
-    new vscode.Location(
-        vscode.Uri.file(path),
-        new vscode.Position(line, 0)
-    );
+// let jumpTo = (path, line = 0) => 
+//     new vscode.Location(
+//         vscode.Uri.file(path),
+//         new vscode.Position(line, 0)
+//     );
 
 let jumpToPath = (doc, pos, path, lineList, reg) => {
     if (!Array.isArray(lineList)) {
@@ -48,6 +48,7 @@ let getLine = (doc, line) =>
             new vscode.Position(line + 1, 0)
         )
     );
+
 // 组件文本大写化转换  e.g.  c-img-content -> ImgContent
 let capWord = (word) =>
     word
@@ -55,10 +56,42 @@ let capWord = (word) =>
         .replace(/-\w/g, (frag) => frag.slice(1).toUpperCase())
         .replace(/^\w/, (frag) => frag.toUpperCase());
 
+// 获取文档中匹配某模式的行数列表
+let getEligibleLines = (doc, reg) => {
+    let lineList = [];
+    let curLineText = '';
+    let curLine = 0;
+    do {
+        curLineText = getLine(doc, curLine++);
+        if (reg.test(curLineText)) {
+            lineList.push(curLine - 1);
+        }
+    } while (curLineText);
+    return lineList;
+}
 
+let jumpType = {
+    'component': {
+        originRegExp(word) {
+            return new RegExp(`['"]?${word}['"]?\\s?:\\s?['"][\\w-/_]+['"]`);
+        },
+        targetRegExp(word) {
+            return new RegExp(`<${word}\\b`);
+        }
+    },
+    'function': {
+        originRegExp(word) {
+            return new RegExp(`${word}\\([\\w\\s,]*\\)\\s*\\{`);
+        },
+        targetRegExp(word) {
+            return new RegExp(`@[\\w-]+="${word}`);
+        }
+    }
+}
 
 exports.jumpFolder = languages.registerDefinitionProvider(['atom'], {
     provideDefinition: (document, position) => {
+        // 引用组件处相关跳转
         let word = getSelectWord(document, position);
         let fileName = document.fileName;
         let extName = [
@@ -116,14 +149,8 @@ exports.jumpFolder = languages.registerDefinitionProvider(['atom'], {
 exports.jumpComponent = languages.registerDefinitionProvider(['atom'], {
     provideDefinition: (document, position) => {
         let word = getSelectWord(document, position);
-        // if (!/^\/?c-/.test(word)) {
-        //     return;
-        // }
-        
         let curPath = vscode.window.activeTextEditor.document.uri.path;
         let clickLineText = document.lineAt(position).text;
-        let curLineText;
-        let curLine = 0;
         let regComponent = new RegExp(`<\\/?${word}`);
         if (regComponent.test(clickLineText)) {
             // 组件标签跳转到组件Readme
@@ -131,7 +158,7 @@ exports.jumpComponent = languages.registerDefinitionProvider(['atom'], {
             let parentWorkPath;
             parentWorkPathArr && (parentWorkPath = parentWorkPathArr[0]);
             let jumpPath = path.join(
-                parentWorkPath,'search-ui/src', capWord(word), 'readme.md'
+                parentWorkPath, 'search-ui/src', capWord(word), 'readme.md'
             );
             if (fs.existsSync(jumpPath)) {
                 // return jumpTo(jumpPath);
@@ -139,15 +166,20 @@ exports.jumpComponent = languages.registerDefinitionProvider(['atom'], {
             }
         }
         else {
-            // 引用组件跳转到组件标签
-            let lineList = [];
-            do {
-                curLineText = getLine(document, curLine++);
-                if (curLineText.includes(`<${word}`)) {
-                    lineList.push(curLine - 1);
+            // 文档内函数/组件跳转
+            for (let i = 0, type; type = Object.keys(jumpType)[i++];) {
+                if (jumpType[type].originRegExp(word).test(clickLineText)) {
+                    let lines = getEligibleLines(document, jumpType[type].targetRegExp(word));
+                    if (lines.length) {
+                        return jumpToPath(document, position, curPath, lines, /[\w/-]+/);
+                    }
+                } else if(jumpType[type].targetRegExp(word).test(clickLineText)) {
+                    let lines = getEligibleLines(document, jumpType[type].originRegExp(word));
+                    if (lines.length) {
+                        return jumpToPath(document, position, curPath, lines, /[\w/-]+/);
+                    }
                 }
-            } while (curLineText && !curLineText.includes('<script'));
-            return jumpToPath(document, position, curPath, lineList, /[\w/-]+/);
+            }
         }
     }
 })
