@@ -28,7 +28,7 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
                 : null
         };
         let getPropArr = () => {
-            let dataPartArr = doc.match(/(props|data):\s*\{[^\{\}]+(\{[^\{\}]+\}[^\{\}]+)*[^\}]+\}/g);
+            let dataPartArr = doc.match(/(props|data):\s*\{[^\{\}]*(\{[^\{\}]*\}[^\{\}]+)*[^\}]+\}/g) || [];
             let resArr      = [];
             resArr.push('$refs');
             dataPartArr.forEach((dataObj) => {
@@ -51,7 +51,8 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
             });
         };
         let getFuncArr = () => {
-            let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/);
+            let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/) || [];
+            if (!methodsPartArr.length) return [];
             let resArr = [];
             // resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
             resArr = methodsPartArr[0].match(/\w+(?=\([\w\s,]*\)\s*\{)/g);
@@ -120,7 +121,7 @@ exports.refCompletion = languages.registerCompletionItemProvider('atom', {
         let beforeCursorDoc = document.getText(
             new vscode.Range(new vscode.Position(0, 0), position)
         );
-        if (!/module\.exports\s*\=/g.test(beforeCursorDoc)) {
+        if (!/(module\.exports\s*\=|export\s+default\s*)/g.test(beforeCursorDoc)) {
             return null;
         }
         let getQuoteArr = () => {
