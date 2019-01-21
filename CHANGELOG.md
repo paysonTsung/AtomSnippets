@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.3.14] - 2019-01-21
+
+### Added
+- 增加c-container等常用class智能提示
+
 ## [0.3.13] - 2019-01-18
 
 ### Fixed

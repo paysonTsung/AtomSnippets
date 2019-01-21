@@ -1,0 +1,198 @@
+{
+    "c-container": {
+        "prefix": "c-container",
+        "description": "容器"
+    },
+    "c-container-tight": {
+        "prefix": "c-container-tight",
+        "description": "无margin容器"
+    },
+    "c-color": {
+        "prefix": "c-color",
+        "description": "[#555] 正文、结构化摘要"
+    },
+    "c-color-gray": {
+        "prefix": "c-color-gray",
+        "description": "[#999] 辅助文字"
+    },
+    "c-color-gray-a": {
+        "prefix": "c-color-gray-a",
+        "description": "[#666] 配合图标出现可点文字"
+    },
+    "c-color-link": {
+        "prefix": "c-color-link",
+        "description": "[#000] 标题色、Tab选中文字"
+    },
+    "c-color-orange": {
+        "prefix": "c-color-orange",
+        "description": "[#f60] 价格、星星高亮色"
+    },
+    "c-gap-top-zero": {
+        "prefix": "c-gap-top-zero",
+        "description": "margin-top: 0rem"
+    },
+    "c-gap-right-zero": {
+        "prefix": "c-gap-right-zero",
+        "description": "margin-right: 0rem"
+    },
+    "c-gap-bottom-zero": {
+        "prefix": "c-gap-bottom-zero",
+        "description": "margin-bottom: 0rem"
+    },
+    "c-gap-left-zero": {
+        "prefix": "c-gap-left-zero",
+        "description": "margin-left: 0rem"
+    },
+    "c-gap-top": {
+        "prefix": "c-gap-top",
+        "description": "margin-top: 0.1rem"
+    },
+    "c-gap-right": {
+        "prefix": "c-gap-right",
+        "description": "margin-right: 0.1rem"
+    },
+    "c-gap-bottom": {
+        "prefix": "c-gap-bottom",
+        "description": "margin-bottom: 0.1rem"
+    },
+    "c-gap-left": {
+        "prefix": "c-gap-left",
+        "description": "margin-left: 0.1rem"
+    },
+    "c-gap-top-large": {
+        "prefix": "c-gap-top-large",
+        "description": "margin-top: 0.15rem"
+    },
+    "c-gap-right-large": {
+        "prefix": "c-gap-right-large",
+        "description": "margin-right: 0.15rem"
+    },
+    "c-gap-bottom-large": {
+        "prefix": "c-gap-bottom-large",
+        "description": "margin-bottom: 0.15rem"
+    },
+    "c-gap-left-large": {
+        "prefix": "c-gap-left-large",
+        "description": "margin-left: 0.15rem"
+    },
+    "c-gap-top-small": {
+        "prefix": "c-gap-top-small",
+        "description": "margin-top: 0.05rem"
+    },
+    "c-gap-right-small": {
+        "prefix": "c-gap-right-small",
+        "description": "margin-right: 0.05rem"
+    },
+    "c-gap-bottom-small": {
+        "prefix": "c-gap-bottom-small",
+        "description": "margin-bottom: 0.05rem"
+    },
+    "c-gap-left-small": {
+        "prefix": "c-gap-left-small",
+        "description": "margin-left: 0.05rem"
+    },
+    "c-gap-left-middle": {
+        "prefix": "c-gap-left-middle",
+        "description": "margin-left: 0.08rem"
+    },
+    "c-gap-right-middle": {
+        "prefix": "c-gap-right-middle",
+        "description": "margin-right: 0.08rem"
+    },
+    "c-gap-inner-top-zero": {
+        "prefix": "c-gap-inner-top-zero",
+        "description": "padding-top: 0rem"
+    },
+    "c-gap-inner-right-zero": {
+        "prefix": "c-gap-inner-right-zero",
+        "description": "padding-right: 0rem"
+    },
+    "c-gap-inner-bottom-zero": {
+        "prefix": "c-gap-inner-bottom-zero",
+        "description": "padding-bottom: 0rem"
+    },
+    "c-gap-inner-left-zero": {
+        "prefix": "c-gap-inner-left-zero",
+        "description": "padding-left: 0rem"
+    },
+    "c-gap-inner-top": {
+        "prefix": "c-gap-inner-top",
+        "description": "padding-top: 0.1rem"
+    },
+    "c-gap-inner-right": {
+        "prefix": "c-gap-inner-right",
+        "description": "padding-right: 0.1rem"
+    },
+    "c-gap-inner-bottom": {
+        "prefix": "c-gap-inner-bottom",
+        "description": "padding-bottom: 0.1rem"
+    },
+    "c-gap-inner-left": {
+        "prefix": "c-gap-inner-left",
+        "description": "padding-left: 0.1rem"
+    },
+    "c-gap-inner-top-large": {
+        "prefix": "c-gap-inner-top-large",
+        "description": "padding-top: 0.15rem"
+    },
+    "c-gap-inner-right-large": {
+        "prefix": "c-gap-inner-right-large",
+        "description": "padding-right: 0.15rem"
+    },
+    "c-gap-inner-bottom-large": {
+        "prefix": "c-gap-inner-bottom-large",
+        "description": "padding-bottom: 0.15rem"
+    },
+    "c-gap-inner-left-large": {
+        "prefix": "c-gap-inner-left-large",
+        "description": "padding-left: 0.15rem"
+    },
+    "c-gap-inner-top-small": {
+        "prefix": "c-gap-inner-top-small",
+        "description": "padding-top: 0.05rem"
+    },
+    "c-gap-inner-right-small": {
+        "prefix": "c-gap-inner-right-small",
+        "description": "padding-right: 0.05rem"
+    },
+    "c-gap-inner-bottom-small": {
+        "prefix": "c-gap-inner-bottom-small",
+        "description": "padding-bottom: 0.05rem"
+    },
+    "c-gap-inner-left-small": {
+        "prefix": "c-gap-inner-left-small",
+        "description": "padding-left: 0.05rem"
+    },
+    "c-gap-inner-left-middle": {
+        "prefix": "c-gap-inner-left-middle",
+        "description": "padding-left: 0.08rem"
+    },
+    "c-gap-inner-right-middle": {
+        "prefix": "c-gap-inner-right-middle",
+        "description": "padding-right: 0.08rem"
+    },
+    "WA_LOG_TAB": {
+        "prefix": "WA_LOG_TAB",
+        "description": "tab切换埋点"
+    },
+    "WA_LOG_BTN": {
+        "prefix": "WA_LOG_BTN",
+        "description": "button点击埋点"
+    },
+    "WA_LOG_SF": {
+        "prefix": "WA_LOG_SF",
+        "description": "superframe点击"
+    },
+    "WA_LOG_MSC": {
+        "prefix": "WA_LOG_MSC",
+        "description": "音乐播放埋点"
+    },
+    "WA_LOG_VD": {
+        "prefix": "WA_LOG_VD",
+        "description": "视频播放埋点"
+    },
+    "WA_LOG_OTHER": {
+        "prefix": "WA_LOG_OTHER",
+        "description": "其他类型点击埋点"
+    }
+}

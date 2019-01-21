@@ -27,6 +27,7 @@ Code snippets for Atom in order to let you develop faster.
     - atom组件引用跳转到search-ui下对应组件readme
     - nextpage组件跳转到app_components下对应文件
     - 其他跳转到对应文件
+- 函数/组件跳转定义
 - 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台(暂定)
 
 ### Demo-atom补全
@@ -61,12 +62,12 @@ atom/prefix:
     - {{ }} 文本插值
 - `component`
 - `template`
-- `caladdin`
-- `ctitle`
-- `cline`
-- `cline2`
-- `cimgcontent`
-- `cimgcontents`
+- `c-aladdin`
+- `c-title`
+- `c-line`
+- `c-line-2`
+- `c-img-content`
+- `c-img-content-s`
 - ......
 
 atom-engine/prefix:
@@ -102,15 +103,25 @@ prefix:
 ### 指令
 prefix:
 
-- `aonce`
-- `aif`
-- `aelseif`
-- `aelse`
-- `afor`
-- `afori`
-- `amodel`
-- `apre`
-- `anossr`
+- `a-once`
+- `a-if`
+- `a-else-if`
+- `a-else`
+- `a-for`
+- `a-for-i`
+- `a-model`
+- `a-pre`
+- `a-nossr`
+
+### 常用class
+prefix:
+
+- `c-container`
+- `c-container-tight`
+- `c-color`
+- `c-gap-top`
+- `WA_LOG_TAB`
+- ......
 
 
 ### 注释
@@ -133,9 +144,9 @@ prefix:
 
 prefix:
 
-- `caladdin`
-- `ctitle`
-- `cline`
+- `c-aladdin`
+- `c-title`
+- `c-line`
 - ......
 
 ### Smarty

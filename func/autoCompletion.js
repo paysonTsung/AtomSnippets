@@ -6,6 +6,8 @@
  */
 
 let vscode = require('vscode');
+let fs = require('fs');
+let path = require('path')
 let languages = vscode.languages;
 
 let uniqueArr = (arr) => {
@@ -158,6 +160,30 @@ exports.refCompletion = languages.registerCompletionItemProvider('atom', {
             ...getQuoteArr(),
             ...getVarArr()
         ];
+    },
+    resolveCompletionItem: (item) => {
+        return item;
+    }
+});
+
+languages.registerCompletionItemProvider('atom', {
+    provideCompletionItems: (document, position) => {
+        let matchPos = document.getWordRangeAtPosition(position, /class="[\w\s-_]*"/);
+        if (!matchPos) return null;
+
+        let configData = JSON.parse(
+            fs.readFileSync(
+                path.join(__dirname, 'snippets-diy/ui-class.json'), 'utf8'
+            )
+        );
+        return Object.keys(configData).map((data) => {
+            let item = new vscode.CompletionItem(
+                data,
+                vscode.CompletionItemKind.Field
+            )
+            item.detail = `${configData[data].description} (Atom Snippets)`;
+            return item;
+        });
     },
     resolveCompletionItem: (item) => {
         return item;
