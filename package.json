@@ -53,6 +53,17 @@
                 }
             ]
         },
+        "configuration": {
+            "type": "object",
+            "title": "AtomSnippets配置",
+            "properties": {
+                "AtomSnippets.autoAddRef": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "补全Atom组件后自动在components下添加组件引用"
+                }
+            }
+        },
         "languages": [
             {
                 "id": "atom",

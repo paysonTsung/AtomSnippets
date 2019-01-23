@@ -1,0 +1,631 @@
+{
+    "c-aladdin": {
+        "prefix": "c-aladdin",
+        "body": [
+            "<c-aladdin",
+            "\t:url=\"$1\"",
+            "\t:title=\"$2\"",
+            "\t:show-left-text=\"$3\"",
+            "\t:show-right-text=\"$4\"",
+            "\t:show-right-url=\"$5\"",
+            ">",
+            "\t$0",
+            "</c-aladdin>"
+        ],
+        "description": "卡片框架/ Aladdin"
+    },
+    "c-title": {
+        "prefix": "c-title",
+        "body": [
+            "<c-title",
+            "\t:params=\"${1:params}\"",
+            "\t:text=\"${2:text}\"",
+            "/>"
+        ],
+        "description": "标题/ Title"
+    },
+    "c-title-s": {
+        "prefix": "c-title-s",
+        "body": [
+            "<c-title",
+            "\t:params=\"${1:params}\"",
+            "\t:text=\"${2:text}\"",
+            "\tsize=\"t2\"",
+            "/>"
+        ],
+        "description": "标题/ Title (小字标题)"
+    },
+    "c-line": {
+        "prefix": "c-line",
+        "body": [
+            "<c-line>",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "多行截断/ Line"
+    },
+    "c-line-2": {
+        "prefix": "c-line-2",
+        "body": [
+            "<c-line",
+            "    clamp=\"${1:2}\"",
+            ">",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "多行截断/ Line (双行截断)"
+    },
+    "c-line-3": {
+        "prefix": "c-line-3",
+        "body": [
+            "<c-line",
+            "    clamp=\"${1:3}\"",
+            ">",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "多行截断/ Line (三行截断)"
+    },
+    "c-line-4": {
+        "prefix": "c-line-4",
+        "body": [
+            "<c-line",
+            "    clamp=\"${1:4}\"",
+            ">",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "多行截断/ Line (四行截断)"
+    },
+    "c-line-5": {
+        "prefix": "c-line-5",
+        "body": [
+            "<c-line",
+            "    clamp=\"${1:5}\"",
+            ">",
+            "\t$0",
+            "</c-line>"
+        ],
+        "description": "多行截断/ Line (五行截断)"
+    },
+    "c-link": {
+        "prefix": "c-link",
+        "body": [
+            "<c-link",
+            "\t:params=\"$1\"",
+            ">",
+            "\t$0",
+            "</c-link>"
+        ],
+        "description": "跳转链接/ Link"
+    },
+    "c-button": {
+        "prefix": "c-button",
+        "body": [
+            "<c-button",
+            "\ttype=\"${1:default}\"",
+            "\ttext=\"$2\"",
+            "\ticon=\"$3\"",
+            "\tparams=\"$4\"",
+            "/>"
+        ],
+        "description": "按钮/ Button"
+    },
+    "c-btn-layout": {
+        "prefix": "c-btn-layout",
+        "body": [
+            "<c-btn-layout",
+            "\t:options=\"$1\"",
+            "\t@click=\"$2\"",
+            "/>"
+        ],
+        "description": "按钮/按钮栏 Button"
+    },
+    "c-divider": {
+        "prefix": "c-divider",
+        "body": [
+            "<c-divider/>"
+        ],
+        "description": "分割线/ Divider"
+    },
+    "c-icon": {
+        "prefix": "c-icon",
+        "body": [
+            "<c-icon type=\"$1\"/>"
+        ],
+        "description": "图标/ Icon"
+    },
+    "c-image": {
+        "prefix": "c-image",
+        "body": [
+            "<c-image",
+            "\t:src=\"$1\"",
+            "\t:title=\"$2\"",
+            "/>"
+        ],
+        "description": "图片/ Image"
+    },
+    "c-label": {
+        "prefix": "c-label",
+        "body": [
+            "<c-label type=\"$1\" :text=\"$2\"/>"
+        ],
+        "description": "标签/ Label"
+    },
+    "c-slink": {
+        "prefix": "c-slink",
+        "body": [
+            "<c-slink",
+            "\ttype=\"$1\"",
+            "\t:params=\"$2\"",
+            "\t:text=\"$3\"",
+            "/>"
+        ],
+        "description": "短链/ Slink"
+    },
+    "c-img-content": {
+        "prefix": "c-img-content",
+        "body": [
+            "<c-img-content",
+            "\t:img-src=\"${1:src}\"",
+            ">",
+            "\t$0",
+            "</c-img-content>"
+        ],
+        "description": "左图右文/ ImgContent"
+    },
+    "c-img-content-s": {
+        "prefix": "c-img-content-s",
+        "body": [
+            "<c-img-content",
+            "\t:img-src=\"${1:src}\"",
+            "\t:img-col=\"2\"",
+            "\timg-is-round",
+            "\tis-vertical-middle",
+            ">",
+            "\t$0",
+            "</c-img-content>"
+        ],
+        "description": "左图右文/ ImgContent (小图)"
+    },
+    "c-list": {
+        "prefix": "c-list",
+        "body": [
+            "<c-list>",
+            "\t<c-list-item",
+            "\t\ta-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
+            "\t\t:key=\"$3\"",
+            "\t>",
+            "\t\t$0",
+            "\t</c-list-item>",
+            "</c-list>"
+        ],
+        "description": "列表行/ List"
+    },
+    "c-navs": {
+        "prefix": "c-navs",
+        "body": [
+            "<c-navs",
+            "\t:label-list=\"$1\"",
+            "\t@change=\"${2:selectFn}\"",
+            "/>"
+        ],
+        "description": "导航/ Navs"
+    },
+    "c-tabs": {
+        "prefix": "c-tabs",
+        "body": [
+            "<c-tabs",
+            "   :selected=\"${1:0}\"",
+            "   has-slide-animation",
+            "   @change=\"${2:changeFn}\">",
+            "   <c-tabs-item",
+            "       a-for=\"(${4:tab}, ${5:index}) in ${3:tabs}\"",
+            "       :key=\"$5\"",
+            "       :label=\"$4.label\"",
+            "   >",
+            "       $0",
+            "   </c-tabs-item>",
+            "</c-tabs>"
+        ],
+        "description": "选项卡/ Tabs"
+    },
+    "c-calendar": {
+        "prefix": "c-calendar",
+        "body": [
+            "<c-calendar",
+            "    :is-show=\"${1:isShow}\"",
+            "    :type=\"${2:2}\"",
+            "    :before-month-num=\"${3:0}\"",
+            "    :after-month-num=\"${4:7}\"",
+            "    start-text=\"${5:入住}\"",
+            "    end-text=\"${6:离店}\"",
+            "    @change=\"${7:handleChange}\"",
+            "    @confirm=\"${8:handleConfirm}\"",
+            "    @reset=\"${9:handleReset}\"",
+            "/>"
+        ],
+        "description": "日历/ Calendar"
+    },
+    "c-table": {
+        "prefix": "c-table",
+        "body": [
+            "<c-table",
+            "    :content=\"${1:tableData}\"",
+            "    type=\"${2:standardLine}\"",
+            "/>"
+        ],
+        "description": "表格/ Table"
+    },
+    "c-table-grid": {
+        "prefix": "c-table-grid",
+        "body": [
+            "<c-table-grid",
+            "    :content=\"${1:tableData}\"",
+            "/>"
+        ],
+        "description": "网格表格/ TableGrid"
+    },
+    "c-mask": {
+        "prefix": "c-mask",
+        "body": [
+            "<c-mask",
+            "    ref=\"${1:mask}\"",
+            "    z-index=\"${2:301}\"",
+            "    class=\"${3:mask}\"",
+            "    @click=\"${4:handleMaskClick}\"",
+            ">",
+            "    $0",
+            "</c-mask>"
+        ],
+        "description": "蒙层/ Mask"
+    },
+    "c-error-page": {
+        "prefix": "c-error-page",
+        "body": [
+            "<c-error-page",
+            "    logo=\"${1:blank}\"",
+            "    has-btn$2",
+            "    btn-text=\"${3:重新加载}\"",
+            "    title=\"${4:暂无内容}\"",
+            "    @click=\"${5:onClick}\"",
+            "/>"
+        ],
+        "description": "搜索空白页/ ErrorPage"
+    },
+    "c-loading": {
+        "prefix": "c-loading",
+        "body": [
+            "<c-loading class=\"${1:loading}\"/>"
+        ],
+        "description": "加载中/ Loading"
+    },
+    "c-more": {
+        "prefix": "c-more",
+        "body": [
+            "<c-more",
+            "    :url=\"${1:url}\"",
+            "    :params=\"${2:params}\"",
+            "    :text=\"${3:text}\"",
+            "    inline$4",
+            "    @showMore=\"${5:selfShowMore}\"",
+            "/>"
+        ],
+        "description": "查看更多/ More"
+    },
+    "c-source": {
+        "prefix": "c-source",
+        "body": [
+            "<c-source",
+            "    :url=\"${1:url}\"",
+            "    :params=\"${2:params}\"",
+            "    :img-src=\"${3:imgSrc}\"",
+            "    :source=\"${4:source}\"",
+            "    :time=\"${5:time}\"",
+            "    @click=\"${6:handleSourceClick}\"",
+            "/>"
+        ],
+        "description": "来源/ Source"
+    },
+    "c-strong-link": {
+        "prefix": "c-strong-link",
+        "body": [
+            "<c-strong-link",
+            "    :name=\"${1:name}\"",
+            "    :url=\"${2:url}\"",
+            "    :params=\"${3:params}\"",
+            ">",
+            "   $0",
+            "</c-strong-link>"
+        ],
+        "description": "强链接/ StrongLink"
+    },
+    "c-text-line": {
+        "prefix": "c-text-line",
+        "body": [
+            "<c-text-line",
+            "    clamp=\"${1:2}\"",
+            "    :text=\"${2:text}\"",
+            "/>"
+        ],
+        "description": "文本多行截断/ TextLine"
+    },
+    "c-timespan": {
+        "prefix": "c-timespan",
+        "body": [
+            "<c-timespan",
+            "    :time=\"${1:time}\"",
+            "/>"
+        ],
+        "description": "时间差/ Timespan"
+    },
+    "c-tombstone": {
+        "prefix": "c-tombstone",
+        "body": [
+            "<c-tombstone",
+            "    a-if=\"${1:isShow}\"",
+            "    :type=\"${2:2}\"",
+            "/>"
+        ],
+        "description": "占位加载/ Tombstone"
+    },
+    "c-triangle": {
+        "prefix": "c-triangle",
+        "body": [
+            "<c-triangle",
+            "    :animation=\"false\"",
+            "    :direction=\"direction1\"",
+            "/>"
+        ],
+        "description": "动效图标/三角型图标 AnimateIcon"
+    },
+    "c-arrow": {
+        "prefix": "c-arrow",
+        "body": [
+            "<c-arrow",
+            "    :animation=\"false\"",
+            "    :direction=\"direction1\"",
+            "/>"
+        ],
+        "description": "动效图标/箭头型图标 AnimateIcon"
+    },
+    "c-dropdown": {
+        "prefix": "c-dropdown",
+        "body": [
+            "<c-dropdown",
+            "    :label=\"${1:label}\"",
+            "    :options=\"${2:options}\"",
+            "    @change=\"${3:handleChange}\"",
+            "/>"
+        ],
+        "description": "下拉选择框/ Dropdown"
+    },
+    "c-input": {
+        "prefix": "c-input",
+        "body": [
+            "<c-input",
+            "    :placeholder=\"${q:placeholder}\"",
+            "    type=\"${2:search}\"",
+            "/>"
+        ],
+        "description": "表单组件/ Input"
+    },
+    "c-cascader": {
+        "prefix": "c-cascader",
+        "body": [
+            "<c-cascader",
+            "    :column=\"${1:1}\"",
+            "    :options=\"${2:options}\"",
+            "    :default-value=\"${3:defaultValue}\"",
+            "    @itemclick=\"${4:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "级联选择器/ Cascader"
+    },
+    "c-row": {
+        "prefix": "c-row",
+        "body": [
+            "<c-row>",
+            "    <c-span",
+            "        a-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
+            "        :key=\"${3:index}\"",
+            "        :col=\"12/${1:list}.length\"",
+            "    >",
+            "        $0",
+            "    </c-span>",
+            "</c-row>"
+        ],
+        "description": "栅格行/ Row"
+    },
+    "c-span": {
+        "prefix": "c-span",
+        "body": [
+            "<c-span",
+            "    :col=\"$1\"",
+            ">",
+            "    $0",
+            "</c-span>"
+        ],
+        "description": "栅格行/ Row"
+    },
+    "c-kg-footer": {
+        "prefix": "c-kg-footer",
+        "body": [
+            "<c-kg-footer",
+            "    :text=\"${1:text}\"",
+            "    :url=\"${2:url}\"",
+            "    :url-params=\"${3:params}\"",
+            "    :icon-type=\"${4:iconType}\"",
+            "    :text-color=\"${5:textColor}\"",
+            "    :icon-color=\"${6:iconColor}\"",
+            "/>"
+        ],
+        "description": "KG底部组件/ KgFooter"
+    },
+    "c-kg-header": {
+        "prefix": "c-kg-header",
+        "body": [
+            "<c-kg-header",
+            "    :title=\"${1:title}\"",
+            "    :url=\"${2:url}\"",
+            "    :params=\"${3:params}\"",
+            "    :abstract=\"${4:abstract}\"",
+            "    :tab-list=\"${5:tabList}\"",
+            "/>"
+        ],
+        "description": "KG头部组件/ KgHeader"
+    },
+    "c-list-result": {
+        "prefix": "c-list-result",
+        "body": [
+            "<c-list-result",
+            "    :title=\"${1:title}\"",
+            "    :url=\"${2:url}\"",
+            "    :url-params=\"${3:urlParams}\"",
+            ">",
+            "    $0",
+            "</c-list-result>"
+        ],
+        "description": "列表结果框架/ ListResult"
+    },
+    "c-footer": {
+        "prefix": "c-footer",
+        "body": [
+            "<c-footer",
+            "    left-text=\"${1:leftText}\"",
+            "    right-text=\"${2:rightText}\"",
+            "    right-url=\"${3:rightUrl}\"",
+            "    right-url-params=\"${4:rightUrlParams}\"",
+            "/>"
+        ],
+        "description": "卡片脚注/ Footer"
+    },
+    "c-content": {
+        "prefix": "c-content",
+        "body": [
+            "<c-content",
+            "    :selected-index=\"${1:selectedIndex}\"",
+            ">",
+            "    $0",
+            "</c-content>"
+        ],
+        "description": "内容/ Content"
+    },
+    "c-tags": {
+        "prefix": "c-tags",
+        "body": [
+            "<c-tags",
+            "    :label-list=\"${1:labelList}\"",
+            "    @change=\"${2:handleTagsChange}\"",
+            "/>"
+        ],
+        "description": "标签/ Tags"
+    },
+    "c-tag-group": {
+        "prefix": "c-tag-group",
+        "body": [
+            "<c-tag-group",
+            "    :list=\"${1:list}\"",
+            "    type=\"${2:radio}\"",
+            "    @change=\"${3:handleChange}\"",
+            "/>"
+        ],
+        "description": "标签组/ TagGroup"
+    },
+    "c-rec": {
+        "prefix": "c-rec",
+        "body": [
+            "<c-rec",
+            "    :list=\"${1:list}\"",
+            "    :title=\"${2:title}\"",
+            "    :num=\"${3:num}\"",
+            "    @itemclick=\"${4:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "推荐模块/ Rec"
+    },
+    "c-scroll-imgs": {
+        "prefix": "c-scroll-imgs",
+        "body": [
+            "<c-scroll-imgs",
+            "    :col=\"${1:col}\"",
+            "    :img-list=\"${2:imgList}\"",
+            "    :more-url=\"${3:moreUrl}\"",
+            "    :more-url-params=\"${4:moreUrlParams}\"",
+            "    :more-col=\"${5:moreCol}\"",
+            "    :default-image-type=\"${6:defaultImageType}\"",
+            "    @itemclick=\"${7:handleItemClick}\"",
+            "/>"
+        ],
+        "description": "多图横滑/ ScrollImgs"
+    },
+    "c-stitch-imgs": {
+        "prefix": "c-stitch-imgs",
+        "body": [
+            "<c-stitch-imgs",
+            "    :num=\"${1:2}\"",
+            "    :img-list=\"${2:imgList}\"",
+            "/>"
+        ],
+        "description": "图集组件/ StitchImgs"
+    },
+    "c-waterfall": {
+        "prefix": "c-waterfall",
+        "body": [
+            "<c-waterfall",
+            "    :img-list=\"${1:imgList}\"",
+            "    :column=\"${2:col}\"",
+            "    class=\"${3:c-row-tile}\"",
+            "    @load=\"${4:onLoad}\"",
+            "    @imgclick=\"${5:handleImgClick}\"",
+            "/>"
+        ],
+        "description": "瀑布流/ Waterfall"
+    },
+    "c-scroll-video": {
+        "prefix": "c-scroll-video",
+        "body": [
+            "<c-scroll-video",
+            "    :video=\"${1:video}\"",
+            "    :col=\"${2:6}\"",
+            "    :show-config=\"${3:showConfig}\"",
+            "    :more-info=\"${4:moreInfo}\"",
+            "    @showMore=\"${5:selfShowMore}\"",
+            "    @scrollEnd=\"${6:selfScrollEnd}\"",
+            "/>"
+        ],
+        "description": "视频横滑列表/ ScrollVideo"
+    },
+    "c-video": {
+        "prefix": "c-video",
+        "body": [
+            "<c-video",
+            "    :video=\"${1:video}\"",
+            "    @click=\"${2:onClick}\"",
+            "/>"
+        ],
+        "description": "视频/ Video"
+    },
+    "c-selector": {
+        "prefix": "c-selector",
+        "body": [
+            "<c-selector",
+            "    :title=\"${1:title}\"",
+            "    :data=\"${2:data}\"",
+            "    :open=\"${3:open}\"",
+            "    @select=\"${4:onSelect}\"",
+            "    @close=\"${5:onClose}\"",
+            "/>"
+        ],
+        "description": "选择框/ Selector"
+    },
+    "c-stars": {
+        "prefix": "c-stars",
+        "body": [
+            "<c-stars",
+            "    :stars=\"$1\"",
+            "/>"
+        ],
+        "description": "星星评分/ Stars"
+    }
+}

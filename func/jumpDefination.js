@@ -67,6 +67,7 @@ let getEligibleLines = (doc, reg) => {
             lineList.push(curLine - 1);
         }
     } while (curLineText);
+    //! 空行bug to fix
     return lineList;
 }
 

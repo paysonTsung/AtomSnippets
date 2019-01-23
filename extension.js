@@ -8,8 +8,8 @@
 let vscode = require('vscode');
 
 let {jumpSoy}                       = require('./func/jumpLink');
-let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
 let {showTerminal, syncMachine}     = require('./func/terminal');
+let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
 let {dataCompletion, refCompletion} = require('./func/autoCompletion');
 
 function activate(context) {

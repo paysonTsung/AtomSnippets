@@ -8,35 +8,37 @@ Code snippets for Atom in order to let you develop faster.
 - [AtomEngine](http://atom.baidu-int.com/atom-native)
 - [NextPage](http://superframe.baidu.com/support/next-page/)
 
-(新版本提供了语言定义, Snippets功能不再依赖Mota插件)
-
-默认Tab/Enter键触发补全
-
 ## Features
 
 - 支持Atom、Smarty语法高亮
-- 提供Atom常用组件、属性等Snippets功能
-- 提供smarty、php预处理文件Ala全部API的Snippets功能
-- 提供this./this.$refs./引入模块/声明变量等的代码智能提示
-- 提供AtomEngine全部组件、通用属性、通用事件、生命周期等Snippets功能
-- 底部状态栏提供按钮调起终端及快速同步到测试机/启动调试并输出日志(Atom/log)
-    - atom执行 ala sync [template] -w
-    - nextpage执行 make watch
-    - atom-engine执行 atom-engine build -d
-- 文件引用处(⌘+鼠标左键)跳转到对应文件(需要本地路径与远程一致)
-    - atom组件引用跳转到search-ui下对应组件readme
-    - nextpage组件跳转到app_components下对应文件
-    - 其他跳转到对应文件
-- 函数/组件跳转定义
-- 快捷键（⌘+.）或右键文本中菜单栏Soy跳转到索引平台(暂定)
+- 提供Atom、AtomEngine常用组件、属性等自动补全功能
+- 提供smarty、php预处理文件Ala全部API的自动补全功能
+- 提供变量、模块等代码智能提示
+- 提供函数、组件等定义跳转功能
+- 提供按钮调起终端及快速同步到测试机
+- 快捷键（⌘+.）跳转到索引平台(暂定)
+- 提供触发Atom组件补全后自动添加组件引用
 
-### Demo-atom补全
+## Detail
+
+### Atom组件补全
+输入触发词的一部分后 tab/enter键触发补全
 <!-- ![demo_a](images/demo_a.gif) -->
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_a.gif" width="400"/>
 
-### Demo-php补全
+### PHP片段补全
 <!-- ![demo_b](images/demo_b.gif) -->
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_b.gif" width="480"/>
+
+### 组件自动引用
+触发组件补全后自动向components下添加引用，目前仅支持search-ui组件的引用
+
+### 智能提示
+目前对this./this.$refs./引入模块/声明变量等提供代码智能提示功能
+
+### 跳转定义
+定义处cmd+鼠标左键触发跳转
+
 
 ## Snippets available
 
