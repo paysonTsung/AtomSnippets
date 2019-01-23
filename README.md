@@ -24,7 +24,7 @@ Code snippets for Atom in order to let you develop faster.
 ### Atom组件补全
 输入触发词的一部分后 tab/enter键触发补全
 <!-- ![demo_a](images/demo_a.gif) -->
-<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_a.gif" width="400"/>
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_a.gif" width="350"/>
 
 ### PHP片段补全
 <!-- ![demo_b](images/demo_b.gif) -->
@@ -33,11 +33,27 @@ Code snippets for Atom in order to let you develop faster.
 ### 组件自动引用
 触发组件补全后自动向components下添加引用，目前仅支持search-ui组件的引用
 
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/auto_add_ref.gif" width="380"/>
+
+若不想使用此功能，可在setting.json中设置
+```json
+"AtomSnippets.autoAddRef": false
+```
+
 ### 智能提示
 目前对this./this.$refs./引入模块/声明变量等提供代码智能提示功能
 
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/intell_prompt.gif" width="380"/>
+
 ### 跳转定义
 定义处cmd+鼠标左键触发跳转
+
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/jump_def_a.png" width="380"/>
+<br/>
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/jump_def_b.png" width="300"/>
+
+### 调起终端
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/sync_machine.png" width="400"/>
 
 
 ## Snippets available
