@@ -359,6 +359,13 @@
         ],
         "description": "资讯组件/ NewsArticle"
     },
+    "c-scroll-article": {
+        "prefix": "c-scroll-article",
+        "body": [
+            "'c-scroll-article': 'search-ui/ScrollArticle/ScrollArticle'"
+        ],
+        "description": "资讯类横滑/ ScrollArticle"
+    },
     "c-scroll-two": {
         "prefix": "c-scroll-two",
         "body": [
@@ -406,7 +413,7 @@
         "body": [
             "'c-filter-frame': 'search-ui/FilterEnhanced/FilterFrame'"
         ],
-        "description": "筛选/ FilterEnhanced"
+        "description": "筛选/(新) FilterEnhanced"
     },
     "c-filter-enhanced": {
         "prefix": "c-filter-enhanced",
@@ -514,6 +521,13 @@
             "'c-touchable-feedback': 'search-ui/TouchableFeedback/TouchableFeedback'"
         ],
         "description": "点击态/ TouchableFeedback"
+    },
+    "c-touchable-stop": {
+        "prefix": "c-touchable-stop",
+        "body": [
+            "'c-touchable-stop': 'search-ui/TouchableFeedback/TouchableStop'"
+        ],
+        "description": "点击态/禁止 TouchableTop"
     },
     "c-switch": {
         "prefix": "c-switch",

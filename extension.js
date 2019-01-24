@@ -1,7 +1,7 @@
 /**
  * @model        Core
  * @description  扩展主入口
- * @version      0.4.0
+ * @version      0.4.1
  * @author       congpeisen
  */
 

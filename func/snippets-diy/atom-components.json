@@ -48,7 +48,7 @@
         "prefix": "c-line-2",
         "body": [
             "<c-line",
-            "    clamp=\"${1:2}\"",
+            "\tclamp=\"${1:2}\"",
             ">",
             "\t$0",
             "</c-line>"
@@ -59,7 +59,7 @@
         "prefix": "c-line-3",
         "body": [
             "<c-line",
-            "    clamp=\"${1:3}\"",
+            "\tclamp=\"${1:3}\"",
             ">",
             "\t$0",
             "</c-line>"
@@ -70,7 +70,7 @@
         "prefix": "c-line-4",
         "body": [
             "<c-line",
-            "    clamp=\"${1:4}\"",
+            "\tclamp=\"${1:4}\"",
             ">",
             "\t$0",
             "</c-line>"
@@ -81,7 +81,7 @@
         "prefix": "c-line-5",
         "body": [
             "<c-line",
-            "    clamp=\"${1:5}\"",
+            "\tclamp=\"${1:5}\"",
             ">",
             "\t$0",
             "</c-line>"
@@ -216,16 +216,16 @@
         "prefix": "c-tabs",
         "body": [
             "<c-tabs",
-            "   :selected=\"${1:0}\"",
-            "   has-slide-animation",
-            "   @change=\"${2:changeFn}\">",
-            "   <c-tabs-item",
-            "       a-for=\"(${4:tab}, ${5:index}) in ${3:tabs}\"",
-            "       :key=\"$5\"",
-            "       :label=\"$4.label\"",
-            "   >",
-            "       $0",
-            "   </c-tabs-item>",
+            "\t:selected=\"${1:0}\"",
+            "\thas-slide-animation",
+            "\t@change=\"${2:changeFn}\">",
+            "\t<c-tabs-item",
+            "\t\ta-for=\"(${4:tab}, ${5:index}) in ${3:tabs}\"",
+            "\t\t:key=\"$5\"",
+            "\t\t:label=\"$4.label\"",
+            "\t>",
+            "\t\t$0",
+            "\t</c-tabs-item>",
             "</c-tabs>"
         ],
         "description": "选项卡/ Tabs"
@@ -234,15 +234,15 @@
         "prefix": "c-calendar",
         "body": [
             "<c-calendar",
-            "    :is-show=\"${1:isShow}\"",
-            "    :type=\"${2:2}\"",
-            "    :before-month-num=\"${3:0}\"",
-            "    :after-month-num=\"${4:7}\"",
-            "    start-text=\"${5:入住}\"",
-            "    end-text=\"${6:离店}\"",
-            "    @change=\"${7:handleChange}\"",
-            "    @confirm=\"${8:handleConfirm}\"",
-            "    @reset=\"${9:handleReset}\"",
+            "\t:is-show=\"${1:isShow}\"",
+            "\t:type=\"${2:2}\"",
+            "\t:before-month-num=\"${3:0}\"",
+            "\t:after-month-num=\"${4:7}\"",
+            "\tstart-text=\"${5:入住}\"",
+            "\tend-text=\"${6:离店}\"",
+            "\t@change=\"${7:handleChange}\"",
+            "\t@confirm=\"${8:handleConfirm}\"",
+            "\t@reset=\"${9:handleReset}\"",
             "/>"
         ],
         "description": "日历/ Calendar"
@@ -251,8 +251,8 @@
         "prefix": "c-table",
         "body": [
             "<c-table",
-            "    :content=\"${1:tableData}\"",
-            "    type=\"${2:standardLine}\"",
+            "\t:content=\"${1:tableData}\"",
+            "\ttype=\"${2:standardLine}\"",
             "/>"
         ],
         "description": "表格/ Table"
@@ -261,7 +261,7 @@
         "prefix": "c-table-grid",
         "body": [
             "<c-table-grid",
-            "    :content=\"${1:tableData}\"",
+            "\t:content=\"${1:tableData}\"",
             "/>"
         ],
         "description": "网格表格/ TableGrid"
@@ -270,12 +270,12 @@
         "prefix": "c-mask",
         "body": [
             "<c-mask",
-            "    ref=\"${1:mask}\"",
-            "    z-index=\"${2:301}\"",
-            "    class=\"${3:mask}\"",
-            "    @click=\"${4:handleMaskClick}\"",
+            "\tref=\"${1:mask}\"",
+            "\tz-index=\"${2:301}\"",
+            "\tclass=\"${3:mask}\"",
+            "\t@click=\"${4:handleMaskClick}\"",
             ">",
-            "    $0",
+            "\t$0",
             "</c-mask>"
         ],
         "description": "蒙层/ Mask"
@@ -284,11 +284,11 @@
         "prefix": "c-error-page",
         "body": [
             "<c-error-page",
-            "    logo=\"${1:blank}\"",
-            "    has-btn$2",
-            "    btn-text=\"${3:重新加载}\"",
-            "    title=\"${4:暂无内容}\"",
-            "    @click=\"${5:onClick}\"",
+            "\tlogo=\"${1:blank}\"",
+            "\thas-btn$2",
+            "\tbtn-text=\"${3:重新加载}\"",
+            "\ttitle=\"${4:暂无内容}\"",
+            "\t@click=\"${5:onClick}\"",
             "/>"
         ],
         "description": "搜索空白页/ ErrorPage"
@@ -304,11 +304,11 @@
         "prefix": "c-more",
         "body": [
             "<c-more",
-            "    :url=\"${1:url}\"",
-            "    :params=\"${2:params}\"",
-            "    :text=\"${3:text}\"",
-            "    inline$4",
-            "    @showMore=\"${5:selfShowMore}\"",
+            "\t:url=\"${1:url}\"",
+            "\t:params=\"${2:params}\"",
+            "\t:text=\"${3:text}\"",
+            "\tinline$4",
+            "\t@showMore=\"${5:selfShowMore}\"",
             "/>"
         ],
         "description": "查看更多/ More"
@@ -317,12 +317,12 @@
         "prefix": "c-source",
         "body": [
             "<c-source",
-            "    :url=\"${1:url}\"",
-            "    :params=\"${2:params}\"",
-            "    :img-src=\"${3:imgSrc}\"",
-            "    :source=\"${4:source}\"",
-            "    :time=\"${5:time}\"",
-            "    @click=\"${6:handleSourceClick}\"",
+            "\t:url=\"${1:url}\"",
+            "\t:params=\"${2:params}\"",
+            "\t:img-src=\"${3:imgSrc}\"",
+            "\t:source=\"${4:source}\"",
+            "\t:time=\"${5:time}\"",
+            "\t@click=\"${6:handleSourceClick}\"",
             "/>"
         ],
         "description": "来源/ Source"
@@ -331,11 +331,11 @@
         "prefix": "c-strong-link",
         "body": [
             "<c-strong-link",
-            "    :name=\"${1:name}\"",
-            "    :url=\"${2:url}\"",
-            "    :params=\"${3:params}\"",
+            "\t:name=\"${1:name}\"",
+            "\t:url=\"${2:url}\"",
+            "\t:params=\"${3:params}\"",
             ">",
-            "   $0",
+            "\t$0",
             "</c-strong-link>"
         ],
         "description": "强链接/ StrongLink"
@@ -344,8 +344,8 @@
         "prefix": "c-text-line",
         "body": [
             "<c-text-line",
-            "    clamp=\"${1:2}\"",
-            "    :text=\"${2:text}\"",
+            "\tclamp=\"${1:2}\"",
+            "\t:text=\"${2:text}\"",
             "/>"
         ],
         "description": "文本多行截断/ TextLine"
@@ -354,7 +354,7 @@
         "prefix": "c-timespan",
         "body": [
             "<c-timespan",
-            "    :time=\"${1:time}\"",
+            "\t:time=\"${1:time}\"",
             "/>"
         ],
         "description": "时间差/ Timespan"
@@ -363,8 +363,8 @@
         "prefix": "c-tombstone",
         "body": [
             "<c-tombstone",
-            "    a-if=\"${1:isShow}\"",
-            "    :type=\"${2:2}\"",
+            "\ta-if=\"${1:isShow}\"",
+            "\t:type=\"${2:2}\"",
             "/>"
         ],
         "description": "占位加载/ Tombstone"
@@ -373,8 +373,8 @@
         "prefix": "c-triangle",
         "body": [
             "<c-triangle",
-            "    :animation=\"false\"",
-            "    :direction=\"direction1\"",
+            "\t:animation=\"false\"",
+            "\t:direction=\"direction1\"",
             "/>"
         ],
         "description": "动效图标/三角型图标 AnimateIcon"
@@ -383,8 +383,8 @@
         "prefix": "c-arrow",
         "body": [
             "<c-arrow",
-            "    :animation=\"false\"",
-            "    :direction=\"direction1\"",
+            "\t:animation=\"false\"",
+            "\t:direction=\"direction1\"",
             "/>"
         ],
         "description": "动效图标/箭头型图标 AnimateIcon"
@@ -393,9 +393,9 @@
         "prefix": "c-dropdown",
         "body": [
             "<c-dropdown",
-            "    :label=\"${1:label}\"",
-            "    :options=\"${2:options}\"",
-            "    @change=\"${3:handleChange}\"",
+            "\t:label=\"${1:label}\"",
+            "\t:options=\"${2:options}\"",
+            "\t@change=\"${3:handleChange}\"",
             "/>"
         ],
         "description": "下拉选择框/ Dropdown"
@@ -404,8 +404,8 @@
         "prefix": "c-input",
         "body": [
             "<c-input",
-            "    :placeholder=\"${q:placeholder}\"",
-            "    type=\"${2:search}\"",
+            "\t:placeholder=\"${q:placeholder}\"",
+            "\ttype=\"${2:search}\"",
             "/>"
         ],
         "description": "表单组件/ Input"
@@ -414,10 +414,10 @@
         "prefix": "c-cascader",
         "body": [
             "<c-cascader",
-            "    :column=\"${1:1}\"",
-            "    :options=\"${2:options}\"",
-            "    :default-value=\"${3:defaultValue}\"",
-            "    @itemclick=\"${4:handleItemClick}\"",
+            "\t:column=\"${1:1}\"",
+            "\t:options=\"${2:options}\"",
+            "\t:default-value=\"${3:defaultValue}\"",
+            "\t@itemclick=\"${4:handleItemClick}\"",
             "/>"
         ],
         "description": "级联选择器/ Cascader"
@@ -426,13 +426,13 @@
         "prefix": "c-row",
         "body": [
             "<c-row>",
-            "    <c-span",
-            "        a-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
-            "        :key=\"${3:index}\"",
-            "        :col=\"12/${1:list}.length\"",
-            "    >",
-            "        $0",
-            "    </c-span>",
+            "\t<c-span",
+            "\t\ta-for=\"(${2:item}, ${3:index}) in ${1:list}\"",
+            "\t\t:key=\"${3:index}\"",
+            "\t\t:col=\"12/${1:list}.length\"",
+            "\t>",
+            "\t\t$0",
+            "\t</c-span>",
             "</c-row>"
         ],
         "description": "栅格行/ Row"
@@ -441,9 +441,9 @@
         "prefix": "c-span",
         "body": [
             "<c-span",
-            "    :col=\"$1\"",
+            "\t:col=\"$1\"",
             ">",
-            "    $0",
+            "\t$0",
             "</c-span>"
         ],
         "description": "栅格行/ Row"
@@ -452,12 +452,12 @@
         "prefix": "c-kg-footer",
         "body": [
             "<c-kg-footer",
-            "    :text=\"${1:text}\"",
-            "    :url=\"${2:url}\"",
-            "    :url-params=\"${3:params}\"",
-            "    :icon-type=\"${4:iconType}\"",
-            "    :text-color=\"${5:textColor}\"",
-            "    :icon-color=\"${6:iconColor}\"",
+            "\t:text=\"${1:text}\"",
+            "\t:url=\"${2:url}\"",
+            "\t:url-params=\"${3:params}\"",
+            "\t:icon-type=\"${4:iconType}\"",
+            "\t:text-color=\"${5:textColor}\"",
+            "\t:icon-color=\"${6:iconColor}\"",
             "/>"
         ],
         "description": "KG底部组件/ KgFooter"
@@ -466,11 +466,11 @@
         "prefix": "c-kg-header",
         "body": [
             "<c-kg-header",
-            "    :title=\"${1:title}\"",
-            "    :url=\"${2:url}\"",
-            "    :params=\"${3:params}\"",
-            "    :abstract=\"${4:abstract}\"",
-            "    :tab-list=\"${5:tabList}\"",
+            "\t:title=\"${1:title}\"",
+            "\t:url=\"${2:url}\"",
+            "\t:params=\"${3:params}\"",
+            "\t:abstract=\"${4:abstract}\"",
+            "\t:tab-list=\"${5:tabList}\"",
             "/>"
         ],
         "description": "KG头部组件/ KgHeader"
@@ -479,11 +479,11 @@
         "prefix": "c-list-result",
         "body": [
             "<c-list-result",
-            "    :title=\"${1:title}\"",
-            "    :url=\"${2:url}\"",
-            "    :url-params=\"${3:urlParams}\"",
+            "\t:title=\"${1:title}\"",
+            "\t:url=\"${2:url}\"",
+            "\t:url-params=\"${3:urlParams}\"",
             ">",
-            "    $0",
+            "\t$0",
             "</c-list-result>"
         ],
         "description": "列表结果框架/ ListResult"
@@ -492,10 +492,10 @@
         "prefix": "c-footer",
         "body": [
             "<c-footer",
-            "    left-text=\"${1:leftText}\"",
-            "    right-text=\"${2:rightText}\"",
-            "    right-url=\"${3:rightUrl}\"",
-            "    right-url-params=\"${4:rightUrlParams}\"",
+            "\tleft-text=\"${1:leftText}\"",
+            "\tright-text=\"${2:rightText}\"",
+            "\tright-url=\"${3:rightUrl}\"",
+            "\tright-url-params=\"${4:rightUrlParams}\"",
             "/>"
         ],
         "description": "卡片脚注/ Footer"
@@ -504,9 +504,9 @@
         "prefix": "c-content",
         "body": [
             "<c-content",
-            "    :selected-index=\"${1:selectedIndex}\"",
+            "\t:selected-index=\"${1:selectedIndex}\"",
             ">",
-            "    $0",
+            "\t$0",
             "</c-content>"
         ],
         "description": "内容/ Content"
@@ -515,8 +515,8 @@
         "prefix": "c-tags",
         "body": [
             "<c-tags",
-            "    :label-list=\"${1:labelList}\"",
-            "    @change=\"${2:handleTagsChange}\"",
+            "\t:label-list=\"${1:labelList}\"",
+            "\t@change=\"${2:handleTagsChange}\"",
             "/>"
         ],
         "description": "标签/ Tags"
@@ -525,9 +525,9 @@
         "prefix": "c-tag-group",
         "body": [
             "<c-tag-group",
-            "    :list=\"${1:list}\"",
-            "    type=\"${2:radio}\"",
-            "    @change=\"${3:handleChange}\"",
+            "\t:list=\"${1:list}\"",
+            "\ttype=\"${2:radio}\"",
+            "\t@change=\"${3:handleChange}\"",
             "/>"
         ],
         "description": "标签组/ TagGroup"
@@ -536,10 +536,10 @@
         "prefix": "c-rec",
         "body": [
             "<c-rec",
-            "    :list=\"${1:list}\"",
-            "    :title=\"${2:title}\"",
-            "    :num=\"${3:num}\"",
-            "    @itemclick=\"${4:handleItemClick}\"",
+            "\t:list=\"${1:list}\"",
+            "\t:title=\"${2:title}\"",
+            "\t:num=\"${3:num}\"",
+            "\t@itemclick=\"${4:handleItemClick}\"",
             "/>"
         ],
         "description": "推荐模块/ Rec"
@@ -548,13 +548,13 @@
         "prefix": "c-scroll-imgs",
         "body": [
             "<c-scroll-imgs",
-            "    :col=\"${1:col}\"",
-            "    :img-list=\"${2:imgList}\"",
-            "    :more-url=\"${3:moreUrl}\"",
-            "    :more-url-params=\"${4:moreUrlParams}\"",
-            "    :more-col=\"${5:moreCol}\"",
-            "    :default-image-type=\"${6:defaultImageType}\"",
-            "    @itemclick=\"${7:handleItemClick}\"",
+            "\t:col=\"${1:col}\"",
+            "\t:img-list=\"${2:imgList}\"",
+            "\t:more-url=\"${3:moreUrl}\"",
+            "\t:more-url-params=\"${4:moreUrlParams}\"",
+            "\t:more-col=\"${5:moreCol}\"",
+            "\t:default-image-type=\"${6:defaultImageType}\"",
+            "\t@itemclick=\"${7:handleItemClick}\"",
             "/>"
         ],
         "description": "多图横滑/ ScrollImgs"
@@ -563,8 +563,8 @@
         "prefix": "c-stitch-imgs",
         "body": [
             "<c-stitch-imgs",
-            "    :num=\"${1:2}\"",
-            "    :img-list=\"${2:imgList}\"",
+            "\t:num=\"${1:2}\"",
+            "\t:img-list=\"${2:imgList}\"",
             "/>"
         ],
         "description": "图集组件/ StitchImgs"
@@ -573,11 +573,11 @@
         "prefix": "c-waterfall",
         "body": [
             "<c-waterfall",
-            "    :img-list=\"${1:imgList}\"",
-            "    :column=\"${2:col}\"",
-            "    class=\"${3:c-row-tile}\"",
-            "    @load=\"${4:onLoad}\"",
-            "    @imgclick=\"${5:handleImgClick}\"",
+            "\t:img-list=\"${1:imgList}\"",
+            "\t:column=\"${2:col}\"",
+            "\tclass=\"${3:c-row-tile}\"",
+            "\t@load=\"${4:onLoad}\"",
+            "\t@imgclick=\"${5:handleImgClick}\"",
             "/>"
         ],
         "description": "瀑布流/ Waterfall"
@@ -586,12 +586,12 @@
         "prefix": "c-scroll-video",
         "body": [
             "<c-scroll-video",
-            "    :video=\"${1:video}\"",
-            "    :col=\"${2:6}\"",
-            "    :show-config=\"${3:showConfig}\"",
-            "    :more-info=\"${4:moreInfo}\"",
-            "    @showMore=\"${5:selfShowMore}\"",
-            "    @scrollEnd=\"${6:selfScrollEnd}\"",
+            "\t:video=\"${1:video}\"",
+            "\t:col=\"${2:6}\"",
+            "\t:show-config=\"${3:showConfig}\"",
+            "\t:more-info=\"${4:moreInfo}\"",
+            "\t@showMore=\"${5:selfShowMore}\"",
+            "\t@scrollEnd=\"${6:selfScrollEnd}\"",
             "/>"
         ],
         "description": "视频横滑列表/ ScrollVideo"
@@ -600,8 +600,8 @@
         "prefix": "c-video",
         "body": [
             "<c-video",
-            "    :video=\"${1:video}\"",
-            "    @click=\"${2:onClick}\"",
+            "\t:video=\"${1:video}\"",
+            "\t@click=\"${2:onClick}\"",
             "/>"
         ],
         "description": "视频/ Video"
@@ -610,11 +610,11 @@
         "prefix": "c-selector",
         "body": [
             "<c-selector",
-            "    :title=\"${1:title}\"",
-            "    :data=\"${2:data}\"",
-            "    :open=\"${3:open}\"",
-            "    @select=\"${4:onSelect}\"",
-            "    @close=\"${5:onClose}\"",
+            "\t:title=\"${1:title}\"",
+            "\t:data=\"${2:data}\"",
+            "\t:open=\"${3:open}\"",
+            "\t@select=\"${4:onSelect}\"",
+            "\t@close=\"${5:onClose}\"",
             "/>"
         ],
         "description": "选择框/ Selector"
@@ -623,9 +623,430 @@
         "prefix": "c-stars",
         "body": [
             "<c-stars",
-            "    :stars=\"$1\"",
+            "\t:stars=\"$1\"",
             "/>"
         ],
         "description": "星星评分/ Stars"
+    },
+    "c-article": {
+        "prefix": "c-article",
+        "body": [
+            "<c-article",
+            "\t:title=\"${1:title}\"",
+            "\t:url=\"${2:url}\"",
+            "\t:url-params=\"${3:urlParams}\"",
+            "\t:abstract=\"${4:abstract}\"",
+            "\t:img-list=\"${5:imgList}\"",
+            "\t:time=\"${6:time}\"",
+            "\t:source=\"${7:source}\"",
+            "\t:read-num=\"${8:readNum}\"",
+            ">",
+            "</c-article>"
+        ],
+        "description": "文章单结果组件/ Article"
+    },
+    "c-list-article": {
+        "prefix": "c-list-article",
+        "body": [
+            "<c-list-article",
+            "\t:articleList=\"${1:articleList}\"",
+            "\tarticleType=\"${2:2}\"",
+            ">",
+            "</c-list-article>"
+        ],
+        "description": "文章列表组件/ ListArticle"
+    },
+    "c-news-article": {
+        "prefix": "c-news-article",
+        "body": [
+            "<c-news-article",
+            "\t:url=\"${1:url}\"",
+            "\t:params=\"${2:params}\"",
+            "\t:title=\"${3:title}\"",
+            "\t:is-title-html=\"${4:isTitleHtml}\"",
+            "\t:avatar=\"${5:avatar}\"",
+            "\t:avatar-url=\"${6:avatarUrl}\"",
+            "\t:avatar-url-params=\"${7:avatarUrlParams}\"",
+            "\t:source=\"${8:source}\"",
+            "\t:time=\"${9:time}\"",
+            "\t:extra=\"${10:extra}\"",
+            "\t:img-src=\"${11:imgSrc}\"",
+            "\t:content=\"${12:content}\"",
+            ">",
+            "</c-news-article>"
+        ],
+        "description": "资讯组件/ NewsArticle"
+    },
+    "c-scroll-article": {
+        "prefix": "c-scroll-article",
+        "body": [
+            "<c-scroll-article",
+            "\t:col=\"${1:col}\"",
+            "\t:article-list=\"${2:articleList}\"",
+            "\t:more-url=\"${3:moreUrl}\"",
+            "\t:more-url-params=\"${4:moreUrlParams}\"",
+            "\t@scrollEnd=\"${5:handleScrollEnd}\"",
+            ">",
+            "</c-scroll-article>"
+        ],
+        "description": "资讯类横滑/ ScrollArticle"
+    },
+    "c-scroll-two": {
+        "prefix": "c-scroll-two",
+        "body": [
+            "<c-scroll-two",
+            "\torientation=\"${1:horizontal}\"",
+            "\t:col=\"${2:col}\"",
+            "\t:list=\"${3:list}\"",
+            "\t:img-type=\"${4:imgType}\"",
+            "\t:more-url=\"${5:moreUrl}\"",
+            "\t:more-url-params=\"${6:moreUrlParams}\"",
+            "\t@showmore=\"${7:handleShowMore}\"",
+            "\t@scrollend=\"${8:handleScrollEnd}\"",
+            "\t@itemclick=\"${9:handleItemClick}\"",
+            ">",
+            "\t$0",
+            "</c-scroll-two>"
+        ],
+        "description": "双排横划组件/ ScrollTwo"
+    },
+    "c-scroll-two-frame": {
+        "prefix": "c-scroll-two-frame",
+        "body": [
+            "<c-scroll-two-frame",
+            "\torientation=\"${1:horizontal}\"",
+            "\t:col=\"${2:col}\"",
+            "\t:length=\"${3:length}\"",
+            "\t:more-url=\"${4:moreUrl}\"",
+            "\t:more-url-params=\"${5:moreUrlParams}\"",
+            "\t@showmore=\"${6:handleShowMore}\"",
+            "\t@scrollend=\"${7:handleScrollEnd}\"",
+            "\t@itemclick=\"${8:handleItemClick}\"",
+            ">",
+            "\t$0",
+            "</c-scroll-two-frame>"
+        ],
+        "description": "双排横划框架组件/ ScrollTwoFrame"
+    },
+    "c-audio": {
+        "prefix": "c-audio",
+        "body": [
+            "<c-audio",
+            "\t:time=\"${1:time}\"",
+            "\t:audioUrl=\"${2:audioUrl}\"",
+            ">",
+            "</c-audio>"
+        ],
+        "description": "音频播放/ Audio"
+    },
+    "c-carousel": {
+        "prefix": "c-carousel",
+        "body": [
+            "<c-carousel",
+            "\t:title=\"${1:title}\"",
+            "\t:list=\"${2:list}\"",
+            "\tis-background-image",
+            "\theight=\"${3:200px}\"",
+            "\tclass=\"${4:c-row-tile}\"",
+            "\t@imgitemclick=\"${5:handleImgItemClick}\"",
+            "\t@change=\"${6:handleChange}\"",
+            "/>"
+        ],
+        "description": "轮播图-走马灯/ Carousel"
+    },
+    "c-drawer": {
+        "prefix": "c-drawer",
+        "body": [
+            "<c-drawer",
+            "\t:is-open=\"${1:isOpen}\"",
+            "\t:title=\"${2:title}\"",
+            "\t:list=\"${3:list}\"",
+            "\t@close=\"${4:handleClose}\"",
+            "\t@change=\"${5:handleChange}\"",
+            ">",
+            "</c-drawer>"
+        ],
+        "description": "抽屉/ Drawer"
+    },
+    "c-filter-simple": {
+        "prefix": "c-filter-simple",
+        "body": [
+            "<c-filter-simple",
+            "\t:selection-list=\"${1:selectionList}\"",
+            "\t:selected-index=\"${2:selectedIndex}\"",
+            "\tclass=\"${3:c-row-tile}\"",
+            "\t@click=\"${4:onClick}\"",
+            "/>"
+        ],
+        "description": "简单筛选/ FilterSimple"
+    },
+    "c-filter-frame": {
+        "prefix": "c-filter-frame",
+        "body": [
+            "<c-filter-frame",
+            "\t:options=\"${1:options}\"",
+            "\tclass=\"${2:filter c-row-tile}\"",
+            "\t@taglayoutclick=\"${3:handleTagLayoutClick}\"",
+            "\t@maskclick=\"${4:handleMaskClick}\"",
+            ">",
+            "\t$0",
+            "</c-filter-frame>"
+        ],
+        "description": "筛选/(新) FilterEnhanced"
+    },
+    "c-filter-enhanced": {
+        "prefix": "c-filter-enhanced",
+        "body": [
+            "<c-filter-enhanced",
+            "\t:selections=\"${1:selections}\"",
+            "\tclass=\"${2:filter}\"",
+            ">",
+            "\t$0",
+            "</c-filter-enhanced>"
+        ],
+        "description": "筛选/(旧) FilterEnhanced"
+    },
+    "c-image-viewer": {
+        "prefix": "c-image-viewer",
+        "body": [
+            "<c-image-viewer",
+            "\ta-if=\"${1:showViewer}\"",
+            "\tref=\"${2:viewer}\"",
+            "\t:list=\"${3:list}\"",
+            "\t:startIndex=\"${4:showIndex}\"",
+            "\t:hideInfo=\"${5:hideInfo}\"",
+            "\t:hideToolbar=\"${6:hideToolbar}\"",
+            "\t:hidePageNum=\"${7:hidePageNum}\"",
+            "\t:isSwipeFirstLeave=\"${8:false}\"",
+            "\t@enterstart=\"${9:beforeViewerEnter}\"",
+            "\t@leavestart=\"${10:beforeViewerLeave}\"",
+            "\t@leave=\"${11:onViewerLeave}\"",
+            "\t@switch=\"${12:onViewerSwitch}\"",
+            "\t@swipefirst=\"${13:onViewerSwipeFirst}\"",
+            ">",
+            "\t$0",
+            "</c-image-viewer>"
+        ],
+        "description": "大图浏览/ ImageViewer"
+    },
+    "c-infinite-scroll": {
+        "prefix": "c-infinite-scroll",
+        "body": [
+            "<c-infinite-scroll",
+            "\t:page-num=\"${1:pageNum}\"",
+            "\tloading-text=\"${2:正在获取优惠信息}\"",
+            "\tload-end-text=\"${3:已无更多优惠信息}\"",
+            "\tload-fail-text=\"${4:优惠都飞走了，点击重新加载}\"",
+            "\t@load=\"${5:onLoad}\"",
+            ">",
+            "\t$0",
+            "</c-infinite-scroll>"
+        ],
+        "description": "无限下拉/ InfiniteScroll"
+    },
+    "c-infinite-scroll-bottom-bar": {
+        "prefix": "c-infinite-scroll-bottom-bar",
+        "body": [
+            "<c-infinite-scroll-bottom-bar",
+            "\t:status=\"${1:status}\"",
+            "\t@click=\"${2:handleInfiniteScrollBottomBarClick}\"",
+            ">",
+            "</c-infinite-scroll-bottom-bar>"
+        ],
+        "description": "无限下拉/无限下拉底部栏 InfiniteScroll"
+    },
+    "c-letter-sort": {
+        "prefix": "c-letter-sort",
+        "body": [
+            "<c-letter-sort",
+            "\t:is-open=\"${1:isOpen}\"",
+            "\t:is-move=\"${2:isMove}\"",
+            "\t:z-index=\"${3:zIndex}\"",
+            "\t:letter-data=\"${4:letterData}\"",
+            "\t:color=\"${5:color}\"",
+            "\t@clickItem=\"${6:click}\"",
+            "\t@clickLetter=\"${7:clickLetter}\"",
+            "\t@handleTouchEnd=\"${8:handleTouchEnd}\"",
+            ">",
+            "\t$0",
+            "</c-letter-sort>"
+        ],
+        "description": "字母排序/ LetterSort"
+    },
+    "c-move": {
+        "prefix": "c-move",
+        "body": [
+            "<c-move",
+            "\tref=\"${1:rotate}\"",
+            "\t:animations=\"${2:animations}\"",
+            "\t:options=\"${3:options}\"",
+            ">",
+            "\t$0",
+            "</c-move>"
+        ],
+        "description": "动效通用组件/ Motion"
+    },
+    "c-page-scroll": {
+        "prefix": "c-page-scroll",
+        "body": [
+            "<c-page-scroll",
+            "\tclass=\"${1:c-row-tile c-gap-top-large c-gap-bottom}\"",
+            "\t:page=\"${2:page}\"",
+            "\t@scrollend=\"${3:onChange}\"",
+            ">",
+            "\t<c-page-scroll-item a-for=\"${4:i in math_ceil(length / cols)}\">",
+            "\t\t$0",
+            "\t</c-page-scroll-item>",
+            "</c-page-scroll>"
+        ],
+        "description": "翻页横滑/ PageScroll"
+    },
+    "c-popup": {
+        "prefix": "c-popup",
+        "body": [
+            "<c-popup",
+            "\t:title=\"${1:title}\"",
+            "\t:subtitle=\"${2:subtitle}\"",
+            "\t:is-open=\"${3:isOpen}\"",
+            "\t@close=\"${4:onClose}\"",
+            ">",
+            "\t$0",
+            "</c-popup>"
+        ],
+        "description": "弹层/ Popup"
+    },
+    "c-pull-refresh": {
+        "prefix": "c-pull-refresh",
+        "body": [
+            "<c-pull-refresh",
+            "\t@on-refresh=\"${1:handleLoaded}\"",
+            ">",
+            "\t$0",
+            "</c-pull-refresh>"
+        ],
+        "description": "下拉刷新/ PullRefresh"
+    },
+    "c-scroll": {
+        "prefix": "c-scroll",
+        "body": [
+            "<c-scroll",
+            "\t@scrollend=\"${1:handleScrollEnd}\"",
+            ">",
+            "\t<c-scroll-item",
+            "\t\ta-for=\"(${2:item}, ${3:index}) in ${4:imgs}\"",
+            "\t\t:col=\"${5:col}\"",
+            "\t\t:key=\"${3:index}\"",
+            "\t>",
+            "\t\t$0",
+            "\t</c-scroll-item>",
+            "</c-scroll>"
+        ],
+        "description": "横滑/ Scroll"
+    },
+    "c-share": {
+        "prefix": "c-share",
+        "body": [
+            "<c-share",
+            "\t:show=\"${1:show}\"",
+            "\t:use-popup=\"${2:trans}\"",
+            "\t:use-fusion=\"${3:false}\"",
+            "\t:url=\"${4:url}\"",
+            "\t:title=\"${5:title}\"",
+            "\t:content=\"${6:content}\"",
+            "\t:iconUrl=\"${7:iconUrl}\"",
+            "\t@close=\"${8:close}\"",
+            "/>"
+        ],
+        "description": "分享/ Share"
+    },
+    "c-spread": {
+        "prefix": "c-spread",
+        "body": [
+            "<c-spread",
+            "\t@change=\"${1:handleChange}\"",
+            ">",
+            "\t$0",
+            "</c-spread>"
+        ],
+        "description": "展开收起/ SpreadEnhanced"
+    },
+    "c-to-top": {
+        "prefix": "c-to-top",
+        "body": [
+            "<c-to-top :showThreshold=\"${1:1}\"/>"
+        ],
+        "description": "返回顶部/ ToTop"
+    },
+    "c-toast": {
+        "prefix": "c-toast",
+        "body": [
+            "<c-toast",
+            "\t:content=\"${1:content}\"",
+            "\t:iconType=\"${2:type}\"",
+            "\t:state=\"${3:state}\"",
+            "\t@change=\"${4:change}\"",
+            "\tauto-close",
+            ">",
+            "</c-toast>"
+        ],
+        "description": "提示框/ Toast"
+    },
+    "c-touchable-feedback": {
+        "prefix": "c-touchable-feedback",
+        "body": [
+            "<c-touchable-feedback",
+            "\t:left=\"${1:-.06}\"",
+            "\t:right=\"${2:-.06}\"",
+            ">",
+            "\t$0",
+            "</c-touchable-feedback>"
+        ],
+        "description": "点击态/ TouchableFeedback"
+    },
+    "c-touchable-stop": {
+        "prefix": "c-touchable-stop",
+        "body": [
+            "<c-touchable-stop>",
+            "\t$0",
+            "</c-touchable-stop>"
+        ],
+        "description": "点击态/禁止 TouchableTop"
+    },
+    "c-switch": {
+        "prefix": "c-switch",
+        "body": [
+            "<c-switch",
+            "\t:value=\"${1:false}\"",
+            "\t:transition=\"${2:false}\"",
+            ">",
+            "</c-switch>"
+        ],
+        "description": "开关/ Switch"
+    },
+    "c-image-viewer-simple": {
+        "prefix": "c-image-viewer-simple",
+        "body": [
+            "<c-image-viewer-simple",
+            "\tref=\"${1:viewer}\"",
+            "\t:hidePageNum=\"${2:hidePageNum}\"",
+            "\t:hideSaveButton=\"${3:hideSaveButton}\"",
+            "\t@switch=\"${4:onViewerSwitch}\"",
+            ">",
+            "</c-image-viewer-simple>"
+        ],
+        "description": "图片查看器/ ImageViewerSimple"
+    },
+    "c-dialog": {
+        "prefix": "c-dialog",
+        "body": [
+            "<c-dialog",
+            "\t:visible=\"${1:visible}\"",
+            "\t:title=\"${2:title}\"",
+            "\t:content=\"${3:content}\"",
+            "\t@close=\"${4:handleClose}\"",
+            "\t@btnclick=\"${5:handleDialogBtnClick}\"",
+            "/>"
+        ],
+        "description": "对话框组件/ Dialog"
     }
 }

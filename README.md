@@ -48,11 +48,21 @@ Code snippets for Atom in order to let you develop faster.
 ### 跳转定义
 定义处cmd+鼠标左键触发跳转
 
+tip:跳转组件文档需要本地路径与远程一致
+ - atom组件引用跳转到search-ui下对应组件readme
+ - nextpage组件跳转到app_components下对应文件
+ - 其他跳转到对应文件
+
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/jump_def_a.png" width="380"/>
 <br/>
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/jump_def_b.png" width="300"/>
 
 ### 调起终端
+点击同步按钮后同时会在控制台Atom/log中输出日志
+ - atom执行 ala sync [template] -w
+ - nextpage执行 make watch
+ - atom-engine执行 atom-engine build -d
+
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/sync_machine.png" width="400"/>
 
 
@@ -72,7 +82,7 @@ prefix:
 
 
 ### Atom组件
-目前支持c-aladdin等47个atom组件
+目前支持c-aladdin等78个atom组件
 
 atom/prefix:
 
