@@ -296,7 +296,8 @@ vscode.commands.registerCommand('extension.autoAddComponent', function (label) {
             // 获取components所在行前空格数量
             let blankArr = curLineText.match(/\s(?=\s*components)/g) || [];
             let tabNum = Math.ceil(blankArr.length / 4 + 1);
-            let tabStr = new Array(tabNum).fill('\t').join('');
+            // let tabStr = new Array(tabNum).fill('\t').join('');
+            let blankStr = new Array(tabNum*4).fill(' ').join('');
 
             // 操作文档
             textEditor.edit(editBuilder => {
@@ -311,11 +312,11 @@ vscode.commands.registerCommand('extension.autoAddComponent', function (label) {
                 }
 
                 // 插入引用
-                let insertLine = refObj.body.join(`\n${tabStr}`); // 生成引用字符串
+                let insertLine = refObj.body.join(`\n${blankStr}`); // 生成引用字符串
                 let lineTail = document.lineAt(targetLine).text.length; // 行字符串长度为行尾位置
                 editBuilder.insert(
                     new vscode.Position(targetLine, lineTail),
-                    `\n${tabStr}${insertLine}${isFirstRef ? '' : ','}`
+                    `\n${blankStr}${insertLine}${isFirstRef ? '' : ','}`
                 );
             });
         }
