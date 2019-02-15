@@ -20,7 +20,7 @@ let uniqueArr = (arr) => {
     return [...x];
 }
 
-//获取json数据
+// 获取文件json数据
 let getFileData = (filePath) => {
     return JSON.parse(
         fs.readFileSync(
@@ -29,6 +29,7 @@ let getFileData = (filePath) => {
     );
 }
 
+// this.xx / this.$refs.xx / AlaUtil.xx
 exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
     provideCompletionItems: (document, position) => {
         let doc            = document.getText();
@@ -72,11 +73,12 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
             });
         };
         let getFuncArr = () => {
-            let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/) || [];
-            if (!methodsPartArr.length) return [];
+            let methodsPartArr = doc.match(/methods:\s*\{[\s\S]*\};/);
+            if (!methodsPartArr) return [];
             let resArr = [];
             // resArr = methodsPartArr[0].match(/\w+(?=\([^\)]*\)\s*\{)/g);
             resArr = methodsPartArr[0].match(/\w+(?=\([\w\s,]*\)\s*\{)/g);
+            if (!resArr) return [];
             return resArr.map((opt) => {
                 return new vscode.CompletionItem(
                     opt,
@@ -135,6 +137,7 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
     }
 }, '.');
 
+// 引用模块/声明变量  import xx / let xxx
 exports.refCompletion = languages.registerCompletionItemProvider('atom', {
     provideCompletionItems: (document, position) => {
         let doc = document.getText();
@@ -184,6 +187,7 @@ exports.refCompletion = languages.registerCompletionItemProvider('atom', {
     }
 });
 
+// PSMD-UI
 languages.registerCompletionItemProvider('atom', {
     provideCompletionItems: (document, position) => {
         let matchPos = document.getWordRangeAtPosition(position, /class="[\w\s-_]*"/);
