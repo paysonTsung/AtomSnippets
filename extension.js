@@ -1,7 +1,7 @@
 /**
  * @model        Core
  * @description  扩展主入口
- * @version      0.4.3
+ * @version      0.4.4
  * @author       congpeisen
  */
 
@@ -10,7 +10,8 @@ let vscode = require('vscode');
 let {jumpSoy}                       = require('./func/jumpLink');
 let {showTerminal, syncMachine}     = require('./func/terminal');
 let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
-let {dataCompletion, refCompletion} = require('./func/autoCompletion');
+// let {dataCompletion, refCompletion} = require('./func/autoCompletion');
+require('./func/autoCompletion');
 
 function activate(context) {
     console.log('"Atom Snippets" is now active');
@@ -24,9 +25,7 @@ function activate(context) {
         showTerminal,
         syncMachine,
         jumpFolder,
-        jumpComponent,
-        dataCompletion,
-        refCompletion
+        jumpComponent
     }
     let Btns = new Map([
         [

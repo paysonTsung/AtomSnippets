@@ -1,8 +1,9 @@
 /**
  * @description 智能提示
- * @exports dataCompletion this.xx / this.$refs.xx / AlaUtil.xx
- * @exports refCompletion 引用模块/声明变量  import xx / let xxx
  * @author congpeisen
+ * @todo 文件待拆分
+ * @todo 待抽象函数、缓存等优化
+ * @todo 组件prop补全: 匹配组件模式,提供不同prop补全
  */
 
 let vscode = require('vscode');
@@ -13,24 +14,77 @@ let languages = vscode.languages;
 const UI_CLASS_PATH = 'snippets-diy/ui-class.json';
 const ATOM_COM_PATH = 'snippets-diy/atom-components.json';
 const ATOM_REF_PATH = 'snippets-diy/atom-reference.json';
+const ATOM_PROP_PATH = 'snippets-diy/atom-props.json';
+const ATOM_EVENT_PATH = 'snippets-diy/atom-events.json';
+const ATOM_INST_PATH = 'snippets-diy/atom-instructions.json';
 
 // 数组去重
-let uniqueArr = (arr) => {
-    let x = new Set(arr);
-    return [...x];
-}
+let uniqueArr = (arr) => [...new Set(arr)];
 
 // 获取文件json数据
-let getFileData = (filePath) => {
-    return JSON.parse(
+let getFileData = (filePath) =>
+    JSON.parse(
         fs.readFileSync(
             path.join(__dirname, filePath), 'utf8'
         )
     );
+
+// 检查是否是template内部
+let checkIfTemplate = (document, position) =>
+    document.getText(
+        new vscode.Range(
+            position,
+            new vscode.Position(document.lineCount, 0)
+        )
+    ).includes('</template>');
+
+// 正则匹配行模式
+let checkLinePrefix = (document, position, reg) => {
+    let prefixLine = document.lineAt(position).text.substr(0, position.character);
+    if (reg.test(prefixLine)) {
+        return prefixLine;
+    }
+    return '';
+}
+// 正则匹配是否为组件头内部并获取组件
+let checkComponentHead = (document, position) => {
+    let matchArr = [];
+    let matchComponent = '';
+    let curLineNum = -1;
+    let curLineStr = '';
+    let focusLineStr = document.lineAt(position).text;
+    let focusLineNum = document.lineAt(position).lineNumber;
+    let posLeftLine = focusLineStr.substr(0, position.character);
+    let posRightLine = focusLineStr.substr(position.character);
+
+    if (posLeftLine.includes('>') || posRightLine.includes('<')) return '';
+
+    curLineNum = focusLineNum - 1;
+    while (curLineNum > 0) {
+        curLineStr = document.lineAt(curLineNum).text;
+        if (curLineStr.includes('>')) return '';
+        if (/\s*<\w*/.test(curLineStr)) {
+            matchComponent = curLineStr.match(/\s*<(?=([\w-]*\b))/)[1];
+            break;
+        }
+        curLineNum--;
+    }
+    
+    curLineNum = focusLineNum + 1;
+    while (curLineNum < document.lineCount - 1) {
+        curLineStr = document.lineAt(curLineNum).text;
+        if (curLineStr.includes('<')) return '';
+        if (/\s*>/.test(curLineStr) && matchComponent) {
+            return matchComponent;
+        }
+        curLineNum++;
+    }
+
+    return '';
 }
 
 // this.xx / this.$refs.xx / AlaUtil.xx
-exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
+languages.registerCompletionItemProvider(['atom'], {
     provideCompletionItems: (document, position) => {
         let doc            = document.getText();
         let line           = document.lineAt(position);
@@ -138,7 +192,7 @@ exports.dataCompletion = languages.registerCompletionItemProvider(['atom'], {
 }, '.');
 
 // 引用模块/声明变量  import xx / let xxx
-exports.refCompletion = languages.registerCompletionItemProvider('atom', {
+languages.registerCompletionItemProvider('atom', {
     provideCompletionItems: (document, position) => {
         let doc = document.getText();
         let beforeCursorDoc = document.getText(
@@ -200,7 +254,7 @@ languages.registerCompletionItemProvider('atom', {
                 data,
                 vscode.CompletionItemKind.Field
             )
-            item.detail = `${configData[data].description} (Atom Snippets)`;
+            item.detail = `${configData[data].description}\n(Atom Snippets)`;
             return item;
         });
     },
@@ -213,35 +267,29 @@ languages.registerCompletionItemProvider('atom', {
 languages.registerCompletionItemProvider('atom', {
     provideCompletionItems: (document, position) => {
         // 补全校验
-        if(
-            !document.getText(
-                new vscode.Range(
-                    position,
-                    new vscode.Position(document.lineCount, 0)
+        if (
+            checkIfTemplate(document, position)
+            && checkLinePrefix(document, position, /^\s*\w*$/)
+            && !checkComponentHead(document, position)
+        ) {
+            let atomComponents = getFileData(ATOM_COM_PATH);
+
+            return Object.keys(atomComponents).map((item) => {
+                let itemObj = atomComponents[item];
+                let sniItem = new vscode.CompletionItem(
+                    itemObj.prefix,
+                    vscode.CompletionItemKind.Struct
                 )
-            ).includes('</template>')  //非template模板内部不触发
-            || !/^\s*\w*$/.test(
-                document.lineAt(position).text.substr(0, position.character)
-            )  // 非空行不触发
-        ) return;
-
-        let atomComponents = getFileData(ATOM_COM_PATH);
-
-        return Object.keys(atomComponents).map((item) => {
-            let itemObj = atomComponents[item];
-            let sniItem = new vscode.CompletionItem(
-                itemObj.prefix,
-                vscode.CompletionItemKind.Struct
-            )
-            sniItem.insertText = new vscode.SnippetString(itemObj.body.join('\n'));
-            sniItem.detail = `${itemObj.description} (Atom Snippets)`;
-            sniItem.command = {
-                title: 'autoAddComponent',
-                command: 'extension.autoAddComponent',
-                arguments: [sniItem.label]
-            };
-            return sniItem;
-        });
+                sniItem.insertText = new vscode.SnippetString(itemObj.body.join('\n'));
+                sniItem.detail = `${itemObj.description}\n(Atom Snippets)`;
+                sniItem.command = {
+                    title: 'autoAddComponent',
+                    command: 'extension.autoAddComponent',
+                    arguments: [sniItem.label]
+                };
+                return sniItem;
+            });
+        }
     },
     resolveCompletionItem: (item) => {
         return item;
@@ -326,3 +374,76 @@ vscode.commands.registerCommand('extension.autoAddComponent', function (label) {
         }
     }
 })
+
+// Atom组件props自动补全
+languages.registerCompletionItemProvider('atom', {
+    provideCompletionItems: (document, position) => {
+        let matchComponent = '';
+        let prefixLine = '';
+        let snippetsArr = [];
+        // 补全校验
+        if(
+            checkIfTemplate(document, position)
+            && (prefixLine = checkLinePrefix(document, position, /^\s*(\:|@)?\w*$/))
+            && (matchComponent = checkComponentHead(document, position))
+        ) {
+            if (/^\s*@/.test(prefixLine)) {
+                // + events
+                let atomEvents = getFileData(ATOM_EVENT_PATH);
+                let atomEventsArr = atomEvents[matchComponent];
+                if (atomEventsArr) {
+                    return atomEventsArr.map((item) => {
+                        let sniItem = new vscode.CompletionItem(
+                            item.prefix,
+                            vscode.CompletionItemKind.Event
+                        )
+                        sniItem.insertText = new vscode.SnippetString(item.body.join('\n'));
+                        sniItem.detail = `${item.description}\n(Atom Snippets)`;
+                        return sniItem;
+                    });
+                }
+            } else {
+                if (/^\s*\w/.test(prefixLine)) {
+                    // + class等
+                    let atomInstObj = getFileData(ATOM_INST_PATH);
+
+                    snippetsArr = [
+                        ...snippetsArr,
+                        ...Object.keys(atomInstObj).map((item) => {
+                            let itemObj = atomInstObj[item];
+                            let sniItem = new vscode.CompletionItem(
+                                itemObj.prefix,
+                                vscode.CompletionItemKind.Enum
+                            )
+                            sniItem.insertText = new vscode.SnippetString(itemObj.body.join('\n'));
+                            sniItem.detail = `${itemObj.description}\n(Atom Snippets)`;
+                            return sniItem;
+                        })
+                    ];
+                }
+                // + props
+                let atomProps = getFileData(ATOM_PROP_PATH);
+                let atomPropArr = atomProps[matchComponent];
+                if (atomPropArr) {
+                    snippetsArr = [
+                        ...snippetsArr,
+                        ...atomPropArr.map((item) => {
+                            let sniItem = new vscode.CompletionItem(
+                                item.prefix,
+                                vscode.CompletionItemKind.Property
+                            )
+                            sniItem.insertText = new vscode.SnippetString(item.body.join('\n'));
+                            sniItem.detail = `${item.description}\n(Atom Snippets)`;
+                            return sniItem;
+                        })
+                    ];
+                }
+                return snippetsArr;
+            }
+            return null;
+        }
+    },
+    resolveCompletionItem: (item) => {
+        return item;
+    }
+});

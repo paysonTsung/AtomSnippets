@@ -1,0 +1,186 @@
+{
+    "c-aladdin": [
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "标题链接地址"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "标题链接所需的参数"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题文本，支持高亮"
+        },
+        {
+            "prefix": "title-clamp",
+            "body": [
+                "title-clamp=\"$1\""
+            ],
+            "description": "显示行数，范围为1-5；\nt1 默认大屏设备(网页宽度376px及以上)1行截断，小屏设备(网页宽度376px以下)不截断\nt2 默认一行截断"
+        },
+        {
+            "prefix": "title-icon",
+            "body": [
+                "title-icon=\"$1\""
+            ],
+            "description": "标题图标"
+        },
+        {
+            "prefix": "title-arrow",
+            "body": [
+                "title-arrow"
+            ],
+            "description": "标题右侧是否有箭头，情景页一般要求设置为true"
+        },
+        {
+            "prefix": "title-label",
+            "body": [
+                "title-label=\"$1\""
+            ],
+            "description": "标题后的标签文本"
+        },
+        {
+            "prefix": "title-label-type",
+            "body": [
+                "title-label-type=\"$1\""
+            ],
+            "description": "标题后的标签类型"
+        },
+        {
+            "prefix": "title-size",
+            "body": [
+                "title-size=\"$1\""
+            ],
+            "description": "标题尺寸，支持t1/t2"
+        },
+        {
+            "prefix": "title-feedback",
+            "body": [
+                "title-feedback"
+            ],
+            "description": "标题是否添加点击态：\n true 为添加；false 时会判断 url 是否存在，存在则添加点击态，否则不添加"
+        },
+        {
+            "prefix": "title-color",
+            "body": [
+                "title-color=\"$1\""
+            ],
+            "description": "标题颜色"
+        },
+        {
+            "prefix": "title-visited",
+            "body": [
+                "title-visited"
+            ],
+            "description": "标题访问后是否变灰"
+        },
+        {
+            "prefix": "show-url",
+            "body": [
+                "show-url=\"$1\""
+            ],
+            "description": "脚注显示的资源方链接"
+        },
+        {
+            "prefix": "show-left-text",
+            "body": [
+                "show-left-text=\"$1\""
+            ],
+            "description": "脚注左侧文字"
+        },
+        {
+            "prefix": "show-left-icon",
+            "body": [
+                "show-left-icon=\"$1\""
+            ],
+            "description": "脚注左侧文字后面的图标"
+        },
+        {
+            "prefix": "show-right-text",
+            "body": [
+                "show-right-text=\"$1\""
+            ],
+            "description": "脚注右侧跳转显示的文字"
+        },
+        {
+            "prefix": "show-right-url",
+            "body": [
+                "show-right-url=\"$1\""
+            ],
+            "description": "脚注右侧跳转链接"
+        },
+        {
+            "prefix": "show-right-url-params",
+            "body": [
+                "show-right-url-params=\"$1\""
+            ],
+            "description": "脚注右侧跳转链接所需参数"
+        },
+        {
+            "prefix": "footer-divider",
+            "body": [
+                "footer-divider"
+            ],
+            "description": "脚注上方是否有分割线"
+        },
+        {
+            "prefix": "hide-header",
+            "body": [
+                "hide-header"
+            ],
+            "description": "是否去掉标题区域"
+        },
+        {
+            "prefix": "hide-footer",
+            "body": [
+                "hide-footer"
+            ],
+            "description": "是否去掉脚注区域"
+        },
+        {
+            "prefix": "feedback",
+            "body": [
+                "feedback=\"$1\""
+            ],
+            "description": "反馈内容数据，用于控制是否展现反馈按钮及反馈内容"
+        },
+        {
+            "prefix": "tpl-info",
+            "body": [
+                "tpl-info=\"$1\""
+            ],
+            "description": "模板信息，这里主要使用tplInfo.style字段，用来判断强弱卡"
+        },
+        {
+            "prefix": "touchable",
+            "body": [
+                "touchable"
+            ],
+            "description": "是否开启整卡可点"
+        },
+        {
+            "prefix": "footer-right-touchable",
+            "body": [
+                "footer-right-touchable"
+            ],
+            "description": "是否开启脚注右侧跳转链接点击态"
+        },
+        {
+            "prefix": "title-data-module",
+            "body": [
+                "title-data-module=\"$1\""
+            ],
+            "description": "标题区域data-module属性"
+        }
+    ]
+}

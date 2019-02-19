@@ -1,0 +1,25 @@
+{
+    "c-aladdin": [
+        {
+            "prefix": "feedbackclick",
+            "body": [
+                "feedbackclick=\"${1:feedbackClickFn}\""
+            ],
+            "description": "反馈按钮点击事件"
+        },
+        {
+            "prefix": "footer-click",
+            "body": [
+                "footer-click=\"${1:footerClickFn}\""
+            ],
+            "description": "脚注点击事件"
+        },
+        {
+            "prefix": "title-click",
+            "body": [
+                "title-click=\"${1:titleClickFn}\""
+            ],
+            "description": "标题点击事件"
+        }
+    ]
+}

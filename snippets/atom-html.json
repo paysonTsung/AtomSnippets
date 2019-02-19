@@ -6,34 +6,6 @@
         ],
         "description": "Atom文本插值"
     },
-    "data-module": {
-        "prefix": "data-module",
-        "body": [
-            "data-module=\"$1\""
-        ],
-        "description": "data-module埋点"
-    },
-    "url": {
-        "prefix": "url",
-        "body": [
-            ":url=\"$1\""
-        ],
-        "description": "url"
-    },
-    "params": {
-        "prefix": "params",
-        "body": [
-            ":params=\"$1\""
-        ],
-        "description": "params"
-    },
-    "title": {
-        "prefix": "title",
-        "body": [
-            ":title=\"$1\""
-        ],
-        "description": "title"
-    },
     "htmlcs-disable": {
         "prefix": "htmlcs-disable",
         "body": [
@@ -268,92 +240,5 @@
             "@scroll=\"$1\""
         ],
         "description": "绑定scroll事件"
-    },
-    "ref": {
-        "prefix": "ref",
-        "body": [
-            "ref=\"$1\""
-        ],
-        "description": "ref"
-    },
-    "class": {
-        "prefix": "class",
-        "body": [
-            "class=\"$1\""
-        ],
-        "description": "class"
-    },
-    "style": {
-        "prefix": "style",
-        "body": [
-            "style=\"$1\""
-        ],
-        "description": "style"
-    },
-    
-
-
-    "a-once": {
-        "prefix": "a-once",
-        "body": [
-            "a-once=\"$1\""
-        ],
-        "description": "a-once指令"
-    },
-    "a-if": {
-        "prefix": "a-if",
-        "body": [
-            "a-if=\"$1\""
-        ],
-        "description": "a-if指令"
-    },
-    "a-else-if": {
-        "prefix": "a-else-if",
-        "body": [
-            "a-else-if=\"$1\""
-        ],
-        "description": "a-else-if指令"
-    },
-    "a-else": {
-        "prefix": "a-else",
-        "body": [
-            "a-else"
-        ],
-        "description": "a-else指令"
-    },
-    "a-for": {
-        "prefix": "a-for",
-        "body": [
-            "a-for=\"${2:item} in ${1:items}\""
-        ],
-        "description": "a-for指令"
-    },
-    "a-for-i": {
-        "prefix": "a-for-i",
-        "body": [
-            "a-for=\"(${2:item}, ${3:index}) in ${1:items}\""
-        ],
-        "description": "a-for指令 +索引"
-    },
-    "a-model": {
-        "prefix": "a-model",
-        "body": [
-            "a-model=\"$1\""
-        ],
-        "description": "a-model指令"
-    },
-    "a-pre": {
-        "prefix": "a-pre",
-        "body": [
-            "a-pre"
-        ],
-        "description": "a-pre指令"
-    },
-    "a-nossr": {
-        "prefix": "a-nossr",
-        "body": [
-            "a-nossr"
-        ],
-        "description": "a-nossr指令"
     }
 }
