@@ -1,15 +1,15 @@
 /**
  * @model        Core
  * @description  扩展主入口
- * @version      0.4.4
+ * @version      0.4.5
  * @author       congpeisen
  */
 
 let vscode = require('vscode');
 
-let {jumpSoy}                       = require('./func/jumpLink');
-let {showTerminal, syncMachine}     = require('./func/terminal');
-let {jumpFolder, jumpComponent}     = require('./func/jumpDefination');
+let {jumpSoy}                   = require('./func/jumpLink');
+let {showTerminal, syncMachine} = require('./func/terminal');
+let {jumpFolder, jumpComponent} = require('./func/jumpDefination');
 // let {dataCompletion, refCompletion} = require('./func/autoCompletion');
 require('./func/autoCompletion');
 

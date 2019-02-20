@@ -1,7 +1,12 @@
 # Change Log
+## [0.4.5] - 2019-02-20
+### Added
+- 新增组件内props代码智能提示（由脚本从组件readme中解析获取，存在部分prop缺失，待校验）
+
 ## [0.4.4] - 2019-02-19
 ### Added
 - 支持组件内props代码智能提示及补全功能（暂仅支持c-aladdin，其他待脚本生成）
+
 ### Changed
 - 组件、指令由配置型补全迁为编程型补全，使其补全在合适位置触发
 
@@ -33,6 +38,7 @@
 ### Added
 - 增加函数的跳转定义
 - 增加引用Util库的代码补全
+
 ### Fixed
 - 修复引用模块特定情况下没有智能提示bug
 
@@ -43,6 +49,7 @@
 ## [0.3.10] - 2019-01-11
 ### Added
 - 增加对组件跳转的跳转列表(非单个组件跳转情况)
+
 ### Fixed
 - 修改跳转定义cmd选中后下划线显示范围不全问题
 
@@ -68,6 +75,7 @@
 ## [0.3.4] - 2018-12-24
 ### Added
 - 增加smarty语法高亮
+
 ### Deleted
 - 删除了部分js/php语法自补充
 
@@ -97,6 +105,7 @@
 ## [0.1.7] - 2018-12-06
 ### Added
 - 新增data-module及常用属性params
+
 ### Changed
 - 修改smarty拼链接默认参数
 
@@ -105,12 +114,14 @@
 - 新增atom文件开发模板Snippets
 - 修改cline, 区分cline单行截断/cline2多行截断
 - 增加cimgcontents小图Snippets
+
 ### Fixed
 - 修复c-link标签错误
 
 ## [0.1.5] - 2018-11-29
 ### Added
 - 新增模板文本插值，js打印数据
+
 ### Fixed
 - 修复部分Snippets错误
 
@@ -118,6 +129,7 @@
 ### Added
 - 新增Atom组件Snippets
 - 增加对data_modifier.tpl/php的smarty、php API snippets功能
+
 ### Changed
 - 不再提供组件搜索，改回跳索引平台
 

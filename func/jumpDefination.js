@@ -49,7 +49,7 @@ let getLine = (doc, line) =>
         )
     );
 
-// 组件文本大写化转换  e.g.  c-img-content -> ImgContent
+// 组件文本大写化转换 驼峰转换  e.g. c-img-content -> ImgContent
 let capWord = (word) =>
     word
         .slice(2)

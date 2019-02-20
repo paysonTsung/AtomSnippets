@@ -11,12 +11,12 @@ let fs = require('fs');
 let path = require('path');
 let languages = vscode.languages;
 
-const UI_CLASS_PATH = 'snippets-diy/ui-class.json';
-const ATOM_COM_PATH = 'snippets-diy/atom-components.json';
-const ATOM_REF_PATH = 'snippets-diy/atom-reference.json';
-const ATOM_PROP_PATH = 'snippets-diy/atom-props.json';
+const UI_CLASS_PATH   = 'snippets-diy/ui-class.json';
+const ATOM_COM_PATH   = 'snippets-diy/atom-components.json';
+const ATOM_REF_PATH   = 'snippets-diy/atom-reference.json';
+const ATOM_PROP_PATH  = 'snippets-diy/atom-props.json';
 const ATOM_EVENT_PATH = 'snippets-diy/atom-events.json';
-const ATOM_INST_PATH = 'snippets-diy/atom-instructions.json';
+const ATOM_INST_PATH  = 'snippets-diy/atom-instructions.json';
 
 // 数组去重
 let uniqueArr = (arr) => [...new Set(arr)];

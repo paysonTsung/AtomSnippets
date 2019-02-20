@@ -5,7 +5,7 @@
             "body": [
                 "url=\"$1\""
             ],
-            "description": "标题链接地址"
+            "description": "标题链接的地址"
         },
         {
             "prefix": "url-params",
@@ -19,14 +19,14 @@
             "body": [
                 "title=\"$1\""
             ],
-            "description": "标题文本，支持高亮"
+            "description": "标题的文本，支持高亮"
         },
         {
             "prefix": "title-clamp",
             "body": [
                 "title-clamp=\"$1\""
             ],
-            "description": "显示行数，范围为1-5；\nt1 默认大屏设备(网页宽度376px及以上)1行截断，小屏设备(网页宽度376px以下)不截断\nt2 默认一行截断"
+            "description": "显示行数，范围为1-5；\nt1 默认大屏设备(网页宽度376px及以上)1行截断，小屏设备(网页宽度376px以下)不截断；\nt2 默认一行截断"
         },
         {
             "prefix": "title-icon",
@@ -40,7 +40,7 @@
             "body": [
                 "title-arrow"
             ],
-            "description": "标题右侧是否有箭头，情景页一般要求设置为true"
+            "description": "标题右侧是否有箭头，情景页一般要求设置为 true"
         },
         {
             "prefix": "title-label",
@@ -61,14 +61,14 @@
             "body": [
                 "title-size=\"$1\""
             ],
-            "description": "标题尺寸，支持t1/t2"
+            "description": "标题尺寸，支持 `t1` `t2`"
         },
         {
             "prefix": "title-feedback",
             "body": [
                 "title-feedback"
             ],
-            "description": "标题是否添加点击态：\n true 为添加；false 时会判断 url 是否存在，存在则添加点击态，否则不添加"
+            "description": "标题是否添加点击态：\ntrue 为添加；false 时会判断 url 是否存在，存在则添加点击态，否则不添加"
         },
         {
             "prefix": "title-color",
@@ -152,14 +152,14 @@
             "body": [
                 "feedback=\"$1\""
             ],
-            "description": "反馈内容数据，用于控制是否展现反馈按钮及反馈内容"
+            "description": "反馈内容数据，用于控制是否展现反馈按钮及反馈内容；\n其中 boolean 类型已经废弃使用"
         },
         {
             "prefix": "tpl-info",
             "body": [
                 "tpl-info=\"$1\""
             ],
-            "description": "模板信息，这里主要使用tplInfo.style字段，用来判断强弱卡"
+            "description": "模板信息，这里主要使用 tplInfo.style 字段，用来判断强弱卡"
         },
         {
             "prefix": "touchable",
@@ -180,7 +180,3669 @@
             "body": [
                 "title-data-module=\"$1\""
             ],
-            "description": "标题区域data-module属性"
+            "description": "标题区域 data-module 属性"
+        }
+    ],
+    "c-animate-icon": [],
+    "c-article": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题的文本，支持高亮"
+        },
+        {
+            "prefix": "article-type",
+            "body": [
+                "article-type=\"$1\""
+            ],
+            "description": "文章类别，一级 or 二级；目前只支持这两级，只有字体大小及行高的区别；2级用于结果页，1级用于情景页"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "链接地址"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "链接所需参数"
+        },
+        {
+            "prefix": "abstract",
+            "body": [
+                "abstract=\"$1\""
+            ],
+            "description": "内容的文本，摘要"
+        },
+        {
+            "prefix": "img-list",
+            "body": [
+                "img-list=\"$1\""
+            ],
+            "description": "图片比例，值有（s,l,w,x,y）"
+        },
+        {
+            "prefix": "img-col",
+            "body": [
+                "img-col=\"$1\""
+            ],
+            "description": "图片所占栅格，只有单图样式有效"
+        },
+        {
+            "prefix": "img-type",
+            "body": [
+                "img-type=\"$1\""
+            ],
+            "description": "文章来源"
+        },
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "时间戳 单位：毫秒"
+        },
+        {
+            "prefix": "read-num",
+            "body": [
+                "read-num=\"$1\""
+            ],
+            "description": "文章阅读数"
+        },
+        {
+            "prefix": "source",
+            "body": [
+                "source=\"$1\""
+            ],
+            "description": "文章来源"
+        },
+        {
+            "prefix": "label-text",
+            "body": [
+                "label-text=\"$1\""
+            ],
+            "description": "标签文案"
+        },
+        {
+            "prefix": "label-type",
+            "body": [
+                "label-type=\"$1\""
+            ],
+            "description": "标签类型"
+        },
+        {
+            "prefix": "title-font-size",
+            "body": [
+                "title-font-size=\"$1\""
+            ],
+            "description": "标题字号"
+        },
+        {
+            "prefix": "title-clamp",
+            "body": [
+                "title-clamp=\"$1\""
+            ],
+            "description": "标题截断"
+        }
+    ],
+    "c-audio": [
+        {
+            "prefix": "audio-url",
+            "body": [
+                "audio-url=\"$1\""
+            ],
+            "description": "音频地址"
+        },
+        {
+            "prefix": "is-opacity",
+            "body": [
+                "is-opacity"
+            ],
+            "description": "是否使用透明背景"
+        },
+        {
+            "prefix": "is-progress",
+            "body": [
+                "is-progress"
+            ],
+            "description": "是否使用进度条样式，默认不使用"
+        },
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "音频时长"
+        },
+        {
+            "prefix": "show-time",
+            "body": [
+                "show-time"
+            ],
+            "description": "是否显示时间，默认显示"
+        },
+        {
+            "prefix": "custom-text",
+            "body": [
+                "custom-text=\"$1\""
+            ],
+            "description": "是否使用自定义显示文案"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "跳转链接（不播放音频，直接跳转）"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "跳转链接参数"
+        }
+    ],
+    "c-button": [
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "按钮文案"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "按钮类型：\n\n'default' 默认类型\n'primary' 主要类型\n'weak' 弱样式\n'primary' 弱样式自适应"
+        },
+        {
+            "prefix": "size",
+            "body": [
+                "size=\"$1\""
+            ],
+            "description": "按钮大小：\n\n'default' 默认\n'small' 小"
+        },
+        {
+            "prefix": "disabled",
+            "body": [
+                "disabled"
+            ],
+            "description": "是否禁用"
+        },
+        {
+            "prefix": "icon",
+            "body": [
+                "icon=\"$1\""
+            ],
+            "description": "按钮图标"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "跳转链接"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "跳转链接参数"
+        }
+    ],
+    "c-calendar": [
+        {
+            "prefix": "is-show",
+            "body": [
+                "is-show"
+            ],
+            "description": "是否显示"
+        },
+        {
+            "prefix": "top",
+            "body": [
+                "top=\"$1\""
+            ],
+            "description": "日历组件距离顶部的高度(css fixed top)"
+        },
+        {
+            "prefix": "bottom",
+            "body": [
+                "bottom=\"$1\""
+            ],
+            "description": "日历组件距离底部的高度(css fixed bottom)"
+        },
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "日历的 z-index 层级"
+        },
+        {
+            "prefix": "btn-color",
+            "body": [
+                "btn-color=\"$1\""
+            ],
+            "description": "日历重置按钮文字颜色"
+        },
+        {
+            "prefix": "btn-border-color",
+            "body": [
+                "btn-border-color=\"$1\""
+            ],
+            "description": "日历重置按钮边框颜色"
+        },
+        {
+            "prefix": "btn-fill-color",
+            "body": [
+                "btn-fill-color=\"$1\""
+            ],
+            "description": "日历确定按钮填充颜色"
+        },
+        {
+            "prefix": "date-checked-bg-color",
+            "body": [
+                "date-checked-bg-color=\"$1\""
+            ],
+            "description": "日期选中背景颜色"
+        },
+        {
+            "prefix": "date-checked-area-bg-color",
+            "body": [
+                "date-checked-area-bg-color=\"$1\""
+            ],
+            "description": "日期选中区域背景颜色"
+        },
+        {
+            "prefix": "default-checked-arr",
+            "body": [
+                "default-checked-arr=\"$1\""
+            ],
+            "description": "默认选中项数组；最多两个；defaultCheckedArr[].year 年；defaultCheckedArr[].month 月；defaultCheckedArr[].day 日；"
+        },
+        {
+            "prefix": "year",
+            "body": [
+                "year=\"$1\""
+            ],
+            "description": "年；不选则为今天的年份"
+        },
+        {
+            "prefix": "month",
+            "body": [
+                "month=\"$1\""
+            ],
+            "description": "月；不选则为今天的月份"
+        },
+        {
+            "prefix": "day",
+            "body": [
+                "day=\"$1\""
+            ],
+            "description": "天；不选则为今天"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "日期组件的类型；1：单选日期；2：范围选择；默认为 2 范围选择"
+        },
+        {
+            "prefix": "start-text",
+            "body": [
+                "start-text=\"$1\""
+            ],
+            "description": "起始日期的文案；不传则不显示"
+        },
+        {
+            "prefix": "end-text",
+            "body": [
+                "end-text=\"$1\""
+            ],
+            "description": "结束日期的文案；不传则不显示"
+        },
+        {
+            "prefix": "same-day-text",
+            "body": [
+                "same-day-text=\"$1\""
+            ],
+            "description": "范围选择选择同一天的显示文案；不传则不允许选择同一天"
+        },
+        {
+            "prefix": "before-month-num",
+            "body": [
+                "before-month-num=\"$1\""
+            ],
+            "description": "在当前月份之前要显示的月个数；默认为 0"
+        },
+        {
+            "prefix": "after-month-num",
+            "body": [
+                "after-month-num=\"$1\""
+            ],
+            "description": "在当前月份之后要显示的月个数；默认为 5"
+        }
+    ],
+    "c-carousel": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题的文案；传标题属性后，会有底部蒙层；有标题的样式最多5张图片"
+        },
+        {
+            "prefix": "loop",
+            "body": [
+                "loop"
+            ],
+            "description": "是否循环"
+        },
+        {
+            "prefix": "show-indicator",
+            "body": [
+                "show-indicator"
+            ],
+            "description": "是否显示指示器"
+        },
+        {
+            "prefix": "sync-render-all",
+            "body": [
+                "sync-render-all"
+            ],
+            "description": "是否同步渲染所有图片"
+        },
+        {
+            "prefix": "height",
+            "body": [
+                "height=\"$1\""
+            ],
+            "description": "定高的高度"
+        },
+        {
+            "prefix": "align-items",
+            "body": [
+                "align-items=\"$1\""
+            ],
+            "description": "垂直对齐位置(具体值请参考 flex align-items 属性)"
+        },
+        {
+            "prefix": "img-type",
+            "body": [
+                "img-type=\"$1\""
+            ],
+            "description": "图片比例，值有（s,l,w,x,y）详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+        },
+        {
+            "prefix": "autoplay",
+            "body": [
+                "autoplay=\"$1\""
+            ],
+            "description": "是否自动播放；可传对象和 boolean 类型"
+        },
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "轮播数据"
+        }
+    ],
+    "c-cascader": [
+        {
+            "prefix": "column",
+            "body": [
+                "column=\"$1\""
+            ],
+            "description": "列数"
+        },
+        {
+            "prefix": "default-value",
+            "body": [
+                "default-value=\"$1\""
+            ],
+            "description": "默认值"
+        },
+        {
+            "prefix": "default-value-type",
+            "body": [
+                "default-value-type=\"$1\""
+            ],
+            "description": "默认值判定类型；\n\n'combine' 合并，合在一个字符串里，以逗号区分；\n\n'separate' 分离，分级写在每一个级联项里\n（'separate' 存在问题，建议使用 'combine'）"
+        },
+        {
+            "prefix": "default-color",
+            "body": [
+                "default-color=\"$1\""
+            ],
+            "description": "默认颜色"
+        },
+        {
+            "prefix": "selected-color",
+            "body": [
+                "selected-color=\"$1\""
+            ],
+            "description": "选中项颜色"
+        },
+        {
+            "prefix": "stop-scroll-through",
+            "body": [
+                "stop-scroll-through"
+            ],
+            "description": "是否阻止滚动穿透"
+        },
+        {
+            "prefix": "deep-copy",
+            "body": [
+                "deep-copy"
+            ],
+            "description": "是否深复制传入的数据，如果传 false，则组件内部会操作传入的数据"
+        },
+        {
+            "prefix": "options",
+            "body": [
+                "options=\"$1\""
+            ],
+            "description": "选项数组"
+        }
+    ],
+    "c-content": [
+        {
+            "prefix": "selected-index",
+            "body": [
+                "selected-index=\"$1\""
+            ],
+            "description": "当前显示项的索引；改变时会触发相应的内容区变化"
+        },
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "内容区数组；目前组件里只使用了 list[].loading 参数，用来表示异步加载 loading"
+        },
+        {
+            "prefix": "vertical-transition",
+            "body": [
+                "vertical-transition"
+            ],
+            "description": "上下滑动动效，selectedIndex 改变时触发（从 -1 到 x 或从 x 到 -1）"
+        },
+        {
+            "prefix": "horizontal-transition",
+            "body": [
+                "horizontal-transition"
+            ],
+            "description": "左右滑动动效，selectedIndex 改变时触发（从 x 到 x）"
+        },
+        {
+            "prefix": "loading-opts",
+            "body": [
+                "loading-opts=\"$1\""
+            ],
+            "description": "加载中 loading 的配置"
+        }
+    ],
+    "c-dialog": [
+        {
+            "prefix": "visible",
+            "body": [
+                "visible"
+            ],
+            "description": "是否打开对话框"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "对话框标题"
+        },
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "对话框内容"
+        },
+        {
+            "prefix": "content-text-align",
+            "body": [
+                "content-text-align=\"$1\""
+            ],
+            "description": "对话框内容居中方式"
+        },
+        {
+            "prefix": "btn-opts",
+            "body": [
+                "btn-opts=\"$1\""
+            ],
+            "description": "按钮配置`<Array>`\n\n[\n{\nevent`<String>`: 该按钮绑定的事件名，点击该按钮时触发\ntext`<String>`: 该按钮绑定的文案\n}\n]"
+        },
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "对话框的 z-index 值"
+        }
+    ],
+    "c-divider": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "分隔线粗细；'thin'：细；'thick'：粗"
+        }
+    ],
+    "c-drawer": [
+        {
+            "prefix": "is-open",
+            "body": [
+                "is-open"
+            ],
+            "description": "控制抽屉组件是否显示"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题"
+        },
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "单选类型列表数据"
+        },
+        {
+            "prefix": "left-tips",
+            "body": [
+                "left-tips=\"$1\""
+            ],
+            "description": "左侧蒙层关闭提示，是一个对象，如果想不显示请传入空对象{}，不要传 null，会出问题；leftTips.icon 控制图标类型；leftTips.text 控制显示文案"
+        }
+    ],
+    "c-dropdown": [
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "disabled",
+            "body": [
+                "disabled"
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "value",
+            "body": [
+                "value=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "name",
+            "body": [
+                "name=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "direction",
+            "body": [
+                "direction=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "no-border",
+            "body": [
+                "no-border"
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "silent",
+            "body": [
+                "silent"
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "options",
+            "body": [
+                "options=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "opt-group",
+            "body": [
+                "opt-group=\"$1\""
+            ],
+            "description": "否"
+        }
+    ],
+    "c-error-page": [
+        {
+            "prefix": "logo",
+            "body": [
+                "logo=\"$1\""
+            ],
+            "description": "logo图片,全屏图片可选分别是空白页(blank),页面出错(error),网络问题(trouble)，半屏可选分别是暂无内容(noContent),暂无评论(noComment),网络问题(network)"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "单行文字标题"
+        },
+        {
+            "prefix": "desc",
+            "body": [
+                "desc=\"$1\""
+            ],
+            "description": "标题下的描述性文案"
+        },
+        {
+            "prefix": "has-btn",
+            "body": [
+                "has-btn"
+            ],
+            "description": "是否有按钮"
+        },
+        {
+            "prefix": "btn-url",
+            "body": [
+                "btn-url=\"$1\""
+            ],
+            "description": "点击按钮的跳转链接"
+        },
+        {
+            "prefix": "btn-text",
+            "body": [
+                "btn-text=\"$1\""
+            ],
+            "description": "按钮文字"
+        },
+        {
+            "prefix": "black",
+            "body": [
+                "black"
+            ],
+            "description": "黑色背景下的外观"
+        },
+        {
+            "prefix": "searchcraft",
+            "body": [
+                "searchcraft"
+            ],
+            "description": "简搜下有特殊样式,通过ua判断,需各垂类在业务里完成"
+        }
+    ],
+    "c-filter": [
+        {
+            "prefix": "selection",
+            "body": [
+                "selection=\"$1\""
+            ],
+            "description": "筛选项"
+        }
+    ],
+    "c-filter-enhanced": [
+        {
+            "prefix": "options",
+            "body": [
+                "options=\"$1\""
+            ],
+            "description": "标签数据数组"
+        },
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "筛选组件的 z-index 层级"
+        },
+        {
+            "prefix": "row-tile",
+            "body": [
+                "row-tile"
+            ],
+            "description": "是否是通栏"
+        },
+        {
+            "prefix": "horizontal-transition",
+            "body": [
+                "horizontal-transition"
+            ],
+            "description": "水平切换动效"
+        },
+        {
+            "prefix": "opacity-transition",
+            "body": [
+                "opacity-transition"
+            ],
+            "description": "透明度动效"
+        },
+        {
+            "prefix": "transition-opts",
+            "body": [
+                "transition-opts=\"$1\""
+            ],
+            "description": "动效配置"
+        },
+        {
+            "prefix": "background-color",
+            "body": [
+                "background-color=\"$1\""
+            ],
+            "description": "背景颜色"
+        }
+    ],
+    "c-filter-simple": [
+        {
+            "prefix": "selection-list",
+            "body": [
+                "selection-list=\"$1\""
+            ],
+            "description": "筛选项列表"
+        },
+        {
+            "prefix": "selected-index",
+            "body": [
+                "selected-index=\"$1\""
+            ],
+            "description": "当前选中项的索引，默认值-1表示不选中任何筛选项"
+        },
+        {
+            "prefix": "background-color",
+            "body": [
+                "background-color=\"$1\""
+            ],
+            "description": "背景色"
+        }
+    ],
+    "c-footer": [
+        {
+            "prefix": "show-url",
+            "body": [
+                "show-url=\"$1\""
+            ],
+            "description": "脚注显示的资源方链接"
+        },
+        {
+            "prefix": "left-text",
+            "body": [
+                "left-text=\"$1\""
+            ],
+            "description": "左侧文字"
+        },
+        {
+            "prefix": "left-icon",
+            "body": [
+                "left-icon=\"$1\""
+            ],
+            "description": "左侧图标"
+        },
+        {
+            "prefix": "right-text",
+            "body": [
+                "right-text=\"$1\""
+            ],
+            "description": "右侧跳转显示的文字"
+        },
+        {
+            "prefix": "right-url",
+            "body": [
+                "right-url=\"$1\""
+            ],
+            "description": "右侧跳转链接"
+        },
+        {
+            "prefix": "right-url-params",
+            "body": [
+                "right-url-params=\"$1\""
+            ],
+            "description": "跳转链接需要的参数，同 `Link`"
+        },
+        {
+            "prefix": "divider",
+            "body": [
+                "divider"
+            ],
+            "description": "是否有分割线"
+        },
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "时间戳 单位：毫秒"
+        },
+        {
+            "prefix": "server-time",
+            "body": [
+                "server-time=\"$1\""
+            ],
+            "description": "服务器时间戳 单位：毫秒（注意：若不提供服务器时间，则以本地时间作为服务器时间）"
+        },
+        {
+            "prefix": "feedback",
+            "body": [
+                "feedback=\"$1\""
+            ],
+            "description": "反馈内容数据，用于控制是否展现反馈按钮及反馈内容"
+        },
+        {
+            "prefix": "right-touchable",
+            "body": [
+                "right-touchable"
+            ],
+            "description": "是否开启右侧跳转链接点击态"
+        }
+    ],
+    "c-icon": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "图标名称"
+        },
+        {
+            "prefix": "code",
+            "body": [
+                "code=\"$1\""
+            ],
+            "description": "直接传入icon编码"
+        }
+    ],
+    "c-image": [
+        {
+            "prefix": "src",
+            "body": [
+                "src=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "title-align",
+            "body": [
+                "title-align=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "title-fix-height",
+            "body": [
+                "title-fix-height=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "title-clamp",
+            "body": [
+                "title-clamp=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "sub-title",
+            "body": [
+                "sub-title=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "sub-title-clamp",
+            "body": [
+                "sub-title-clamp=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "sub-title-align",
+            "body": [
+                "sub-title-align=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "sub-title-fix-height",
+            "body": [
+                "sub-title-fix-height=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "lazy",
+            "body": [
+                "lazy=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "pill-big-text",
+            "body": [
+                "pill-big-text=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "show-num",
+            "body": [
+                "show-num=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "icon-type",
+            "body": [
+                "icon-type=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "lb-pill-opts",
+            "body": [
+                "lb-pill-opts=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "hack-white-stroke",
+            "body": [
+                "hack-white-stroke=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "maskgap-size",
+            "body": [
+                "maskgap-size=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "is-round",
+            "body": [
+                "is-round=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "info",
+            "body": [
+                "info=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "grid-size",
+            "body": [
+                "grid-size=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "circle-mask-size",
+            "body": [
+                "circle-mask-size=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "circle-mask-icon",
+            "body": [
+                "circle-mask-icon=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "circle-mask-text",
+            "body": [
+                "circle-mask-text=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "padding-bottom",
+            "body": [
+                "padding-bottom=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "no-escape",
+            "body": [
+                "no-escape=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "progressive",
+            "body": [
+                "progressive=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "blur",
+            "body": [
+                "blur=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "is-background-image",
+            "body": [
+                "is-background-image=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "background-size",
+            "body": [
+                "background-size=\"$1\""
+            ],
+            "description": "否"
+        },
+        {
+            "prefix": "background-position",
+            "body": [
+                "background-position=\"$1\""
+            ],
+            "description": "| 否"
+        },
+        {
+            "prefix": "border-radius",
+            "body": [
+                "border-radius=\"$1\""
+            ],
+            "description": "否"
+        }
+    ],
+    "c-image-viewer": [],
+    "c-image-viewer-simple": [],
+    "c-img-content": [
+        {
+            "prefix": "img-src",
+            "body": [
+                "img-src=\"$1\""
+            ],
+            "description": "图片地址"
+        },
+        {
+            "prefix": "img-type",
+            "body": [
+                "img-type=\"$1\""
+            ],
+            "description": "图片比例"
+        },
+        {
+            "prefix": "img-url",
+            "body": [
+                "img-url=\"$1\""
+            ],
+            "description": "是 |图片链接地址，a 标签元素，若为空，则输出的是一个 div"
+        },
+        {
+            "prefix": "img-url-params",
+            "body": [
+                "img-url-params=\"$1\""
+            ],
+            "description": "链接所带的参数"
+        },
+        {
+            "prefix": "img-hack-white-stroke",
+            "body": [
+                "img-hack-white-stroke"
+            ],
+            "description": "有些图片有白边，需要加这个保证间距的统一"
+        },
+        {
+            "prefix": "img-lazy",
+            "body": [
+                "img-lazy"
+            ],
+            "description": "是否需要懒加载"
+        },
+        {
+            "prefix": "img-maskgap-size",
+            "body": [
+                "img-maskgap-size=\"$1\""
+            ],
+            "description": "当值为12时，图片右下角遮罩与外框的边距为 \n bottom: .05rem;right: .05rem, \n不传默认为bottom: 0.02rem right: .0.02rem"
+        },
+        {
+            "prefix": "img-show-num",
+            "body": [
+                "img-show-num=\"$1\""
+            ],
+            "description": "展示图集个数或者视频时长"
+        },
+        {
+            "prefix": "img-icon-type",
+            "body": [
+                "img-icon-type=\"$1\""
+            ],
+            "description": "图标类型"
+        },
+        {
+            "prefix": "img-is-round",
+            "body": [
+                "img-is-round"
+            ],
+            "description": "是否为原形图片"
+        },
+        {
+            "prefix": "img-col",
+            "body": [
+                "img-col=\"$1\""
+            ],
+            "description": "图片所占栅格"
+        },
+        {
+            "prefix": "is-vertical-middle",
+            "body": [
+                "is-vertical-middle"
+            ],
+            "description": "右侧内容是否垂直居中"
+        },
+        {
+            "prefix": "default-image-type",
+            "body": [
+                "default-image-type=\"$1\""
+            ],
+            "description": "目前支持 `hotel`（酒店）、 `food`（美食）"
+        },
+        {
+            "prefix": "img-touchable",
+            "body": [
+                "img-touchable"
+            ],
+            "description": "是否打开图片的点击态"
+        },
+        {
+            "prefix": "is-background-image",
+            "body": [
+                "is-background-image"
+            ],
+            "description": "是否采用背景图片的方式"
+        },
+        {
+            "prefix": "background-size",
+            "body": [
+                "background-size=\"$1\""
+            ],
+            "description": "背景图片 css background-size，当且仅当采用背景图片时才有效"
+        }
+    ],
+    "c-infinite-scroll": [
+        {
+            "prefix": "page-num",
+            "body": [
+                "page-num=\"$1\""
+            ],
+            "description": "当前页码数"
+        },
+        {
+            "prefix": "loading-text",
+            "body": [
+                "loading-text=\"$1\""
+            ],
+            "description": "加载中文本"
+        },
+        {
+            "prefix": "load-end-text",
+            "body": [
+                "load-end-text=\"$1\""
+            ],
+            "description": "加载到尾部文本"
+        },
+        {
+            "prefix": "load-fail-text",
+            "body": [
+                "load-fail-text=\"$1\""
+            ],
+            "description": "加载失败文本"
+        },
+        {
+            "prefix": "buffer-height-px",
+            "body": [
+                "buffer-height-px=\"$1\""
+            ],
+            "description": "滚动位置和文档底部的距离，小于这个距离时触发加载新数据"
+        },
+        {
+            "prefix": "mode",
+            "body": [
+                "mode=\"$1\""
+            ],
+            "description": "触发模式；'scroll' 滚动到底部触发；'click' 点击按钮触发"
+        },
+        {
+            "prefix": "load-btn-show",
+            "body": [
+                "load-btn-show"
+            ],
+            "description": "是否显示加载按钮"
+        },
+        {
+            "prefix": "load-btn-text",
+            "body": [
+                "load-btn-text=\"$1\""
+            ],
+            "description": "加载按钮的文案"
+        },
+        {
+            "prefix": "log-class",
+            "body": [
+                "log-class"
+            ],
+            "description": "是否增加日志类"
+        },
+        {
+            "prefix": "bottom-opts",
+            "body": [
+                "bottom-opts=\"$1\""
+            ],
+            "description": "底部按钮配置"
+        },
+        {
+            "prefix": "auto-load",
+            "body": [
+                "auto-load"
+            ],
+            "description": "是否在 mounted 时进行自动加载，默认自动加载；如果想主动触发加载，需要通过 ref 获取到 vnode 主动调用 load 方法"
+        }
+    ],
+    "c-input": [
+        {
+            "prefix": "disabled",
+            "body": [
+                "disabled=\"$1\""
+            ],
+            "description": "选中选项卡的索引"
+        },
+        {
+            "prefix": "placeholder",
+            "body": [
+                "placeholder"
+            ],
+            "description": "tabnav是否允许滚动"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type"
+            ],
+            "description": "支持text，button，password，reset，submit，hidden"
+        },
+        {
+            "prefix": "value",
+            "body": [
+                "value=\"$1\""
+            ],
+            "description": "表单值"
+        },
+        {
+            "prefix": "name",
+            "body": [
+                "name=\"$1\""
+            ],
+            "description": "表单名称"
+        },
+        {
+            "prefix": "message",
+            "body": [
+                "message=\"$1\""
+            ],
+            "description": "错误信息"
+        },
+        {
+            "prefix": "right-text",
+            "body": [
+                "right-text=\"$1\""
+            ],
+            "description": "右侧文字，注：使用右侧文字时必须隐藏关闭图标"
+        },
+        {
+            "prefix": "left-text",
+            "body": [
+                "left-text=\"$1\""
+            ],
+            "description": "左侧文字"
+        },
+        {
+            "prefix": "right-color",
+            "body": [
+                "right-color=\"$1\""
+            ],
+            "description": "右侧文字颜色"
+        },
+        {
+            "prefix": "left-color",
+            "body": [
+                "left-color=\"$1\""
+            ],
+            "description": "左侧文字颜色"
+        },
+        {
+            "prefix": "is-show-close-icon",
+            "body": [
+                "is-show-close-icon"
+            ],
+            "description": "是否显示关闭图标"
+        },
+        {
+            "prefix": "primary-color",
+            "body": [
+                "primary-color=\"$1\""
+            ],
+            "description": "主题颜色，可设置边框和文字的颜色"
+        },
+        {
+            "prefix": "border-color",
+            "body": [
+                "border-color=\"$1\""
+            ],
+            "description": "可单独设置边框颜色，覆盖"
+        },
+        {
+            "prefix": "no-border",
+            "body": [
+                "no-border"
+            ],
+            "description": "隐藏边框"
+        },
+        {
+            "prefix": "max-length",
+            "body": [
+                "max-length=\"$1\""
+            ],
+            "description": "input的最大内容字符"
+        },
+        {
+            "prefix": "is-focus",
+            "body": [
+                "is-focus"
+            ],
+            "description": "focus状态"
+        }
+    ],
+    "c-kg-footer": [
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "底部按钮的文案"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "kg底部链接地址"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "头图区链接所带的参数"
+        },
+        {
+            "prefix": "icon-type",
+            "body": [
+                "icon-type=\"$1\""
+            ],
+            "description": "底部按钮类型"
+        },
+        {
+            "prefix": "text-color",
+            "body": [
+                "text-color=\"$1\""
+            ],
+            "description": "底部文案的颜色"
+        },
+        {
+            "prefix": "icon-color",
+            "body": [
+                "icon-color=\"$1\""
+            ],
+            "description": "底部按钮的颜色"
+        },
+        {
+            "prefix": "feedback",
+            "body": [
+                "feedback=\"$1\""
+            ],
+            "description": "反馈内容数据，用于控制是否展现反馈按钮及反馈内容"
+        },
+        {
+            "prefix": "background-color",
+            "body": [
+                "background-color=\"$1\""
+            ],
+            "description": "背景色"
+        },
+        {
+            "prefix": "border-top",
+            "body": [
+                "border-top=\"$1\""
+            ],
+            "description": "上边线"
+        },
+        {
+            "prefix": "border-bottom",
+            "body": [
+                "border-bottom=\"$1\""
+            ],
+            "description": "下边线"
+        }
+    ],
+    "c-kg-header": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题的文本"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "头图区链接地址"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "头图区链接所带的参数"
+        },
+        {
+            "prefix": "abstract",
+            "body": [
+                "abstract=\"$1\""
+            ],
+            "description": "描述信息"
+        },
+        {
+            "prefix": "header-img",
+            "body": [
+                "header-img=\"$1\""
+            ],
+            "description": "头图区图片地址"
+        },
+        {
+            "prefix": "header-img-type",
+            "body": [
+                "header-img-type=\"$1\""
+            ],
+            "description": "头图比例，值有（s,l,w,x,y）详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+        },
+        {
+            "prefix": "header-img-align",
+            "body": [
+                "header-img-align=\"$1\""
+            ],
+            "description": "头图对齐方式，默认是顶部对齐；'v-center' 垂直居中对齐"
+        },
+        {
+            "prefix": "bg-color",
+            "body": [
+                "bg-color=\"$1\""
+            ],
+            "description": "头图区背景颜色"
+        },
+        {
+            "prefix": "bg-img",
+            "body": [
+                "bg-img=\"$1\""
+            ],
+            "description": "头图区背景图，最好保持和背景颜色同一色调，否者丑的一逼 \n 图片尺寸要求: \n宣发样式高度 >= 164px, 非宣发样式高度 >= 88px \n 非半图模式下，background-size采用cover铺满 \n 半图模式下，background-size采用auto 100%，高度撑满，宽度自适应。 \n合理控制图片大小"
+        },
+        {
+            "prefix": "bg-size",
+            "body": [
+                "bg-size=\"$1\""
+            ],
+            "description": "背景拉伸方式"
+        },
+        {
+            "prefix": "half-bg",
+            "body": [
+                "half-bg"
+            ],
+            "description": "背景图是否为半图（占屏宽1/2），只有设置背景图之后才有意义 \n同时影响title展现，半图title最多展现2行，占屏幕宽度1/2"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "字体颜色"
+        },
+        {
+            "prefix": "tab-list",
+            "body": [
+                "tab-list=\"$1\""
+            ],
+            "description": "一级导航"
+        },
+        {
+            "prefix": "tab-bg-color",
+            "body": [
+                "tab-bg-color=\"$1\""
+            ],
+            "description": "tab 区背景颜色，未设置时和bgColor保持着一致"
+        },
+        {
+            "prefix": "tab-color",
+            "body": [
+                "tab-color=\"$1\""
+            ],
+            "description": "tab 区字体颜色，未设置时和color保持着一致"
+        },
+        {
+            "prefix": "selected-index",
+            "body": [
+                "selected-index=\"$1\""
+            ],
+            "description": "一级导航默认选中项"
+        },
+        {
+            "prefix": "is-weaken",
+            "body": [
+                "is-weaken"
+            ],
+            "description": "是否为弱化样式，弱化样式下样式固定，背景图，背景色，字体颜色，分享设置等无效"
+        },
+        {
+            "prefix": "disable-event",
+            "body": [
+                "disable-event"
+            ],
+            "description": "禁用tab点击事件"
+        },
+        {
+            "prefix": "disperse",
+            "body": [
+                "disperse"
+            ],
+            "description": "宣发样式，高度更高，tab特殊样式"
+        },
+        {
+            "prefix": "tab-scroll",
+            "body": [
+                "tab-scroll"
+            ],
+            "description": "导航栏是否滚动"
+        },
+        {
+            "prefix": "title-column-number",
+            "body": [
+                "title-column-number=\"$1\""
+            ],
+            "description": "标题栅格"
+        },
+        {
+            "prefix": "right-column-number",
+            "body": [
+                "right-column-number=\"$1\""
+            ],
+            "description": "右侧 slot 栅格"
+        }
+    ],
+    "c-label": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "标签类型"
+        },
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "标签中文案"
+        }
+    ],
+    "c-letter-sort": [
+        {
+            "prefix": "letter-data",
+            "body": [
+                "letter-data=\"$1\""
+            ],
+            "description": "必选"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "可选"
+        },
+        {
+            "prefix": "top",
+            "body": [
+                "top=\"$1\""
+            ],
+            "description": "可选"
+        },
+        {
+            "prefix": "bottom",
+            "body": [
+                "bottom=\"$1\""
+            ],
+            "description": "可选"
+        },
+        {
+            "prefix": "is-move",
+            "body": [
+                "is-move"
+            ],
+            "description": "是否启用字母上下滑动事件，默认关闭，注意（在ios手百滑动偶尔会卡顿，数据量大于150条不建议开启）| 可选"
+        },
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "可选"
+        }
+    ],
+    "c-line": [
+        {
+            "prefix": "clamp",
+            "body": [
+                "clamp=\"$1\""
+            ],
+            "description": "显示行数，范围为1-5"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "文案颜色，可选值参照`c-color-*`"
+        },
+        {
+            "prefix": "align",
+            "body": [
+                "align=\"$1\""
+            ],
+            "description": "文案对齐方式，可选值为`text-align`可选值"
+        }
+    ],
+    "c-link": [
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "链接的地址"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "链接所需参数"
+        },
+        {
+            "prefix": "visited",
+            "body": [
+                "visited"
+            ],
+            "description": "\b链接是否点击后变灰"
+        },
+        {
+            "prefix": "target",
+            "body": [
+                "target=\"$1\""
+            ],
+            "description": "链接标签的 target 属性，pc 上生效"
+        }
+    ],
+    "c-list": [],
+    "c-list-article": [
+        {
+            "prefix": "article-list",
+            "body": [
+                "article-list=\"$1\""
+            ],
+            "description": "文章内容列表，详细字段参考c-single-article"
+        },
+        {
+            "prefix": "article-type",
+            "body": [
+                "article-type=\"$1\""
+            ],
+            "description": "文章类别，一级 or 二级 \n 目前只支持这两级，只有字体大小及行高的区别 \n 2级用于结果页，1级用于情景页"
+        }
+    ],
+    "c-list-result": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题的文本，可以传 html"
+        },
+        {
+            "prefix": "title-clamp",
+            "body": [
+                "title-clamp=\"$1\""
+            ],
+            "description": "否 |标题多行截断"
+        },
+        {
+            "prefix": "title-icon",
+            "body": [
+                "title-icon=\"$1\""
+            ],
+            "description": "标题的图标"
+        },
+        {
+            "prefix": "title-label",
+            "body": [
+                "title-label=\"$1\""
+            ],
+            "description": "标题的文字图标"
+        },
+        {
+            "prefix": "title-label-type",
+            "body": [
+                "title-label-type=\"$1\""
+            ],
+            "description": "标题的文字图标的类型"
+        },
+        {
+            "prefix": "title-arrow",
+            "body": [
+                "title-arrow=\"$1\""
+            ],
+            "description": "标题是否有箭头"
+        },
+        {
+            "prefix": "title-size",
+            "body": [
+                "title-size=\"$1\""
+            ],
+            "description": "标题尺寸，支持 t1 t2"
+        },
+        {
+            "prefix": "title-icon",
+            "body": [
+                "title-icon=\"$1\""
+            ],
+            "description": "标题图标"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "标题链接的地址"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "标题链接所需的参数，同 `c-link`"
+        },
+        {
+            "prefix": "hide-header",
+            "body": [
+                "hide-header"
+            ],
+            "description": "是否去掉标题区域"
+        }
+    ],
+    "c-loading": [
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "loading 组件下方文字描述；当且仅当类型为图标类型才生效"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "loading 类型；1 图标类型；2 百度文字 logo"
+        },
+        {
+            "prefix": "text-logo-style",
+            "body": [
+                "text-logo-style=\"$1\""
+            ],
+            "description": "百度文字 logo 样式风格；'light' 为白底样式；'dark' 为黑底样式"
+        }
+    ],
+    "c-mask": [
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "蒙层显示时的 z-index"
+        },
+        {
+            "prefix": "width",
+            "body": [
+                "width=\"$1\""
+            ],
+            "description": "蒙层的宽度"
+        },
+        {
+            "prefix": "height",
+            "body": [
+                "height=\"$1\""
+            ],
+            "description": "蒙层的高度"
+        },
+        {
+            "prefix": "background-color",
+            "body": [
+                "background-color=\"$1\""
+            ],
+            "description": "蒙层的背景色"
+        },
+        {
+            "prefix": "prevent-default-touchmove",
+            "body": [
+                "prevent-default-touchmove"
+            ],
+            "description": "是否阻止默认滑动事件"
+        }
+    ],
+    "c-more": [
+        {
+            "prefix": "inline",
+            "body": [
+                "inline"
+            ],
+            "description": "是否使用非绝对定位样式 请务必设置该值为 `true`! 后续可能不再支持该值为 false 的情况"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "链接地址，a 标签元素，若为空，则输出的是一个 div"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "链接所带的参数，可参考 `Link` 组件"
+        },
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "查看更多文案"
+        }
+    ],
+    "c-motion": [
+        {
+            "prefix": "enter",
+            "body": [
+                "enter=\"$1\""
+            ],
+            "description": "进场动画"
+        },
+        {
+            "prefix": "leave",
+            "body": [
+                "leave=\"$1\""
+            ],
+            "description": "退场动画，配置同`enter`"
+        }
+    ],
+    "c-navs": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "判断nav类型可选项为 nav、navSub"
+        }
+    ],
+    "c-news-article": [
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "跳转的 url"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "跳转 url 的 params"
+        },
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "标题的标签文案"
+        },
+        {
+            "prefix": "label-type",
+            "body": [
+                "label-type=\"$1\""
+            ],
+            "description": "标题的标签类型，可参考[ Label 组件](http://sfe.baidu.com:8184/Label)"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题"
+        },
+        {
+            "prefix": "is-title-html",
+            "body": [
+                "is-title-html"
+            ],
+            "description": "标题是否作为 innerHtml 插入到 dom 中；标题飘红需求时使用，默认为 false"
+        },
+        {
+            "prefix": "avatar",
+            "body": [
+                "avatar=\"$1\""
+            ],
+            "description": "熊掌号头像地址"
+        },
+        {
+            "prefix": "avatar-url",
+            "body": [
+                "avatar-url=\"$1\""
+            ],
+            "description": "熊掌号跳转 url"
+        },
+        {
+            "prefix": "avatar-url-params",
+            "body": [
+                "avatar-url-params=\"$1\""
+            ],
+            "description": "熊掌号 urlParams"
+        },
+        {
+            "prefix": "source",
+            "body": [
+                "source=\"$1\""
+            ],
+            "description": "来源字段"
+        },
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "时间字段，可传 number 类型或 string 类型，传 number 类型时会使用 TimeSpan 组件"
+        },
+        {
+            "prefix": "extra",
+            "body": [
+                "extra=\"$1\""
+            ],
+            "description": "除了来源、时间之外的其他信息"
+        },
+        {
+            "prefix": "img-src",
+            "body": [
+                "img-src=\"$1\""
+            ],
+            "description": "图片地址"
+        },
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "段落文字内容"
+        }
+    ],
+    "c-page-scroll": [
+        {
+            "prefix": "momentum",
+            "body": [
+                "momentum"
+            ],
+            "description": "滑动势能开关"
+        },
+        {
+            "prefix": "page",
+            "body": [
+                "page=\"$1\""
+            ],
+            "description": "页码"
+        },
+        {
+            "prefix": "indicator",
+            "body": [
+                "indicator"
+            ],
+            "description": "是否显示翻页指示器"
+        },
+        {
+            "prefix": "is-show",
+            "body": [
+                "is-show"
+            ],
+            "description": "当前 PageScroll 组件是否被隐藏，默认为 true 表示不被隐藏。当 PageScroll 由隐藏状态变为展示状态时，会触发 IScroll 的 refresh 方法，重新初始化变量。适用于 PageScroll 被嵌套在 Tab 中等情况。"
+        },
+        {
+            "prefix": "content-touchable-stop",
+            "body": [
+                "content-touchable-stop"
+            ],
+            "description": "content 是否屏蔽整卡点击态"
+        },
+        {
+            "prefix": "overflow",
+            "body": [
+                "overflow=\"$1\""
+            ],
+            "description": "PageScroll 的 overflow 属性"
+        }
+    ],
+    "c-page-scroll-video": [
+        {
+            "prefix": "video",
+            "body": [
+                "video=\"$1\""
+            ],
+            "description": "筛选项"
+        },
+        {
+            "prefix": "show-config",
+            "body": [
+                "show-config=\"$1\""
+            ],
+            "description": "展现配置，可选"
+        },
+        {
+            "prefix": "more-info",
+            "body": [
+                "more-info=\"$1\""
+            ],
+            "description": "查看更多配置，可选"
+        }
+    ],
+    "c-popup": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "弹层标题(9n)"
+        },
+        {
+            "prefix": "subtitle",
+            "body": [
+                "subtitle=\"$1\""
+            ],
+            "description": "弹层副标题(9n)"
+        },
+        {
+            "prefix": "is-open",
+            "body": [
+                "is-open"
+            ],
+            "description": "是否打开弹层"
+        },
+        {
+            "prefix": "is-hide-header-border-bottom",
+            "body": [
+                "is-hide-header-border-bottom"
+            ],
+            "description": "是否隐藏头部功能区下边线"
+        },
+        {
+            "prefix": "max-height",
+            "body": [
+                "max-height=\"$1\""
+            ],
+            "description": "弹层面板最大高度"
+        },
+        {
+            "prefix": "min-height",
+            "body": [
+                "min-height=\"$1\""
+            ],
+            "description": "弹层面板最大高度"
+        },
+        {
+            "prefix": "has-padding",
+            "body": [
+                "has-padding"
+            ],
+            "description": "是否有左右边距"
+        },
+        {
+            "prefix": "transition",
+            "body": [
+                "transition"
+            ],
+            "description": "是否有弹出动画"
+        },
+        {
+            "prefix": "is-hide-header",
+            "body": [
+                "is-hide-header"
+            ],
+            "description": "是否隐藏 header"
+        },
+        {
+            "prefix": "stop-touch-event-through",
+            "body": [
+                "stop-touch-event-through"
+            ],
+            "description": "阻止触摸事件透传开关"
+        }
+    ],
+    "c-pull-refresh": [
+        {
+            "prefix": "offset",
+            "body": [
+                "offset=\"$1\""
+            ],
+            "description": "下拉多少距离触发`on-refresh`"
+        },
+        {
+            "prefix": "error-tip",
+            "body": [
+                "error-tip=\"$1\""
+            ],
+            "description": "异步请求失败后的提示"
+        },
+        {
+            "prefix": "tip-show-time",
+            "body": [
+                "tip-show-time=\"$1\""
+            ],
+            "description": "tip提示展示时间"
+        }
+    ],
+    "c-rec": [
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "推荐数据"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "推荐卡片标题文案"
+        },
+        {
+            "prefix": "title-icon",
+            "body": [
+                "title-icon=\"$1\""
+            ],
+            "description": "标题图标"
+        },
+        {
+            "prefix": "title-color",
+            "body": [
+                "title-color=\"$1\""
+            ],
+            "description": "标题颜色"
+        },
+        {
+            "prefix": "num",
+            "body": [
+                "num=\"$1\""
+            ],
+            "description": "推荐条数最大限制"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "推荐样式类型；'normal' 正常类型；'scroll' 滑动类型；'vertical' 竖直排列样式"
+        },
+        {
+            "prefix": "horizontal-padding",
+            "body": [
+                "horizontal-padding"
+            ],
+            "description": "水平内间距；为保证线上兼容，默认自带水平内间距，如不需要需要手动传入 false"
+        },
+        {
+            "prefix": "scroll-opts",
+            "body": [
+                "scroll-opts=\"$1\""
+            ],
+            "description": "滑动样式配置"
+        }
+    ],
+    "c-row": [],
+    "c-scroll": [
+        {
+            "prefix": "scroller-flex",
+            "body": [
+                "scroller-flex"
+            ],
+            "description": "scroller 是否使用 flex 布局，示例见 ScrollImgs / SrcollArticle / ScrollTwo / NewsArticle"
+        },
+        {
+            "prefix": "bounce",
+            "body": [
+                "bounce"
+            ],
+            "description": "是否是弹性滚动"
+        },
+        {
+            "prefix": "probe-type",
+            "body": [
+                "probe-type=\"$1\""
+            ],
+            "description": "有时候我们需要知道滚动的位置。\n当 probeType 为 1 的时候，会非实时（屏幕滑动超过一定时间后）派发scroll 事件；\n当 probeType 为 2 的时候，会在屏幕滑动的过程中实时的派发 scroll 事件；\n当 probeType 为 3 的时候，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件。\n如果没有设置该值，其默认值为 0，即不派发 scroll 事件"
+        },
+        {
+            "prefix": "snap",
+            "body": [
+                "snap"
+            ],
+            "description": "滚动后是否对齐到item，须每项的宽度都相等才生效"
+        }
+    ],
+    "c-scroll-article": [
+        {
+            "prefix": "col",
+            "body": [
+                "col=\"$1\""
+            ],
+            "description": "栅格列数，如（6,8表示6n,8n）"
+        },
+        {
+            "prefix": "article-list",
+            "body": [
+                "article-list=\"$1\""
+            ],
+            "description": "是"
+        },
+        {
+            "prefix": "more-url",
+            "body": [
+                "more-url=\"$1\""
+            ],
+            "description": "查看更多跳转的url，参考c-link"
+        },
+        {
+            "prefix": "more-url-params",
+            "body": [
+                "more-url-params=\"$1\""
+            ],
+            "description": "查看更多url的params，参考c-link"
+        },
+        {
+            "prefix": "show-ext",
+            "body": [
+                "show-ext"
+            ],
+            "description": "当只是用extslot时需要设置为true"
+        }
+    ],
+    "c-scroll-two": [
+        {
+            "prefix": "orientation",
+            "body": [
+                "orientation=\"$1\""
+            ],
+            "description": "否 |排列方式，有水平排列（'horizontal'）和竖直排列（'vertical'）两种"
+        },
+        {
+            "prefix": "col",
+            "body": [
+                "col=\"$1\""
+            ],
+            "description": "栅格列数"
+        },
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "数据列表"
+        },
+        {
+            "prefix": "img-type",
+            "body": [
+                "img-type=\"$1\""
+            ],
+            "description": "图片比例，值有（s,l,w,x,y），详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+        },
+        {
+            "prefix": "more-url",
+            "body": [
+                "more-url=\"$1\""
+            ],
+            "description": "查看更多跳转的url"
+        },
+        {
+            "prefix": "more-url-params",
+            "body": [
+                "more-url-params=\"$1\""
+            ],
+            "description": "查看更多url的params，参考c-link"
+        }
+    ],
+    "c-scroll-two-frame": [
+        {
+            "prefix": "orientation",
+            "body": [
+                "orientation=\"$1\""
+            ],
+            "description": "排列方式，有水平排列（'horizontal'）和竖直排列（'vertical'）两种"
+        },
+        {
+            "prefix": "col",
+            "body": [
+                "col=\"$1\""
+            ],
+            "description": "栅格列数"
+        },
+        {
+            "prefix": "length",
+            "body": [
+                "length=\"$1\""
+            ],
+            "description": "数据长度"
+        },
+        {
+            "prefix": "more-url",
+            "body": [
+                "more-url=\"$1\""
+            ],
+            "description": "查看更多跳转的url"
+        },
+        {
+            "prefix": "more-url-params",
+            "body": [
+                "more-url-params=\"$1\""
+            ],
+            "description": "查看更多url的params，参考c-link"
+        },
+        {
+            "prefix": "bounce",
+            "body": [
+                "bounce"
+            ],
+            "description": "是否是弹性滚动"
+        },
+        {
+            "prefix": "probe-type",
+            "body": [
+                "probe-type=\"$1\""
+            ],
+            "description": "有时候我们需要知道滚动的位置。\n当 probeType 为 1 的时候，会非实时（屏幕滑动超过一定时间后）派发scroll 事件；\n当 probeType 为 2 的时候，会在屏幕滑动的过程中实时的派发 scroll 事件；\n当 probeType 为 3 的时候，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件。\n如果没有设置该值，其默认值为 0，即不派发 scroll 事件"
+        },
+        {
+            "prefix": "right-slot-col",
+            "body": [
+                "right-slot-col=\"$1\""
+            ],
+            "description": "右侧 slot 自定义区的栅格数，不传则会隐藏（弹性滑动至最右边时可出现）"
+        },
+        {
+            "prefix": "snap",
+            "body": [
+                "snap"
+            ],
+            "description": "是否是 snap"
+        },
+        {
+            "prefix": "snap-step-x",
+            "body": [
+                "snap-step-x=\"$1\""
+            ],
+            "description": "snap 滑动的距离（为 itemWidth 的倍数）"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "布局类型；'normal' 为默认样式；'auto' 为自适应样式"
+        }
+    ],
+    "c-scroll-video": [
+        {
+            "prefix": "video",
+            "body": [
+                "video=\"$1\""
+            ],
+            "description": "筛选项"
+        },
+        {
+            "prefix": "show-config",
+            "body": [
+                "show-config=\"$1\""
+            ],
+            "description": "展现配置，可选"
+        },
+        {
+            "prefix": "more-info",
+            "body": [
+                "more-info=\"$1\""
+            ],
+            "description": "查看更多配置，可选"
+        }
+    ],
+    "c-selector": [
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "标题的文本, 可选"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "选框类型 'radio'单选 'multi'多选"
+        },
+        {
+            "prefix": "open",
+            "body": [
+                "open"
+            ],
+            "description": "是否打开, 可选"
+        },
+        {
+            "prefix": "title-align",
+            "body": [
+                "title-align=\"$1\""
+            ],
+            "description": "标题位置，默认为居中；居中：center；左对齐：left"
+        },
+        {
+            "prefix": "data",
+            "body": [
+                "data=\"$1\""
+            ],
+            "description": "选项数据, 必选"
+        }
+    ],
+    "c-share": [
+        {
+            "prefix": "use-fusion",
+            "body": [
+                "use-fusion"
+            ],
+            "description": "注意！新增分享组件请务必设置此值为 false"
+        },
+        {
+            "prefix": "show",
+            "body": [
+                "show"
+            ],
+            "description": "是否展示分享面板"
+        },
+        {
+            "prefix": "use-popup",
+            "body": [
+                "use-popup"
+            ],
+            "description": "直接展示分享面板(false)or 用弹出框展示分享面板(true)"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "要分享的url"
+        },
+        {
+            "prefix": "title",
+            "body": [
+                "title=\"$1\""
+            ],
+            "description": "自定义的分享标题(QZONE 网页版不支持)"
+        },
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "自定义的分享内容"
+        },
+        {
+            "prefix": "icon-url",
+            "body": [
+                "icon-url=\"$1\""
+            ],
+            "description": "自定义的分享图片的地址"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "文字颜色配置，#333，#666，#999"
+        },
+        {
+            "prefix": "channel",
+            "body": [
+                "channel=\"$1\""
+            ],
+            "description": "分享渠道，可根据需求选择分享哪些渠道"
+        },
+        {
+            "prefix": "loginfo",
+            "body": [
+                "loginfo=\"$1\""
+            ],
+            "description": "分享按钮点击时候需要发送的日志内容(只在结果页生效,发tc日志)"
+        },
+        {
+            "prefix": "custom",
+            "body": [
+                "custom=\"$1\""
+            ],
+            "description": "分享窗口自定义功能，每一个元素都是一个对象"
+        },
+        {
+            "prefix": "imageurl",
+            "body": [
+                "imageurl=\"$1\""
+            ],
+            "description": "分享图片的地址，默认图片是百度的logo图片"
+        },
+        {
+            "prefix": "screen-shot",
+            "body": [
+                "screen-shot=\"$1\""
+            ],
+            "description": "截图分享额外需要的属性；一个json类型的字符串，存放截图分享所需的属性"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "分享类型：链接（url），图片（image），截图（screenshot）"
+        }
+    ],
+    "c-sigma": [
+        {
+            "prefix": "footer-type",
+            "body": [
+                "footer-type=\"$1\""
+            ],
+            "description": "底部展现的类型"
+        },
+        {
+            "prefix": "footer-text",
+            "body": [
+                "footer-text=\"$1\""
+            ],
+            "description": "底部文字"
+        },
+        {
+            "prefix": "footer-url",
+            "body": [
+                "footer-url=\"$1\""
+            ],
+            "description": "底部链接"
+        },
+        {
+            "prefix": "footer-url-params",
+            "body": [
+                "footer-url-params=\"$1\""
+            ],
+            "description": "底部链接参数"
+        },
+        {
+            "prefix": "footer-use-divider",
+            "body": [
+                "footer-use-divider"
+            ],
+            "description": "是否显示底部分割线"
+        },
+        {
+            "prefix": "hide-footer",
+            "body": [
+                "hide-footer"
+            ],
+            "description": "是否隐藏底部栏"
+        },
+        {
+            "prefix": "hide-other-result",
+            "body": [
+                "hide-other-result"
+            ],
+            "description": "是否隐藏其他结果"
+        },
+        {
+            "prefix": "icon-type",
+            "body": [
+                "icon-type=\"$1\""
+            ],
+            "description": "图标类型"
+        },
+        {
+            "prefix": "icon-color",
+            "body": [
+                "icon-color=\"$1\""
+            ],
+            "description": "图标颜色"
+        }
+    ],
+    "c-slink": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "短链类型，可选值：default、strong、auto"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "跳转地址"
+        },
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "短链内容"
+        },
+        {
+            "prefix": "text-color",
+            "body": [
+                "text-color=\"$1\""
+            ],
+            "description": "短链内容颜色"
+        },
+        {
+            "prefix": "tail",
+            "body": [
+                "tail=\"$1\""
+            ],
+            "description": "短链尾部文字"
+        },
+        {
+            "prefix": "tail-color",
+            "body": [
+                "tail-color=\"$1\""
+            ],
+            "description": "短链尾部文字颜色"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "链接所带的参数，可参考 `Link`"
+        },
+        {
+            "prefix": "icon-type",
+            "body": [
+                "icon-type=\"$1\""
+            ],
+            "description": "图标类型，可选值参考c-icon"
+        },
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "文字标签"
+        },
+        {
+            "prefix": "label-type",
+            "body": [
+                "label-type=\"$1\""
+            ],
+            "description": "文字标签类型"
+        },
+        {
+            "prefix": "no-gap",
+            "body": [
+                "no-gap"
+            ],
+            "description": "控制不添加上下的栅格 gap"
+        }
+    ],
+    "c-source": [
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "来源跳转链接"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "来源跳转链接参数对象"
+        },
+        {
+            "prefix": "img-src",
+            "body": [
+                "img-src=\"$1\""
+            ],
+            "description": "图像路径"
+        },
+        {
+            "prefix": "source",
+            "body": [
+                "source=\"$1\""
+            ],
+            "description": "来源字符串"
+        },
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "时间（可传字符串，也可传数字时间戳）\n传字符串直接展示，传数字时间戳会使用 TimeSpan 转换成相对时间"
+        },
+        {
+            "prefix": "server-time",
+            "body": [
+                "server-time=\"$1\""
+            ],
+            "description": "服务器时间戳（可选）当且近当 time 为数字时间戳时有效"
+        },
+        {
+            "prefix": "time-margin-left",
+            "body": [
+                "time-margin-left=\"$1\""
+            ],
+            "description": "时间字段距离左边的间距"
+        }
+    ],
+    "c-spread": [
+        {
+            "prefix": "is-show",
+            "body": [
+                "is-show"
+            ],
+            "description": "是否显示 true为显示 false为隐藏"
+        },
+        {
+            "prefix": "is-spread",
+            "body": [
+                "is-spread"
+            ],
+            "description": "【图标】是否是展示态；由于 Spread 组件内部不维护状态，这里的 展示/收起 指的是图标的状态；true 为展示态图标（箭头向下，表示点击展开）；false 为收起态图标（箭头向上，表示点击收起）"
+        },
+        {
+            "prefix": "has-icon",
+            "body": [
+                "has-icon"
+            ],
+            "description": "是否有箭头图标 true为有 false为没有"
+        },
+        {
+            "prefix": "spread-text",
+            "body": [
+                "spread-text=\"$1\""
+            ],
+            "description": "展示内容文案配置"
+        },
+        {
+            "prefix": "fold-text",
+            "body": [
+                "fold-text=\"$1\""
+            ],
+            "description": "收起内容文案配置"
+        }
+    ],
+    "c-spread-enhanced": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "展开收起类型，目前支持3种类型：\n列表类型 list；\n文字段落类型 paragraph；\n自定义收起高度类型 height；\n默认为 list 类型"
+        },
+        {
+            "prefix": "spread",
+            "body": [
+                "spread"
+            ],
+            "description": "默认展开收起状态，展开为 true，收起为 false"
+        },
+        {
+            "prefix": "threshold",
+            "body": [
+                "threshold=\"$1\""
+            ],
+            "description": "代表收起状态时的高度：\n当 type 为 list 时，代表显示的 item 数量；\n当 type 为 paragraph 时，代表需要显示的文字行数；\n当 type 为 height 时，threshold 无意义"
+        },
+        {
+            "prefix": "content-click",
+            "body": [
+                "content-click"
+            ],
+            "description": "内容区域是否可点击"
+        },
+        {
+            "prefix": "row-tile",
+            "body": [
+                "row-tile"
+            ],
+            "description": "是否是通栏（即增加 margin-left: -.17rem, margin-right: -.17rem）"
+        },
+        {
+            "prefix": "bottom-btn",
+            "body": [
+                "bottom-btn=\"$1\""
+            ],
+            "description": "底部按钮的配置 option；\n\nopt.isShow(boolean) 表示是否显示，默认为 true；\n\nopt.textAlign(string) 表示文字居中方式，默认为 'center'；\n\nopt.spreadText(string) 表示展开文案，默认为 '展开'；\n\nopt.foldText(string) 表示收起文案，默认为 '收起'；\n\nopt.paddingTop(string) 表示底部按钮的 padding-top，默认为 '.1rem'；\n\nopt.paddingBottom(string) 表示底部按钮的 padding-bottom，默认为 '.1rem'；\n\nopt.touchableFeedbackTop(number) 表示底部按钮点击态基于被包裹容器绝对定位 top 值，默认为 0；\n\nopt.touchableFeedbackBottom(number) 表示底部按钮点击态基于被包裹容器绝对定位 bottom 值，默认为 0；\n\nopt.borderTop(boolean) 是否有上边线，默认为 false；\n\nopt.borderBottom(boolean) 是否有下边线，默认为 false；\n\nopt.iconColor(string) 右下角按钮箭头图标颜色，默认为 '#555'；\n\nopt.bgColor(string) 右下角按钮背景颜色；背景颜色必须使用 rgb(xx,xx,xx) 的格式；不可使用十六进制"
+        },
+        {
+            "prefix": "top-btn",
+            "body": [
+                "top-btn=\"$1\""
+            ],
+            "description": "底部按钮的配置 option；\n\nopt.isShow(boolean) 表示是否显示，默认为 true；\n\nopt.leftText(string) 表示左侧文字，默认为 ''；\n\nopt.spreadText(string) 表示展开文案，默认为 '展开'；\n\nopt.foldText(string) 表示收起文案，默认为 '收起'"
+        },
+        {
+            "prefix": "right-bottom-btn",
+            "body": [
+                "right-bottom-btn=\"$1\""
+            ],
+            "description": "右下角按钮的配置 option；\n\nopt.isShow(boolean) 表示是否显示，默认为 true；\n\nopt.spreadText(string) 表示展开文案，默认为 '展开'；\n\nopt.foldText(string) 表示收起文案，默认为 '收起'；\n\nopt.iconColor(string) 右下角按钮箭头图标颜色，默认为 '#555'；\n\nopt.bgColor(string) 右下角按钮背景颜色；背景颜色必须使用 rgb(xx,xx,xx) 的格式；不可使用十六进制"
+        },
+        {
+            "prefix": "fold-height",
+            "body": [
+                "fold-height=\"$1\""
+            ],
+            "description": "设置收起状态时的高度，当 type 为 height 时生效"
+        },
+        {
+            "prefix": "height-unit",
+            "body": [
+                "height-unit=\"$1\""
+            ],
+            "description": "高度单位，可选 'px'、'rem', 当 type 为 height 时生效"
+        },
+        {
+            "prefix": "is-show",
+            "body": [
+                "is-show"
+            ],
+            "description": "是否显示，用来在切换显示隐藏的时候触发计算高度"
+        },
+        {
+            "prefix": "log-class",
+            "body": [
+                "log-class"
+            ],
+            "description": "是否增加日志类"
+        }
+    ],
+    "c-stars": [
+        {
+            "prefix": "stars",
+            "body": [
+                "stars=\"$1\""
+            ],
+            "description": "星星数，范围是：0 ~ 5；可以为小数（例：3.5）"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "激活状态的星星颜色"
+        },
+        {
+            "prefix": "font-size",
+            "body": [
+                "font-size=\"$1\""
+            ],
+            "description": "星星的字体大小"
+        },
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "右侧文案"
+        },
+        {
+            "prefix": "show-text",
+            "body": [
+                "show-text"
+            ],
+            "description": "是否显示右侧文案"
+        },
+        {
+            "prefix": "text-font-size",
+            "body": [
+                "text-font-size=\"$1\""
+            ],
+            "description": "右侧文字的字体大小"
+        },
+        {
+            "prefix": "text-color",
+            "body": [
+                "text-color=\"$1\""
+            ],
+            "description": "右侧文字的颜色"
+        },
+        {
+            "prefix": "text-gap",
+            "body": [
+                "text-gap=\"$1\""
+            ],
+            "description": "右侧文与星星之间的间距"
+        },
+        {
+            "prefix": "icon",
+            "body": [
+                "icon=\"$1\""
+            ],
+            "description": "星星的图标名"
+        },
+        {
+            "prefix": "empty-icon",
+            "body": [
+                "empty-icon=\"$1\""
+            ],
+            "description": "镂空星星的图标名"
+        },
+        {
+            "prefix": "disabled",
+            "body": [
+                "disabled"
+            ],
+            "description": "是否禁止交互（只读）；默认为 true"
+        }
+    ],
+    "c-strong-link": [
+        {
+            "prefix": "name",
+            "body": [
+                "name=\"$1\""
+            ],
+            "description": "强链接名称"
+        },
+        {
+            "prefix": "num",
+            "body": [
+                "num=\"$1\""
+            ],
+            "description": "强链接数量"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "整行可点的链接"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "整行可点的链接类型"
+        }
+    ],
+    "c-switch": [
+        {
+            "prefix": "value",
+            "body": [
+                "value"
+            ],
+            "description": "开关状态值"
+        },
+        {
+            "prefix": "transition",
+            "body": [
+                "transition"
+            ],
+            "description": "是否开启动效"
+        }
+    ],
+    "c-table": [
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "表格数据"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "表格类型（standardLine：整行可点；\nstandardBlock：单个可点；\nabstractLine：概要表格-单行；\nabstractMulti：概览表格：多行）"
+        }
+    ],
+    "c-table-grid": [
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "表格数据"
+        }
+    ],
+    "c-tabs": [
+        {
+            "prefix": "selected",
+            "body": [
+                "selected=\"$1\""
+            ],
+            "description": "选中选项卡的索引"
+        },
+        {
+            "prefix": "bottom",
+            "body": [
+                "bottom=\"$1\""
+            ],
+            "description": "导航在底部"
+        },
+        {
+            "prefix": "content-touchable-stop",
+            "body": [
+                "content-touchable-stop=\"$1\""
+            ],
+            "description": "content 是否屏蔽整卡点击态"
+        }
+    ],
+    "c-tag-group": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "类型；单选 radio；多选 checkbox"
+        },
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "数据数组"
+        },
+        {
+            "prefix": "is-auto",
+            "body": [
+                "is-auto"
+            ],
+            "description": "按钮大小是否自适应"
+        },
+        {
+            "prefix": "disable",
+            "body": [
+                "disable"
+            ],
+            "description": "是否禁用点击交互效果；注：禁用点击效果后点击Tag不会发送tc日志"
+        },
+        {
+            "prefix": "allow-scroll",
+            "body": [
+                "allow-scroll"
+            ],
+            "description": "是否允许 TagGroup 滑动"
+        },
+        {
+            "prefix": "column",
+            "body": [
+                "column=\"$1\""
+            ],
+            "description": "列数；当5列时较为特殊，不走栅格而是等分"
+        }
+    ],
+    "c-tags": [
+        {
+            "prefix": "selected-index",
+            "body": [
+                "selected-index=\"$1\""
+            ],
+            "description": "否|选中的标签索引"
+        },
+        {
+            "prefix": "toggle-label",
+            "body": [
+                "toggle-label=\"$1\""
+            ],
+            "description": "否|下拉显示后的引导文字"
+        }
+    ],
+    "c-text-line": [
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "文本内容"
+        },
+        {
+            "prefix": "clamp",
+            "body": [
+                "clamp=\"$1\""
+            ],
+            "description": "显示行数，范围为1-5"
+        },
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "文案颜色，可选值参照`c-color-*`"
+        },
+        {
+            "prefix": "align",
+            "body": [
+                "align=\"$1\""
+            ],
+            "description": "文案对齐方式，可选值为`text-align`可选值"
+        },
+        {
+            "prefix": "size",
+            "body": [
+                "size=\"$1\""
+            ],
+            "description": "t1 ~ t4"
+        },
+        {
+            "prefix": "fix-height",
+            "body": [
+                "fix-height"
+            ],
+            "description": "是否定高"
+        },
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "标签文本"
+        },
+        {
+            "prefix": "label-type",
+            "body": [
+                "label-type=\"$1\""
+            ],
+            "description": "标签类型，可参考 `Label` 组件"
+        },
+        {
+            "prefix": "label-front",
+            "body": [
+                "label-front=\"$1\""
+            ],
+            "description": "标题前的标签文本"
+        },
+        {
+            "prefix": "label-front-type",
+            "body": [
+                "label-front-type=\"$1\""
+            ],
+            "description": "标题前的标签类型，可参考 `Label` 组件"
+        }
+    ],
+    "c-timespan": [
+        {
+            "prefix": "time",
+            "body": [
+                "time=\"$1\""
+            ],
+            "description": "时间戳 单位：毫秒，"
+        },
+        {
+            "prefix": "server-time",
+            "body": [
+                "server-time=\"$1\""
+            ],
+            "description": "服务器时间戳 单位：毫秒（**注意：若不提供服务器时间，则以本地时间作为服务器时间**）"
+        },
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "分隔符类型；1：横杠 '-' 分割；2：中文 '年、月、日' 分割"
+        }
+    ],
+    "c-title": [
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "标题的跳转链接"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "标题跳转链接的属性，sf 跳转需要，由 smarty 工具函数生成"
+        },
+        {
+            "prefix": "text",
+            "body": [
+                "text=\"$1\""
+            ],
+            "description": "标题文本，支持传入 html"
+        },
+        {
+            "prefix": "icon",
+            "body": [
+                "icon=\"$1\""
+            ],
+            "description": "标题后面的 iconfont 图标"
+        },
+        {
+            "prefix": "arrow",
+            "body": [
+                "arrow"
+            ],
+            "description": "是否带有跳转的箭头，在情景页会用到"
+        },
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "标题后面的文字图标"
+        },
+        {
+            "prefix": "label-type",
+            "body": [
+                "label-type=\"$1\""
+            ],
+            "description": "文字图标的类型，具体参考 `c-label`"
+        },
+        {
+            "prefix": "size",
+            "body": [
+                "size=\"$1\""
+            ],
+            "description": "字体大小，支持 t1 t2 两种字号"
+        },
+        {
+            "prefix": "clamp",
+            "body": [
+                "clamp=\"$1\""
+            ],
+            "description": "显示行数，范围为1-5；t1 默认大屏设备(网页宽度376px及以上)1行截断，小屏设备(网页宽度376px以下)不截断；t2 默认一行截断"
+        },
+        {
+            "prefix": "right-text",
+            "body": [
+                "right-text=\"$1\""
+            ],
+            "description": "右侧文字"
+        },
+        {
+            "prefix": "right-col",
+            "body": [
+                "right-col=\"$1\""
+            ],
+            "description": "右侧栅格数"
+        }
+    ],
+    "c-to-top": [
+        {
+            "prefix": "size",
+            "body": [
+                "size=\"$1\""
+            ],
+            "description": "组件的大小（高和宽）"
+        },
+        {
+            "prefix": "right",
+            "body": [
+                "right=\"$1\""
+            ],
+            "description": "组件距离页面右边的距离（组件是fixed定位的）"
+        },
+        {
+            "prefix": "bottom",
+            "body": [
+                "bottom=\"$1\""
+            ],
+            "description": "组件距离页面底部的距离（组件是fixed定位的）"
+        },
+        {
+            "prefix": "z-index",
+            "body": [
+                "z-index=\"$1\""
+            ],
+            "description": "组件的\"z-index\"属性"
+        },
+        {
+            "prefix": "icon-font-size",
+            "body": [
+                "icon-font-size=\"$1\""
+            ],
+            "description": "内部向上箭头(icon)的字体大小"
+        },
+        {
+            "prefix": "show-threshold",
+            "body": [
+                "show-threshold=\"$1\""
+            ],
+            "description": "组件展示阈值，页面向上滑动了多少个可视窗口的距离的时候展示组件"
+        }
+    ],
+    "c-toast": [
+        {
+            "prefix": "icon-type",
+            "body": [
+                "icon-type=\"$1\""
+            ],
+            "description": "图标类型"
+        },
+        {
+            "prefix": "icon-code",
+            "body": [
+                "icon-code=\"$1\""
+            ],
+            "description": "图标编码"
+        },
+        {
+            "prefix": "content",
+            "body": [
+                "content=\"$1\""
+            ],
+            "description": "提示文字"
+        },
+        {
+            "prefix": "auto-close",
+            "body": [
+                "auto-close"
+            ],
+            "description": "是否自动关闭"
+        },
+        {
+            "prefix": "duration",
+            "body": [
+                "duration=\"$1\""
+            ],
+            "description": "tip提示展示时间"
+        }
+    ],
+    "c-tombstone": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "占位加载图类型：\n\n1：图片；\n2：资讯；\n3：问答列表；\n4：图文列表；\n5：浏览态样式"
+        },
+        {
+            "prefix": "row-tile",
+            "body": [
+                "row-tile"
+            ],
+            "description": "是否是通栏；默认为 false"
+        },
+        {
+            "prefix": "enter-animation-duration",
+            "body": [
+                "enter-animation-duration=\"$1\""
+            ],
+            "description": "进入动画持续时间；默认 0"
+        },
+        {
+            "prefix": "leave-animation-duration",
+            "body": [
+                "leave-animation-duration=\"$1\""
+            ],
+            "description": "离开动画持续时间；默认 80"
+        },
+        {
+            "prefix": "img-num",
+            "body": [
+                "img-num=\"$1\""
+            ],
+            "description": "图片占位图占的屏幕数量；默认1屏；当且仅当为图片类型 type === 1 时生效"
+        },
+        {
+            "prefix": "img-type",
+            "body": [
+                "img-type=\"$1\""
+            ],
+            "description": "图片占位类型；'waterfall' 瀑布流；'same' 相同；默认为 'waterfall'，当且仅当为图片类型 type === 1 时生效"
+        },
+        {
+            "prefix": "num",
+            "body": [
+                "num=\"$1\""
+            ],
+            "description": "除图片类型外，其他类型占位加载的条数；默认6条；当且仅当不为图片类型 type !== 1 时生效"
+        }
+    ],
+    "c-touchable-feedback": [
+        {
+            "prefix": "open",
+            "body": [
+                "open"
+            ],
+            "description": "是否添加点击态"
+        },
+        {
+            "prefix": "top",
+            "body": [
+                "top=\"$1\""
+            ],
+            "description": "基于被包裹容器 absolute 定位，top 值"
+        },
+        {
+            "prefix": "right",
+            "body": [
+                "right=\"$1\""
+            ],
+            "description": "基于被包裹容器 absolute 定位，right 值"
+        },
+        {
+            "prefix": "bottom",
+            "body": [
+                "bottom=\"$1\""
+            ],
+            "description": "基于被包裹容器 absolute 定位，bottom 值"
+        },
+        {
+            "prefix": "left",
+            "body": [
+                "left=\"$1\""
+            ],
+            "description": "基于被包裹容器 absolute 定位，left 值"
+        },
+        {
+            "prefix": "background-color",
+            "body": [
+                "background-color=\"$1\""
+            ],
+            "description": "设置点击态的颜色，透明度取值为 .05, .08, .12 其中之一"
+        },
+        {
+            "prefix": "border-radius",
+            "body": [
+                "border-radius=\"$1\""
+            ],
+            "description": "设置 borderRadius"
+        },
+        {
+            "prefix": "is-jump",
+            "body": [
+                "is-jump"
+            ],
+            "description": "是否是跳转类型 跳转类型会保持点击态到跳转 并具备块级跳转功能"
+        },
+        {
+            "prefix": "url",
+            "body": [
+                "url=\"$1\""
+            ],
+            "description": "点击态区域块级跳转链接的 url 地址"
+        },
+        {
+            "prefix": "url-params",
+            "body": [
+                "url-params=\"$1\""
+            ],
+            "description": "点击态区域块级跳转链接的 urlParams"
+        },
+        {
+            "prefix": "expand",
+            "body": [
+                "expand"
+            ],
+            "description": "是否扩展点击跳转响应区域，区域大小同点击态的区域"
+        }
+    ],
+    "c-waterfall": [
+        {
+            "prefix": "img-list",
+            "body": [
+                "img-list=\"$1\""
+            ],
+            "description": "传入的图片数据 list"
+        },
+        {
+            "prefix": "column",
+            "body": [
+                "column=\"$1\""
+            ],
+            "description": "列数"
+        },
+        {
+            "prefix": "mode",
+            "body": [
+                "mode=\"$1\""
+            ],
+            "description": "触发模式；'scroll' 滚动到底部触发；'click' 点击按钮触发"
+        },
+        {
+            "prefix": "load-btn-show",
+            "body": [
+                "load-btn-show"
+            ],
+            "description": "是否显示加载按钮"
+        },
+        {
+            "prefix": "load-btn-text",
+            "body": [
+                "load-btn-text=\"$1\""
+            ],
+            "description": "加载按钮的文案"
+        },
+        {
+            "prefix": "gap-opts",
+            "body": [
+                "gap-opts=\"$1\""
+            ],
+            "description": "间距配置（单位都为 px）\n\n`gapOpts.inside<Number>` 图片中间的间距\n\n`gapOpts.outside<Number>` 图片距离两边的间距\n\n`gapOpts.bottom<Number>` 图片距离下方的间距"
+        },
+        {
+            "prefix": "border-radius",
+            "body": [
+                "border-radius=\"$1\""
+            ],
+            "description": "圆角参数"
+        },
+        {
+            "prefix": "default-placeholder-img-color",
+            "body": [
+                "default-placeholder-img-color=\"$1\""
+            ],
+            "description": "默认占位图颜色"
+        },
+        {
+            "prefix": "loading-text",
+            "body": [
+                "loading-text=\"$1\""
+            ],
+            "description": "加载中文本，参考[无限下拉组件](http://soy.baidu-int.com/component/InfiniteScroll)"
+        },
+        {
+            "prefix": "load-end-text",
+            "body": [
+                "load-end-text=\"$1\""
+            ],
+            "description": "加载到尾部文本"
+        },
+        {
+            "prefix": "load-fail-text",
+            "body": [
+                "load-fail-text=\"$1\""
+            ],
+            "description": "加载失败文本"
         }
     ]
 }
