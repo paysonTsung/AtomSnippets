@@ -61,7 +61,7 @@
             "body": [
                 "title-size=\"$1\""
             ],
-            "description": "标题尺寸，支持 `t1` `t2`"
+            "description": "标题尺寸，支持 t1/t2"
         },
         {
             "prefix": "title-feedback",
@@ -183,7 +183,66 @@
             "description": "标题区域 data-module 属性"
         }
     ],
-    "c-animate-icon": [],
+    "c-triangle": [
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "颜色色值"
+        },
+        {
+            "prefix": "direction",
+            "body": [
+                "direction=\"$1\""
+            ],
+            "description": "默认方向；1：向下；2：向上"
+        },
+        {
+            "prefix": "animation",
+            "body": [
+                "animation=\"${1:false}\""
+            ],
+            "description": "是否开启点击动画"
+        },
+        {
+            "prefix": "default-line-height",
+            "body": [
+                "default-line-height=\"${1:false}\""
+            ],
+            "description": "是否有默认行高"
+        }
+    ],
+    "c-arrow": [
+        {
+            "prefix": "color",
+            "body": [
+                "color=\"$1\""
+            ],
+            "description": "颜色 svg stroke color"
+        },
+        {
+            "prefix": "fill-color",
+            "body": [
+                "fill-color=\"$1\""
+            ],
+            "description": "svg 填充颜色"
+        },
+        {
+            "prefix": "direction",
+            "body": [
+                "direction=\"$1\""
+            ],
+            "description": "默认方向；1：向下；2：向上"
+        },
+        {
+            "prefix": "animation",
+            "body": [
+                "animation=\"${1:false}\""
+            ],
+            "description": "是否开启点击动画"
+        }
+    ],
     "c-article": [
         {
             "prefix": "title",
@@ -197,7 +256,7 @@
             "body": [
                 "article-type=\"$1\""
             ],
-            "description": "文章类别，一级 or 二级；目前只支持这两级，只有字体大小及行高的区别；2级用于结果页，1级用于情景页"
+            "description": "文章类别，一级 or 二级；\n目前只支持这两级，只有字体大小及行高的区别；\n2级用于结果页，1级用于情景页"
         },
         {
             "prefix": "url",
@@ -309,7 +368,7 @@
         {
             "prefix": "is-progress",
             "body": [
-                "is-progress"
+                "is-progress=\"${1:false}\""
             ],
             "description": "是否使用进度条样式，默认不使用"
         },
@@ -323,7 +382,7 @@
         {
             "prefix": "show-time",
             "body": [
-                "show-time"
+                "show-time=\"${1:false}\""
             ],
             "description": "是否显示时间，默认显示"
         },
@@ -469,7 +528,7 @@
             "body": [
                 "default-checked-arr=\"$1\""
             ],
-            "description": "默认选中项数组；最多两个；defaultCheckedArr[].year 年；defaultCheckedArr[].month 月；defaultCheckedArr[].day 日；"
+            "description": "默认选中项数组；最多两个；\ndefaultCheckedArr[].year 年；\ndefaultCheckedArr[].month 月；\ndefaultCheckedArr[].day 日；"
         },
         {
             "prefix": "year",
@@ -497,7 +556,7 @@
             "body": [
                 "type=\"$1\""
             ],
-            "description": "日期组件的类型；1：单选日期；2：范围选择；默认为 2 范围选择"
+            "description": "日期组件的类型；\n1：单选日期；\n2：范围选择；默认为 2 范围选择"
         },
         {
             "prefix": "start-text",
@@ -546,14 +605,14 @@
         {
             "prefix": "loop",
             "body": [
-                "loop"
+                "loop=\"${1:false}\""
             ],
             "description": "是否循环"
         },
         {
             "prefix": "show-indicator",
             "body": [
-                "show-indicator"
+                "show-indicator=\"${1:false}\""
             ],
             "description": "是否显示指示器"
         },
@@ -583,7 +642,7 @@
             "body": [
                 "img-type=\"$1\""
             ],
-            "description": "图片比例，值有（s,l,w,x,y）详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+            "description": "图片比例，值有（s,l,w,x,y）"
         },
         {
             "prefix": "autoplay",
@@ -646,7 +705,7 @@
         {
             "prefix": "deep-copy",
             "body": [
-                "deep-copy"
+                "deep-copy=\"${1:false}\""
             ],
             "description": "是否深复制传入的数据，如果传 false，则组件内部会操作传入的数据"
         },
@@ -683,7 +742,7 @@
         {
             "prefix": "horizontal-transition",
             "body": [
-                "horizontal-transition"
+                "horizontal-transition=\"${1:false}\""
             ],
             "description": "左右滑动动效，selectedIndex 改变时触发（从 x 到 x）"
         },
@@ -729,7 +788,7 @@
             "body": [
                 "btn-opts=\"$1\""
             ],
-            "description": "按钮配置`<Array>`\n\n[\n{\nevent`<String>`: 该按钮绑定的事件名，点击该按钮时触发\ntext`<String>`: 该按钮绑定的文案\n}\n]"
+            "description": "按钮配置<Array>\n\n[\n{\nevent`<String>`: 该按钮绑定的事件名，点击该按钮时触发\ntext`<String>`: 该按钮绑定的文案\n}\n]"
         },
         {
             "prefix": "z-index",
@@ -775,7 +834,7 @@
             "body": [
                 "left-tips=\"$1\""
             ],
-            "description": "左侧蒙层关闭提示，是一个对象，如果想不显示请传入空对象{}，不要传 null，会出问题；leftTips.icon 控制图标类型；leftTips.text 控制显示文案"
+            "description": "左侧蒙层关闭提示，是一个对象，如果想不显示请传入空对象{}，不要传 null，会出问题；\nleftTips.icon 控制图标类型；\nleftTips.text 控制显示文案"
         }
     ],
     "c-dropdown": [
@@ -784,63 +843,63 @@
             "body": [
                 "label=\"$1\""
             ],
-            "description": "否"
+            "description": "下拉框上方的标签名"
         },
         {
             "prefix": "disabled",
             "body": [
                 "disabled"
             ],
-            "description": "否"
+            "description": "是否禁用"
         },
         {
             "prefix": "value",
             "body": [
                 "value=\"$1\""
             ],
-            "description": "否"
+            "description": "初始状态下选中的值"
         },
         {
             "prefix": "name",
             "body": [
                 "name=\"$1\""
             ],
-            "description": "否"
+            "description": "下拉框组件的名字"
         },
         {
             "prefix": "direction",
             "body": [
                 "direction=\"$1\""
             ],
-            "description": "否"
+            "description": "文字方向，可选值：ltr/rtl"
         },
         {
             "prefix": "no-border",
             "body": [
                 "no-border"
             ],
-            "description": "否"
+            "description": "是否去掉边框"
         },
         {
             "prefix": "silent",
             "body": [
                 "silent"
             ],
-            "description": "否"
+            "description": "是否在值改变时不触发 change 事件，默认为 false"
         },
         {
             "prefix": "options",
             "body": [
                 "options=\"$1\""
             ],
-            "description": "否"
+            "description": "选择列表的值"
         },
         {
             "prefix": "opt-group",
             "body": [
                 "opt-group=\"$1\""
             ],
-            "description": "否"
+            "description": "选项文案"
         }
     ],
     "c-error-page": [
@@ -928,7 +987,7 @@
         {
             "prefix": "row-tile",
             "body": [
-                "row-tile"
+                "row-tile=\"${1:false}\""
             ],
             "description": "是否是通栏"
         },
@@ -1025,7 +1084,7 @@
             "body": [
                 "right-url-params=\"$1\""
             ],
-            "description": "跳转链接需要的参数，同 `Link`"
+            "description": "跳转链接需要的参数，同 Link"
         },
         {
             "prefix": "divider",
@@ -1085,221 +1144,335 @@
             "body": [
                 "src=\"$1\""
             ],
-            "description": "否"
+            "description": "图片链接"
         },
         {
             "prefix": "type",
             "body": [
                 "type=\"$1\""
             ],
-            "description": "否"
+            "description": "图片比例，值有（s,l,w,x,y）"
         },
         {
             "prefix": "title",
             "body": [
                 "title=\"$1\""
             ],
-            "description": "否"
+            "description": "图片标题"
         },
         {
             "prefix": "title-align",
             "body": [
                 "title-align=\"$1\""
             ],
-            "description": "否"
+            "description": "图片标题对齐方式"
         },
         {
             "prefix": "title-fix-height",
             "body": [
                 "title-fix-height=\"$1\""
             ],
-            "description": "否"
+            "description": "标题是否定高，如果定高，会按titleClamp计算高度"
         },
         {
             "prefix": "title-clamp",
             "body": [
                 "title-clamp=\"$1\""
             ],
-            "description": "否"
+            "description": "图片标题截断行数"
         },
         {
             "prefix": "sub-title",
             "body": [
                 "sub-title=\"$1\""
             ],
-            "description": "否"
+            "description": "图片副标题"
         },
         {
             "prefix": "sub-title-clamp",
             "body": [
                 "sub-title-clamp=\"$1\""
             ],
-            "description": "否"
+            "description": "图片副标题截断行数"
         },
         {
             "prefix": "sub-title-align",
             "body": [
                 "sub-title-align=\"$1\""
             ],
-            "description": "否"
+            "description": "图片副标题对齐方式"
         },
         {
             "prefix": "sub-title-fix-height",
             "body": [
                 "sub-title-fix-height=\"$1\""
             ],
-            "description": "否"
+            "description": "副标题是否定高，如果定高，会按subTitleClamp计算高度"
         },
         {
             "prefix": "lazy",
             "body": [
-                "lazy=\"$1\""
+                "lazy"
             ],
-            "description": "否"
+            "description": "是否需要懒加载"
         },
         {
             "prefix": "pill-big-text",
             "body": [
                 "pill-big-text=\"$1\""
             ],
-            "description": "否"
+            "description": "右下角胶囊遮罩大号字体文案"
         },
         {
             "prefix": "show-num",
             "body": [
                 "show-num=\"$1\""
             ],
-            "description": "否"
+            "description": "胶囊遮罩的文案"
         },
         {
             "prefix": "icon-type",
             "body": [
                 "icon-type=\"$1\""
             ],
-            "description": "否"
+            "description": "胶囊遮罩的图标类型"
         },
         {
             "prefix": "lb-pill-opts",
             "body": [
                 "lb-pill-opts=\"$1\""
             ],
-            "description": "否"
+            "description": "左下角胶囊配置"
         },
         {
             "prefix": "hack-white-stroke",
             "body": [
                 "hack-white-stroke=\"$1\""
             ],
-            "description": "否"
+            "description": "加上去白边的蒙层"
         },
         {
             "prefix": "maskgap-size",
             "body": [
                 "maskgap-size=\"$1\""
             ],
-            "description": "| 否"
+            "description": "当值为12时图片右下角胶囊遮罩与外框的边距为\nbottom: .05rem right: .05rem\n不传默认为 bottom: .02rem right: .02rem"
         },
         {
             "prefix": "is-round",
             "body": [
-                "is-round=\"$1\""
+                "is-round"
             ],
-            "description": "否"
+            "description": "是否为圆形图片"
         },
         {
             "prefix": "info",
             "body": [
                 "info=\"$1\""
             ],
-            "description": "| 否"
+            "description": "覆盖图片底部的说明文案"
+        },
+        {
+            "prefix": "default-image-type",
+            "body": [
+                "default-image-type=\"$1\""
+            ],
+            "description": "缺省图&加载图类型"
         },
         {
             "prefix": "grid-size",
             "body": [
                 "grid-size=\"$1\""
             ],
-            "description": "否"
+            "description": "图片所在栅格的大小"
         },
         {
             "prefix": "circle-mask-size",
             "body": [
                 "circle-mask-size=\"$1\""
             ],
-            "description": "否"
+            "description": "圆形遮罩大小"
         },
         {
             "prefix": "circle-mask-icon",
             "body": [
                 "circle-mask-icon=\"$1\""
             ],
-            "description": "| 否"
+            "description": "圆形遮罩图标"
         },
         {
             "prefix": "circle-mask-text",
             "body": [
                 "circle-mask-text=\"$1\""
             ],
-            "description": "| 否"
+            "description": "圆形遮罩文字"
         },
         {
             "prefix": "padding-bottom",
             "body": [
                 "padding-bottom=\"$1\""
             ],
-            "description": "| 否"
+            "description": "图片自定义padding-bottom"
         },
         {
             "prefix": "no-escape",
             "body": [
-                "no-escape=\"$1\""
+                "no-escape"
             ],
-            "description": "否"
+            "description": "不对 url 进行转义"
         },
         {
             "prefix": "progressive",
             "body": [
-                "progressive=\"$1\""
+                "progressive"
             ],
-            "description": "否"
+            "description": "图片显示使用渐显效果"
         },
         {
             "prefix": "blur",
             "body": [
-                "blur=\"$1\""
+                "blur"
             ],
-            "description": "否"
+            "description": "图片显示使用模糊效果"
         },
         {
             "prefix": "is-background-image",
             "body": [
-                "is-background-image=\"$1\""
+                "is-background-image"
             ],
-            "description": "否"
+            "description": "是否采用背景图片的方式"
         },
         {
             "prefix": "background-size",
             "body": [
                 "background-size=\"$1\""
             ],
-            "description": "否"
+            "description": "背景图片 css background-size，\n当且仅当采用背景图片时才有效"
         },
         {
             "prefix": "background-position",
             "body": [
                 "background-position=\"$1\""
             ],
-            "description": "| 否"
+            "description": "背景图片 css background-position，\n当且仅当采用背景图片时才有效"
         },
         {
             "prefix": "border-radius",
             "body": [
                 "border-radius=\"$1\""
             ],
-            "description": "否"
+            "description": "图片圆角配置；\n\nobj.tl 左上角圆角；\nobj.tr 右上角圆角；\nobj.bl 左下角圆角；\nobj.br 右下角圆角"
         }
     ],
-    "c-image-viewer": [],
-    "c-image-viewer-simple": [],
+    "c-image-viewer": [
+        {
+            "prefix": "list",
+            "body": [
+                "list=\"$1\""
+            ],
+            "description": "图片列表"
+        },
+        {
+            "prefix": "total",
+            "body": [
+                "total=\"$1\""
+            ],
+            "description": "图片总数"
+        },
+        {
+            "prefix": "start-index",
+            "body": [
+                "start-index=\"$1\""
+            ],
+            "description": "浏览起始位置"
+        },
+        {
+            "prefix": "set-index",
+            "body": [
+                "set-index=\"$1\""
+            ],
+            "description": "套图内的index，一般为0"
+        },
+        {
+            "prefix": "hide-info",
+            "body": [
+                "hide-info"
+            ],
+            "description": "隐藏信息区"
+        },
+        {
+            "prefix": "hide-toolbar",
+            "body": [
+                "hide-toolbar"
+            ],
+            "description": "隐藏功能区"
+        },
+        {
+            "prefix": "hide-page-num",
+            "body": [
+                "hide-page-num"
+            ],
+            "description": "隐藏沉浸态的页码"
+        },
+        {
+            "prefix": "is-swipe-first-leave",
+            "body": [
+                "is-swipe-first-leave"
+            ],
+            "description": "左滑第一张图是否退场"
+        },
+        {
+            "prefix": "image-clip",
+            "body": [
+                "image-clip=\"$1\""
+            ],
+            "description": "缩略图裁剪方式，0: 其他裁剪，1: 无裁剪，2: 居中裁剪，3: 顶部居中裁剪"
+        },
+        {
+            "prefix": "easy-swipe",
+            "body": [
+                "easy-swipe"
+            ],
+            "description": "翻页条件只看滑动距离"
+        },
+        {
+            "prefix": "swipe-duration",
+            "body": [
+                "swipe-duration=\"$1\""
+            ],
+            "description": "翻页动画时长"
+        },
+        {
+            "prefix": "swipe-down-distance",
+            "body": [
+                "swipe-down-distance=\"$1\""
+            ],
+            "description": "下拉退场的距离条件"
+        }
+    ],
+    "c-image-viewer-simple": [
+        {
+            "prefix": "hide-page-num",
+            "body": [
+                "hide-page-num"
+            ],
+            "description": "隐藏页码"
+        },
+        {
+            "prefix": "hide-save-button",
+            "body": [
+                "hide-save-button"
+            ],
+            "description": "隐藏保存按钮"
+        },
+        {
+            "prefix": "image-clip",
+            "body": [
+                "image-clip=\"$1\""
+            ],
+            "description": "缩略图裁剪方式，0: 其他裁剪，1: 无裁剪，2: 居中裁剪，3: 顶部居中裁剪"
+        }
+    ],
     "c-img-content": [
         {
             "prefix": "img-src",
@@ -1320,7 +1493,7 @@
             "body": [
                 "img-url=\"$1\""
             ],
-            "description": "是 |图片链接地址，a 标签元素，若为空，则输出的是一个 div"
+            "description": "图片链接地址，a 标签元素，若为空，则输出的是一个 div"
         },
         {
             "prefix": "img-url-params",
@@ -1348,7 +1521,7 @@
             "body": [
                 "img-maskgap-size=\"$1\""
             ],
-            "description": "当值为12时，图片右下角遮罩与外框的边距为 \n bottom: .05rem;right: .05rem, \n不传默认为bottom: 0.02rem right: .0.02rem"
+            "description": "当值为12时，图片右下角遮罩与外框的边距为 \nbottom: .05rem;right: .05rem, \n不传默认为bottom: 0.02rem right: .0.02rem"
         },
         {
             "prefix": "img-show-num",
@@ -1395,7 +1568,7 @@
         {
             "prefix": "img-touchable",
             "body": [
-                "img-touchable"
+                "img-touchable=\"${1:false}\""
             ],
             "description": "是否打开图片的点击态"
         },
@@ -1460,7 +1633,7 @@
         {
             "prefix": "load-btn-show",
             "body": [
-                "load-btn-show"
+                "load-btn-show=\"${1:false}\""
             ],
             "description": "是否显示加载按钮"
         },
@@ -1474,7 +1647,7 @@
         {
             "prefix": "log-class",
             "body": [
-                "log-class"
+                "log-class=\"${1:false}\""
             ],
             "description": "是否增加日志类"
         },
@@ -1488,7 +1661,7 @@
         {
             "prefix": "auto-load",
             "body": [
-                "auto-load"
+                "auto-load=\"${1:false}\""
             ],
             "description": "是否在 mounted 时进行自动加载，默认自动加载；如果想主动触发加载，需要通过 ref 获取到 vnode 主动调用 load 方法"
         }
@@ -1497,44 +1670,44 @@
         {
             "prefix": "disabled",
             "body": [
-                "disabled=\"$1\""
+                "disabled"
             ],
-            "description": "选中选项卡的索引"
+            "description": "是否禁用"
         },
         {
             "prefix": "placeholder",
             "body": [
-                "placeholder"
+                "placeholder=\"$1\""
             ],
-            "description": "tabnav是否允许滚动"
+            "description": "占位"
         },
         {
             "prefix": "type",
             "body": [
-                "type"
+                "type=\"$1\""
             ],
-            "description": "支持text，button，password，reset，submit，hidden"
+            "description": "输入类型，如text、password等"
         },
         {
             "prefix": "value",
             "body": [
                 "value=\"$1\""
             ],
-            "description": "表单值"
+            "description": "输入框的值"
         },
         {
             "prefix": "name",
             "body": [
                 "name=\"$1\""
             ],
-            "description": "表单名称"
+            "description": "表单中的名称"
         },
         {
             "prefix": "message",
             "body": [
                 "message=\"$1\""
             ],
-            "description": "错误信息"
+            "description": "错误提示信息"
         },
         {
             "prefix": "right-text",
@@ -1567,7 +1740,7 @@
         {
             "prefix": "is-show-close-icon",
             "body": [
-                "is-show-close-icon"
+                "is-show-close-icon=\"${1:false}\""
             ],
             "description": "是否显示关闭图标"
         },
@@ -1720,7 +1893,7 @@
             "body": [
                 "header-img-type=\"$1\""
             ],
-            "description": "头图比例，值有（s,l,w,x,y）详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+            "description": "头图比例，值有（s,l,w,x,y）"
         },
         {
             "prefix": "header-img-align",
@@ -1857,42 +2030,42 @@
             "body": [
                 "letter-data=\"$1\""
             ],
-            "description": "必选"
+            "description": "内容数据"
         },
         {
             "prefix": "color",
             "body": [
                 "color=\"$1\""
             ],
-            "description": "可选"
+            "description": "自定义字母选中颜色和Toast背景颜色"
         },
         {
             "prefix": "top",
             "body": [
                 "top=\"$1\""
             ],
-            "description": "可选"
+            "description": "自定义距离浏览器窗口的距离，默认为0，置顶"
         },
         {
             "prefix": "bottom",
             "body": [
                 "bottom=\"$1\""
             ],
-            "description": "可选"
+            "description": "自定义距离浏览器窗口底部的距离，默认为0"
         },
         {
             "prefix": "is-move",
             "body": [
                 "is-move"
             ],
-            "description": "是否启用字母上下滑动事件，默认关闭，注意（在ios手百滑动偶尔会卡顿，数据量大于150条不建议开启）| 可选"
+            "description": "是否启用字母上下滑动事件，默认关闭，注意（在ios手百滑动偶尔会卡顿，数据量大于150条不建议开启）"
         },
         {
             "prefix": "z-index",
             "body": [
                 "z-index=\"$1\""
             ],
-            "description": "可选"
+            "description": "自定义元素CSS中的z-index值"
         }
     ],
     "c-line": [
@@ -1908,14 +2081,14 @@
             "body": [
                 "color=\"$1\""
             ],
-            "description": "文案颜色，可选值参照`c-color-*`"
+            "description": "文案颜色，可选值参照 c-color-*"
         },
         {
             "prefix": "align",
             "body": [
                 "align=\"$1\""
             ],
-            "description": "文案对齐方式，可选值为`text-align`可选值"
+            "description": "文案对齐方式，可选值为 text-align 可选值"
         }
     ],
     "c-link": [
@@ -1938,7 +2111,7 @@
             "body": [
                 "visited"
             ],
-            "description": "\b链接是否点击后变灰"
+            "description": "链接是否点击后变灰"
         },
         {
             "prefix": "target",
@@ -1948,14 +2121,22 @@
             "description": "链接标签的 target 属性，pc 上生效"
         }
     ],
-    "c-list": [],
+    "c-list-item": [
+        {
+            "prefix": "has-last-border",
+            "body": [
+                "has-last-border=\"$1\""
+            ],
+            "description": "最后一行的底边框：0（没有边框）、 1（有边框）"
+        }
+    ],
     "c-list-article": [
         {
             "prefix": "article-list",
             "body": [
                 "article-list=\"$1\""
             ],
-            "description": "文章内容列表，详细字段参考c-single-article"
+            "description": "文章内容列表，详细字段参考 c-single-article"
         },
         {
             "prefix": "article-type",
@@ -1978,7 +2159,7 @@
             "body": [
                 "title-clamp=\"$1\""
             ],
-            "description": "否 |标题多行截断"
+            "description": "标题多行截断"
         },
         {
             "prefix": "title-icon",
@@ -2004,7 +2185,7 @@
         {
             "prefix": "title-arrow",
             "body": [
-                "title-arrow=\"$1\""
+                "title-arrow"
             ],
             "description": "标题是否有箭头"
         },
@@ -2099,7 +2280,7 @@
         {
             "prefix": "prevent-default-touchmove",
             "body": [
-                "prevent-default-touchmove"
+                "prevent-default-touchmove=\"${1:false}\""
             ],
             "description": "是否阻止默认滑动事件"
         }
@@ -2147,7 +2328,7 @@
             "body": [
                 "leave=\"$1\""
             ],
-            "description": "退场动画，配置同`enter`"
+            "description": "退场动画，配置同 enter"
         }
     ],
     "c-navs": [
@@ -2186,7 +2367,7 @@
             "body": [
                 "label-type=\"$1\""
             ],
-            "description": "标题的标签类型，可参考[ Label 组件](http://sfe.baidu.com:8184/Label)"
+            "description": "标题的标签类型，可参考 Label 组件"
         },
         {
             "prefix": "title",
@@ -2277,21 +2458,21 @@
         {
             "prefix": "indicator",
             "body": [
-                "indicator"
+                "indicator=\"${1:false}\""
             ],
             "description": "是否显示翻页指示器"
         },
         {
             "prefix": "is-show",
             "body": [
-                "is-show"
+                "is-show=\"${1:false}\""
             ],
-            "description": "当前 PageScroll 组件是否被隐藏，默认为 true 表示不被隐藏。当 PageScroll 由隐藏状态变为展示状态时，会触发 IScroll 的 refresh 方法，重新初始化变量。适用于 PageScroll 被嵌套在 Tab 中等情况。"
+            "description": "当前 PageScroll 组件是否被隐藏，默认为 true 表示不被隐藏\n当 PageScroll 由隐藏状态变为展示状态时，会触发 IScroll 的 refresh 方法，重新初始化变量\n适用于 PageScroll 被嵌套在 Tab 中等情况"
         },
         {
             "prefix": "content-touchable-stop",
             "body": [
-                "content-touchable-stop"
+                "content-touchable-stop=\"${1:false}\""
             ],
             "description": "content 是否屏蔽整卡点击态"
         },
@@ -2393,7 +2574,7 @@
         {
             "prefix": "stop-touch-event-through",
             "body": [
-                "stop-touch-event-through"
+                "stop-touch-event-through=\"${1:false}\""
             ],
             "description": "阻止触摸事件透传开关"
         }
@@ -2479,7 +2660,31 @@
             "description": "滑动样式配置"
         }
     ],
-    "c-row": [],
+    "c-row": [
+        {
+            "prefix": "type",
+            "body": [
+                "type=\"$1\""
+            ],
+            "description": "接受参数tile、tight，生成c-row-title和c-row-tight"
+        },
+        {
+            "prefix": "align",
+            "body": [
+                "align=\"$1\""
+            ],
+            "description": "接受参数top/middle/bottom，分别生成c-row-align-top/c-row-align-middle/c-row-align-bottom"
+        }
+    ],
+    "c-span": [
+        {
+            "prefix": "col",
+            "body": [
+                "col=\"$1\""
+            ],
+            "description": "span栅格宽度"
+        }
+    ],
     "c-scroll": [
         {
             "prefix": "scroller-flex",
@@ -2523,7 +2728,7 @@
             "body": [
                 "article-list=\"$1\""
             ],
-            "description": "是"
+            "description": "文章列表"
         },
         {
             "prefix": "more-url",
@@ -2553,7 +2758,7 @@
             "body": [
                 "orientation=\"$1\""
             ],
-            "description": "否 |排列方式，有水平排列（'horizontal'）和竖直排列（'vertical'）两种"
+            "description": "排列方式，有水平排列（'horizontal'）和竖直排列（'vertical'）两种"
         },
         {
             "prefix": "col",
@@ -2574,7 +2779,7 @@
             "body": [
                 "img-type=\"$1\""
             ],
-            "description": "图片比例，值有（s,l,w,x,y），详见[栅格图片](http://pmd.baidu.com/doc/#image)"
+            "description": "图片比例，值有（s,l,w,x,y）"
         },
         {
             "prefix": "more-url",
@@ -2734,7 +2939,7 @@
         {
             "prefix": "use-fusion",
             "body": [
-                "use-fusion"
+                "use-fusion=\"${1:false}\""
             ],
             "description": "注意！新增分享组件请务必设置此值为 false"
         },
@@ -3029,21 +3234,21 @@
         {
             "prefix": "is-show",
             "body": [
-                "is-show"
+                "is-show=\"${1:false}\""
             ],
             "description": "是否显示 true为显示 false为隐藏"
         },
         {
             "prefix": "is-spread",
             "body": [
-                "is-spread"
+                "is-spread=\"${1:false}\""
             ],
             "description": "【图标】是否是展示态；由于 Spread 组件内部不维护状态，这里的 展示/收起 指的是图标的状态；true 为展示态图标（箭头向下，表示点击展开）；false 为收起态图标（箭头向上，表示点击收起）"
         },
         {
             "prefix": "has-icon",
             "body": [
-                "has-icon"
+                "has-icon=\"${1:false}\""
             ],
             "description": "是否有箭头图标 true为有 false为没有"
         },
@@ -3136,14 +3341,14 @@
         {
             "prefix": "is-show",
             "body": [
-                "is-show"
+                "is-show=\"${1:false}\""
             ],
             "description": "是否显示，用来在切换显示隐藏的时候触发计算高度"
         },
         {
             "prefix": "log-class",
             "body": [
-                "log-class"
+                "log-class=\"${1:false}\""
             ],
             "description": "是否增加日志类"
         }
@@ -3180,7 +3385,7 @@
         {
             "prefix": "show-text",
             "body": [
-                "show-text"
+                "show-text=\"${1:false}\""
             ],
             "description": "是否显示右侧文案"
         },
@@ -3222,7 +3427,7 @@
         {
             "prefix": "disabled",
             "body": [
-                "disabled"
+                "disabled=\"${1:false}\""
             ],
             "description": "是否禁止交互（只读）；默认为 true"
         }
@@ -3268,7 +3473,7 @@
         {
             "prefix": "transition",
             "body": [
-                "transition"
+                "transition=\"${1:false}\""
             ],
             "description": "是否开启动效"
         }
@@ -3307,11 +3512,81 @@
             "description": "选中选项卡的索引"
         },
         {
+            "prefix": "allow-scroll",
+            "body": [
+                "allow-scroll"
+            ],
+            "description": "tabnav是否允许滚动"
+        },
+        {
             "prefix": "bottom",
             "body": [
-                "bottom=\"$1\""
+                "bottom"
             ],
             "description": "导航在底部"
+        },
+        {
+            "prefix": "hide-nav",
+            "body": [
+                "hide-nav"
+            ],
+            "description": "当只有一个 tab 时设置是否隐藏 Nav 只显示内容，默认显示，true 表示隐藏。当 tab 数量超过1个时，这个设置失效"
+        },
+        {
+            "prefix": "has-slide-animation",
+            "body": [
+                "has-slide-animation"
+            ],
+            "description": "内容区切换是否带过渡效果，默认没有过渡效果"
+        },
+        {
+            "prefix": "is-open-log",
+            "body": [
+                "is-open-log=\"${1:false}\""
+            ],
+            "description": "是否打开日志， 默认为打开"
+        },
+        {
+            "prefix": "disable-event",
+            "body": [
+                "disable-event"
+            ],
+            "description": "是否触发点击事件改选定选项"
+        },
+        {
+            "prefix": "inner-height",
+            "body": [
+                "inner-height=\"$1\""
+            ],
+            "description": "当 tab 内容高度发生变化时（如 tab 中套展开收起），需要将变化后的高度传入 inner-height 字段"
+        },
+        {
+            "prefix": "no-content",
+            "body": [
+                "no-content=\"$1\""
+            ],
+            "description": "设置 true 时表示没有内容，只有头部。可用于 kgheader 等组件中"
+        },
+        {
+            "prefix": "gap-top",
+            "body": [
+                "gap-top=\"${1:false}\""
+            ],
+            "description": "设置 tab 上方是否自带5px间距，默认有"
+        },
+        {
+            "prefix": "gap-bottom",
+            "body": [
+                "gap-bottom=\"${1:false}\""
+            ],
+            "description": "设置 tab 下方是否自带5px间距，默认有"
+        },
+        {
+            "prefix": "content-gap-top",
+            "body": [
+                "content-gap-top=\"${1:false}\""
+            ],
+            "description": "设置 tab 内容上方是否自带间距，默认有"
         },
         {
             "prefix": "content-touchable-stop",
@@ -3319,6 +3594,73 @@
                 "content-touchable-stop=\"$1\""
             ],
             "description": "content 是否屏蔽整卡点击态"
+        }
+    ],
+    "c-tabs-item": [
+        {
+            "prefix": "label",
+            "body": [
+                "label=\"$1\""
+            ],
+            "description": "选项卡的标题"
+        },
+        {
+            "prefix": "icon",
+            "body": [
+                "icon=\"$1\""
+            ],
+            "description": "tabbar上的图标，宽高14px"
+        },
+        {
+            "prefix": "is-loading",
+            "body": [
+                "is-loading"
+            ],
+            "description": "是否为正在加载中，主要用于异步加载组件"
+        },
+        {
+            "prefix": "log-content",
+            "body": [
+                "log-content=\"$1\""
+            ],
+            "description": "自定义日志内容,格式为{key, value}"
+        },
+        {
+            "prefix": "params",
+            "body": [
+                "params=\"$1\""
+            ],
+            "description": "携带参数"
+        }
+    ],
+    "c-tabs-content": [
+        {
+            "prefix": "selected",
+            "body": [
+                "selected=\"$1\""
+            ],
+            "description": "需要显示的 tab 序号"
+        },
+        {
+            "prefix": "has-slide-animation",
+            "body": [
+                "has-slide-animation"
+            ],
+            "description": "内容区切换是否带过渡效果，默认没有过渡效果"
+        },
+        {
+            "prefix": "inner-height",
+            "body": [
+                "inner-height=\"$1\""
+            ],
+            "description": "当 tab 内容高度发生变化时（如 tab 中套展开收起），需要将变化后的高度传入 inner-height 字段"
+        },
+        {
+            "prefix": "content-gap-top",
+            "body": [
+                "content-gap-top=\"${1:false}\""
+            ],
+            "description": "设置 tab 内容上方是否自带5px间距，默认有"
         }
     ],
     "c-tag-group": [
@@ -3367,18 +3709,46 @@
     ],
     "c-tags": [
         {
+            "prefix": "label-list",
+            "body": [
+                "label-list=\"$1\""
+            ],
+            "description": "每个元素为一个object: {name: '', type: 'default'} name为string类型 type为string 类型 默认为default 可选项为negative和default"
+        },
+        {
             "prefix": "selected-index",
             "body": [
                 "selected-index=\"$1\""
             ],
-            "description": "否|选中的标签索引"
+            "description": "选中的标签索引"
+        },
+        {
+            "prefix": "allow-scroll",
+            "body": [
+                "allow-scroll"
+            ],
+            "description": "是否允许tags滑动"
         },
         {
             "prefix": "toggle-label",
             "body": [
                 "toggle-label=\"$1\""
             ],
-            "description": "否|下拉显示后的引导文字"
+            "description": "下拉显示后的引导文字"
+        },
+        {
+            "prefix": "gap",
+            "body": [
+                "gap=\"$1\""
+            ],
+            "description": "上下间隙大小"
+        },
+        {
+            "prefix": "is-expand",
+            "body": [
+                "is-expand=\"${1:false}\""
+            ],
+            "description": "是否有下拉箭头，是否可展开"
         }
     ],
     "c-text-line": [
@@ -3401,14 +3771,14 @@
             "body": [
                 "color=\"$1\""
             ],
-            "description": "文案颜色，可选值参照`c-color-*`"
+            "description": "文案颜色，可选值参照 c-color-*"
         },
         {
             "prefix": "align",
             "body": [
                 "align=\"$1\""
             ],
-            "description": "文案对齐方式，可选值为`text-align`可选值"
+            "description": "文案对齐方式，可选值为 text-align 可选值"
         },
         {
             "prefix": "size",
@@ -3691,7 +4061,7 @@
         {
             "prefix": "open",
             "body": [
-                "open"
+                "open=\"${1:false}\""
             ],
             "description": "是否添加点击态"
         },
@@ -3791,7 +4161,7 @@
         {
             "prefix": "load-btn-show",
             "body": [
-                "load-btn-show"
+                "load-btn-show=\"${1:false}\""
             ],
             "description": "是否显示加载按钮"
         },
@@ -3828,7 +4198,7 @@
             "body": [
                 "loading-text=\"$1\""
             ],
-            "description": "加载中文本，参考[无限下拉组件](http://soy.baidu-int.com/component/InfiniteScroll)"
+            "description": "加载中文本，参考 InfiniteScroll"
         },
         {
             "prefix": "load-end-text",
