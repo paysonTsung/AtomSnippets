@@ -457,6 +457,13 @@
                 "params=\"$1\""
             ],
             "description": "跳转链接参数"
+        },
+        {
+            "prefix": "primary-color",
+            "body": [
+                "primary-color=\"$1\""
+            ],
+            "description": "颜色"
         }
     ],
     "c-calendar": [

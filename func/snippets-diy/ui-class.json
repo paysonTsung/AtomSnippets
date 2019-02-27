@@ -27,6 +27,18 @@
         "prefix": "c-color-orange",
         "description": "[#f60] 价格、星星高亮色"
     },
+    "c-color-red": {
+        "prefix": "c-color-red",
+        "description": "[#e43] 红色(风险，慎用)"
+    },
+    "c-bg-color-white": {
+        "prefix": "c-bg-color-white",
+        "description": "[#fff] 白色背景色"
+    },
+    "c-bg-color-black": {
+        "prefix": "c-bg-color-black",
+        "description": "[#000] 黑色背景色"
+    },
     "c-gap-top-zero": {
         "prefix": "c-gap-top-zero",
         "description": "margin-top: 0rem"
@@ -170,6 +182,26 @@
     "c-gap-inner-right-middle": {
         "prefix": "c-gap-inner-right-middle",
         "description": "padding-right: 0.08rem"
+    },
+    "c-font-tiny": {
+        "prefix": "c-font-tiny",
+        "description": "10px/20px 一级/二级标签胶囊文字"
+    },
+    "c-font-small": {
+        "prefix": "c-font-small",
+        "description": "12px/22px 小号字体"
+    },
+    "c-font-normal": {
+        "prefix": "c-font-normal",
+        "description": "14px/24px 标准字体"
+    },
+    "c-font-medium": {
+        "prefix": "c-font-medium",
+        "description": "16px/26px 二级列表类标题"
+    },
+    "c-font-big": {
+        "prefix": "c-font-big",
+        "description": "18px/28px 情景页标题文字"
     },
     "WA_LOG_TAB": {
         "prefix": "WA_LOG_TAB",

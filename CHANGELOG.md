@@ -1,4 +1,10 @@
 # Change Log
+## [0.4.7] - 2019-02-27
+### Added
+- 新增c-font-normal等class提示
+### Fixed
+- 修复部分组件提示错误问题
+
 ## [0.4.6] - 2019-02-21
 ### Fixed
 - 修复组件内props缺失问题
