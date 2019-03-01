@@ -21,24 +21,22 @@ Code snippets for Atom in order to let you develop faster.
 
 ## Detail
 
-### Atom组件补全
+### Atom组件补全及引用自动添加
 输入触发词的一部分后 tab/enter键触发补全
-<!-- ![demo_a](images/demo_a.gif) -->
-<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_a.gif" width="350"/>
 
-### PHP片段补全
-<!-- ![demo_b](images/demo_b.gif) -->
-<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_b.gif" width="480"/>
-
-### 组件自动引用
 触发组件补全后自动向components下添加引用，目前仅支持search-ui组件的引用
 
 <img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/auto_add_ref.gif" width="380"/>
 
-若不想使用此功能，可在setting.json中设置
+若不想使用引用自动添加功能，可在setting.json中设置
 ```json
 "AtomSnippets.autoAddRef": false
 ```
+
+### PHP片段补全
+
+<img src="https://raw.githubusercontent.com/paysonTsung/AtomSnippets/master/images/demo_b.gif" width="480"/>
+
 
 ### 智能提示
 目前对this./this.$refs./引入模块/声明变量等提供代码智能提示功能
@@ -117,15 +115,14 @@ atom-engine/prefix:
 - `@touchmove`
 - `@scroll`
 
-### 常用属性
+### 组件属性/事件
+各组件属性/事件已实现智能提示，其他通用属性如下
+
 prefix:
 
 - `ref`
 - `class`
 - `style`
-- `url`
-- `params`
-- `title`
 - `data-module`
 
 ### 指令
@@ -146,9 +143,10 @@ prefix:
 
 - `c-container`
 - `c-container-tight`
-- `c-color`
-- `c-gap-top`
-- `WA_LOG_TAB`
+- `c-color` &#160;&#160;颜色相关
+- `c-gap-top` &#160;&#160;间距相关
+- `c-font-normal` &#160;&#160;字体相关
+- `WA_LOG_TAB` &#160;&#160;埋点相关
 - ......
 
 

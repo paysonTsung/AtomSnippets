@@ -3,7 +3,6 @@
  * @author congpeisen
  * @todo 文件待拆分
  * @todo 待抽象函数、缓存等优化
- * @todo 组件prop补全: 匹配组件模式,提供不同prop补全
  */
 
 let vscode = require('vscode');
@@ -38,7 +37,7 @@ let checkIfTemplate = (document, position) =>
         )
     ).includes('</template>');
 
-// 正则匹配行模式
+// 正则匹配行模式(光标前)
 let checkLinePrefix = (document, position, reg) => {
     let prefixLine = document.lineAt(position).text.substr(0, position.character);
     if (reg.test(prefixLine)) {
@@ -48,7 +47,6 @@ let checkLinePrefix = (document, position, reg) => {
 }
 // 正则匹配是否为组件头内部并获取组件
 let checkComponentHead = (document, position) => {
-    let matchArr = [];
     let matchComponent = '';
     let curLineNum = -1;
     let curLineStr = '';

@@ -3,23 +3,790 @@
         {
             "prefix": "feedbackclick",
             "body": [
-                "feedbackclick=\"${1:feedbackClickFn}\""
+                "feedbackclick=\"${1:handleFn}\""
             ],
             "description": "反馈按钮点击事件"
         },
         {
             "prefix": "footer-click",
             "body": [
-                "footer-click=\"${1:footerClickFn}\""
+                "footer-click=\"${1:handleFn}\""
             ],
             "description": "脚注点击事件"
         },
         {
             "prefix": "title-click",
             "body": [
-                "title-click=\"${1:titleClickFn}\""
+                "title-click=\"${1:handleFn}\""
             ],
             "description": "标题点击事件"
+        }
+    ],
+    "c-arrow": [],
+    "c-triangle": [],
+    "c-article": [],
+    "c-audio": [
+        {
+            "prefix": "play",
+            "body": [
+                "play=\"${1:handleFn}\""
+            ],
+            "description": "播放状态更新事件"
+        }
+    ],
+    "c-button": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击按钮时触发"
+        }
+    ],
+    "c-calendar": [
+        {
+            "prefix": "confirm",
+            "body": [
+                "confirm=\"${1:handleFn}\""
+            ],
+            "description": "点击确定的时候触发"
+        },
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "点击有效日期项的时候触发"
+        },
+        {
+            "prefix": "reset",
+            "body": [
+                "reset=\"${1:handleFn}\""
+            ],
+            "description": "重置按钮点击时触发"
+        }
+    ],
+    "c-carousel": [
+        {
+            "prefix": "imgitemclick",
+            "body": [
+                "imgitemclick=\"${1:handleFn}\""
+            ],
+            "description": "点击图片项时候触发"
+        },
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "轮播改变的时候触发"
+        }
+    ],
+    "c-cascader": [
+        {
+            "prefix": "itemclick",
+            "body": [
+                "itemclick=\"${1:handleFn}\""
+            ],
+            "description": "项点击事件"
+        },
+        {
+            "prefix": "lastcolumnitemclick",
+            "body": [
+                "lastcolumnitemclick=\"${1:handleFn}\""
+            ],
+            "description": "最后一列项点击事件"
+        }
+    ],
+    "c-divider": [],
+    "c-drawer": [
+        {
+            "prefix": "close",
+            "body": [
+                "close=\"${1:handleFn}\""
+            ],
+            "description": "关闭浮层事件，需要监听该事件控制抽屉组件是否显示"
+        },
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "单选类型时选择后的回调"
+        }
+    ],
+    "c-dropdown": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "选中值改变时触发"
+        }
+    ],
+    "c-error-page": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "透传原生的click事件"
+        }
+    ],
+    "c-filter": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "筛选后触发"
+        },
+        {
+            "prefix": "fliterStatus",
+            "body": [
+                "fliterStatus=\"${1:handleFn}\""
+            ],
+            "description": "筛选状态返回info,当filter组件筛选状态函数值，当值不为-1的时候为打开状态，-1时候为关闭筛选状态"
+        }
+    ],
+    "c-filter-enhanced": [
+        {
+            "prefix": "taglayoutclick",
+            "body": [
+                "taglayoutclick=\"${1:handleFn}\""
+            ],
+            "description": "上方标签项点击"
+        },
+        {
+            "prefix": "maskclick",
+            "body": [
+                "maskclick=\"${1:handleFn}\""
+            ],
+            "description": "蒙层阴影点击"
+        }
+    ],
+    "c-filter-simple": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击选项卡时触发，参数对象中包含index、filterKey和label(如果index为-1，这两个值为undefined)属性"
+        }
+    ],
+    "c-footer": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击右侧链接时候触发"
+        },
+        {
+            "prefix": "feedbackclick",
+            "body": [
+                "feedbackclick=\"${1:handleFn}\""
+            ],
+            "description": "反馈按钮点击事件"
+        }
+    ],
+    "c-icon": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-image": [
+        {
+            "prefix": "load",
+            "body": [
+                "load=\"${1:handleFn}\""
+            ],
+            "description": "图片加载完成后的回调"
+        },
+        {
+            "prefix": "error",
+            "body": [
+                "error=\"${1:handleFn}\""
+            ],
+            "description": "图片加载失败后的回调"
+        }
+    ],
+    "c-image-viewer": [
+        {
+            "prefix": "enterstart",
+            "body": [
+                "enterstart=\"${1:handleFn}\""
+            ],
+            "description": "进场开始"
+        },
+        {
+            "prefix": "enter",
+            "body": [
+                "enter=\"${1:handleFn}\""
+            ],
+            "description": "进场完成"
+        },
+        {
+            "prefix": "leavestart",
+            "body": [
+                "leavestart=\"${1:handleFn}\""
+            ],
+            "description": "退场开始"
+        },
+        {
+            "prefix": "leave",
+            "body": [
+                "leave=\"${1:handleFn}\""
+            ],
+            "description": "退场完成"
+        },
+        {
+            "prefix": "switch",
+            "body": [
+                "switch=\"${1:handleFn}\""
+            ],
+            "description": "翻页"
+        },
+        {
+            "prefix": "imgclick",
+            "body": [
+                "imgclick=\"${1:handleFn}\""
+            ],
+            "description": "图片点击"
+        },
+        {
+            "prefix": "secondscreenshow",
+            "body": [
+                "secondscreenshow=\"${1:handleFn}\""
+            ],
+            "description": "第二屏显示"
+        },
+        {
+            "prefix": "secondscreenhide",
+            "body": [
+                "secondscreenhide=\"${1:handleFn}\""
+            ],
+            "description": "第二屏隐藏"
+        },
+        {
+            "prefix": "swipefirst",
+            "body": [
+                "swipefirst=\"${1:handleFn}\""
+            ],
+            "description": "左滑第一张图"
+        }
+    ],
+    "c-image-viewer-simple": [
+        {
+            "prefix": "switch",
+            "body": [
+                "switch=\"${1:handleFn}\""
+            ],
+            "description": "翻页"
+        },
+        {
+            "prefix": "close",
+            "body": [
+                "close=\"${1:handleFn}\""
+            ],
+            "description": "关闭"
+        }
+    ],
+    "c-img-content": [
+        {
+            "prefix": "imgclick",
+            "body": [
+                "imgclick=\"${1:handleFn}\""
+            ],
+            "description": "左侧图片点击事件"
+        },
+        {
+            "prefix": "load",
+            "body": [
+                "load=\"${1:handleFn}\""
+            ],
+            "description": "左侧图片加载完成事件"
+        },
+        {
+            "prefix": "error",
+            "body": [
+                "error=\"${1:handleFn}\""
+            ],
+            "description": "左侧图片加载失败事件"
+        }
+    ],
+    "c-infinite-scroll": [
+        {
+            "prefix": "load",
+            "body": [
+                "load=\"${1:handleFn}\""
+            ],
+            "description": "触发滚动底部加载时"
+        }
+    ],
+    "c-input": [
+        {
+            "prefix": "input",
+            "body": [
+                "input=\"${1:handleFn}\""
+            ],
+            "description": "输入事件"
+        },
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "内容改变事件"
+        },
+        {
+            "prefix": "focus",
+            "body": [
+                "focus=\"${1:handleFn}\""
+            ],
+            "description": "获取焦点事件"
+        },
+        {
+            "prefix": "blur",
+            "body": [
+                "blur=\"${1:handleFn}\""
+            ],
+            "description": "失去焦点事件"
+        },
+        {
+            "prefix": "clear",
+            "body": [
+                "clear=\"${1:handleFn}\""
+            ],
+            "description": "点击关闭(清除)事件"
+        }
+    ],
+    "c-kg-footer": [
+        {
+            "prefix": "feedbackclick",
+            "body": [
+                "feedbackclick=\"${1:handleFn}\""
+            ],
+            "description": "反馈按钮点击事件"
+        }
+    ],
+    "c-kg-header": [
+        {
+            "prefix": "navclick",
+            "body": [
+                "navclick=\"${1:handleFn}\""
+            ],
+            "description": "nav点击时触发，参数对象中包含index属性，代表选中的导航标签的索引"
+        }
+    ],
+    "c-label": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-link": [
+        {
+            "prefix": "title-click",
+            "body": [
+                "title-click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-list": [],
+    "c-list-article": [],
+    "c-list-result": [
+        {
+            "prefix": "title-click",
+            "body": [
+                "title-click=\"${1:handleFn}\""
+            ],
+            "description": "点击标题时候触发"
+        }
+    ],
+    "c-loading": [],
+    "c-mask": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "蒙层点击事件"
+        },
+        {
+            "prefix": "touchmove",
+            "body": [
+                "touchmove=\"${1:handleFn}\""
+            ],
+            "description": "蒙层滑动事件"
+        }
+    ],
+    "c-navs": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "选项卡改变时触发"
+        },
+        {
+            "prefix": "toggle",
+            "body": [
+                "toggle=\"${1:handleFn}\""
+            ],
+            "description": "当滑动navs展开关闭时触发"
+        },
+        {
+            "prefix": "clickItem",
+            "body": [
+                "clickItem=\"${1:handleFn}\""
+            ],
+            "description": "点击项目时触发事件"
+        },
+        {
+            "prefix": "scrollEnd",
+            "body": [
+                "scrollEnd=\"${1:handleFn}\""
+            ],
+            "description": "选项卡nav滑动结束触发"
+        }
+    ],
+    "c-pull-refresh": [
+        {
+            "prefix": "on-refresh",
+            "body": [
+                "on-refresh=\"${1:handleFn}\""
+            ],
+            "description": "当下拉到指定高度后松开，触发刷新事件，用户在此时进行异步操作"
+        }
+    ],
+    "c-scroll-article": [
+        {
+            "prefix": "showMore",
+            "body": [
+                "showMore=\"${1:handleFn}\""
+            ],
+            "description": "点击『查看更多』时触发"
+        },
+        {
+            "prefix": "itemClick",
+            "body": [
+                "itemClick=\"${1:handleFn}\""
+            ],
+            "description": "点击单条文章时触发"
+        },
+        {
+            "prefix": "scrollEnd",
+            "body": [
+                "scrollEnd=\"${1:handleFn}\""
+            ],
+            "description": "滚动事件结束时触发"
+        }
+    ],
+    "c-scroll-two-frame": [
+        {
+            "prefix": "showmore",
+            "body": [
+                "showmore=\"${1:handleFn}\""
+            ],
+            "description": "当最后一项展示『查看更多』并且需要有特殊操作时，可在组件外层调用的地方绑定该事件"
+        },
+        {
+            "prefix": "itemclick",
+            "body": [
+                "itemclick=\"${1:handleFn}\""
+            ],
+            "description": "当点击项不做url跳转有特殊操作时，可在组件外层调用的地方绑定该事件"
+        },
+        {
+            "prefix": "scrollend",
+            "body": [
+                "scrollend=\"${1:handleFn}\""
+            ],
+            "description": "滚动事件结束时触发"
+        },
+        {
+            "prefix": "beforescrollstart",
+            "body": [
+                "beforescrollstart=\"${1:handleFn}\""
+            ],
+            "description": "触发时机：滚动开始之前\n（仅在 bounce === true 时）\n[参考：better-scroll 事件](http://ustbhuangyi.github.io/better-scroll/doc/events.html#beforescrollstart)"
+        },
+        {
+            "prefix": "scrollstart",
+            "body": [
+                "scrollstart=\"${1:handleFn}\""
+            ],
+            "description": "触发时机：滚动开始时\n（仅在 bounce === true 时）\n[参考：better-scroll 事件](http://ustbhuangyi.github.io/better-scroll/doc/events.html#scrollstart)"
+        },
+        {
+            "prefix": "scroll",
+            "body": [
+                "scroll=\"${1:handleFn}\""
+            ],
+            "description": "触发时机：滚动过程中，具体时机取决于选项中的 probeType\n（仅在 bounce === true 时）\n[参考：better-scroll 事件](http://ustbhuangyi.github.io/better-scroll/doc/events.html#scroll)"
+        },
+        {
+            "prefix": "touchend",
+            "body": [
+                "touchend=\"${1:handleFn}\""
+            ],
+            "description": "触发时机：鼠标/手指离开\n（仅在 bounce === true 时）\n[参考：better-scroll 事件](http://ustbhuangyi.github.io/better-scroll/doc/events.html#touchend)"
+        }
+    ],
+    "c-selector": [
+        {
+            "prefix": "close",
+            "body": [
+                "close=\"${1:handleFn}\""
+            ],
+            "description": "关闭组件时触发"
+        }
+    ],
+    "c-share": [
+        {
+            "prefix": "close",
+            "body": [
+                "close=\"${1:handleFn}\""
+            ],
+            "description": "关闭分享面板"
+        },
+        {
+            "prefix": "shareclick",
+            "body": [
+                "shareclick=\"${1:handleFn}\""
+            ],
+            "description": "点击分享面板上的按钮时触发"
+        },
+        {
+            "prefix": "resolve",
+            "body": [
+                "resolve=\"${1:handleFn}\""
+            ],
+            "description": "分享完成回调"
+        },
+        {
+            "prefix": "catch",
+            "body": [
+                "catch=\"${1:handleFn}\""
+            ],
+            "description": "分享失败回调"
+        }
+    ],
+    "c-slink": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-source": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "当点击展开按钮后触发的回调函数"
+        }
+    ],
+    "c-spread": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "当点击展开按钮后触发的回调函数"
+        }
+    ],
+    "c-spread-enhanced": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "展开收起状态改变后触发的回调"
+        }
+    ],
+    "c-stars": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "评分改变时触发"
+        }
+    ],
+    "c-switch": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "点击切换"
+        }
+    ],
+    "c-tabs": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "改变选定项时触发"
+        },
+        {
+            "prefix": "clickHeaderItem",
+            "body": [
+                "clickHeaderItem=\"${1:handleFn}\""
+            ],
+            "description": "点击组件头部时可选项时触发"
+        },
+        {
+            "prefix": "onTabScrollEnd",
+            "body": [
+                "onTabScrollEnd=\"${1:handleFn}\""
+            ],
+            "description": "选项卡nav滑动结束触发"
+        }
+    ],
+    "c-tag-group": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "选项改变后的回调函数；单选返回选中项元素的下标；多选返回选中项元素们的下标数组"
+        },
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "当项被点击时触发"
+        },
+        {
+            "prefix": "scrollEnd",
+            "body": [
+                "scrollEnd=\"${1:handleFn}\""
+            ],
+            "description": "当横滑结束时触发，主要用于日志"
+        }
+    ],
+    "c-tags": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "选项卡改变时触发"
+        },
+        {
+            "prefix": "toggle",
+            "body": [
+                "toggle=\"${1:handleFn}\""
+            ],
+            "description": "当滑动tags展开关闭时触发"
+        },
+        {
+            "prefix": "scrollEnd",
+            "body": [
+                "scrollEnd=\"${1:handleFn}\""
+            ],
+            "description": "当tags横划时触发，主要用于日志"
+        }
+    ],
+    "c-text-line": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-timespan": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击事件"
+        }
+    ],
+    "c-title": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击时候触发"
+        }
+    ],
+    "c-to-top": [
+        {
+            "prefix": "click",
+            "body": [
+                "click=\"${1:handleFn}\""
+            ],
+            "description": "点击组件时触发"
+        }
+    ],
+    "c-toast": [
+        {
+            "prefix": "change",
+            "body": [
+                "change=\"${1:handleFn}\""
+            ],
+            "description": "状态state 发生变化时触发 true 为打开，false 为关闭"
+        }
+    ],
+    "c-tombstone": [
+        {
+            "prefix": "beforeleave",
+            "body": [
+                "beforeleave=\"${1:handleFn}\""
+            ],
+            "description": "组件移除之前的回调"
+        },
+        {
+            "prefix": "leave",
+            "body": [
+                "leave=\"${1:handleFn}\""
+            ],
+            "description": "组件移除的回调"
+        },
+        {
+            "prefix": "afterleave",
+            "body": [
+                "afterleave=\"${1:handleFn}\""
+            ],
+            "description": "组件移除之后的回调"
+        }
+    ],
+    "c-touchable-feedback": [],
+    "c-waterfall": [
+        {
+            "prefix": "load",
+            "body": [
+                "load=\"${1:handleFn}\""
+            ],
+            "description": "触发滚动底部加载时"
+        },
+        {
+            "prefix": "imgclick",
+            "body": [
+                "imgclick=\"${1:handleFn}\""
+            ],
+            "description": "点击图片项时"
         }
     ]
 }

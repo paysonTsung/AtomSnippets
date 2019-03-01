@@ -192,13 +192,6 @@
         ],
         "description": "photo"
     },
-    "click": {
-        "prefix": "@click",
-        "body": [
-            "@click=\"$1\""
-        ],
-        "description": "绑定click事件"
-    },
     "tap": {
         "prefix": "@tap",
         "body": [
