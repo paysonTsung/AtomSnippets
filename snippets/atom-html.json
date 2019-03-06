@@ -191,47 +191,5 @@
             "></video>"
         ],
         "description": "photo"
-    },
-    "tap": {
-        "prefix": "@tap",
-        "body": [
-            "@tap=\"$1\""
-        ],
-        "description": "绑定tap事件"
-    },
-    "focus": {
-        "prefix": "@focus",
-        "body": [
-            "@focus=\"$1\""
-        ],
-        "description": "绑定focus事件"
-    },
-    "touchstart": {
-        "prefix": "@touchstart",
-        "body": [
-            "@touchstart=\"$1\""
-        ],
-        "description": "绑定touchstart事件"
-    },
-    "touchend": {
-        "prefix": "@touchend",
-        "body": [
-            "@touchend=\"$1\""
-        ],
-        "description": "绑定touchend事件"
-    },
-    "touchmove": {
-        "prefix": "@touchmove",
-        "body": [
-            "@touchmove=\"$1\""
-        ],
-        "description": "绑定touchmove事件"
-    },
-    "scroll": {
-        "prefix": "@scroll",
-        "body": [
-            "@scroll=\"$1\""
-        ],
-        "description": "绑定scroll事件"
     }
 }

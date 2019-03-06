@@ -57,6 +57,12 @@ let checkComponentHead = (document, position) => {
 
     if (posLeftLine.includes('>') || posRightLine.includes('<')) return '';
 
+    // 若为组件首行进行特殊处理
+    if (/\s*<\w*/.test(posLeftLine)) {
+        matchComponent = posLeftLine.match(/\s*<(?=([\w-]*\b))/)[1];
+        return matchComponent;
+    }
+
     curLineNum = focusLineNum - 1;
     while (curLineNum > 0) {
         curLineStr = document.lineAt(curLineNum).text;
@@ -382,9 +388,10 @@ languages.registerCompletionItemProvider('atom', {
         // 补全校验
         if(
             checkIfTemplate(document, position)
-            && (prefixLine = checkLinePrefix(document, position, /^\s*(\:|@)?\w*$/))
+            // && (prefixLine = checkLinePrefix(document, position, /^\s*(\:|@)?\w*$/))
             && (matchComponent = checkComponentHead(document, position))
         ) {
+            prefixLine = checkLinePrefix(document, position, /^[\s*<[\w-]*]?\s*(\:|@)?\w*$/);
             if (/^\s*@/.test(prefixLine)) {
                 // + events
                 let atomEvents = getFileData(ATOM_EVENT_PATH);
@@ -401,7 +408,7 @@ languages.registerCompletionItemProvider('atom', {
                     });
                 }
             } else {
-                if (/^\s*\w/.test(prefixLine)) {
+                if (/^[\s*<[\w-]*]?\s*\w/.test(prefixLine)) {
                     // + class等
                     let atomInstObj = getFileData(ATOM_INST_PATH);
 
@@ -444,4 +451,4 @@ languages.registerCompletionItemProvider('atom', {
     resolveCompletionItem: (item) => {
         return item;
     }
-});
+}, ':', '@');
