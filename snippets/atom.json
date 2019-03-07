@@ -3,82 +3,93 @@
         "prefix": "ll",
         "body": [
             "<template>",
-            "    $0",
+            "\t$0",
             "</template>",
             "<script type=\"config\">",
             "{",
-            "    props: {",
-            "",
-            "    },",
-            "    components: {",
-            "",
-            "    }",
+            "\tprops: {",
+            "\t\t",
+            "\t},",
+            "\tcomponents: {",
+            "\t\t",
+            "\t}",
             "}",
             "</script>",
             "<script>",
             "export default {",
-            "    mounted() {",
-            "",
-            "    },",
-            "    methods: {",
-            "",
-            "    }",
+            "\tmounted() {",
+            "\t\t",
+            "\t},",
+            "\tmethods: {",
+            "\t\t",
+            "\t}",
             "};",
             "</script>",
-            "<style scoped>",
+            "<style lang=\"less\" scoped>",
             "",
             "</style>"
         ],
         "description": "Atom主开发模板"
     },
     "script": {
-        "prefix": "lscript",
+        "prefix": "script",
         "body": [
             "<script>",
             "export default {",
-            "    mounted() {",
-            "$0",
-            "    },",
-            "    methods: {",
-            "",
-            "    }",
+            "\tmounted() {",
+            "\t\t$0",
+            "\t},",
+            "\tmethods: {",
+            "\t\t",
+            "\t}",
             "};",
             "</script>"
         ],
         "description": "Atom开发模板-script"
     },
-    "config": {
-        "prefix": "lconfig",
+    "script-php": {
+        "prefix": "script-php",
+        "body": [
+            "<script type=\"php\">",
+            "\tfunction ${1:created}(${2:\\$ctx}) {",
+            "\t\t$0",
+            "\t}",
+            "</script>"
+        ],
+        "description": "Atom开发模板-php"
+    },
+    "script-config": {
+        "prefix": "script-config",
         "body": [
             "<script type=\"config\">",
             "{",
-            "    props: {",
-            "$0",
-            "    },",
-            "    components: {",
-            "",
-            "    }",
+            "\tprops: {",
+            "\t\t$0",
+            "\t},",
+            "\tcomponents: {",
+            "\t\t",
+            "\t}",
             "}",
             "</script>"
         ],
         "description": "Atom开发模板-config"
     },
     "style": {
-        "prefix": "lstyle",
+        "prefix": "style",
         "body": [
             "<style scoped>",
             "$0",
             "</style>"
         ],
-        "description": "Atom开发模板-style"
+        "description": "Atom开发模板-css"
     },
     "style-less": {
-        "prefix": "lstyle-less",
+        "prefix": "style-less",
         "body": [
             "<style lang=\"less\" scoped>",
             "$0",
             "</style>"
         ],
-        "description": "Atom开发模板-style-less"
+        "description": "Atom开发模板-less"
     }
 }

@@ -73,10 +73,11 @@ prefix:
 
 - `ll`
     - 开发模板: template/script/style标签组
-- `lconfig`
-- `lscript`
-- `lstyle`
-- `lstyle-less`
+- `config`
+- `script`
+- `script-php`
+- `style`
+- `style-less`
 
 
 ### Atom组件
@@ -107,13 +108,6 @@ atom-engine/prefix:
 - `h-scrollview`
 - `photo`
 - `video`
-- `@click`
-- `@tap`
-- `@focus`
-- `@touchstart`
-- `@touchend`
-- `@touchmove`
-- `@scroll`
 
 ### 组件属性/事件
 各组件属性/事件已实现智能提示，其他通用属性如下

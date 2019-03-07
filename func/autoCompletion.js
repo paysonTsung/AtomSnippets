@@ -20,7 +20,7 @@ const ATOM_INST_PATH  = 'snippets-diy/atom-instructions.json';
 // 数组去重
 let uniqueArr = (arr) => [...new Set(arr)];
 
-// 获取文件json数据
+// 获取配置文件json数据
 let getFileData = (filePath) =>
     JSON.parse(
         fs.readFileSync(
@@ -55,7 +55,11 @@ let checkComponentHead = (document, position) => {
     let posLeftLine = focusLineStr.substr(0, position.character);
     let posRightLine = focusLineStr.substr(position.character);
 
-    if (posLeftLine.includes('>') || posRightLine.includes('<')) return '';
+    if (
+        posLeftLine.includes('"')
+        || posLeftLine.includes('>')
+        || posRightLine.includes('<')
+    ) return '';
 
     // 若为组件首行进行特殊处理
     if (/\s*<\w*/.test(posLeftLine)) {
@@ -408,7 +412,7 @@ languages.registerCompletionItemProvider('atom', {
                     });
                 }
             } else {
-                if (/^[\s*<[\w-]*]?\s*\w/.test(prefixLine)) {
+                if (/^[\s*<[\w-]*]?\s*\w$/.test(prefixLine)) {
                     // + class等
                     let atomInstObj = getFileData(ATOM_INST_PATH);
 

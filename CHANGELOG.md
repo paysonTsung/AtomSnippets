@@ -1,10 +1,16 @@
 # Change Log
+## [0.4.10] - 2019-03-07
+### Fixed
+- 修复组件属性双引号内可触发属性提示bug
+- 修复组件首行无法触发class等提示的bug
+- component/template等标签及atom-engine组件迁为编程性补全
+
 ## [0.4.9] - 2019-03-06
 ### Added
 - 增加组件内输入:或@提示组件所有属性或事件
 
 ### Fixed
-- 修复组件首行无法触发prop/event/class等提示的bug
+- 修复组件首行无法触发prop/event等提示的bug
 
 ## [0.4.8] - 2019-03-01
 ### Added
