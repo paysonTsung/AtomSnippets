@@ -1087,23 +1087,6 @@
         ],
         "description": "slot插槽便签"
     },
-    "div": {
-        "prefix": "div",
-        "body": [
-            "<div>",
-            "\t$0",
-            "</div>"
-        ],
-        "description": "div标签"
-    },
-    "span": {
-        "prefix": "span",
-        "body": [
-            "<span>$1</span>"
-        ],
-        "description": "span标签"
-    },
-
 
 
     
@@ -1204,5 +1187,239 @@
             "></video>"
         ],
         "description": "photo"
+    },
+
+
+
+    "div": {
+        "prefix": "div",
+        "body": [
+            "<div>",
+            "\t$0",
+            "</div>"
+        ],
+        "description": "块级元素"
+    },
+    "span": {
+        "prefix": "span",
+        "body": [
+            "<span>$1</span>"
+        ],
+        "description": "内联元素"
+    },
+    "ul": {
+        "prefix": "ul",
+        "body": [
+            "<ul>",
+            "\t$0",
+            "</ul>"
+        ],
+        "description": "无序列表"
+    },
+    "ol": {
+        "prefix": "ol",
+        "body": [
+            "<ol>",
+            "\t$0",
+            "</ol>"
+        ],
+        "description": "有序列表"
+    },
+    "li": {
+        "prefix": "li",
+        "body": [
+            "<li>",
+            "\t$0",
+            "</li>"
+        ],
+        "description": "列表项"
+    },
+    "object": {
+        "prefix": "object",
+        "body": [
+            "<object>",
+            "\t$0",
+            "</object>"
+        ],
+        "description": "内嵌对象"
+    },
+    "p": {
+        "prefix": "p",
+        "body": [
+            "<p>",
+            "\t$0",
+            "</p>"
+        ],
+        "description": "段落"
+    },
+    "h1": {
+        "prefix": "h1",
+        "body": [
+            "<h1>$1</h1>"
+        ],
+        "description": "标题"
+    },
+    "h2": {
+        "prefix": "h2",
+        "body": [
+            "<h2>$1</h2>"
+        ],
+        "description": "标题"
+    },
+    "h3": {
+        "prefix": "h3",
+        "body": [
+            "<h3>$1</h3>"
+        ],
+        "description": "标题"
+    },
+    "h4": {
+        "prefix": "h4",
+        "body": [
+            "<h4>$1</h4>"
+        ],
+        "description": "标题"
+    },
+    "h5": {
+        "prefix": "h5",
+        "body": [
+            "<h5>$1</h5>"
+        ],
+        "description": "标题"
+    },
+    "h6": {
+        "prefix": "h6",
+        "body": [
+            "<h6>$1</h6>"
+        ],
+        "description": "标题"
+    },
+    "br": {
+        "prefix": "br",
+        "body": [
+            "<br>"
+        ],
+        "description": "折行"
+    },
+    "hr": {
+        "prefix": "hr",
+        "body": [
+            "<hr>"
+        ],
+        "description": "水平线"
+    },
+    "i": {
+        "prefix": "i",
+        "body": [
+            "<i>$1</i>"
+        ],
+        "description": "斜体字"
+    },
+    "strong": {
+        "prefix": "strong",
+        "body": [
+            "<strong>$1</strong>"
+        ],
+        "description": "强调内容"
+    },
+    "del": {
+        "prefix": "del",
+        "body": [
+            "<del>$1</del>"
+        ],
+        "description": "删除文本"
+    },
+    "section": {
+        "prefix": "section",
+        "body": [
+            "<section>",
+            "\t$0",
+            "</section>"
+        ],
+        "description": "section"
+    },
+    "article": {
+        "prefix": "article",
+        "body": [
+            "<article>",
+            "\t$0",
+            "</article>"
+        ],
+        "description": "文章"
+    },
+    "header": {
+        "prefix": "header",
+        "body": [
+            "<header>",
+            "\t$0",
+            "</header>"
+        ],
+        "description": "页眉"
+    },
+    "footer": {
+        "prefix": "footer",
+        "body": [
+            "<footer>",
+            "\t$0",
+            "</footer>"
+        ],
+        "description": "页脚"
+    },
+    "aside": {
+        "prefix": "aside",
+        "body": [
+            "<aside>",
+            "\t$0",
+            "</aside>"
+        ],
+        "description": "侧边栏"
+    },
+    "nav": {
+        "prefix": "nav",
+        "body": [
+            "<nav>",
+            "\t$0",
+            "</nav>"
+        ],
+        "description": "导航"
+    },
+    "dialog": {
+        "prefix": "dialog",
+        "body": [
+            "<dialog>",
+            "\t$0",
+            "</dialog>"
+        ],
+        "description": "对话框"
+    },
+    "img": {
+        "prefix": "img",
+        "body": [
+            "<img src=\"$1\"$2/>"
+        ],
+        "description": "图像"
+    },
+    "input": {
+        "prefix": "input",
+        "body": [
+            "<input type=\"${1:text}\" name=\"$2\"$3/>"
+        ],
+        "description": "输入控件"
+    },
+    "label": {
+        "prefix": "label",
+        "body": [
+            "<label for=\"$1\">$2</label>"
+        ],
+        "description": "输入控件标注"
+    },
+    "textarea": {
+        "prefix": "textarea",
+        "body": [
+            "<textarea rows=\"$1\" cols=\"$2\"$3>",
+            "\t$0",
+            "</textarea>"
+        ],
+        "description": "多行文本输入控件"
     }
 }
