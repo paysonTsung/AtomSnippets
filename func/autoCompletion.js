@@ -91,6 +91,17 @@ let checkComponentHead = (document, position) => {
     return '';
 }
 
+let checkIfComponet = (document, position) => {
+    let curLineNum = document.lineAt(position).lineNumber;
+    let curLineStr = '';
+    while (curLineNum > 0) {
+        curLineStr = document.lineAt(curLineNum).text;
+        if (curLineStr.includes('}')) return false;
+        if (/components:\s*\{/.test(curLineStr)) return true;
+        curLineNum--;
+    }
+}
+
 // this.xx / this.$refs.xx / AlaUtil.xx
 languages.registerCompletionItemProvider(['atom'], {
     provideCompletionItems: (document, position) => {
@@ -456,3 +467,23 @@ languages.registerCompletionItemProvider('atom', {
         return item;
     }
 }, ':', '@');
+
+languages.registerCompletionItemProvider('atom', {
+    provideCompletionItems: (document, position) => {
+        if (!checkIfComponet(document, position)) return;
+
+        let configData = getFileData(ATOM_REF_PATH);
+        return Object.keys(configData).map((data) => {
+            let item = new vscode.CompletionItem(
+                data,
+                vscode.CompletionItemKind.Field
+            )
+            item.insertText = new vscode.SnippetString(configData[data].body.join('\n'));
+            item.detail = `${configData[data].description}\n(Atom Snippets)`;
+            return item;
+        });
+    },
+    resolveCompletionItem: (item) => {
+        return item;
+    }
+});

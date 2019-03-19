@@ -8,7 +8,7 @@
         "nextpage",
         "snippets"
     ],
-    "version": "0.4.11",
+    "version": "0.4.12",
     "publisher": "congpeisen",
     "engines": {
         "vscode": "^1.29.0"
