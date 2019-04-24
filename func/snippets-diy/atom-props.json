@@ -3239,43 +3239,6 @@
     ],
     "c-spread": [
         {
-            "prefix": "is-show",
-            "body": [
-                "is-show=\"${1:false}\""
-            ],
-            "description": "是否显示 true为显示 false为隐藏"
-        },
-        {
-            "prefix": "is-spread",
-            "body": [
-                "is-spread=\"${1:false}\""
-            ],
-            "description": "【图标】是否是展示态；由于 Spread 组件内部不维护状态，这里的 展示/收起 指的是图标的状态；true 为展示态图标（箭头向下，表示点击展开）；false 为收起态图标（箭头向上，表示点击收起）"
-        },
-        {
-            "prefix": "has-icon",
-            "body": [
-                "has-icon=\"${1:false}\""
-            ],
-            "description": "是否有箭头图标 true为有 false为没有"
-        },
-        {
-            "prefix": "spread-text",
-            "body": [
-                "spread-text=\"$1\""
-            ],
-            "description": "展示内容文案配置"
-        },
-        {
-            "prefix": "fold-text",
-            "body": [
-                "fold-text=\"$1\""
-            ],
-            "description": "收起内容文案配置"
-        }
-    ],
-    "c-spread-enhanced": [
-        {
             "prefix": "type",
             "body": [
                 "type=\"$1\""
@@ -3339,25 +3302,18 @@
             "description": "设置收起状态时的高度，当 type 为 height 时生效"
         },
         {
-            "prefix": "height-unit",
-            "body": [
-                "height-unit=\"$1\""
-            ],
-            "description": "高度单位，可选 'px'、'rem', 当 type 为 height 时生效"
-        },
-        {
-            "prefix": "is-show",
-            "body": [
-                "is-show=\"${1:false}\""
-            ],
-            "description": "是否显示，用来在切换显示隐藏的时候触发计算高度"
-        },
-        {
             "prefix": "log-class",
             "body": [
                 "log-class=\"${1:false}\""
             ],
             "description": "是否增加日志类"
+        },
+        {
+            "prefix": "spread-step",
+            "body": [
+                "spread-step=\"$1\""
+            ],
+            "description": "阶段展开间隔；\n\n每次点击展开展开 n 个元素（仅限列表类型 type === 'list' 时有意义）"
         }
     ],
     "c-stars": [

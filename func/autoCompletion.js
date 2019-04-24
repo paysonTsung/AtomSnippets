@@ -40,7 +40,7 @@ let checkIfTemplate = (document, position) =>
 // 正则匹配行模式(光标前)
 let checkLinePrefix = (document, position, reg) => {
     let prefixLine = document.lineAt(position).text.substr(0, position.character);
-    if (reg.test(prefixLine)) {
+    if (!reg || reg.test(prefixLine)) {
         return prefixLine;
     }
     return '';
@@ -54,9 +54,16 @@ let checkComponentHead = (document, position) => {
     let focusLineNum = document.lineAt(position).lineNumber;
     let posLeftLine = focusLineStr.substr(0, position.character);
     let posRightLine = focusLineStr.substr(position.character);
+    let numOfQuot = 0;
+
+    for(let i = 0, item; item = posLeftLine[i++];) {
+        if (item === '"') {
+            numOfQuot++;
+        }
+    }
 
     if (
-        posLeftLine.includes('"')
+        numOfQuot % 2 === 1  // 光标左侧双引号为奇数时不会触发提示
         || posLeftLine.includes('>')
         || posRightLine.includes('<')
     ) return '';
@@ -395,6 +402,11 @@ vscode.commands.registerCommand('extension.autoAddComponent', function (label) {
 })
 
 // Atom组件props自动补全
+/* 
+ *  :xx  prop
+ *  xxx  prop + 指令等
+ *  @xx  event
+ */
 languages.registerCompletionItemProvider('atom', {
     provideCompletionItems: (document, position) => {
         let matchComponent = '';
@@ -406,8 +418,9 @@ languages.registerCompletionItemProvider('atom', {
             // && (prefixLine = checkLinePrefix(document, position, /^\s*(\:|@)?\w*$/))
             && (matchComponent = checkComponentHead(document, position))
         ) {
-            prefixLine = checkLinePrefix(document, position, /^[\s*<[\w-]*]?\s*(\:|@)?\w*$/);
-            if (/^\s*@/.test(prefixLine)) {
+            // prefixLine = checkLinePrefix(document, position, /^(\s*<[\w-]*)?\s*(\:|@)?\w*$/);
+            prefixLine = checkLinePrefix(document, position);
+            if (/\s*@$/.test(prefixLine)) { // 光标前为@符号
                 // + events
                 let atomEvents = getFileData(ATOM_EVENT_PATH);
                 let atomEventsArr = atomEvents[matchComponent];
@@ -422,8 +435,9 @@ languages.registerCompletionItemProvider('atom', {
                         return sniItem;
                     });
                 }
-            } else {
-                if (/^[\s*<[\w-]*]?\s*\w$/.test(prefixLine)) {
+            } else { // 光标前非@符号
+                // /^[\s*<[\w-]*]?\s*\w$/.test(prefixLine)
+                if (!prefixLine.includes(':') && !prefixLine.includes('@')) {
                     // + class等
                     let atomInstObj = getFileData(ATOM_INST_PATH);
 

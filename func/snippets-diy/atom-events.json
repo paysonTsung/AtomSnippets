@@ -601,20 +601,18 @@
     ],
     "c-spread": [
         {
-            "prefix": "click",
-            "body": [
-                "click=\"${1:handleFn}\""
-            ],
-            "description": "当点击展开按钮后触发的回调函数"
-        }
-    ],
-    "c-spread-enhanced": [
-        {
             "prefix": "change",
             "body": [
                 "change=\"${1:handleFn}\""
             ],
             "description": "展开收起状态改变后触发的回调"
+        },
+        {
+            "prefix": "spreadbtnclick",
+            "body": [
+                "spreadbtnclick=\"${1:handleFn}\""
+            ],
+            "description": "展开收起按钮点击事件"
         }
     ],
     "c-stars": [

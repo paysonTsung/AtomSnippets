@@ -103,10 +103,8 @@
         "prefix": "c-button",
         "body": [
             "<c-button",
-            "\ttype=\"${1:default}\"",
-            "\ttext=\"$2\"",
-            "\ticon=\"$3\"",
-            "\tparams=\"$4\"",
+            "\t:text=\"$1\"",
+            "\t:params=\"$2\"",
             "/>"
         ],
         "description": "按钮/ Button"
